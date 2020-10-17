@@ -1,0 +1,10 @@
+[style]
+based_on_style = google
+indent_width = 3
+continuation_indent_width = 3
+use_tabs = True
+align_closing_bracket_with_visual_indent = True
+join_multiple_lines = True
+arithmetic_precedence_indication = True
+dedent_closing_brackets = False
+indent_closing_brackets = True

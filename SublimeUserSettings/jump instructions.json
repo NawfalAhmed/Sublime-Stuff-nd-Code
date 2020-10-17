@@ -1,0 +1,86 @@
+  {
+    "Name": "jc",
+    "Alias": ["jb","jnae"],
+    "Brief": "Jump if carry/below/not above or equal, CF=1",
+    "Description:" "This jump is taken if the last arithmetic operation generated a carry or required a borrow. After a CMP it is taken if the unsigned destination is smaller than the unsigned source."
+  },
+  {
+    "Name": "jnc",
+    "Alias": ["jnb","jae"],
+    "Brief": "Jump if not(carry/below) or if above or equal, CF=0",
+  },
+  {
+    "Name": "je",
+    "Alias": ["jz"],
+    "Brief": "Jump if equal/zero, ZF=1",
+  },
+  {
+    "Name": "jne",
+    "Alias": ["jnz"],
+    "Brief": "Jump if not(equal/zero), ZF=0",
+  },
+  {
+    "Name": "ja",
+    "Alias": ["jnbe"],
+    "Brief": "Jump if above/not below or equal, CF=ZF=0",
+  },
+	{
+    "Name": "jna",
+    "Alias": ["jbe"],
+    "Brief": "Jump if below or equal/not above, CF=1 or ZF=1",
+  },
+  {
+    "Name": "jl",
+    "Alias": ["jnge"],
+    "Brief": "Jump if less/not greater or equal, SF!=OF",
+  },
+  {
+    "Name": "jnl",
+    "Alias": ["jge"],
+    "Brief": "Jump if greater or equal/not less, SF==OF",
+  },
+	{
+    "Name": "jle",
+    "Alias": ["jng"],
+    "Brief": "Jump if less or equal/not greater, ZF=1 or SF!=OF",
+  },
+	{
+    "Name": "jg",
+    "Alias": ["jnle"],
+    "Brief": "Jump if greater/not less or equal, ZF=0 && SF==OF",
+  },
+  {
+    "Name": "jo",
+    "Alias": [],
+    "Brief": "Jump if overflow, OF=1",
+  },
+  {
+    "Name": "jno",
+    "Alias": [],
+    "Brief": "Jump if not overflow, OF=0",
+  },
+  {
+    "Name": "js",
+    "Alias": [],
+    "Brief": "Jump if sign, SF=1",
+  },
+  {
+    "Name": "jns",
+    "Alias": [],
+    "Brief": "Jump if not sign, SF=0",
+  },
+  {
+    "Name": "jp",
+    "Alias": ["jpe"],
+    "Brief": "Jump if parity(even), PF=1",
+  },
+  {
+    "Name": "jnp",
+    "Alias": ["jpo"],
+    "Brief": "Jump if not parity(odd), PF=0",
+  },
+  {
+    "Name": "jcxz",
+    "Alias": [],
+    "Brief": "Jump if reg CX==0",
+  },

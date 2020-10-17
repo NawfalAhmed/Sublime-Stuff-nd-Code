@@ -1,0 +1,23 @@
+[
+	{
+		"args": null,
+		// {
+		// 	"by": "word_ends",
+		// 	"extend": true,
+		// 	"forward": true
+		// },
+		"command": "expand_region"
+	},
+	// {
+	// 	"args":
+	// 	{
+	// 		"extend": true,
+	// 		"to": "eol"
+	// 	},
+	// 	"command": "move_to"
+	// },
+	{
+		"args": null,
+		"command": "transpose"
+	}
+]

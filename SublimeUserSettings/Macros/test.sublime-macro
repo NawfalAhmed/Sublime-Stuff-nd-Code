@@ -1,0 +1,12 @@
+[
+	{
+		"command": "new_file",
+	},
+	{
+		"args":
+		{
+			"name": "Packages/User/Snippets/AssemblyDefault.sublime-snippet"
+		},
+		"command": "insert_snippet",
+	},
+]

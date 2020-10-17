@@ -1,0 +1,21 @@
+<snippet>
+		<content><![CDATA[#include <iostream>
+#include <string>
+using namespace std;
+
+void stdin_from_inputfile();
+
+int main() {
+	stdin_from_inputfile();$1
+}
+
+void stdin_from_inputfile()
+{
+	string name = __FILE__;
+	name = name.substr(name.rfind('\\\\')+1);
+	name = name.substr(0,name.length()-4);
+	name+= "-input.txt";
+	freopen(name.c_str(), "r", stdin);
+}]]></content>
+	<description>Default Cpp</description>
+</snippet>

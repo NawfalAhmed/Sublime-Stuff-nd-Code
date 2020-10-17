@@ -1,0 +1,185 @@
+{
+	"file_commands_freq":
+	[
+		23,
+		8,
+		8,
+		6,
+		5,
+		5,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"file_commands_list":
+	[
+		[
+			false,
+			"Open Location",
+			"side_bar_reveal"
+		],
+		[
+			true,
+			"Move to",
+			"side_bar_move"
+		],
+		[
+			true,
+			"Delete",
+			"side_bar_delete"
+		],
+		[
+			false,
+			"Fix Indentation",
+			[
+				"reindent",
+				{
+					"single_line": false
+				}
+			]
+		],
+		[
+			true,
+			"Rename",
+			"rename_file"
+		],
+		[
+			true,
+			"New Folder Relative to Current View",
+			"side_bar_new_directory"
+		],
+		[
+			true,
+			"New File Relative to Project Root",
+			"side_bar_new_file2"
+		],
+		[
+			false,
+			"Reveal (Show In Side Bar)",
+			"reveal_in_side_bar"
+		],
+		[
+			true,
+			"New Folder Relative to Project Root",
+			"side_bar_new_directory2"
+		],
+		[
+			true,
+			"New File Relative to Current View",
+			"smooth_new"
+		],
+		[
+			true,
+			"Copy to",
+			"side_bar_duplicate"
+		],
+		[
+			false,
+			"Open In Chrome",
+			[
+				"side_bar_open_in_browser",
+				{
+					"paths":
+					[
+					],
+					"type": "testing"
+				}
+			]
+		],
+		[
+			false,
+			"Copy as HrefTag",
+			"side_bar_copy_tag_ahref"
+		],
+		[
+			false,
+			"Copy Path as URL",
+			"side_bar_copy_path_encoded"
+		],
+		[
+			false,
+			"Copy File Path Relative To Project",
+			"side_bar_copy_path_relative_from_project"
+		],
+		[
+			false,
+			"Copy File Path",
+			"side_bar_copy_path"
+		],
+		[
+			false,
+			"Copy File Name",
+			"side_bar_copy_name"
+		],
+		[
+			false,
+			"Clone to Right Pane",
+			[
+				"clone_file_to_pane",
+				{
+					"direction": "right"
+				}
+			]
+		]
+	],
+	"preferences_freq":
+	[
+		10,
+		4,
+		3,
+		2,
+		1,
+		1,
+		1,
+		0,
+		0,
+		0
+	],
+	"preferences_list":
+	[
+		[
+			"Draw_White_Space",
+			"selection",
+			"all"
+		],
+		[
+			"Word_Wrap"
+		],
+		[
+			"Fix_Indent_On_Line_Move"
+		],
+		[
+			"Line_Numbers"
+		],
+		[
+			"plugin_mode",
+			"extended",
+			"disabled",
+			"Display_Number_Conversions"
+		],
+		[
+			"Show_Char_Code"
+		],
+		[
+			"Indent_To_Bracket"
+		],
+		[
+			"Scroll_Past_End"
+		],
+		[
+			"Indent_With_Tabs_On_Save"
+		],
+		[
+			"Gutter"
+		]
+	]
+}

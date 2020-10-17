@@ -1,0 +1,5 @@
+// These settings override both User and Default settings for the UnityC# syntax
+{
+	"tab_size": 3,
+	 // "auto_complete_triggers": [{"selector": "source.cs - string - comment- constant.numeric", "characters": "."}]
+}

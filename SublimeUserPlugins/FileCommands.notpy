@@ -1,0 +1,98 @@
+import sublime
+import sublime_plugin
+from glob import glob
+
+
+class MenuFileCommandsCommand(sublime_plugin.TextCommand):
+
+	def run(self, edit):
+		view = self.view
+		window = view.window()
+		# syntax = view.settings().get("syntax")
+		# commandlist = [
+		# # Syntax:
+		# #	[Input,Command Name, command, put brackets if command with arguments]
+		# # [False,	"Delete ", "delete_assembly_stuff"],
+		# [False,	"Fix Indentation", ("reindent", {"single_line": False}) ],
+		# # [False,	"Fix Line", ("reindent", {"single_line": True}) ],
+		# [False,	"Open Location", "side_bar_reveal" ],
+		# [True,	"Rename", "rename_file"],
+		# [True,	"Delete", "side_bar_delete" ], # needs confirmation
+		# [True,	"Move to", "side_bar_move" ], #needs initial text
+		# [True,	"Copy to", "side_bar_duplicate" ], #needs initial text
+		# [False,	"Clone to Right Pane", ("clone_file_to_pane", {"direction": "right"}) ],
+		# [True,	"New File Relative to Current View", "smooth_new" ],
+		# [True,	"New Folder Relative to Current View", "side_bar_new_directory" ],
+		# [False,	"Copy File Path", "side_bar_copy_path" ],
+		# [False,	"Copy File Path Relative To Project", "side_bar_copy_path_relative_from_project" ],
+		# [False,	"Open In Chrome", ("side_bar_open_in_browser", { "paths": [], "type": "testing" }) ],
+		# [False,	"Copy File Name", "side_bar_copy_name" ],
+		# [False,	"Reveal (Show In Side Bar)", "reveal_in_side_bar" ],
+		# [False,	"Copy Path as URL", "side_bar_copy_path_encoded" ],
+		# [False,	"Copy as HrefTag", "side_bar_copy_tag_ahref" ],
+		# [True,	"New File Relative to Project Root", "side_bar_new_file2" ],
+		# [True,	"New Folder Relative to Project Root", "side_bar_new_directory2" ],
+		# 	]
+
+		# if "Assembly x86.tmLanguage" not in syntax:
+		# commandlist = commandlist[1:]
+
+		settings = sublime.load_settings("Frequency.sublime-settings")
+		commandlist = settings.get("file_commands_list")
+
+		# print(commandlist)
+		def on_done(index):
+			if index != -1:
+				settings = sublime.load_settings("Frequency.sublime-settings")
+				frequencylist = settings.get("file_commands_freq")
+				commandlist = settings.get("file_commands_list")
+
+				#load command
+				command = commandlist[index][2]
+
+				#adjust order
+				frequencylist[index] += 1
+				frequencylist, commandlist = (
+					list(_) for _ in
+					zip(*sorted(zip(frequencylist, commandlist), reverse=True))
+					)
+				settings.set("file_commands_freq", frequencylist)
+				settings.set("file_commands_list", commandlist)
+				sublime.save_settings("Frequency.sublime-settings")
+
+				#run loaded command
+				if type(command) == list:
+					window.run_command(*command)
+				else:
+					window.run_command(command)
+
+		window.show_quick_panel([command[1] for command in commandlist], on_done)
+
+
+# Globally Declared list of commands
+
+# [False,	"Copy Name Encoded", "side_bar_copy_name_encoded",],
+# [False,	"Copy Path Quoted", "side_bar_copy_path_quoted",],
+# [False,	"Copy Path (Windows)", "side_bar_copy_path_absolute_from_project_encoded_windows",],
+# [False,	"Copy Path Absolute To Project", "side_bar_copy_path_absolute_from_project",],
+# [False,	"Copy Path Absolute To Project Encoded", "side_bar_copy_path_absolute_from_project_encoded",],
+# [False,	"Copy Path Relative To Last Selected View ", "side_bar_copy_path_relative_to_last_selected_view",],
+# [False,	"Copy as Tag script", "side_bar_copy_tag_script",],
+# [False,	"Copy as Tag style", "side_bar_copy_tag_style",],
+# [False,	"Copy URL", "side_bar_copy_url",],
+# [False,	"Project: Edit", "side_bar_project_open_file",],
+# [False,	"Search Files", "side_bar_find_files_path_containing" ],
+
+# class ArgInputHandler(sublime_plugin.ListInputHandler):
+# 	def name(self):
+# 		return "ans"
+# 	def list_items(self):
+# 		return [(element[1],[element[0],element[2],i]) for i, element in enumerate(commandlist)]
+# 	def placeholder(self):
+# 		return "Select Command"
+# 	def next_input(self,args):
+# 		if "text" not in args:
+# 			if args["ans"][0]:
+# 				return ArgsInputHandler()#args["ans"][1])
+# 			else:
+# 				return None#args["ans"][1])

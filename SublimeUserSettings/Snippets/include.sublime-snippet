@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+]]></content>
+	<tabTrigger>include</tabTrigger>
+	<description>include iostream,string,vector</description>
+	<scope>source.c++</scope>
+</snippet>

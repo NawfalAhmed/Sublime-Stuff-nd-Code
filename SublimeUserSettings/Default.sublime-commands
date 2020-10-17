@@ -1,0 +1,15 @@
+[
+	{
+		  "caption": "Terminus: Linux - Ubuntu - wsl",
+		  "command": "terminus_open",
+		  "args": {
+				"config_name": "Linux",
+				"panel_name": "Linux Terminal"
+			},
+	 },
+	 {
+		  "caption": "Terminus: Open Default Shell in Panel",
+		  "command": "terminus_open",
+		  "args": {"panel_name": "Windows Terminal"}
+	 },
+]
