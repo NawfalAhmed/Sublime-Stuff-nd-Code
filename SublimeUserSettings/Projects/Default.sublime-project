@@ -1,0 +1,59 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"c:\\Users\\Ibraheem\\AppData\\Local\\Programs\\Python\\Python38\\python.exe\" -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"*"
+			],
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText"
+		},
+		{
+			"name": ": AI",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\AI"
+		},
+		{
+			"name": ": OS",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\OS"
+		},
+		{
+			"name": ": CV",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\CV"
+		},
+		{
+			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects\\FIFA Penguin\\Assets\\Scripts"
+		},
+		{
+			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects"
+		},
+		{
+			"name": ": Python Code",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Python Code"
+		},
+		{
+			"name": ": Background Proj",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Background Proj"
+		},
+		{
+			"path": "C:\\Users\\ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\User"
+		},
+		{
+			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\MenuPenguin"
+		},
+		{
+			"path": "C:\\Users\\ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\UserPlugins"
+		},
+		{
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimePublishedPlugins\\MenuPreferences"
+		}
+	]
+}

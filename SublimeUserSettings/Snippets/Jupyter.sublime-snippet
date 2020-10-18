@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[jupyter notebook]]></content>
+	<tabTrigger>jn</tabTrigger>
+	<!-- <description></description> -->
+	<!-- <scope>source.c++</scope> -->
+</snippet>

@@ -1,0 +1,8 @@
+// {
+// 	 "target": "terminus_exec",
+// 	 "cancel": "terminus_cancel_build",
+// 	 "working_dir": "$folder",
+
+// 	 "shell_cmd": "echo helloworld",
+// 	 "selector": "source.json",
+// }

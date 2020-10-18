@@ -1,0 +1,84 @@
+{
+	"python_interpreter": "C:\\Users\\Ibraheem\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+	"enable_signatures_tooltip": true,
+	"enable_docstrings_tooltip": true,
+	"merge_signatures_and_doc": false,
+
+	"complete_parameters": true,
+	"swallow_startup_errors": true,
+	"anaconda_linter_delay": 1,
+	"anaconda_gutter_theme": "simple",
+	"anaconda_linter_mark_style": "none",
+	// 'solid_underline', 'stippled_underline', 'squiggly_underline','none'
+
+	"pep8_max_line_length": 80,
+	"pep8_ignore":
+	[
+		// "E309",
+		// "E111",
+		"E226",
+		"E123",
+		"W191"
+	],
+	// "pep8_error_levels": {"E": "E", "W": "W", "V": "V"},
+	// "auto_formatting": false,
+	// "autoformat_ignore":
+	// [
+	// 	"E309","E111", "E121", "E122", "E123", "E124", "E125", "E126", "E127", "E128", "E129", "E201", "E202", "E203", "E211", "E221", "E222", "E223", "E224", "E241", "E242", "E261", "E262", "E271", "E272", "E273", "E274", "E301", "E302", "E303", "E304", "E401", "E501", "E502", "E701", "E702", "E703", "E711", "E712", "W191", "W291", "W293", "W391", "E26", "W6", "W602"
+	// ],
+}
+
+/*
+E101 - Reindent all lines.
+			E111 - Reindent all lines.
+			E121 - Fix indentation to be a multiple of four.
+			E122 - Add absent indentation for hanging indentation.
+			E123 - Align closing bracket to match opening bracket.
+			E124 - Align closing bracket to match visual indentation.
+			E125 - Indent to distinguish line from next logical line.
+			E126 - Fix over-indented hanging indentation.
+			E127 - Fix visual indentation.
+			E128 - Fix visual indentation.
+			E129 - Indent to distinguish line from next logical line.
+			E201 - Remove extraneous whitespace.
+			E202 - Remove extraneous whitespace.
+			E203 - Remove extraneous whitespace.
+			E211 - Remove extraneous whitespace.
+			E221 - Fix extraneous whitespace around keywords.
+			E222 - Fix extraneous whitespace around keywords.
+			E223 - Fix extraneous whitespace around keywords.
+			E224 - Remove extraneous whitespace around operator.
+			E225 - Fix missing whitespace around operator.
+			E226 - Fix missing whitespace around operator.
+			E227 - Fix missing whitespace around operator.
+			E228 - Fix missing whitespace around operator.
+			E231 - Add missing whitespace.
+			E241 - Fix extraneous whitespace around keywords.
+			E242 - Remove extraneous whitespace around operator.
+			E251 - Remove whitespace around parameter '=' sign.
+			E261 - Fix spacing before comment hash.
+			E262 - Fix spacing after comment hash.
+			E271 - Fix extraneous whitespace around keywords.
+			E272 - Fix extraneous whitespace around keywords.
+			E273 - Fix extraneous whitespace around keywords.
+			E274 - Fix extraneous whitespace around keywords.
+			E301 - Add missing blank line.
+			E302 - Add missing 2 blank lines.
+			E303 - Remove extra blank lines.
+			E304 - Remove blank line following function decorator.
+			E401 - Put imports on separate lines.
+			E501 - Try to make lines fit within --max-line-length characters.
+			E502 - Remove extraneous escape of newline.
+			E701 - Put colon-separated compound statement on separate lines.
+			E702 - Put semicolon-separated compound statement on separate lines.
+			E703 - Put semicolon-separated compound statement on separate lines.
+			E711 - Fix comparison with None.
+			E712 - Fix comparison with boolean.
+			W191 - Reindent all lines.
+			W291 - Remove trailing whitespace.
+			W293 - Remove trailing whitespace on blank line.
+			W391 - Remove trailing blank lines.
+			E26  - Format block comments.
+			W6   - Fix various deprecated code (via lib2to3).
+			W602 - Fix deprecated form of raising exception.
+*/

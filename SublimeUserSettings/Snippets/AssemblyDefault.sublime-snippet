@@ -1,0 +1,17 @@
+<snippet>
+		<content><![CDATA[
+			org 100h
+			jmp start
+
+${2:num1}:		dw 0x${3:0000}
+
+start:		${1:mov}
+
+
+			mov ax, 4c00h
+			int 21h
+]]></content>
+	<tabTrigger>org</tabTrigger>
+	<description>Default Assembly</description>
+	<!-- <scope>source.assembly</scope> -->
+</snippet>

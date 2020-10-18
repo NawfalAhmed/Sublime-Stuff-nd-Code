@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+// <${1:N}>]]></content>
+	<tabTrigger>ta</tabTrigger>
+	<description>comment in html tag</description>
+	<scope>source.c++</scope>
+</snippet>

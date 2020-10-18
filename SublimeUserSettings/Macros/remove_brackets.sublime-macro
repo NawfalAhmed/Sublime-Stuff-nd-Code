@@ -1,0 +1,22 @@
+[
+	{
+		"args":
+		{
+			"plugin":
+			{
+				"args":
+				{
+					"remove_block": false,
+					"remove_content": false,
+					"remove_indent": false
+				},
+				"command": "bh_modules.bracketremove",
+				"type":
+				[
+					"__all__"
+				]
+			}
+		},
+		"command": "bh_key"
+	}
+]

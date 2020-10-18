@@ -1,0 +1,21 @@
+[
+	{
+		"args": null,
+		"command": "set_mark"
+	},
+	{
+		"args":
+		{
+			"to": "line"
+		},
+		"command": "expand_selection"
+	},
+	{
+		"args": null,
+		"command": "duplicate_line"
+	},
+	{
+		"args": null,
+		"command": "swap_with_mark"
+	}
+]

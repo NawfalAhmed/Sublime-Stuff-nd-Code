@@ -1,0 +1,6 @@
+// These settings override both User and Default settings for the Assembly x86 syntax
+{
+	"tab_size": 4,
+	"color_scheme": "Monokai2.sublime-color-scheme",
+	"show_panel_on_build": false,
+}

@@ -1,0 +1,86 @@
+# import sublime
+# import sublime_plugin
+# from datetime import datetime
+
+# class UltraStatusBarCommand(sublime_plugin.EventListener):
+# 	stBarStartTime = 0  # variable to hold start time
+# 	def on_activated(self, view):
+# 		# clock_interval = settings.get(STATUSBARTIME_CLOCKDELAY_KEY, 1000)
+# 		onlyinview = clock_display_onlyinview
+# 		# clock_type = settings.get(STATUSBARTIME_clock_type_KEY, 0)
+# 		# onlyinview = settings.get(STATUSBARTIME_CLOCKDISPLAY_ONLYINVIEW_KEY, True)
+# 		# clock_lefty = settings.get(STATUSBARTIME_clock_LEFTY_KEY, True)
+# 		if not self.stBarStartTime:
+# 			self.UltraStatusBarCommandrStartTime=datetime.now()
+# 		if not clock_type:
+# 			Timer(time_format).displayTime(view, clock_interval, onlyinview, clock_lefty)
+# 		else:
+# 			Timer().displayUpTime(view, self.stBarStartTime, clock_interval, onlyinview)
+
+# class Timer():
+# 	status_key = 'statusclock'
+# 	def __init__(self, format="%h:%m"):
+# 		self._format = format
+
+# 	# helper method which converts given duration to days, hours, minutes and seconds
+# 	def convert_timedelta(self, duration):
+# 		days, seconds = duration.days, duration.seconds
+# 		hours = seconds//3600
+# 		minutes = (seconds % 3600)//60
+# 		seconds = seconds % 60
+# 		return days, hours, minutes, seconds
+
+# 	def displayTime(self, view, stdelay, onlyinview, clock_lefty):
+# 		if clock_lefty:
+# 			self.status_key = "__statusclock"
+# 		view.set_status(self.status_key, datetime.now().strftime(self._format))
+# 		actwin = sublime.active_window()
+# 		if actwin:
+# 			if not onlyinview or (actwin.active_view() and actwin.active_view().id() == view.id()):
+# 			   sublime.set_timeout(lambda: self.displayTime(view, delay, onlyinview, clock_lefty), delay)
+# 		else:
+# 			view.set_status(self.status_key, '')
+# 		return
+
+# 	# Method for handling uptime display
+# 	def displayUpTime(self, view, startTime, delay, onlyinview):
+# 		upTime = datetime.now() - startTime
+# 		days, hours, minutes, seconds = self.convert_timedelta(upTime)
+# 		out = ''
+# 		if days: out += str("%s days, " % (days))
+# 		if hours: out += str("%02d:%02d:%02d" % (hours, minutes, seconds))
+# 		elif minutes: out += str("%02d:%02d" % (minutes, seconds))
+# 		elif seconds: out += str("%02d seconds" % (seconds))
+# 		view.set_status(self.status_key, out)
+# 		actwin = sublime.active_window()
+# 		if actwin:
+# 			if not onlyinview or (actwin.active_view() and actwin.active_view().id() == view.id()):
+# 			   sublime.set_timeout(lambda: self.displayUpTime(view, startTime, delay, onlyinview), delay)
+# 		else:
+# 			view.set_status(self.status_key, '')
+# 		return
+
+
+# # Preferencess
+# 	# Clock update interval
+# clock_interval= 1000,
+
+# 	# Display only when there is a view (Making it false will turn clock always even when there is no file in view)
+# clock_display_onlyinview= False,
+
+# 	# Specifies date / time format, where:
+# 	# %H - Hour (24-hour clock) as a decimal number [00, 23]
+# 	# %M - Minute as a decimal number [00, 59]
+# 	# %S - Second as a decimal number [00, 61]
+# 	# For more information, please refer to: http:#docs.python.org/2/library/time.html#time.strftime
+# time_format= "%a %b %d %h:%m",
+
+# 	# Specifies Clock type
+# 	# 0 - System clock
+# 	# 1 - Sublime Up time
+# clock_type= 0,
+
+# 	# Stick the clock on the left side of the status bar
+# clock_lefty= False
+# """
+# """
