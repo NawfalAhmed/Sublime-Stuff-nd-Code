@@ -8,11 +8,11 @@
 		5,
 		5,
 		5,
-		5,
-		4,
+		3,
 		1,
 		1,
-		1,
+		0,
+		0,
 		0,
 		0,
 		0,
@@ -61,11 +61,6 @@
 			"side_bar_new_directory"
 		],
 		[
-			true,
-			"Git - Commit Changes",
-			"git_commit"
-		],
-		[
 			false,
 			"Clone to Right Pane",
 			[
@@ -91,11 +86,6 @@
 			"reveal_in_side_bar"
 		],
 		[
-			false,
-			"Git - Stage This File",
-			"git_stage_self"
-		],
-		[
 			true,
 			"New Folder Relative to Project Root",
 			"side_bar_new_directory2"
@@ -104,6 +94,11 @@
 			true,
 			"New File Relative to Current View",
 			"smooth_new"
+		],
+		[
+			true,
+			"Git - Commit Changes",
+			"git_commit"
 		],
 		[
 			true,
@@ -122,6 +117,11 @@
 					"type": "testing"
 				}
 			]
+		],
+		[
+			false,
+			"Git - Stage This File",
+			"git_stage_self"
 		],
 		[
 			false,
