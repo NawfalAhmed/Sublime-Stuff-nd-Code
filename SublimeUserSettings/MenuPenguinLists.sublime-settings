@@ -8,10 +8,10 @@
 		5,
 		5,
 		5,
-		3,
+		4,
 		1,
 		1,
-		0,
+		1,
 		0,
 		0,
 		0,
@@ -86,6 +86,11 @@
 			"reveal_in_side_bar"
 		],
 		[
+			false,
+			"Git - Stage This File",
+			"git_stage_self"
+		],
+		[
 			true,
 			"New Folder Relative to Project Root",
 			"side_bar_new_directory2"
@@ -117,11 +122,6 @@
 					"type": "testing"
 				}
 			]
-		],
-		[
-			false,
-			"Git - Stage This File",
-			"git_stage_self"
 		],
 		[
 			false,

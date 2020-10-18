@@ -520,10 +520,27 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+			"file": "/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/OnClose.py",
 			"settings":
 			{
-				"buffer_size": 3564,
+				"buffer_size": 868,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserSettings/MenuPenguinLists.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 2286,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/mycommandpalette.sublime-commands",
+			"settings":
+			{
+				"buffer_size": 528,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -1113,6 +1130,10 @@
 		"selected_items":
 		[
 			[
+				"open res",
+				"OverrideAudit: Open Resource"
+			],
+			[
 				"enable",
 				"Package Control: Enable Package"
 			],
@@ -1131,10 +1152,6 @@
 			[
 				"terminus sett",
 				"Preferences: Terminus Settings"
-			],
-			[
-				"open res",
-				"OverrideAudit: Open Resource"
 			],
 			[
 				"ui",
@@ -1634,6 +1651,10 @@
 		[
 			"sublime.log_commands(True)",
 			"sublime.log_commands(False)",
+			"sublime.log_input(False)",
+			"sublime.log_input(True)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
 			"sublime.log_commands(True)",
 			"sublime.log_commands(False)",
 			"sublime.log_input(False)",
@@ -1752,35 +1773,37 @@
 	"expanded_folders":
 	[
 		"/C/Users/Ibraheem/Desktop/SublimeText",
-		"/C/Users/Ibraheem/Desktop/SublimeText/AI",
-		"/C/Users/Ibraheem/Desktop/SublimeText/AI/Lab1",
-		"/C/Users/Ibraheem/Desktop/SublimeText/AI/Lab3",
-		"/C/Users/Ibraheem/Desktop/SublimeText/OS",
-		"/C/Users/Ibraheem/Desktop/Unity Projects/FIFA Penguin/Assets/Scripts",
-		"/C/Users/Ibraheem/Desktop/SublimeText/Python Code",
-		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/User",
-		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Snippets",
-		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Terminus",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/MenuPenguin",
-		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins",
-		"/C/Users/Ibraheem/Desktop/SublimeText/SublimePublishedPlugins/MenuPreferences"
+		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/MenuPreferences",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserSettings"
 	],
 	"file_history":
 	[
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserSettings/MenuPenguinLists.sublime-settings",
+		"/C/Users/Ibraheem/Desktop/SublimeText/.gitignore",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/GitCommands.py",
+		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/MenuPreferences/FileCommands.py",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/SmoothNew.py",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserSettings/Preferences.sublime-settings",
+		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/MenuPreferences/MenuPenguinLists.sublime-settings",
+		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Projects/Default.sublime-project",
+		"/C/Users/Ibraheem/Desktop/Unity Projects/FIFA Penguin/Library/PackageCache/com.unity.collab-proxy@1.3.9/Tests/Editor/Models/StartModelTests.cs",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/FileCommands.notpy",
+		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/OpenKeyBindings.py",
+		"/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserSettings/Default (Windows).sublime-keymap",
 		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins/OnClose.py",
 		"/C/Users/Ibraheem/Desktop/SublimeText/test.py",
 		"/C/Users/Ibraheem/Desktop/SublimeText/packageslist.txt",
 		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins/RunCmd.py",
 		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins/RunOnTerminus.py",
 		"/C/Users/Ibraheem/Desktop/Stuff/SublimePublishedPlugins/package_control_channel/repository/m.json",
-		"/C/Users/Ibraheem/Desktop/SublimeText/.gitignore",
 		"/C/Users/Ibraheem/Desktop/SublimeText/l.py",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Default/paste_from_history.py",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Case Conversion/Default (Windows).sublime-keymap",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Case Conversion/CaseConversion.sublime-settings",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/PanePane/Default (Windows).sublime-keymap",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Anaconda/commands/complete_func_args.py",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Anaconda/anaconda_lib/_typing.py",
@@ -1788,7 +1811,6 @@
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Origami/Default (Windows).sublime-keymap",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Default/send2trash/__init__.py",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Default/Add Line Before.sublime-macro",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Projects/Default.sublime-project",
 		"/C/Users/Ibraheem/Desktop/SublimeText/notes.txt",
 		"/C/Users/Ibraheem/Desktop/SublimeText/notes-updates.json",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Materialize/themes/Material Augmented Reaction.sublime-theme",
@@ -1807,7 +1829,6 @@
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Anaconda/anaconda_lib/builder/python_builder.py",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/MenuPreferences/TogglePreferences.py",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins/FileCommands.notpy",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/MenuPreferences/FileCommands.py",
 		"/C/Users/Ibraheem/Desktop/SublimeText/OS/lab3.c",
 		"/C/Users/Ibraheem/Desktop/SublimeText/Python Code/idk.py",
 		"/C/Users/Ibraheem/Desktop/SublimeText/PythonYapfStyleConfig",
@@ -1885,16 +1906,7 @@
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Penguin/FileCommands.notpy",
 		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Penguin/Default (Windows).sublime-keymap",
 		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/Penguin/Default.sublime-commands",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Penguin/OpenFromCurrentDir.py",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Default (Windows).sublime-keymap",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Display numbers/display_nums.sublime-settings",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Anaconda/commands/autoformat.py",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/StatusBarTime.sublime-settings",
-		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins/AutoSideBarReveal.py",
-		"/C/Users/ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins/OpenFileFromCurrentDir.py",
-		"/C/Users/Ibraheem/Desktop/SublimeText/AI/Lab3/Assignment.ipynb",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/UserPlugins/OpenFileFromCurrentDir.py",
-		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings"
+		"/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/Penguin/OpenFromCurrentDir.py"
 	],
 	"find":
 	{
@@ -1923,6 +1935,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"git",
+			"stage",
 			"f",
 			"command",
 			"path",
@@ -2048,9 +2062,7 @@
 			"sizeof",
 			"FILE *fwrite",
 			"fmessages",
-			"sizeof(message), fwrite",
-			"fmessages",
-			"sigprocmask (SIG_BLOCK, &childMask, &childOldMask);\n\twhile (!childInterrupt)\n\t\tsigsuspend (&childOldMask);\n\tsigprocmask (SIG_UNBLOCK, &childMask, NULL);"
+			"sizeof(message), fwrite"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -2103,24 +2115,129 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Ibraheem/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+					"file": "/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/OnClose.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3564,
+						"buffer_size": 868,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								235,
-								235
+								140,
+								140
+							]
+						],
+						"settings":
+						{
+							"always_prompt_for_file_reload": true,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"format_on_save": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserSettings/MenuPenguinLists.sublime-settings",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2286,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -2132,8 +2249,126 @@
 								{
 									"1":
 									[
-										234,
-										235
+										2284,
+										2285
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/mycommandpalette.sublime-commands",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								388
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										388,
+										389
 									]
 								},
 								"icon":
@@ -2148,8 +2383,8 @@
 								{
 									"1":
 									[
-										214,
-										215
+										377,
+										378
 									]
 								},
 								"unmatched":
@@ -2158,41 +2393,11 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -2203,6 +2408,16 @@
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -2212,7 +2427,27 @@
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"translate_tabs_to_spaces": false
@@ -2221,7 +2456,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -2355,6 +2590,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"file",
+				"MenuPreferences\\FileCommands.py"
+			],
+			[
+				"menulist",
+				"UserSettings\\MenuPenguinLists.sublime-settings"
+			],
+			[
+				"pre",
+				"UserSettings\\Preferences.sublime-settings"
+			],
+			[
+				"menu",
+				"UserSettings\\MenuPenguinLists.sublime-settings"
+			],
+			[
+				"smot",
+				"Unity Projects\\FIFA Penguin\\Library\\PackageCache\\com.unity.collab-proxy@1.3.9\\Tests\\Editor\\Models\\StartModelTests.cs"
+			],
+			[
+				"open",
+				"UserPlugins\\OpenKeyBindings.py"
+			],
 			[
 				"onc",
 				"UserPlugins\\OnClose.py"
@@ -2612,7 +2871,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 389.0,
+	"side_bar_width": 476.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
