@@ -55,8 +55,10 @@
 		"FileManager",
 		"MarkdownEditing",
 		"PackageResourceViewer",
+		"R-IDE",
 		"SQLPlus",
 		"SublimeLinter-shellcheck",
+		"Verilog",
 		"Vintage"
 	],
 	"indent_to_bracket": true,

@@ -16,6 +16,10 @@
 		"command": "file_commands",
 	},
 	{
+		"caption": "Git - Commit Changes",
+		"command": "git_commit",
+	},
+	{
 		"caption": "User: Test",
 		"command": "Open_From_Current_Dir",
 	},

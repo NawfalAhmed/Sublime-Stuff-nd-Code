@@ -8,6 +8,9 @@
 		5,
 		5,
 		5,
+		5,
+		1,
+		1,
 		1,
 		1,
 		0,
@@ -59,6 +62,11 @@
 		],
 		[
 			false,
+			"Git - Stage This Directory",
+			"git_stage_self_dir"
+		],
+		[
+			false,
 			"Clone to Right Pane",
 			[
 				"clone_file_to_pane",
@@ -73,9 +81,19 @@
 			"side_bar_new_file2"
 		],
 		[
+			true,
+			"Copy to",
+			"side_bar_duplicate"
+		],
+		[
 			false,
 			"Reveal (Show In Side Bar)",
 			"reveal_in_side_bar"
+		],
+		[
+			false,
+			"Git - Stage This File",
+			"git_stage_self"
 		],
 		[
 			true,
@@ -89,8 +107,8 @@
 		],
 		[
 			true,
-			"Copy to",
-			"side_bar_duplicate"
+			"Git - Commit Changes",
+			"git_commit"
 		],
 		[
 			false,

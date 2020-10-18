@@ -1,0 +1,72 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"Redacted"
+		}
+	],
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"*"
+			],
+			"path": "Redacted"
+		},
+		{
+			"name": ": AI",
+			"path": "Redacted"
+		},
+		{
+			"name": ": CV",
+			"path": "Redacted"
+		},
+		{
+			"name": ": OS",
+			"path": "Redacted"
+		},
+		{
+			"name": ": Probabilty",
+			"path": "Redacted"
+		},
+		{
+			"path": "Redacted"
+		},
+		{
+			"path": "Redacted"
+		},
+		{
+			"name": ": Python Code",
+			"path": "Redacted"
+		},
+		{
+			"name": "Background Proj",
+			"path": "Redacted"
+		},
+		{
+			"path": "Redacted"
+		},
+		{
+			"name": "UserPlugins",
+			"path": "Redacted"
+		},
+		{
+			"name": "UserSettings",
+			"path": "Redacted"
+		}
+	],
+	"settings":
+	{
+		"LSP":
+		{
+			"rlang":
+			{
+				"enabled": true
+			}
+		}
+	}
+}
