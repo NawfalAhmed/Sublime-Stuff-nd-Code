@@ -40,20 +40,20 @@
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Python Code"
 		},
 		{
-			"name": ": Background Proj",
+			"name": "Background Proj",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Background Proj"
 		},
 		{
-			"path": "C:\\Users\\ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\User"
+			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\MenuPreferences"
 		},
 		{
-			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\MenuPenguin"
+			"name": "UserPlugins",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserPlugins"
 		},
 		{
-			"path": "C:\\Users\\ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\UserPlugins"
+			"name": "UserSettings",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserSettings"
 		},
-		{
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimePublishedPlugins\\MenuPreferences"
-		}
+		// {}
 	]
 }

@@ -1,7 +1,8 @@
 [
 	{ "keys": ["ctrl+\\"], "command": "toggle_inline_diff" },
 	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff", "args": { "prefer_hide": true } },
-	// { "keys": ["ctrl+\\"],	"command": "user_test" },
+	{ "keys": ["alt+z"], "command": "revert_modification" },
+	{ "keys": ["alt+\\"],	"command": "user_test" },
 	{ "keys": ["super+\\"],	"command": "open_key_bindings" },
 	{ "keys": ["super+shift+\\"], "command": "run_jupyter" },
 	// { "keys": ["alt+o"],	"command": "open_from_current_dir" },
