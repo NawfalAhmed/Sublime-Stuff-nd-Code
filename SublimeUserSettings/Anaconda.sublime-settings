@@ -1,12 +1,12 @@
 {
 	"python_interpreter": "C:\\Users\\Ibraheem\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
-	"enable_signatures_tooltip": true,
-	"enable_docstrings_tooltip": true,
+	"enable_signatures_tooltip": false,
+	"enable_docstrings_tooltip": false,
 	"merge_signatures_and_doc": false,
 
-	"complete_parameters": true,
+	"complete_parameters": false,
 	"swallow_startup_errors": true,
-	"anaconda_linter_delay": 1,
+	"anaconda_linter_delay": 0.2,
 	"anaconda_gutter_theme": "simple",
 	"anaconda_linter_mark_style": "none",
 	// 'solid_underline', 'stippled_underline', 'squiggly_underline','none'
