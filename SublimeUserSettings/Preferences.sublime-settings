@@ -46,17 +46,19 @@
 		"*.db"
 	],
 	"fix_indent_on_line_move": false,
-	"font_size": 12,
+	"font_size": 9,
 	"gutter": true,
 	"ignored_packages":
 	[
 		"Compare Side-By-Side",
 		"Display numbers",
 		"FileManager",
+		"Helium",
 		"MarkdownEditing",
 		"PackageResourceViewer",
 		"SQLPlus",
 		"SublimeLinter-shellcheck",
+		"Verilog",
 		"Vintage"
 	],
 	"indent_to_bracket": true,
@@ -81,7 +83,7 @@
 	"show_git_status": true,
 	"status_bar_path": false,
 	"tab_size": 2,
-	"theme": "Material Augmented Reaction.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
