@@ -1,4 +1,9 @@
 [
+	{ "keys": ["ctrl+alt+\\"], "command": "send_code",
+		"context": [
+		{ "key": "selector", "operator": "equal", "operand": "source" }
+		]
+	},
 	{ "keys": ["ctrl+\\"], "command": "toggle_inline_diff" },
 	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff", "args": { "prefer_hide": true } },
 	{ "keys": ["alt+z"], "command": "revert_modification" },
