@@ -22,12 +22,15 @@
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\AI"
 		},
 		{
+			"name": ": CV",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\CV"
+		},
+		{
 			"name": ": OS",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\OS"
 		},
 		{
-			"name": ": CV",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\CV"
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Probabilty"
 		},
 		{
 			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects\\FIFA Penguin\\Assets\\Scripts"
@@ -53,7 +56,16 @@
 		{
 			"name": "UserSettings",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserSettings"
-		},
-		// {}
-	]
+		}
+	],
+	"settings":
+	{
+		"LSP":
+		{
+			"rlang":
+			{
+				"enabled": true
+			}
+		}
+	}
 }
