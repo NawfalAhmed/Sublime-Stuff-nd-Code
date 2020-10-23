@@ -26,6 +26,11 @@
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\CV"
 		},
 		{
+			"name": ": Game Dev",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Game Dev",
+			"file_exclude_patterns": ["*.meta"]
+		},
+		{
 			"name": ": OS",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\OS"
 		},
@@ -34,13 +39,6 @@
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Probabilty"
 		},
 		{
-			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects\\FIFA Penguin\\Assets\\Scripts"
-		},
-		{
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Unity Projects"
-		},
-		{
-			"name": ": Python Code",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Python Code"
 		},
 		{

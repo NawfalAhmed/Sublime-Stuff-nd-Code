@@ -4,6 +4,11 @@
 	"binary_file_patterns":
 	[
 		"*.exe",
+		"*.prefab",
+		"*.mat",
+		"*.physicMaterial",
+		"*.physicsMaterial2D",
+		"*.fbx",
 		"*.obj",
 		"*.jpg",
 		"*.jpeg",
