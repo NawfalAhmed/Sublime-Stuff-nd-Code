@@ -3,7 +3,7 @@ SublimeUserSettings/MenuPenguinLists.sublime-settings
 SublimeUserSettings/Projects/Default.sublime-workspace
 *.exe
 *.mp4
-Game Dev/*/*.*
-!Game Dev/*/*.cs
-Game Dev/*/*/*
-!Game Dev/*/*/*.cs
+#Game Dev/*/*.*
+#!Game Dev/*/*.cs
+#Game Dev/*/*/*
+#!Game Dev/*/*/*.cs
