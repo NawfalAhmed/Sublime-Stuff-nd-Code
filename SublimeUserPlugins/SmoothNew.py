@@ -29,7 +29,7 @@ class SmoothNewCommand(sublime_plugin.TextCommand):
 		window = view.window()
 		window.run_command(
 			"exec", {
-				"shell_cmd": "subl " + name + " && subl",
+				"shell_cmd": 'subl "' + name + '" && subl',
 				"show_panel": False
 				}
 			)

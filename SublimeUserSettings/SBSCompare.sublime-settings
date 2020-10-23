@@ -1,4 +1,7 @@
 {
 	// "hide_sidebar": false,
-	// "ignore_whitespace": false,
+	"ignore_whitespace": false,
+	"line_count_popup": false,
+	"intraline_emptyspace": true,
+	// "outlines_only": true,
 }
