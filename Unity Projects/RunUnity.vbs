@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "LaunchUnity.bat", 0, True

@@ -3,3 +3,10 @@ SublimeUserSettings/MenuPenguinLists.sublime-settings
 SublimeUserSettings/Projects/Default.sublime-workspace
 *.exe
 *.mp4
+Unity Projects/*Unity*.*
+Unity Projects/*/*
+!Unity Projects/*/Assets/
+Unity Projects/*/Assets/*.*
+!Unity Projects/*/Assets/*.cs
+Unity Projects/*/Assets/*/*
+!Unity Projects/*/Assets/*/*.cs
