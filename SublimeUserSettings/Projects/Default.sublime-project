@@ -26,6 +26,11 @@
 			"path": "Redacted"
 		},
 		{
+			"name": ": Game Dev",
+			"path": "Redacted",
+			"file_exclude_patterns": ["*.meta"]
+		},
+		{
 			"name": ": OS",
 			"path": "Redacted"
 		},
@@ -34,13 +39,6 @@
 			"path": "Redacted"
 		},
 		{
-			"path": "Redacted"
-		},
-		{
-			"path": "Redacted"
-		},
-		{
-			"name": ": Python Code",
 			"path": "Redacted"
 		},
 		{
