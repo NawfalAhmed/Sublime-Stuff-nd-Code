@@ -1,7 +1,53 @@
 {
-	"preserve_keys":
-	[
-		"ctrl+\\"
-	],
-	"theme": "user"
+	"shell_configs": [
+			{
+				"name": "Command Prompt",
+				"cmd": "cmd.exe",
+				"env": {},
+				"enable": true,
+				"platforms": ["windows"]
+			},
+			{
+				"name": "PowerShell Core",
+				"cmd": "pwsh.exe",
+				"env": {},
+				"enable": true,
+				"platforms": ["windows"]
+			},
+			{
+				"name": "PowerShell",
+				"cmd": "powershell.exe",
+				"env": {},
+				"enable": true,
+				"platforms": ["windows"]
+			},
+			{
+				"name": "Linux",
+				"cmd": "wsl.exe",
+				"env": {},
+				"enable": true,
+				"platforms": ["windows"]
+			}
+	 ],
+	"theme": "user",
+	"user_theme_colors": {
+		 "foreground": "#dedfed",
+			"background": "#212123",
+			// "black": "#323232",
+			// "red": "#c22832",
+			// "green": "#8ec43d",
+			// "brown": "#e0c64f",
+			// "blue": "#43a5d5",
+			// "magenta": "#8b57b5",
+			// "cyan": "#8ec43d",
+			// "white": "#eeeeee",
+			// "light_black": "#323232",
+			// "light_red": "#c22832",
+			// "light_green": "#8ec43d",
+			// "light_brown": "#e0c64f",
+			// "light_blue": "#43a5d5",
+			// "light_magenta": "#8b57b5",
+			// "light_cyan": "#8ec43d",
+			// "light_white": "#ffffff"
+	 }
 }

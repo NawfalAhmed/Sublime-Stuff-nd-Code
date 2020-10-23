@@ -55,8 +55,8 @@
 	"gutter": true,
 	"ignored_packages":
 	[
-		"Compare Side-By-Side",
 		"Display numbers",
+		"FileDiffs",
 		"FileManager",
 		"MarkdownEditing",
 		"PackageResourceViewer",
@@ -88,7 +88,7 @@
 	"show_git_status": true,
 	"status_bar_path": false,
 	"tab_size": 2,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "Material Augmented Reaction.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true

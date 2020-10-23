@@ -28,7 +28,8 @@
 		{
 			"name": ": Game Dev",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Game Dev",
-			"file_exclude_patterns": ["*.meta"]
+			"file_exclude_patterns": ["*.meta"],
+			"follow_symlinks": true
 		},
 		{
 			"name": ": OS",
