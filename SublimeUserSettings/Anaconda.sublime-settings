@@ -3,10 +3,16 @@
 	"enable_signatures_tooltip": false,
 	"enable_docstrings_tooltip": false,
 	"merge_signatures_and_doc": false,
-
 	"complete_parameters": false,
+
+
 	"swallow_startup_errors": true,
-	"anaconda_linter_delay": 0.2,
+	"auto_python_builder_enabled": false,
+	"pyflakes_ignore_import_*": false,
+	"disable_anaconda_completion": true,
+
+	"anaconda_linter_delay": 0.15,
+	"anaconda_linter_persistent": true,
 	"anaconda_gutter_theme": "simple",
 	"anaconda_linter_mark_style": "none",
 	// 'solid_underline', 'stippled_underline', 'squiggly_underline','none'

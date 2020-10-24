@@ -26,10 +26,13 @@
 			"path": "Redacted"
 		},
 		{
+			"file_exclude_patterns":
+			[
+				"*.meta"
+			],
+			"follow_symlinks": true,
 			"name": ": Game Dev",
-			"path": "Redacted",
-			"file_exclude_patterns": ["*.meta"],
-			"follow_symlinks": true
+			"path": "Redacted"
 		},
 		{
 			"name": ": OS",
@@ -62,6 +65,10 @@
 	{
 		"LSP":
 		{
+			"pyls":
+			{
+				"enabled": true
+			},
 			"rlang":
 			{
 				"enabled": true
