@@ -26,10 +26,13 @@
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\CV"
 		},
 		{
+			"file_exclude_patterns":
+			[
+				"*.meta"
+			],
+			"follow_symlinks": true,
 			"name": ": Game Dev",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Game Dev",
-			"file_exclude_patterns": ["*.meta"],
-			"follow_symlinks": true
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Game Dev"
 		},
 		{
 			"name": ": OS",
@@ -62,6 +65,10 @@
 	{
 		"LSP":
 		{
+			"pyls":
+			{
+				"enabled": true
+			},
 			"rlang":
 			{
 				"enabled": true
