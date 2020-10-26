@@ -22,6 +22,7 @@
 		"FindKeyConflicts",
 		"Increment Selection",
 		"LSP",
+		"LSP-json",
 		"MarkdownEditing",
 		"MarkdownLivePreview",
 		"Materialize",

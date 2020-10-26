@@ -58,10 +58,13 @@
 		"Display numbers",
 		"FileDiffs",
 		"FileManager",
+		"LSP-json",
 		"MarkdownEditing",
 		"PackageResourceViewer",
 		"R-IDE",
 		"SQLPlus",
+		"SublimeLinter",
+		"SublimeLinter-gcc",
 		"SublimeLinter-shellcheck",
 		"Verilog",
 		"Vintage"
