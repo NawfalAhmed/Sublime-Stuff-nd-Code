@@ -1,30 +1,28 @@
-// Settings in here override those in "LSP/LSP.sublime-settings"
 {
+	"clients":
+	{
+		"omnisharp":
+		{
+			"command":
+			[
+				"C:/Users/Ibraheem/.vscode/extensions/ms-dotnettools.csharp-1.23.4/.omnisharp/1.37.3/omnisharp.exe",
+				"-lsp"
+			],
+			"enabled": false,
+			"languageId": "csharp",
+			"scopes":
+			[
+				"source.cs"
+			],
+			"syntaxes":
+			[
+				"Packages/C#/C#.sublime-syntax",
+				"Packages/Unity3D/UnityC#.tmLanguage"
+			]
+		}
+	},
+	"diagnostics_gutter_marker": "sign",
 	"show_code_actions_bulb": true,
-	"show_symbol_action_links": true,
-	// "clients":
-	// {
-	// 	"clangd - wsl":
-	// 	{
-	// 		"command": ["wsl clangd"],
-	// 		"languages": [{
-	// 				"scopes": ["source.c"],
-	// 				"syntaxes": ["Packages/C++/C.sublime-syntax"],
-	// 				"languageId": "c"
-	// 			},{
-	// 				"scopes": ["source.c++"],
-	// 				"syntaxes": ["Packages/C++/C++.sublime-syntax"],
-	// 				"languageId": "cpp"
-	// 			},{
-	// 				"scopes": ["source.objc"],
-	// 				"syntaxes": ["Packages/Objective-C/Objective-C.sublime-syntax"],
-	// 				"languageId": "objective-c"
-	// 			},{
-	// 				"scopes": ["source.objc++"],
-	// 				"syntaxes": ["Packages/Objective-C/Objective-C++.sublime-syntax"],
-	// 				"languageId": "objective-cpp"
-	// 			},
-	// 		]
-	// 	},
-	// }
+	"show_diagnostics_in_view_status": false,
+	"show_symbol_action_links": true
 }

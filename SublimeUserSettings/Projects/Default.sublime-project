@@ -30,7 +30,6 @@
 			[
 				"*.meta"
 			],
-			"follow_symlinks": true,
 			"name": ": Game Dev",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Game Dev"
 		},
