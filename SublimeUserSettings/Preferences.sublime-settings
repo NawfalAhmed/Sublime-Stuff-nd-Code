@@ -51,7 +51,7 @@
 		"*.db"
 	],
 	"fix_indent_on_line_move": false,
-	"font_size": 12,
+	"font_size": 13,
 	"gutter": true,
 	"ignored_packages":
 	[
@@ -60,6 +60,7 @@
 		"FileManager",
 		"LSP-json",
 		"MarkdownEditing",
+		"OmniSharp",
 		"PackageResourceViewer",
 		"R-IDE",
 		"SQLPlus",
