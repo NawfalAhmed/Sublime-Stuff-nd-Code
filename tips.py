@@ -3,11 +3,10 @@
 	super+r #type cmd, anywhere
 	ctrl+alt+p #directly open
 	d:      #to switch directory
-	cd..    #to go one step up
 	dir     #to show directory,
-	mkdir   #to create folder
 	start.  #to open file exporer there
-
+	> "for output redirect "
+	2> "for error redirect"
 	#add suffic to multiple
 	for %a in (*) do ren "%a" "Task - %a"
 	#link a specific folder to One Drive
