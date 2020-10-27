@@ -1,16 +1,18 @@
 [
+	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
+	// 	"context": [{"key": "setting.lsp_active"}]},
 	{ "keys": ["ctrl+alt+space"], "command": "pass"},
 	{
 		"keys": ["shift+space"], "command": "noop",
 		"context":
 			[{ "key": "lsp.signature_help", "operator": "equal", "operand": 0}]
 	},
-	{	"keys": ["ctrl+shift+space"], "command": "lsp_hover",
+	{ "keys": ["ctrl+shift+space"], "command": "lsp_hover",
 		"context": [{"key": "setting.lsp_active"}]
 	},
 	{ "keys": ["ctrl+r"], "command": "lsp_document_symbols",
 		"context": [{"key": "setting.lsp_active"}]},
-	{ "keys": ["ctrl+shift+r"], "command": "lsp_symbol_rename",
+	{ "keys": ["alt+shift+r"], "command": "lsp_symbol_rename",
 		"context": [{"key": "setting.lsp_active"}]},
 	{ "keys": ["ctrl+alt+enter"], "command": "send_code",
 		"context": [
@@ -24,7 +26,8 @@
 	{ "keys": ["alt+\\"],	"command": "user_test" },
 	{ "keys": ["alt+z"], "command": "revert_modification" },
 	{ "keys": ["ctrl+\\"], "command": "toggle_inline_diff" },
-	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff", "args": { "prefer_hide": true } },
+	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff",
+		"args": { "prefer_hide": true } },
 	{ "keys": ["super+\\"],	"command": "open_key_bindings" },
 	{ "keys": ["super+shift+\\"],	"command": "edit_settings",
 			"args": {
@@ -54,7 +57,9 @@
 		"context": [{
 		"key": "selector", "operator": "equal","operand": "text.advanced_csv" }]
 	},
-	{ "keys": ["ctrl+space"], "command": "expand_region" },
+	{ "keys": ["ctrl+space"], "command": "expand_region",
+		"args": { "debug": false },
+	},
 	{ "keys": ["alt+context_menu"],	"command": "open_unity_project"	},
 	// { "keys": ["context_menu"], "command": "file_commands" },
 	// { "keys": ["shift+context_menu"],	"command": "toggle_preferences"	},
