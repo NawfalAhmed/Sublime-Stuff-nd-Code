@@ -10,18 +10,18 @@ class RunJupyterCommand(sublime_plugin.TextCommand):
 		def delayedRun():
 			self.view.window().run_command(
 				"carry_file_to_pane", {"direction": "down"}
-				)
+			)
 			self.view.window().run_command("toggle_zoom_pane", {"fraction": 0.2})
 			self.view.window().run_command(
 				"terminus_send_string", {
 					"string": "jupyter notebook\n",
 					"visible_only": True
-					}
-				)
+				}
+			)
 
 		self.view.window().run_command(
 			"terminus_open", {"cwd": "${file_path:${folder}}"}
-			)
+		)
 		sublime.set_timeout(lambda: delayedRun(), 150)
 
 
@@ -57,27 +57,26 @@ class RunOnTerminalCommand(sublime_plugin.TextCommand):
 		self.view.window().run_command(
 			"terminus_open", {
 				"config_name":
-					terminal,
+				terminal,
 				"title":
-					terminal,
+				terminal,
 				"cwd":
-					"${file_path:${folder}}",
-				"post_window_hooks":
-					[
-						("carry_file_to_pane", {
-							"direction": "down"
-							}), ("toggle_zoom_pane", {
-								"fraction": 0.4
-								}),
-						(
-							"terminus_send_string", {
-								"string": command,
-								"visible_only": True
-								}
-							)
-						]
-				}
-			)
+				"${file_path:${folder}}",
+				"post_window_hooks": [
+					("carry_file_to_pane", {
+						"direction": "down"
+					}), ("toggle_zoom_pane", {
+						"fraction": 0.4
+					}),
+					(
+						"terminus_send_string", {
+							"string": command,
+							"visible_only": True
+						}
+					)
+				]
+			}
+		)
 		# sublime.set_timeout(
 		# 	lambda: self.view.window().run_command(
 		# 		"terminus_send_string", {
