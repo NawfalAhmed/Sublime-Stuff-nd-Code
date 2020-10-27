@@ -24,5 +24,6 @@
 	"diagnostics_gutter_marker": "sign",
 	"show_code_actions_bulb": true,
 	"show_diagnostics_in_view_status": false,
-	"show_symbol_action_links": true
+	"show_symbol_action_links": true,
+	"auto_show_diagnostics_panel": "never"
 }
