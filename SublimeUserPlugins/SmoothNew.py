@@ -31,8 +31,8 @@ class SmoothNewCommand(sublime_plugin.TextCommand):
 			"exec", {
 				"shell_cmd": 'subl "' + name + '" && subl',
 				"show_panel": False
-				}
-			)
+			}
+		)
 
 	def input(self, args):
 		if "name" not in args:

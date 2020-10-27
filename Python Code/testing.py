@@ -3,16 +3,16 @@ from random import randint as rand
 
 data = []
 for i in range(200):
-	data.append(rand(0,600))
+	data.append(rand(0, 600))
 
 data2 = []
 for num in data:
 	if num not in data2 and len(data2) != 100:
 		data2.append(num)
 data = data2
-data = " ".join(map(str,data))
+data = " ".join(map(str, data))
 print(data)
-filee = open("theseldata.txt","w+")
+filee = open("theseldata.txt", "w+")
 filee.write(data)
 filee.close()
 # from bisect import bisect_left

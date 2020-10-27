@@ -12,8 +12,8 @@ class GitStageSelfCommand(sublime_plugin.TextCommand):
 			"exec", {
 				"shell_cmd": stage,
 				"show_panel": False
-				}
-			)
+			}
+		)
 
 
 class GitStageSelfDirCommand(sublime_plugin.TextCommand):
@@ -24,8 +24,8 @@ class GitStageSelfDirCommand(sublime_plugin.TextCommand):
 			"exec", {
 				"shell_cmd": stage,
 				"show_panel": False
-				}
-			)
+			}
+		)
 
 
 class NameInputHandler(sublime_plugin.TextInputHandler):
@@ -42,8 +42,8 @@ class GitCommitCommand(sublime_plugin.TextCommand):
 			"exec", {
 				"shell_cmd": commit,
 				"show_panel": False
-				}
-			)
+			}
+		)
 
 	def input(self, args):
 		if "name" not in args:

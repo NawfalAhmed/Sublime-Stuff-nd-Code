@@ -13,11 +13,11 @@ class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
 		command = (
 			"wsl zip ../{name} -u -9 -r *" if not glob(dirpath + "\\Zips") else
 			"wsl zip ../Zips/{name} -u -9 -r *"
-			)
+		)
 		styles = [
 			"BSCS18010_", "", "BSCS18010-", "BSCS18010_Nawfal_Ahmed_",
 			"BSCS18010_Nawfal_"
-			]
+		]
 		styles = [style + dirname for style in styles]
 
 		def on_done(index):
@@ -26,7 +26,7 @@ class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
 					"exec", {
 						"shell_cmd": command.format(name=styles[index]),
 						"show_panel": False
-						}
-					)
+					}
+				)
 
 		view.window().show_quick_panel(styles, on_done)

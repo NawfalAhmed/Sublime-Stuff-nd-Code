@@ -1,9 +1,6 @@
 file = open('Shrinker.txt')
 data = file.read()
-data =
 data.split('\n')
-
-
 
 # key1 = " \\"
 # key2 = ["January","February","March","April","May","June","July","August","September","October","November","December"]
@@ -20,4 +17,4 @@ data.split('\n')
 # 				if found == 1:
 # 					datecheck(data[index+1]):
 # 					data[index+1] = "---Fatim----: " + data[index+1];
-# list.index 
+# list.index
