@@ -1,0 +1,19 @@
+[style]
+based_on_style = pep8
+align_closing_bracket_with_visual_indent = False
+column_limit = 80
+continuation_align_style = VALIGN-RIGHT
+dedent_closing_brackets = True
+indent_closing_brackets = False
+allow_multiline_dictionary_keys = True
+allow_split_before_dict_value = False
+each_dict_entry_on_separate_line = False
+# indent_dictionary_value = True
+
+# User Settings:
+continuation_indent_width = 3
+indent_width = 3
+use_tabs = True
+
+#	this link can explain the options that are used in formatting
+#		https://github.com/google/yapf/blob/master/yapf/yapflib/style.py#L412
