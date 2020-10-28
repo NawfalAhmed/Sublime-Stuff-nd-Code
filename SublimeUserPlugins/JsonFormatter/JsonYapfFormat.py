@@ -10,7 +10,7 @@ class JsonYapfFormatCommand(sublime_plugin.TextCommand):
 		content = content.replace("//", "#")
 		content = content.replace("res:#", "res://")
 
-		path = sublime.packages_path()+'\\JsonFormatter\\'
+		path = sublime.packages_path()+'/JsonFormatter/'
 		with open(path+'temporary.notpy', 'w') as file:
 			file.write(content)
 		command = 'yapf "'+path+'temporary.notpy" -i --style style.txt'
