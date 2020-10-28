@@ -74,6 +74,7 @@
 	"indent_to_bracket": true,
 	"indent_with_tabs_on_save": true,
 	"line_numbers": true,
+	"lsp_diagnostics_highlight_style": "underline",
 	"margin": 0,
 	"material_theme_accent_indigo": true,
 	"material_theme_compact_panel": true,

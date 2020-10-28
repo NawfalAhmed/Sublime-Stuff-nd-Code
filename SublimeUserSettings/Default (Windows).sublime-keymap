@@ -1,66 +1,81 @@
 [
 	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
 	// 	"context": [{"key": "setting.lsp_active"}]},
-	{ "keys": ["ctrl+alt+space"], "command": "pass"},
+	{"keys": ["ctrl+alt+space"], "command": "pass"},
 	{
-		"keys": ["shift+space"], "command": "noop",
-		"context":
-			[{ "key": "lsp.signature_help", "operator": "equal", "operand": 0}]
-	},
-	{ "keys": ["ctrl+shift+space"], "command": "lsp_hover",
-		"context": [{"key": "setting.lsp_active"}]
-	},
-	{ "keys": ["ctrl+r"], "command": "lsp_document_symbols",
-		"context": [{"key": "setting.lsp_active"}]},
-	{ "keys": ["alt+shift+r"], "command": "lsp_symbol_rename",
-		"context": [{"key": "setting.lsp_active"}]},
-	{ "keys": ["ctrl+alt+enter"], "command": "send_code",
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.r" }
+		"keys": ["shift+space"], "command": "noop", "context": [
+			{"key": "lsp.signature_help", "operator": "equal", "operand": 0}
 		]
 	},
-	{ "keys": ["super+alt+c"], "command": "super_calculator" },
+	{
+		"keys": ["ctrl+shift+space"], "command": "lsp_hover",
+		"context": [{"key": "setting.lsp_active"}]
+	},
+	{
+		"keys": ["ctrl+r"], "command": "lsp_document_symbols",
+		"context": [{"key": "setting.lsp_active"}]
+	},
+	{
+		"keys": ["alt+shift+r"], "command": "lsp_symbol_rename",
+		"context": [{"key": "setting.lsp_active"}]
+	},
+	{
+		"keys": ["ctrl+alt+enter"], "command": "send_code", "context": [
+			{"key": "selector", "operator": "equal", "operand": "source.r"}
+		]
+	},
+	{"keys": ["super+alt+c"], "command": "super_calculator"},
 	// "ctrl alt a for allignment"
 
-//  '\\' prefix commands
-	{ "keys": ["alt+\\"],	"command": "user_test" },
-	{ "keys": ["alt+z"], "command": "revert_modification" },
-	{ "keys": ["ctrl+\\"], "command": "toggle_inline_diff" },
-	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff",
-		"args": { "prefer_hide": true } },
-	{ "keys": ["super+\\"],	"command": "open_key_bindings" },
-	{ "keys": ["super+shift+\\"],	"command": "edit_settings",
-			"args": {
+	//  '\\' prefix commands
+	{"keys": ["alt+\\"], "command": "user_test"},
+	{"keys": ["alt+z"], "command": "revert_modification"},
+	{"keys": ["ctrl+\\"], "command": "toggle_inline_diff"},
+	{
+		"keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff",
+		"args": {"prefer_hide": true}
+	},
+	{"keys": ["super+\\"], "command": "open_key_bindings"},
+	{
+		"keys": ["super+shift+\\"], "command": "edit_settings", "args": {
 			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
 			"default": "[\n\t$0\n]\n",
 		}
 	},
-	{ "keys": ["ctrl+shift+`"],	"command": "diff_changes"	},
+	{"keys": ["ctrl+shift+`"], "command": "diff_changes"},
 
-
-//alt prefix commands
-	{ "keys": ["alt+l"],	"command":	"move_to",
+	//alt prefix commands
+	{
+		"keys": ["alt+l"], "command": "move_to",
 		"args": {"to": "eol", "extend": true}
 	},
-	{ "keys": ["alt+n"], "command": "smooth_new" },
-	{ "keys": ["alt+o"],	"command": "prompt_select_workspace" },
-	{ "keys": ["alt+p"], "command": "menu_open_from_current_dir" },
-	{ "keys": ["alt+r"],	"command": "rename_file" },
-	{ "keys": ["alt+t"], "command": "transpose" },
-	{ "keys": ["ctrl+t"],	"command": "run_macro_file",
+	{"keys": ["alt+n"], "command": "smooth_new"},
+	{"keys": ["alt+o"], "command": "prompt_select_workspace"},
+	{"keys": ["alt+p"], "command": "menu_open_from_current_dir"},
+	{"keys": ["alt+r"], "command": "rename_file"},
+	{"keys": ["alt+t"], "command": "transpose"},
+	{
+		"keys": ["ctrl+t"], "command": "run_macro_file",
 		"args": {"file": "Packages/User/Macros/extendedtranspose.sublime-macro"}
 	},
-	{ "keys": ["alt+space"], "command": "expand_selection",
+	{
+		"keys": ["alt+space"], "command": "expand_selection",
 		"args": {"to": "scope"}
 	},
-	{ "keys": ["alt+space"], "command": "csv_select_col",
-		"context": [{
-		"key": "selector", "operator": "equal","operand": "text.advanced_csv" }]
+	{
+		"keys": ["alt+space"], "command": "csv_select_col", "context": [
+			{
+				"key": "selector", "operator": "equal",
+				"operand": "text.advanced_csv"
+			}
+		]
 	},
-	{ "keys": ["ctrl+space"], "command": "expand_region",
-		"args": { "debug": false },
+	{
+		"keys": ["ctrl+space"],
+		"command": "expand_region",
+		"args": {"debug": false},
 	},
-	{ "keys": ["alt+context_menu"],	"command": "open_unity_project"	},
+	{"keys": ["alt+context_menu"], "command": "open_unity_project"},
 	// { "keys": ["context_menu"], "command": "file_commands" },
 	// { "keys": ["shift+context_menu"],	"command": "toggle_preferences"	},
 	// { "keys": ["ctrl+alt+context_menu"],	"command": "open_unity_project"	},
@@ -68,93 +83,106 @@
 	// 	"context": [{
 	// 		"key": "selector", "operator": "equal", "operand": "source.c++" }]
 	// },
-// other commands
-	{ "keys": ["ctrl+b"], "command": "toggle_bookmark" },
-	{ "keys": ["ctrl+shift+o"],	"command": "open_in_browser" },
-		{ "keys": ["ctrl+k", "ctrl+k"], "command": "pass"},
-	{ "keys": ["ctrl+shift+k"], "command": "pass"},
-	{ "keys": ["insert","insert"], "command": "toggle_overwrite" },
+	// other commands
+	{"keys": ["ctrl+b"], "command": "toggle_bookmark"},
+	{"keys": ["ctrl+shift+o"], "command": "open_in_browser"},
+	{"keys": ["ctrl+k", "ctrl+k"], "command": "pass"},
+	{"keys": ["ctrl+shift+k"], "command": "pass"},
+	{"keys": ["insert", "insert"], "command": "toggle_overwrite"},
 
-//builds and terminals
-	{ "keys": ["ctrl+enter"], "command": "chain",
-		"args": { "commands": [["save"],["build"]]}
+	//builds and terminals
+	{
+		"keys": ["ctrl+enter"], "command": "chain",
+		"args": {"commands": [["save"], ["build"]]}
 	},
-	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build" },
-	{ "keys": ["ctrl+alt+enter"], "command": "run_on_terminal",
-		"args": {"terminal": "Linux"},
-		"context": [{
-			"key": "selector", "operator": "equal", "operand": "source.python" }]
+	{"keys": ["ctrl+shift+enter"], "command": "cancel_build"},
+	{
+		"keys": ["ctrl+alt+enter"], "command": "run_on_terminal",
+		"args": {"terminal": "Linux"}, "context": [
+			{"key": "selector", "operator": "equal", "operand": "source.python"}
+		]
 	},
 	// { "keys": ["ctrl+shift+enter"], "command": "chain",
 	// 	"context": [{ "key":
 	// 		"selector", "operator": "equal", "operand": "source.assembly" }],
 	// 	"args": { "commands": [["save"],["build", { "select": true}]]}
 	// },
-	{ "keys": ["super+shift+j"], "command": "run_jupyter" },
-	{ "keys": ["super+`"], "command": "terminus_open",
-		"args":	{
-			"cwd": "${file_path:${folder}}",
-			"panel_name": "Terminus"
-		}
+	{"keys": ["super+shift+j"], "command": "run_jupyter"},
+	{
+		"keys": ["super+`"], "command": "terminus_open",
+		"args": {"cwd": "${file_path:${folder}}", "panel_name": "Terminus"}
 	},
-	{ "keys": ["alt+`"], "command": "terminus_open",
-		"args":	{
-			"config_name": "Linux",
-			"panel_name": "Linux Terminal",
+	{
+		"keys": ["alt+`"], "command": "terminus_open", "args": {
+			"config_name": "Linux", "panel_name": "Linux Terminal",
 			"cwd": "${file_path:${folder}}"
 		}
 	},
-	{ "keys": ["ctrl+keypad0"], "command": "lsp_show_diagnostics_panel",
+	{
+		"keys": ["ctrl+keypad0"],
+		"command": "lsp_show_diagnostics_panel",
 		// "context": [{"key": "setting.lsp_active"}]
 	},
 
-// <close>
-	{ "keys": ["ctrl+w"], "command": "safe_close" },
-	{ "keys": ["ctrl+w"],
+	// <close>
+	{"keys": ["ctrl+w"], "command": "safe_close"},
+	{
+		"keys": ["ctrl+w"],
 		"command": "chain",
-		"context": [{
-			"key": "selector", "operator": "equal", "operand": "source.assembly"}],
-		"args": { "commands": [
+		"context": [
+			{"key": "selector", "operator": "equal", "operand": "source.assembly"}
+		],
+		"args": {"commands": [
 			["delete_assembly_stuff"],
 			["safe_close"],
 		]},
 	},
-	{ "keys": ["ctrl+shift+w"], "command": "destroy_pane",
-		"args": {"direction": "self"} },
-// </close>
-
-// <delete>
-	{ "keys": ["super+delete"], "command": "run_macro_file",
-		"args": {
-			"file": "Packages/User/Macros/remove_brackets_and_line.sublime-macro"}
+	{
+		"keys": ["ctrl+shift+w"], "command": "destroy_pane",
+		"args": {"direction": "self"}
 	},
-	{ "keys": ["super+shift+delete"], "command": "bh_remove_brackets" },
-	{ "keys": ["alt+delete"], "command": "run_macro_file",
+	// </close>
+
+	// <delete>
+	{
+		"keys": ["super+delete"], "command": "run_macro_file", "args": {
+			"file": "Packages/User/Macros/remove_brackets_and_line.sublime-macro"
+		}
+	},
+	{"keys": ["super+shift+delete"], "command": "bh_remove_brackets"},
+	{
+		"keys": ["alt+delete"], "command": "run_macro_file",
 		"args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}
 	},
-// </delete>
+	// </delete>
 
-// <linemove,copy>
-	{ "keys": ["super+alt+up"], "command": "swap_up_with_indent_always" },
-	{ "keys": ["super+alt+down"], "command": "swap_down_with_indent_always" },
-	{ "keys": ["alt+up"], "command": "swap_up_with_indent" },
-	{ "keys": ["alt+down"], "command": "swap_down_with_indent" },
+	// <linemove,copy>
+	{"keys": ["super+alt+up"], "command": "swap_up_with_indent_always"},
+	{"keys": ["super+alt+down"], "command": "swap_down_with_indent_always"},
+	{"keys": ["alt+up"], "command": "swap_up_with_indent"},
+	{"keys": ["alt+down"], "command": "swap_down_with_indent"},
 	// { "keys": ["alt+up"], "command": "swap_line_up" },
 	// { "keys": ["alt+down"], "command": "swap_line_down" },
-	{ "keys": ["alt+shift+down"], "command": "run_macro_file",
+	{
+		"keys": ["alt+shift+down"], "command": "run_macro_file",
 		"args": {"file": "Packages/User/Macros/copy_lines_down.sublime-macro"}
 	},
-	{ "keys": ["alt+shift+up"], "command": "run_macro_file",
+	{
+		"keys": ["alt+shift+up"], "command": "run_macro_file",
 		"args": {"file": "Packages/User/Macros/copy_lines_up.sublime-macro"}
 	},
-	{ "keys": ["ctrl+shift+up"], "command": "move",
-		"args": {"by": "lines", "forward": false, "extend": true} },
-	{ "keys": ["ctrl+shift+down"], "command": "move",
-		"args": {"by": "lines", "forward": true, "extend": true} },
-// </linemove,copy>
+	{
+		"keys": ["ctrl+shift+up"], "command": "move",
+		"args": {"by": "lines", "forward": false, "extend": true}
+	},
+	{
+		"keys": ["ctrl+shift+down"], "command": "move",
+		"args": {"by": "lines", "forward": true, "extend": true}
+	},
+	// </linemove,copy>
 
-// <openingtemplates>
-	{ "keys": ["ctrl+shift+n"], "command": "new_window" },
+	// <openingtemplates>
+	{"keys": ["ctrl+shift+n"], "command": "new_window"},
 	// { "keys": ["ctrl+shift+n"],
 	// 	"command": "chain",
 	// 	"context": [{ "key": "selector", "operator": "equal", "operand": "source.assembly" }],
@@ -172,92 +200,109 @@
 	// 		]
 	// 	}
 	// },
-	{ "keys": ["ctrl+shift+n"],
+	{
+		"keys": ["ctrl+shift+n"],
 		"command": "chain",
-		"context": [{
-		"key": "selector", "operator": "equal", "operand": "source.c++" }],
+		"context": [
+			{"key": "selector", "operator": "equal", "operand": "source.c++"}
+		],
 		"args": {
 			"commands": [
 				["new_file"],
-				["insert_snippet", {
-						"name":
-							"Packages/User/Snippets/CppDefault.sublime-snippet"
-					}
+				[
+					"insert_snippet",
+					{"name": "Packages/User/Snippets/CppDefault.sublime-snippet"}
 				],
-				["set_file_type", {
-						"syntax": "Packages/C++/C++.sublime-syntax"}
-				],
+				["set_file_type", {"syntax": "Packages/C++/C++.sublime-syntax"}],
 			]
 		},
 	},
-// </openingtemplates>
+	// </openingtemplates>
 
-// <escape key remapped>
-	{ "keys": ["escape"], "command": "pass", "context": [
-		{ "key": "panel_visible", "operator": "equal", "operand": true },
-		{ "key": "panel_has_focus", "operator": "equal", "operand": false},
-		{ "key": "num_selections", "operator": "equal", "operand": 1 },
-		{ "key": "has_next_field", "operator": "equal", "operand": false },
-		{ "key": "has_prev_field", "operator": "equal", "operand": false },
-		{ "key": "overlay_visible", "operator": "equal", "operand": false },
-		{ "key": "popup_visible", "operator": "equal", "operand": false },
-		{ "key": "auto_complete_visible", "operator": "equal", "operand": false }
-	]},
-	{ "keys": ["escape"], "command": "single_selection", "context": [
-		{ "key": "num_selections", "operator": "not_equal", "operand": 1 },
-		{ "key": "panel_visible", "operator": "equal", "operand": true },
-		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-	]},
-	{ "keys": ["escape"], "command": "clear_fields", "context": [
-		{ "key": "has_next_field", "operator": "equal", "operand": true },
-		{ "key": "panel_visible", "operator": "equal", "operand": true },
-		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-	]},
-	{ "keys": ["escape"], "command": "clear_fields", "context": [
-		{ "key": "has_prev_field", "operator": "equal", "operand": true },
-		{ "key": "panel_visible", "operator": "equal", "operand": true },
-		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-	]},
-	{ "keys": ["shift+escape"],
-		"command": "hide_panel",
-		"args":  {"cancel": true},
-		"context":	[
-			{ "key": "panel_visible", "operator": "equal", "operand": true },
+	// <escape key remapped>
+	{
+		"keys": ["escape"], "command": "pass", "context": [
+			{"key": "panel_visible", "operator": "equal", "operand": true
+			}, {"key": "panel_has_focus", "operator": "equal", "operand": false},
+			{"key": "num_selections", "operator": "equal", "operand": 1},
+			{"key": "has_next_field", "operator": "equal", "operand": false},
+			{"key": "has_prev_field", "operator": "equal", "operand": false},
+			{"key": "overlay_visible", "operator": "equal", "operand": false
+			}, {"key": "popup_visible", "operator": "equal", "operand": false}, {
+				"key": "auto_complete_visible", "operator": "equal",
+				"operand": false
+			}
 		]
 	},
-	{ "keys": ["shift+escape"],
-		"command": "chain",
-		"context":	[
-			{ "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "terminus_view"}
-		],
-		"args": { "commands": [
-			["terminus_close"],
-			["hide_panel", {"cancel": true}],
-		]},
+	{
+		"keys": ["escape"], "command": "single_selection", "context": [
+			{"key": "num_selections", "operator": "not_equal", "operand": 1},
+			{"key": "panel_visible", "operator": "equal", "operand": true},
+			{"key": "panel_has_focus", "operator": "equal", "operand": false}
+		]
 	},
-// </escape key remapped>
+	{
+		"keys": ["escape"], "command": "clear_fields", "context": [
+			{"key": "has_next_field", "operator": "equal", "operand": true},
+			{"key": "panel_visible", "operator": "equal", "operand": true},
+			{"key": "panel_has_focus", "operator": "equal", "operand": false}
+		]
+	},
+	{
+		"keys": ["escape"], "command": "clear_fields", "context": [
+			{"key": "has_prev_field", "operator": "equal", "operand": true},
+			{"key": "panel_visible", "operator": "equal", "operand": true},
+			{"key": "panel_has_focus", "operator": "equal", "operand": false}
+		]
+	},
+	{
+		"keys": ["shift+escape"], "command": "hide_panel",
+		"args": {"cancel": true}, "context": [
+			{"key": "panel_visible", "operator": "equal", "operand": true},
+		]
+	},
+	{
+		"keys": ["shift+escape"],
+		"command": "chain",
+		"context": [
+			{"key": "panel_visible", "operator": "equal", "operand": true},
+			{"key": "terminus_view"}
+		],
+		"args": {
+			"commands": [
+				["terminus_close"],
+				["hide_panel", {"cancel": true}],
+			]
+		},
+	},
+	// </escape key remapped>
 
-//some default layouts
-	{ "keys": ["alt+shift+6"], "command": "set_layout",
+	//some default layouts
+	{
+		"keys": ["alt+shift+6"],
+		"command": "set_layout",
 		"args": {
 			"cols": [0.0, 0.6, 1.0],
 			"rows": [0.0, 0.6, 1.0],
 			"cells": [
 				//| coln | rowb |cole|rowe|
-				[0, 0, 1, 1], [1, 0, 2, 1],
+				[0, 0, 1, 1],
+				[1, 0, 2, 1],
 				[0, 1, 2, 2],
 			]
 		}
 	},
-	{ "keys": ["alt+shift+7"], "command": "set_layout",
+	{
+		"keys": ["alt+shift+7"],
+		"command": "set_layout",
 		"args": {
 			"cols": [0.0, 0.6, 1.0],
 			"rows": [0.0, 0.6, 1.0],
 			"cells": [
 				//| coln | rowb |cole|rowe|
 				[0, 0, 2, 1],
-				[0, 1, 1, 2],[1, 1, 2, 2]
+				[0, 1, 1, 2],
+				[1, 1, 2, 2]
 			]
 		}
 	},
