@@ -9,11 +9,11 @@
 	},
 	{
 		"keys": ["ctrl+shift+space"], "command": "lsp_hover",
-		"context": [{"key": "setting.lsp_active"}]
+		"context": [{ "key": "setting.lsp_active"}]
 	},
 	{
 		"keys": ["ctrl+r"], "command": "lsp_document_symbols",
-		"context": [{"key": "setting.lsp_active"}]
+		"context": [{ "key": "setting.lsp_active"}]
 	},
 	{
 		"keys": ["alt+shift+r"], "command": "lsp_symbol_rename",
@@ -29,14 +29,14 @@
 	// "ctrl alt a for allignment"
 
 	//  '\\' prefix commands
-	{"keys": ["alt+\\"], "command": "user_test"},
-	{"keys": ["alt+z"], "command": "revert_modification"},
-	{"keys": ["ctrl+\\"], "command": "toggle_inline_diff"},
+	{ "keys": ["alt+\\"], "command": "user_test"},
+	{ "keys": ["alt+z"], "command": "revert_modification"},
+	{ "keys": ["ctrl+\\"], "command": "toggle_inline_diff"},
 	{
 		"keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff",
-		"args": {"prefer_hide": true}
+		"args": { "prefer_hide": true }
 	},
-	{"keys": ["super+\\"], "command": "open_key_bindings"},
+	{ "keys": ["super+\\"], "command": "open_key_bindings"},
 	{
 		"keys": ["super+shift+\\"], "command": "edit_settings", "args": {
 			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
@@ -48,16 +48,16 @@
 	//alt prefix commands
 	{
 		"keys": ["alt+l"], "command": "move_to",
-		"args": {"to": "eol", "extend": true}
+		"args": { "to": "eol", "extend": true }
 	},
-	{"keys": ["alt+n"], "command": "smooth_new"},
-	{"keys": ["alt+o"], "command": "prompt_select_workspace"},
-	{"keys": ["alt+p"], "command": "menu_open_from_current_dir"},
-	{"keys": ["alt+r"], "command": "rename_file"},
-	{"keys": ["alt+t"], "command": "transpose"},
+	{ "keys": ["alt+n"], "command": "smooth_new"},
+	{ "keys": ["alt+o"], "command": "prompt_select_workspace"},
+	{ "keys": ["alt+p"], "command": "menu_open_from_current_dir"},
+	{ "keys": ["alt+r"], "command": "rename_file"},
+	{ "keys": ["alt+t"], "command": "transpose"},
 	{
 		"keys": ["ctrl+t"], "command": "run_macro_file",
-		"args": {"file": "Packages/User/Macros/extendedtranspose.sublime-macro"}
+		"args": { "file": "Packages/User/Macros/extendedtranspose.sublime-macro"}
 	},
 	{
 		"keys": ["alt+space"], "command": "expand_selection",
@@ -81,16 +81,16 @@
 	// 		"key": "selector", "operator": "equal", "operand": "source.c++" }]
 	// },
 	// other commands
-	{"keys": ["ctrl+b"], "command": "toggle_bookmark"},
-	{"keys": ["ctrl+shift+o"], "command": "open_in_browser"},
-	{"keys": ["ctrl+k", "ctrl+k"], "command": "pass"},
-	{"keys": ["ctrl+shift+k"], "command": "pass"},
-	{"keys": ["insert", "insert"], "command": "toggle_overwrite"},
+	{ "keys": ["ctrl+b"], "command": "toggle_bookmark"},
+	{ "keys": ["ctrl+shift+o"], "command": "open_in_browser"},
+	{ "keys": ["ctrl+k", "ctrl+k"], "command": "pass"},
+	{ "keys": ["ctrl+shift+k"], "command": "pass"},
+	{ "keys": ["insert", "insert"], "command": "toggle_overwrite"},
 
 	//builds and terminals
 	{
 		"keys": ["ctrl+enter"], "command": "chain",
-		"args": {"commands": [["save"], ["build"]]}
+		"args": { "commands": [["save"], ["build"]] }
 	},
 	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build"},
 	{
@@ -104,10 +104,10 @@
 	// 		"selector", "operator": "equal", "operand": "source.assembly" }],
 	// 	"args": { "commands": [["save"],["build", { "select": true}]]}
 	// },
-	{"keys": ["super+shift+j"], "command": "run_jupyter"},
+	{ "keys": ["super+shift+j"], "command": "run_jupyter"},
 	{
 		"keys": ["super+`"], "command": "terminus_open",
-		"args": {"cwd": "${file_path:${folder}}", "panel_name": "Terminus"}
+		"args": { "cwd": "${file_path:${folder}}", "panel_name": "Terminus"}
 	},
 	{
 		"keys": ["alt+`"], "command": "terminus_open", "args": {
@@ -146,40 +146,40 @@
 			"file": "Packages/User/Macros/remove_brackets_and_line.sublime-macro"
 		}
 	},
-	{"keys": ["super+shift+delete"], "command": "bh_remove_brackets"},
+	{ "keys": ["super+shift+delete"], "command": "bh_remove_brackets"},
 	{
 		"keys": ["alt+delete"], "command": "run_macro_file",
-		"args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}
+		"args": { "file": "res://Packages/Default/Delete Line.sublime-macro"}
 	},
 	// </delete>
 
 	// <linemove,copy>
-	{"keys": ["super+alt+up"], "command": "swap_up_with_indent_always"},
-	{"keys": ["super+alt+down"], "command": "swap_down_with_indent_always"},
-	{"keys": ["alt+up"], "command": "swap_up_with_indent"},
-	{"keys": ["alt+down"], "command": "swap_down_with_indent"},
+	{ "keys": ["super+alt+up"], "command": "swap_up_with_indent_always"},
+	{ "keys": ["super+alt+down"], "command": "swap_down_with_indent_always"},
+	{ "keys": ["alt+up"], "command": "swap_up_with_indent"},
+	{ "keys": ["alt+down"], "command": "swap_down_with_indent"},
 	// { "keys": ["alt+up"], "command": "swap_line_up" },
 	// { "keys": ["alt+down"], "command": "swap_line_down" },
 	{
 		"keys": ["alt+shift+down"], "command": "run_macro_file",
-		"args": {"file": "Packages/User/Macros/copy_lines_down.sublime-macro"}
+		"args": { "file": "Packages/User/Macros/copy_lines_down.sublime-macro"}
 	},
 	{
 		"keys": ["alt+shift+up"], "command": "run_macro_file",
-		"args": {"file": "Packages/User/Macros/copy_lines_up.sublime-macro"}
+		"args": { "file": "Packages/User/Macros/copy_lines_up.sublime-macro"}
 	},
 	{
 		"keys": ["ctrl+shift+up"], "command": "move",
-		"args": {"by": "lines", "forward": false, "extend": true}
+		"args": { "by": "lines", "forward": false, "extend": true }
 	},
 	{
 		"keys": ["ctrl+shift+down"], "command": "move",
-		"args": {"by": "lines", "forward": true, "extend": true}
+		"args": { "by": "lines", "forward": true, "extend": true }
 	},
 	// </linemove,copy>
 
 	// <openingtemplates>
-	{"keys": ["ctrl+shift+n"], "command": "new_window"},
+	{ "keys": ["ctrl+shift+n"], "command": "new_window"},
 	// { "keys": ["ctrl+shift+n"],
 	// 	"command": "chain",
 	// 	"context": [{ "key": "selector", "operator": "equal", "operand": "source.assembly" }],
