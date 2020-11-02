@@ -15,8 +15,11 @@ class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
 			else "wsl zip ../Zips/{name} -u -9 -r *"
 		)  #yapf: disable
 		styles = [
-			"BSCS18010_", "", "BSCS18010-", "BSCS18010_Nawfal_Ahmed_",
-			"BSCS18010_Nawfal_"
+			"BSCS18010_",
+			"",
+			"BSCS18010_Nawfal_",
+			"BSCS18010-",
+			# "BSCS18010_Nawfal_Ahmed_"
 		]
 		styles = [style + dirname for style in styles]
 

@@ -1,26 +1,34 @@
 [
 	{
-		"caption": "Terminus: Open Default Shell iTab",
-		"command": "terminus_open"
+		"caption": "Terminus: Open Command Prompt in Tab (cmd)",
+		"command": "terminus_open",
+		"args": {
+			"cwd": "${file_path:${folder}}",
+		}
 	},
 	{
-		"caption": "Terminus: Linux in Tab (wsl)",
+		"caption": "Terminus: Open Command Prompt in Panel",
+		"command": "terminus_open",
+		"args": {
+			"panel_name": "Windows Terminal",
+			"cwd": "${file_path:${folder}}"
+		}
+	},
+	{
+		"caption": "Terminus: Open Linux in Tab (wsl)",
 		"command": "terminus_open",
 		"args": {
 			"config_name": "Linux",
+			"cwd": "${file_path:${folder}}",
 		},
 	},
 	{
-		"caption": "Terminus: Linux in Panel (wsl",
+		"caption": "Terminus: Open Linux in Panel (wsl",
 		"command": "terminus_open",
 		"args": {
 			"config_name": "Linux",
-			"panel_name": "Linux Terminal"
+			"panel_name": "Linux Terminal",
+			"cwd": "${file_path:${folder}}",
 		},
-	},
-	{
-		"caption": "Terminus: Open Default Shell in Panel",
-		"command": "terminus_open",
-		"args": {"panel_name": "Windows Terminal"}
 	},
 ]
