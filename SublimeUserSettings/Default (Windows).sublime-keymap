@@ -17,14 +17,15 @@
 	},
 	{
 		"keys": ["alt+shift+r"], "command": "lsp_symbol_rename",
-		"context": [{"key": "setting.lsp_active"}]
+		"context": [{ "key": "setting.lsp_active"}]
 	},
 	{
-		"keys": ["ctrl+alt+enter"], "command": "send_code", "context": [
-			{"key": "selector", "operator": "equal", "operand": "source.r"}
-		]
+		"keys": ["super+ctrl+alt+enter"], "command": "send_code", "context": [{
+			"key": "selector", "operator": "equal", "operand": "source.r",
+			"key": "selector", "operator": "equal", "operand": "source.python"
+		}]
 	},
-	{"keys": ["super+alt+c"], "command": "super_calculator"},
+	{ "keys": ["super+alt+c"], "command": "super_calculator"},
 	// "ctrl alt a for allignment"
 
 	//  '\\' prefix commands
@@ -39,10 +40,10 @@
 	{
 		"keys": ["super+shift+\\"], "command": "edit_settings", "args": {
 			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
-			"default": "[\n\t$0\n]\n",
+			"default": "[\n\t$0\n]\n"
 		}
 	},
-	{"keys": ["ctrl+shift+`"], "command": "diff_changes"},
+	{ "keys": ["ctrl+shift+`"], "command": "diff_changes"},
 
 	//alt prefix commands
 	{
@@ -60,22 +61,18 @@
 	},
 	{
 		"keys": ["alt+space"], "command": "expand_selection",
-		"args": {"to": "scope"}
+		"args": { "to": "scope"}
 	},
 	{
-		"keys": ["alt+space"], "command": "csv_select_col", "context": [
-			{
-				"key": "selector", "operator": "equal",
-				"operand": "text.advanced_csv"
-			}
-		]
+		"keys": ["alt+space"], "command": "csv_select_col", "context": [{
+			"key": "selector", "operator": "equal", "operand": "text.advanced_csv"
+		}]
 	},
 	{
-		"keys": ["ctrl+space"],
-		"command": "expand_region",
-		"args": {"debug": false},
+		"keys": ["ctrl+space"], "command": "expand_region",
+		"args": { "debug": false }
 	},
-	{"keys": ["alt+context_menu"], "command": "open_unity_project"},
+	{ "keys": ["alt+context_menu"], "command": "open_unity_project"},
 	// { "keys": ["context_menu"], "command": "file_commands" },
 	// { "keys": ["shift+context_menu"],	"command": "toggle_preferences"	},
 	// { "keys": ["ctrl+alt+context_menu"],	"command": "open_unity_project"	},
@@ -95,12 +92,12 @@
 		"keys": ["ctrl+enter"], "command": "chain",
 		"args": {"commands": [["save"], ["build"]]}
 	},
-	{"keys": ["ctrl+shift+enter"], "command": "cancel_build"},
+	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build"},
 	{
 		"keys": ["ctrl+alt+enter"], "command": "run_on_terminal",
-		"args": {"terminal": "Linux"}, "context": [
-			{"key": "selector", "operator": "equal", "operand": "source.python"}
-		]
+		"args": { "terminal": "Linux"}, "context": [{
+			"key": "selector", "operator": "equal", "operand": "source.python"
+		}]
 	},
 	// { "keys": ["ctrl+shift+enter"], "command": "chain",
 	// 	"context": [{ "key":
@@ -201,21 +198,18 @@
 	// 	}
 	// },
 	{
-		"keys": ["ctrl+shift+n"],
-		"command": "chain",
-		"context": [
-			{"key": "selector", "operator": "equal", "operand": "source.c++"}
-		],
-		"args": {
+		"keys": ["ctrl+shift+n"], "command": "chain", "context": [{
+			"key": "selector", "operator": "equal", "operand": "source.c++"
+		}], "args": {
 			"commands": [
 				["new_file"],
 				[
 					"insert_snippet",
-					{"name": "Packages/User/Snippets/CppDefault.sublime-snippet"}
+					{ "name": "Packages/User/Snippets/CppDefault.sublime-snippet"}
 				],
-				["set_file_type", {"syntax": "Packages/C++/C++.sublime-syntax"}],
+				["set_file_type", { "syntax": "Packages/C++/C++.sublime-syntax"}]
 			]
-		},
+		}
 	},
 	// </openingtemplates>
 
@@ -288,7 +282,7 @@
 				//| coln | rowb |cole|rowe|
 				[0, 0, 1, 1],
 				[1, 0, 2, 1],
-				[0, 1, 2, 2],
+				[0, 1, 2, 2]
 			]
 		}
 	},
@@ -305,5 +299,5 @@
 				[1, 1, 2, 2]
 			]
 		}
-	},
+	}
 ]

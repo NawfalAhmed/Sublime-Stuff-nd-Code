@@ -2,8 +2,7 @@
 	"prog": "terminus",
 	"python":
 	{
-		"bracketed_paste_mode": true,
-		// "paste_to_console": true,
+		"bracketed_paste_mode": false,
 		"prog": "terminus"
 	},
 	"r":
