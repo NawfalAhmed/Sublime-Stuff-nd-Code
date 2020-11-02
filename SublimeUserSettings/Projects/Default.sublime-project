@@ -11,6 +11,9 @@
 	"folders":
 	[
 		{
+			"path": "Redacted"
+		},
+		{
 			"folder_exclude_patterns":
 			[
 				"*"

@@ -1,0 +1,14 @@
+{
+	"scopes": {
+	"source.go": { "cmd": ["goimports"] },
+		"source.rust": { "cmd": ["rustfmt"] },
+		"source.mox": { "cmd": ["moxfmt"] },
+		"source.mox.nox": { "cmd": ["moxfmt"] },
+		"source.mox.lox": { "cmd": ["moxfmt"] },
+		"source.c": {
+			// "cmd": ["clang-format", "--style", "{UseTab: false, IndentWidth: 8}"],
+			"cmd": ["clang-format"]
+		},
+		"source.json": { "cmd": ["jsonfmt"], "format_on_save": false }
+	}
+}
