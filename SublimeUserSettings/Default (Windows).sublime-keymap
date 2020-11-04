@@ -73,6 +73,12 @@
 		"args": { "debug": false }
 	},
 	{ "keys": ["alt+context_menu"], "command": "open_unity_project"},
+	{ "keys": ["super+context_menu"], "command": "show_overlay",
+		"args": {
+			"overlay": "command_palette",
+			"text": "Terminus Open",
+		},
+	},
 	// { "keys": ["context_menu"], "command": "file_commands" },
 	// { "keys": ["shift+context_menu"],	"command": "toggle_preferences"	},
 	// { "keys": ["ctrl+alt+context_menu"],	"command": "open_unity_project"	},
