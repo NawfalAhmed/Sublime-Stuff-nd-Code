@@ -14,13 +14,14 @@ class Python:
 		pip list 	-u #check uptodate packages
 
 class CommandPrompt:
-	alt+d   # type cmd, opens in that folder
-	super+r # type cmd, anywhere
-	d:      # to switch directory
-	dir     # to show directory,
-	start.  # to open file exporer there
-	> "for output redirect "
-	2> "for error redirect"
+	cls		# clear screen
+	alt+d		# type cmd, opens in that folder
+	super+r	# type cmd, anywhere
+	d:			# to switch directory
+	dir		# to show directory,
+	start.	# to open file exporer there
+	> 			# for output redirect
+	2>			# for error redirect
 	#add suffix to multiple
 	for %a in (*) do ren "%a" "Task - %a"
 	#link a specific folder to One Drive

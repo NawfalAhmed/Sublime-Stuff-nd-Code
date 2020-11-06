@@ -1,5 +1,6 @@
 {
 	"python_interpreter": "Redacted",
+	"display_signatures": false,
 	"enable_signatures_tooltip": false,
 	"enable_docstrings_tooltip": false,
 	"merge_signatures_and_doc": false,

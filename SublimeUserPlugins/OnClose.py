@@ -1,6 +1,6 @@
 import sublime
 import sublime_plugin
-from os.path import split as splitpath, splitext
+# from os.path import split as splitpath, splitext
 
 
 class SafeCloseCommand(sublime_plugin.TextCommand):
