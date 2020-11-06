@@ -7,7 +7,12 @@
 		{
 			"folder_exclude_patterns":
 			[
-				"*"
+				"AI",
+				"CV",
+				"Game Dev",
+				"OS",
+				"Probability",
+				"SublimeUser*"
 			],
 			"path": "Redacted"
 		},
@@ -28,18 +33,29 @@
 			"path": "Redacted"
 		},
 		{
+			"file_exclude_patterns":
+			[
+				"*.csproj",
+				"*.sln"
+			],
+			"folder_exclude_patterns":
+			[
+				".vscode",
+				"Library",
+				"Logs",
+				"Packages",
+				"ProjectSettings",
+				"UserSettings"
+			],
+			"name": "Game Dev",
+			"path": "Redacted"
+		},
+		{
 			"name": ": OS",
 			"path": "Redacted"
 		},
 		{
 			"name": ": Probabilty",
-			"path": "Redacted"
-		},
-		{
-			"path": "Redacted"
-		},
-		{
-			"name": "Background Proj",
 			"path": "Redacted"
 		},
 		{
@@ -58,10 +74,6 @@
 	{
 		"LSP":
 		{
-			"clangd":
-			{
-				"enabled": false
-			},
 			"pyls":
 			{
 				"enabled": true
