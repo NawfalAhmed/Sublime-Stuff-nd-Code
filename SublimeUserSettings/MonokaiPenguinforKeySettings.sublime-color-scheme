@@ -16,7 +16,7 @@
 		"purple": "hsl(261, 100%, 75%)",
 		"red": "hsla(0, 93%,45%,0.9)",
 		"red2": "hsl(338, 95%, 56%)",
-		"red3": "hsla(338, 95%, 56%,0.95)",
+		"red3": "hsl(340,100%,60%)",
 		"white": "hsl(0, 0%, 97%)",
 		"white2": "hsl(60, 36%, 96%)",
 		"white3": "hsl(60, 30%, 96%)",
@@ -77,7 +77,12 @@
 		{
 			"name": "User-defined constant",
 			"scope": "constant.character, constant.other",
-			"foreground": "var(purple)"
+			"foreground": "var(green)"
+		},
+		{
+			"name": "Escape characters",
+			"scope": "constant.character.escape",
+			"foreground": "var(red3)"
 		},
 		{
 			"name": "Variable",
@@ -86,13 +91,13 @@
 		},
 		{
 			"name": "Keyword",
-			"scope": "keyword - (keyword.operator,keyword.other.unit)",
-			"foreground": "var(green)"
+			"scope": "keyword - (keyword.operator)",
+			"foreground": "var(purple)"
 		},
 		{
 			"name": "Operators",
 			"scope": "keyword.operator",
-			"foreground": "var(blue)"
+			"foreground": "var(purple)"
 		},
 		{
 			"name": "Operatorstwo",
@@ -117,14 +122,13 @@
 		{
 			"name": "Storage type",
 			"scope": "storage.type",
-			"foreground": "var(blue)",
+			"foreground": "var(green)",
 			"font_style": "italic"
 		},
 		{
 			"name": "Entity name",
 			"scope": "entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)",
-			"font_style": "italic",
-			"foreground": "var(green)"
+			"foreground": "var(yellow2)"
 		},
 		{
 			"name": "Inherited class",
@@ -160,11 +164,11 @@
 			"scope": "variable.function, variable.annotation",
 			"foreground": "var(blue)"
 		},
-		{
-			"name": "Function call var",
-			"scope": "meta.function-call.var",
-			"foreground": "var(red3)"
-		},
+		// {
+		// 	"name": "Function call var",
+		// 	"scope": "meta.function-call.var",
+		// 	"foreground": "var(purple)"
+		// },
 		{
 			"name": "Library function",
 			"scope": "support.function, support.macro",
@@ -173,8 +177,8 @@
 		{
 			"name": "Library constant",
 			"scope": "support.constant",
-			"font_style": "italic",
-			"foreground": "var(red3)"
+			// "font_style": "italic",
+			"foreground": "var(green)"
 		},
 		{
 			"name": "Library class/type",
@@ -184,7 +188,7 @@
 		},
 		{
 			"name": "Library variable",
-			"scope": "support.other.variable"
+			"scope": "support.other.variable",
 		},
 		{
 			"name": "Invalid",

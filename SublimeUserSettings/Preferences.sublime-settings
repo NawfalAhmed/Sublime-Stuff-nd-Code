@@ -1,6 +1,7 @@
 {
 	"auto_complete_cycle": true,
 	"auto_find_in_selection": true,
+	"auto_sidebar_reveal": false,
 	"binary_file_patterns":
 	[
 		"*.exe",
