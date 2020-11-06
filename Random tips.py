@@ -36,6 +36,10 @@ class CommandPrompt:
 		nasm -f win64 forwin64_console.asm
 		link /LARGEADDRESSAWARE:NO /ENTRY:main user32.lib kernel32.lib forwin64_console.obj
 
+class Git:
+	# Removing a folder
+	path_to_folder/ # add this to gitignore
+	git rm -r --cached path_to_folder/
 
 #old hostname
 DESKTOP-2NT06QL
