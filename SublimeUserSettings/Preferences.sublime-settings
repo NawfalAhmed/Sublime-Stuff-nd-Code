@@ -57,12 +57,10 @@
 	"ignored_packages":
 	[
 		"Display numbers",
-		"FileDiffs",
 		"FileManager",
 		"LSP-json",
 		"MarkdownEditing",
 		"OmniSharp",
-		"PackageResourceViewer",
 		"R-IDE",
 		"SQLPlus",
 		"Status Bar Time",
