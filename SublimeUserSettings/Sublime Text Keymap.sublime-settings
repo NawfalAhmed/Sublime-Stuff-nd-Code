@@ -1,5 +1,5 @@
 // These settings override both User and Default settings for the Sublime Text Keymap syntax
 {
-	"color_scheme": "MonokaiPenguinforSettings.sublime-color-scheme",
+	"color_scheme": "MonokaiPenguinforKeySettings.sublime-color-scheme",
 	"tab_size": 2
 }

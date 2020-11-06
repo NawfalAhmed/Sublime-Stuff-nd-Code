@@ -1,5 +1,5 @@
 // These settings override both User and Default settings for the Sublime Text Mousemap syntax
 {
 
-	"color_scheme": "MonokaiPenguinforSettings.sublime-color-scheme"
+	"color_scheme": "MonokaiPenguinforKeySettings.sublime-color-scheme"
 }
