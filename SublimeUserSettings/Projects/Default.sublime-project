@@ -69,7 +69,7 @@
 		{
 			"clangd":
 			{
-				"enabled": true
+				"enabled": false
 			},
 			"pyls":
 			{
