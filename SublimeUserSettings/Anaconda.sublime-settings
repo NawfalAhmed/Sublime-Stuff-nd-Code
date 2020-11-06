@@ -1,5 +1,6 @@
 {
 	"python_interpreter": "C:\\Users\\Ibraheem\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+	"display_signatures": false,
 	"enable_signatures_tooltip": false,
 	"enable_docstrings_tooltip": false,
 	"merge_signatures_and_doc": false,

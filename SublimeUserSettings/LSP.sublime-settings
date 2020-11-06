@@ -1,6 +1,23 @@
 {
 	"clients":
 	{
+		"pyls": {
+			"command": ["pyls"],
+			"scopes": ["source.python"],
+			"syntaxes": ["Packages/Python/Python.sublime-syntax", "Packages/MagicPython/grammars/MagicPython.tmLanguage", "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"],
+			"languageId": "python",
+			"settings": {
+					"pyls.plugins.jedi.extra_paths": [
+							// add jfcherng-sublime/ST-API-stubs
+							"$packages/../ST-API-stubs",
+							// the followings come from the default settings
+							"$sublime_py_files_dir",
+							"$packages",
+					],
+					"pyls.plugins.autopep8.enabled": false,
+					"pyls.plugins.yapf.enabled": true,
+			},
+		},
 		"omnisharp":
 		{
 			"command":
