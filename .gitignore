@@ -5,6 +5,7 @@ SublimeUserSettings/MenuPenguinLists.sublime-settings
 SublimeUserSettings/Projects/Default.sublime-workspace
 *.exe
 *.mp4
+*.ipynb_checkpoints
 #Game Dev/*/*.*
 #!Game Dev/*/*.cs
 #Game Dev/*/*/*
