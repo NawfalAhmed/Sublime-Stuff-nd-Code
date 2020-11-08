@@ -25,6 +25,14 @@
 			"path": "Redacted"
 		},
 		{
+			"name": ": OS",
+			"path": "Redacted"
+		},
+		{
+			"name": ": Probabilty",
+			"path": "Redacted"
+		},
+		{
 			"file_exclude_patterns":
 			[
 				"*.meta"
@@ -48,14 +56,6 @@
 				"UserSettings"
 			],
 			"name": "Game Dev",
-			"path": "Redacted"
-		},
-		{
-			"name": ": OS",
-			"path": "Redacted"
-		},
-		{
-			"name": ": Probabilty",
 			"path": "Redacted"
 		},
 		{

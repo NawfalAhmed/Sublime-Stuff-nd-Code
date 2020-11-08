@@ -1,11 +1,11 @@
 [
 	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
 	// 	"context": [{"key": "setting.lsp_active"}]},
-	{"keys": ["ctrl+alt+space"], "command": "pass"},
+	{ "keys": ["ctrl+alt+space"], "command": "pass"},
 	{
-		"keys": ["shift+space"], "command": "noop", "context": [
-			{"key": "lsp.signature_help", "operator": "equal", "operand": 0}
-		]
+		"keys": ["shift+space"], "command": "noop", "context": [{
+			"key": "lsp.signature_help", "operator": "equal", "operand": 0
+		}]
 	},
 	{
 		"keys": ["ctrl+shift+space"], "command": "lsp_hover",
@@ -73,11 +73,9 @@
 		"args": { "debug": false }
 	},
 	{ "keys": ["alt+context_menu"], "command": "open_unity_project"},
-	{ "keys": ["super+context_menu"], "command": "show_overlay",
-		"args": {
-			"overlay": "command_palette",
-			"text": "Terminus Open",
-		},
+	{
+		"keys": ["super+context_menu"], "command": "show_overlay",
+		"args": { "overlay": "command_palette", "text": "Terminus Open"}
 	},
 	// { "keys": ["context_menu"], "command": "file_commands" },
 	// { "keys": ["shift+context_menu"],	"command": "toggle_preferences"	},
@@ -112,11 +110,23 @@
 	// },
 	{ "keys": ["super+shift+j"], "command": "run_jupyter"},
 	{
-		"keys": ["super+`"], "command": "terminus_open",
-		"args": { "cwd": "${file_path:${folder}}", "panel_name": "Terminus"}
+		"keys": ["super+`"], "command": "toggle_terminus_panel", "args": {
+			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
+		}
 	},
 	{
-		"keys": ["alt+`"], "command": "terminus_open", "args": {
+		"keys": ["super+shift+`"], "command": "terminus_open", "args": {
+			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
+		}
+	},
+	{
+		"keys": ["alt+`"], "command": "toggle_terminus_panel", "args": {
+			"config_name": "Linux", "panel_name": "Linux Terminal",
+			"cwd": "${file_path:${folder}}"
+		}
+	},
+	{
+		"keys": ["alt+shift+`"], "command": "terminus_open", "args": {
 			"config_name": "Linux", "panel_name": "Linux Terminal",
 			"cwd": "${file_path:${folder}}"
 		}
@@ -128,21 +138,15 @@
 	},
 
 	// <close>
-	{"keys": ["ctrl+w"], "command": "safe_close"},
+	{ "keys": ["ctrl+w"], "command": "safe_close"},
 	{
-		"keys": ["ctrl+w"],
-		"command": "chain",
-		"context": [
-			{"key": "selector", "operator": "equal", "operand": "source.assembly"}
-		],
-		"args": {"commands": [
-			["delete_assembly_stuff"],
-			["safe_close"],
-		]},
+		"keys": ["ctrl+w"], "command": "chain", "context": [{
+			"key": "selector", "operator": "equal", "operand": "source.assembly"
+		}], "args": { "commands": [["delete_assembly_stuff"], ["safe_close"]] }
 	},
 	{
 		"keys": ["ctrl+shift+w"], "command": "destroy_pane",
-		"args": {"direction": "self"}
+		"args": { "direction": "self"}
 	},
 	// </close>
 
@@ -222,58 +226,48 @@
 	// <escape key remapped>
 	{
 		"keys": ["escape"], "command": "pass", "context": [
-			{"key": "panel_visible", "operator": "equal", "operand": true
-			}, {"key": "panel_has_focus", "operator": "equal", "operand": false},
-			{"key": "num_selections", "operator": "equal", "operand": 1},
-			{"key": "has_next_field", "operator": "equal", "operand": false},
-			{"key": "has_prev_field", "operator": "equal", "operand": false},
-			{"key": "overlay_visible", "operator": "equal", "operand": false
-			}, {"key": "popup_visible", "operator": "equal", "operand": false}, {
+			{ "key": "panel_visible", "operator": "equal", "operand": true
+			}, { "key": "panel_has_focus", "operator": "equal", "operand": false },
+			{ "key": "num_selections", "operator": "equal", "operand": 1 },
+			{ "key": "has_next_field", "operator": "equal", "operand": false
+			}, { "key": "has_prev_field", "operator": "equal", "operand": false },
+			{ "key": "overlay_visible", "operator": "equal", "operand": false
+			}, { "key": "popup_visible", "operator": "equal", "operand": false }, {
 				"key": "auto_complete_visible", "operator": "equal",
 				"operand": false
 			}
 		]
 	},
 	{
-		"keys": ["escape"], "command": "single_selection", "context": [
-			{"key": "num_selections", "operator": "not_equal", "operand": 1},
-			{"key": "panel_visible", "operator": "equal", "operand": true},
-			{"key": "panel_has_focus", "operator": "equal", "operand": false}
-		]
+		"keys": ["escape"], "command": "single_selection", "context": [{
+			"key": "num_selections", "operator": "not_equal", "operand": 1
+		}, { "key": "panel_visible", "operator": "equal", "operand": true
+			}, { "key": "panel_has_focus", "operator": "equal", "operand": false }]
 	},
 	{
-		"keys": ["escape"], "command": "clear_fields", "context": [
-			{"key": "has_next_field", "operator": "equal", "operand": true},
-			{"key": "panel_visible", "operator": "equal", "operand": true},
-			{"key": "panel_has_focus", "operator": "equal", "operand": false}
-		]
+		"keys": ["escape"], "command": "clear_fields", "context": [{
+			"key": "has_next_field", "operator": "equal", "operand": true
+		}, { "key": "panel_visible", "operator": "equal", "operand": true
+			}, { "key": "panel_has_focus", "operator": "equal", "operand": false }]
 	},
 	{
-		"keys": ["escape"], "command": "clear_fields", "context": [
-			{"key": "has_prev_field", "operator": "equal", "operand": true},
-			{"key": "panel_visible", "operator": "equal", "operand": true},
-			{"key": "panel_has_focus", "operator": "equal", "operand": false}
-		]
+		"keys": ["escape"], "command": "clear_fields", "context": [{
+			"key": "has_prev_field", "operator": "equal", "operand": true
+		}, { "key": "panel_visible", "operator": "equal", "operand": true
+			}, { "key": "panel_has_focus", "operator": "equal", "operand": false }]
 	},
 	{
 		"keys": ["shift+escape"], "command": "hide_panel",
-		"args": {"cancel": true}, "context": [
-			{"key": "panel_visible", "operator": "equal", "operand": true},
-		]
+		"args": { "cancel": true }, "context": [{
+			"key": "panel_visible", "operator": "equal", "operand": true
+		}]
 	},
 	{
-		"keys": ["shift+escape"],
-		"command": "chain",
-		"context": [
-			{"key": "panel_visible", "operator": "equal", "operand": true},
-			{"key": "terminus_view"}
-		],
-		"args": {
-			"commands": [
-				["terminus_close"],
-				["hide_panel", {"cancel": true}],
-			]
-		},
+		"keys": ["shift+escape"], "command": "chain", "context": [{
+			"key": "panel_visible", "operator": "equal", "operand": true
+		}, { "key": "terminus_view"}], "args": {
+			"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
+		}
 	},
 	// </escape key remapped>
 
