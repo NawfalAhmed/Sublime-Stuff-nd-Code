@@ -25,6 +25,14 @@
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\CV"
 		},
 		{
+			"name": ": OS",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\OS"
+		},
+		{
+			"name": ": Probabilty",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Probability"
+		},
+		{
 			"file_exclude_patterns":
 			[
 				"*.meta"
@@ -49,14 +57,6 @@
 			],
 			"name": "Game Dev",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects"
-		},
-		{
-			"name": ": OS",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\OS"
-		},
-		{
-			"name": ": Probabilty",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Probabilty"
 		},
 		{
 			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\MenuPreferences"
