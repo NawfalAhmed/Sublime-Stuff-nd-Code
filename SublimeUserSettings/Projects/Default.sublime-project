@@ -55,8 +55,9 @@
 				"ProjectSettings",
 				"UserSettings"
 			],
-			"name": "Game Dev",
-			"path": "Redacted"
+			"name": "U: Game Dev",
+			"path": "Redacted",
+			"binary_file_patterns": ["*"],
 		},
 		{
 			"path": "Redacted"
