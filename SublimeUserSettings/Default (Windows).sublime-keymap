@@ -1,4 +1,20 @@
 [
+	{ "keys": ["ctrl+shift+f"], "command": "show_panel", "args": {
+			"panel": "find_in_files",
+			"where": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects\\,*/Assets/*.cs,-*/Assets/*/*.cs",
+		},
+		"context": [{
+			"key": "selector", "operator": "equal", "operand": "source.cs"
+		}]
+	},
+	{ "keys": ["ctrl+shift+f"], "command": "show_panel", "args": {
+			"panel": "find_in_files",
+			"where": "C:\\Users\\Ibraheem\\Desktop\\SublimeText,*.py",
+		},
+		"context": [{
+			"key": "selector", "operator": "equal", "operand": "source.python"
+		}]
+	},
 	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
 	// 	"context": [{"key": "setting.lsp_active"}]},
 	{ "keys": ["ctrl+alt+space"], "command": "pass"},
@@ -226,6 +242,7 @@
 	// <escape key remapped>
 	{
 		"keys": ["escape"], "command": "pass", "context": [
+			{ "key": "terminus_view" },
 			{ "key": "panel_visible", "operator": "equal", "operand": true
 			}, { "key": "panel_has_focus", "operator": "equal", "operand": false },
 			{ "key": "num_selections", "operator": "equal", "operand": 1 },
@@ -256,16 +273,19 @@
 		}, { "key": "panel_visible", "operator": "equal", "operand": true
 			}, { "key": "panel_has_focus", "operator": "equal", "operand": false }]
 	},
+	// {
+	// 	"keys": ["shift+escape"], "command": "hide_panel",
+	// 	"args": { "cancel": true }, "context": [{
+	// 		"key": "panel_visible", "operator": "equal", "operand": true
+	// 	}]
+	// },
 	{
-		"keys": ["shift+escape"], "command": "hide_panel",
-		"args": { "cancel": true }, "context": [{
-			"key": "panel_visible", "operator": "equal", "operand": true
-		}]
-	},
-	{
-		"keys": ["shift+escape"], "command": "chain", "context": [{
-			"key": "panel_visible", "operator": "equal", "operand": true
-		}, { "key": "terminus_view"}], "args": {
+		"keys": ["shift+escape"], "command": "chain",
+		"context": [
+			{ "key": "panel_visible", "operator": "equal", "operand": true},
+			{ "key": "terminus_view" }
+		],
+		"args": {
 			"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
 		}
 	},

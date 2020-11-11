@@ -3,6 +3,7 @@ class Sublime Notes:
 	- Try snapi Nd filecomand
 	- make own syntax highlighting for notes .penguin
 	- right click+leftclick =  expand scope
+	` look at changes in lsp
 super+A: "Open Action center"
 super+E: "Open File Explorer"
 super+ctrl+Q: "Open Quick Assist"
