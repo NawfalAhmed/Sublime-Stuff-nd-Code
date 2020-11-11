@@ -1,27 +1,32 @@
 [
-	{ "keys": ["ctrl+shift+f"], "command": "show_panel", "args": {
+	{
+		"keys": ["ctrl+shift+f"], "command": "show_panel",
+		"args": {
 			"panel": "find_in_files",
-			"where": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects\\,*/Assets/*.cs,-*/Assets/*/*.cs",
+			"where": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects\\,*/Assets/*.cs,-*/Assets/*/*.cs"
 		},
-		"context": [{
-			"key": "selector", "operator": "equal", "operand": "source.cs"
-		}]
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.cs"}
+		]
 	},
-	{ "keys": ["ctrl+shift+f"], "command": "show_panel", "args": {
+	{
+		"keys": ["ctrl+shift+f"], "command": "show_panel",
+		"args": {
 			"panel": "find_in_files",
-			"where": "C:\\Users\\Ibraheem\\Desktop\\SublimeText,*.py",
+			"where": "C:\\Users\\Ibraheem\\Desktop\\SublimeText,*.py"
 		},
-		"context": [{
-			"key": "selector", "operator": "equal", "operand": "source.python"
-		}]
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python"}
+		]
 	},
 	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
 	// 	"context": [{"key": "setting.lsp_active"}]},
 	{ "keys": ["ctrl+alt+space"], "command": "pass"},
 	{
-		"keys": ["shift+space"], "command": "noop", "context": [{
-			"key": "lsp.signature_help", "operator": "equal", "operand": 0
-		}]
+		"keys": ["shift+space"], "command": "noop",
+		"context": [
+			{ "key": "lsp.signature_help", "operator": "equal", "operand": 0 }
+		]
 	},
 	{
 		"keys": ["ctrl+shift+space"], "command": "lsp_hover",
@@ -36,10 +41,11 @@
 		"context": [{ "key": "setting.lsp_active"}]
 	},
 	{
-		"keys": ["super+ctrl+alt+enter"], "command": "send_code", "context": [{
-			"key": "selector", "operator": "equal", "operand": "source.r",
-			"key": "selector", "operator": "equal", "operand": "source.python"
-		}]
+		"keys": ["super+ctrl+alt+enter"], "command": "send_code",
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.r"},
+			{ "key": "selector", "operator": "equal", "operand": "source.python"}
+		]
 	},
 	{ "keys": ["super+alt+c"], "command": "super_calculator"},
 	// "ctrl alt a for allignment"
@@ -54,7 +60,8 @@
 	},
 	{ "keys": ["super+\\"], "command": "open_key_bindings"},
 	{
-		"keys": ["super+shift+\\"], "command": "edit_settings", "args": {
+		"keys": ["super+shift+\\"], "command": "edit_settings",
+		"args": {
 			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
 			"default": "[\n\t$0\n]\n"
 		}
@@ -80,9 +87,14 @@
 		"args": { "to": "scope"}
 	},
 	{
-		"keys": ["alt+space"], "command": "csv_select_col", "context": [{
-			"key": "selector", "operator": "equal", "operand": "text.advanced_csv"
-		}]
+		"keys": ["alt+space"], "command": "csv_select_col",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"operand": "text.advanced_csv"
+			}
+		]
 	},
 	{
 		"keys": ["ctrl+space"], "command": "expand_region",
@@ -115,9 +127,10 @@
 	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build"},
 	{
 		"keys": ["ctrl+alt+enter"], "command": "run_on_terminal",
-		"args": { "terminal": "Linux"}, "context": [{
-			"key": "selector", "operator": "equal", "operand": "source.python"
-		}]
+		"args": { "terminal": "Linux"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python"}
+		]
 	},
 	// { "keys": ["ctrl+shift+enter"], "command": "chain",
 	// 	"context": [{ "key":
@@ -126,39 +139,50 @@
 	// },
 	{ "keys": ["super+shift+j"], "command": "run_jupyter"},
 	{
-		"keys": ["super+`"], "command": "toggle_terminus_panel", "args": {
+		"keys": ["super+`"], "command": "toggle_terminus_panel",
+		"args": {
 			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
 		}
 	},
 	{
-		"keys": ["super+shift+`"], "command": "terminus_open", "args": {
+		"keys": ["super+shift+`"], "command": "terminus_open",
+		"args": {
 			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
 		}
 	},
 	{
-		"keys": ["alt+`"], "command": "toggle_terminus_panel", "args": {
-			"config_name": "Linux", "panel_name": "Linux Terminal",
+		"keys": ["alt+`"], "command": "toggle_terminus_panel",
+		"args": {
+			"config_name": "Linux",
+			"panel_name": "Linux Terminal",
 			"cwd": "${file_path:${folder}}"
 		}
 	},
 	{
-		"keys": ["alt+shift+`"], "command": "terminus_open", "args": {
-			"config_name": "Linux", "panel_name": "Linux Terminal",
+		"keys": ["alt+shift+`"], "command": "terminus_open",
+		"args": {
+			"config_name": "Linux",
+			"panel_name": "Linux Terminal",
 			"cwd": "${file_path:${folder}}"
 		}
 	},
 	{
-		"keys": ["ctrl+keypad0"],
-		"command": "lsp_show_diagnostics_panel",
+		"keys": ["ctrl+keypad0"], "command": "lsp_show_diagnostics_panel",
 		// "context": [{"key": "setting.lsp_active"}]
 	},
 
 	// <close>
 	{ "keys": ["ctrl+w"], "command": "safe_close"},
 	{
-		"keys": ["ctrl+w"], "command": "chain", "context": [{
-			"key": "selector", "operator": "equal", "operand": "source.assembly"
-		}], "args": { "commands": [["delete_assembly_stuff"], ["safe_close"]] }
+		"keys": ["ctrl+w"], "command": "chain",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"operand": "source.assembly"
+			}
+		],
+		"args": { "commands": [["delete_assembly_stuff"], ["safe_close"]] }
 	},
 	{
 		"keys": ["ctrl+shift+w"], "command": "destroy_pane",
@@ -168,7 +192,8 @@
 
 	// <delete>
 	{
-		"keys": ["super+delete"], "command": "run_macro_file", "args": {
+		"keys": ["super+delete"], "command": "run_macro_file",
+		"args": {
 			"file": "Packages/User/Macros/remove_brackets_and_line.sublime-macro"
 		}
 	},
@@ -206,8 +231,7 @@
 
 	// <openingtemplates>
 	{ "keys": ["ctrl+shift+n"], "command": "new_window"},
-	// { "keys": ["ctrl+shift+n"],
-	// 	"command": "chain",
+	// { "keys": ["ctrl+shift+n"], // 	"command": "chain",
 	// 	"context": [{ "key": "selector", "operator": "equal", "operand": "source.assembly" }],
 	// 	"args": {
 	// 		"commands": [
@@ -224,9 +248,11 @@
 	// 	}
 	// },
 	{
-		"keys": ["ctrl+shift+n"], "command": "chain", "context": [{
-			"key": "selector", "operator": "equal", "operand": "source.c++"
-		}], "args": {
+		"keys": ["ctrl+shift+n"], "command": "chain",
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.c++"}
+		],
+		"args": {
 			"commands": [
 				["new_file"],
 				[
@@ -241,37 +267,46 @@
 
 	// <escape key remapped>
 	{
-		"keys": ["escape"], "command": "pass", "context": [
-			{ "key": "terminus_view" },
-			{ "key": "panel_visible", "operator": "equal", "operand": true
-			}, { "key": "panel_has_focus", "operator": "equal", "operand": false },
-			{ "key": "num_selections", "operator": "equal", "operand": 1 },
+		"keys": ["escape"], "command": "pass",
+		"context": [
+			{ "key": "terminus_view"
+			}, { "key": "panel_visible", "operator": "equal", "operand": true },
+			{ "key": "panel_has_focus", "operator": "equal", "operand": false
+			}, { "key": "num_selections", "operator": "equal", "operand": 1 },
 			{ "key": "has_next_field", "operator": "equal", "operand": false
 			}, { "key": "has_prev_field", "operator": "equal", "operand": false },
-			{ "key": "overlay_visible", "operator": "equal", "operand": false
-			}, { "key": "popup_visible", "operator": "equal", "operand": false }, {
-				"key": "auto_complete_visible", "operator": "equal",
+			{ "key": "overlay_visible", "operator": "equal", "operand": false },
+			{ "key": "popup_visible", "operator": "equal", "operand": false },
+			{
+				"key": "auto_complete_visible",
+				"operator": "equal",
 				"operand": false
 			}
 		]
 	},
 	{
-		"keys": ["escape"], "command": "single_selection", "context": [{
-			"key": "num_selections", "operator": "not_equal", "operand": 1
-		}, { "key": "panel_visible", "operator": "equal", "operand": true
-			}, { "key": "panel_has_focus", "operator": "equal", "operand": false }]
+		"keys": ["escape"], "command": "single_selection",
+		"context": [
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 },
+			{ "key": "panel_visible", "operator": "equal", "operand": true },
+			{ "key": "panel_has_focus", "operator": "equal", "operand": false }
+		]
 	},
 	{
-		"keys": ["escape"], "command": "clear_fields", "context": [{
-			"key": "has_next_field", "operator": "equal", "operand": true
-		}, { "key": "panel_visible", "operator": "equal", "operand": true
-			}, { "key": "panel_has_focus", "operator": "equal", "operand": false }]
+		"keys": ["escape"], "command": "clear_fields",
+		"context": [
+			{ "key": "has_next_field", "operator": "equal", "operand": true },
+			{ "key": "panel_visible", "operator": "equal", "operand": true },
+			{ "key": "panel_has_focus", "operator": "equal", "operand": false }
+		]
 	},
 	{
-		"keys": ["escape"], "command": "clear_fields", "context": [{
-			"key": "has_prev_field", "operator": "equal", "operand": true
-		}, { "key": "panel_visible", "operator": "equal", "operand": true
-			}, { "key": "panel_has_focus", "operator": "equal", "operand": false }]
+		"keys": ["escape"], "command": "clear_fields",
+		"context": [
+			{ "key": "has_prev_field", "operator": "equal", "operand": true },
+			{ "key": "panel_visible", "operator": "equal", "operand": true },
+			{ "key": "panel_has_focus", "operator": "equal", "operand": false }
+		]
 	},
 	// {
 	// 	"keys": ["shift+escape"], "command": "hide_panel",
@@ -282,8 +317,8 @@
 	{
 		"keys": ["shift+escape"], "command": "chain",
 		"context": [
-			{ "key": "panel_visible", "operator": "equal", "operand": true},
-			{ "key": "terminus_view" }
+			{ "key": "panel_visible", "operator": "equal", "operand": true },
+			{ "key": "terminus_view"}
 		],
 		"args": {
 			"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
@@ -293,8 +328,7 @@
 
 	//some default layouts
 	{
-		"keys": ["alt+shift+6"],
-		"command": "set_layout",
+		"keys": ["alt+shift+6"], "command": "set_layout",
 		"args": {
 			"cols": [0.0, 0.6, 1.0],
 			"rows": [0.0, 0.6, 1.0],
@@ -307,8 +341,7 @@
 		}
 	},
 	{
-		"keys": ["alt+shift+7"],
-		"command": "set_layout",
+		"keys": ["alt+shift+7"], "command": "set_layout",
 		"args": {
 			"cols": [0.0, 0.6, 1.0],
 			"rows": [0.0, 0.6, 1.0],

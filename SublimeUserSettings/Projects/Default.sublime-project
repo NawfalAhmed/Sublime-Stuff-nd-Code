@@ -2,7 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\JSONFORMATTERF"
+			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\JsonYapfFormatter"
 		},
 		{
 			"folder_exclude_patterns":
@@ -55,8 +55,9 @@
 				"ProjectSettings",
 				"UserSettings"
 			],
-			"name": "Game Dev",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects"
+			"name": "U: Game Dev",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects",
+			"binary_file_patterns": ["*"],
 		},
 		{
 			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\MenuPreferences"
