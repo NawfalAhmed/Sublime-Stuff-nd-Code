@@ -3,7 +3,9 @@ class Sublime Notes:
 	- Try snapi Nd filecomand
 	- make own syntax highlighting for notes .penguin
 	- right click+leftclick =  expand scope
-	` look at changes in lsp
+	- look at changes in lsp
+	- try changing workspace expanded folders
+	- u can do a command specifcally based on a previous command
 super+A: "Open Action center"
 super+E: "Open File Explorer"
 super+ctrl+Q: "Open Quick Assist"

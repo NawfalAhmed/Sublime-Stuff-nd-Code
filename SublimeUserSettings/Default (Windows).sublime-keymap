@@ -1,4 +1,10 @@
 [
+	// <Sublime Plugins Keybindings>
+	{ "keys": ["ctrl+alt+i"], "command": "increment_selection" },
+	{ "keys": ["ctrl+alt+a"], "command": "alignment" },
+	{ "keys": ["alt+c"], "command": "toggle_snake_camel_pascal"},
+	{ "keys": ["alt+shift+c"], "command": "toggle_all_cases"},
+	// </Sublime Plugins Keybindings>
 	{
 		"keys": ["ctrl+shift+f"], "command": "show_panel",
 		"args": {
@@ -21,7 +27,6 @@
 	},
 	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
 	// 	"context": [{"key": "setting.lsp_active"}]},
-	{ "keys": ["ctrl+alt+space"], "command": "pass"},
 	{
 		"keys": ["shift+space"], "command": "noop",
 		"context": [
@@ -100,10 +105,13 @@
 		"keys": ["ctrl+space"], "command": "expand_region",
 		"args": { "debug": false }
 	},
+	{ "keys": ["context_menu"], "command": "menu_file_commands" },
+	{ "keys": ["shift+context_menu"],	"command": "menu_toggle_preferences"	},
+	{ "keys": ["ctrl+context_menu"], "command": "menu_open_from_current_dir" },
 	{ "keys": ["alt+context_menu"], "command": "open_unity_project"},
 	{
 		"keys": ["super+context_menu"], "command": "show_overlay",
-		"args": { "overlay": "command_palette", "text": "Terminus Open"}
+		"args": { "overlay": "command_palette", "text": "Terminus Op"}
 	},
 	// { "keys": ["context_menu"], "command": "file_commands" },
 	// { "keys": ["shift+context_menu"],	"command": "toggle_preferences"	},
@@ -192,9 +200,16 @@
 
 	// <delete>
 	{
-		"keys": ["super+delete"], "command": "run_macro_file",
-		"args": {
-			"file": "Packages/User/Macros/remove_brackets_and_line.sublime-macro"
+		"keys": ["super+delete"], "command": "bh_key","args": {
+			"plugin":  {
+				"type": ["__all__"],
+				"command": "bh_modules.bracketremove",
+				"args": {
+					"remove_indent": false,
+					"remove_block": false,
+					"remove_content": false
+				}
+			}
 		}
 	},
 	{ "keys": ["super+shift+delete"], "command": "bh_remove_brackets"},
@@ -352,5 +367,17 @@
 				[1, 1, 2, 2]
 			]
 		}
-	}
+	},
+	// original defaults
+	{ "keys": ["alt+c"], "command": "toggle_case_sensitive", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+r"], "command": "toggle_regex", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+
 ]
