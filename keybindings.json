@@ -59,62 +59,18 @@
 		]
 	},
 // -----------------------------------------------------------------------------
-	// Toggle Global Enable
-	{ "keys": ["ctrl+alt+super+e"], "command": "bh_toggle_enable"},
-	// Search to end of file for bracket
+	// "command": "bh_async_key"
+	//fold/unfold bracket content
 	{
-		"keys": ["ctrl+alt+super+b"], "command": "bh_key",
-		"args": { "lines": true }
-	},
-	// Go to left bracket
-	{
-		"keys": ["ctrl+alt+super+up"], "command": "bh_key",
+		"keys": ["alt+b"], "command": "bh_key",
 		"args": {
-			"no_outside_adj": null,
-			"no_block_mode": null,
-			"lines": true,
-			"plugin": {
-				"type": ["__all__"],
-				"command": "bh_modules.bracketselect",
-				"args": { "select": "left"}
-			}
+			"plugin": { "type": ["__all__"], "command": "bh_modules.foldbracket"}
 		}
 	},
-	// Go to right bracket
+	// expand to current bracketcontent with or without bracket
 	{
-		"keys": ["ctrl+alt+super+down"], "command": "bh_key",
-		"args": {
-			"no_outside_adj": null,
-			"no_block_mode": null,
-			"lines": true,
-			"plugin": {
-				"type": ["__all__"],
-				"command": "bh_modules.bracketselect",
-				"args": { "select": "right"}
-			}
-		}
-	},
-	// Remove brackets
-	{ "keys": ["ctrl+alt+super+r"], "command": "bh_remove_brackets"},
-	// Toggle string escape mode for sub bracket search in strings
-	{ "keys": ["ctrl+alt+super+x"], "command": "bh_toggle_string_escape_mode"},
-	// Jump to matching bracket
-	{
-		"keys": ["ctrl+m"], "command": "bh_key",
-		"args": {
-			"plugin": {
-				"args": { "select": "right", "alternate": true },
-				"command": "bh_modules.bracketselect",
-				"type": ["__all__"]
-			},
-			"lines": true,
-			"no_outside_adj": null
-		}
-	},
-	// Select text between brackets
-	{
-		"no_outside_adj": null,
-		"keys": ["ctrl+alt+super+s"], "command": "bh_key",
+		"keys": ["ctrl+b"], "no_outside_adj": null,
+		"command": "bh_key",
 		"args": {
 			"lines": true,
 			"plugin": {
@@ -122,9 +78,9 @@
 			}
 		}
 	},
-	// Select text including brackets
+	//expand to next bracketcontents+brackets()
 	{
-		"keys": ["ctrl+alt+super+d"], "command": "bh_key",
+		"keys": ["ctrl+shift+b"], "command": "bh_key",
 		"args": {
 			"no_outside_adj": null,
 			"lines": true,
@@ -135,42 +91,12 @@
 			}
 		}
 	},
-	// Select tag name of HTML/XML tag (both opening name and closing)
+
+	//swap brackets
+	{ "keys": ["alt+shift+b"], "command": "swap_brackets"},
+	//swap quotes
 	{
-		"keys": ["ctrl+alt+super+t"], "command": "bh_key",
-		"args": {
-			"plugin": {
-				"type": ["cfml", "html", "angle"],
-				"command": "bh_modules.tagnameselect"
-			}
-		}
-	},
-	// Select the attribute to the right of the cursor (will wrap inside the tag)
-	{
-		"keys": ["ctrl+alt+super+right"], "command": "bh_key",
-		"args": {
-			"plugin": {
-				"type": ["cfml", "html", "angle"],
-				"command": "bh_modules.tagattrselect",
-				"args": { "direction": "right"}
-			}
-		}
-	},
-	// Select the attribute to the left of the cursor (will wrap inside the tag)
-	{
-		"keys": ["ctrl+alt+super+left"], "command": "bh_key",
-		"args": {
-			"plugin": {
-				"type": ["cfml", "html", "angle"],
-				"command": "bh_modules.tagattrselect",
-				"args": { "direction": "left"}
-			}
-		}
-	},
-	// Convert single quote string to double quoted string and vice versa
-	// Will handle escaping or unescaping quotes within the string
-	{
-		"keys": ["ctrl+alt+super+q"], "command": "bh_key",
+		"keys": ["alt+'"], "command": "bh_key",
 		"args": {
 			"lines": true,
 			"plugin": {
@@ -184,17 +110,43 @@
 			}
 		}
 	},
-	// Fold contents between brackets
+	// jump/unjump brackets
 	{
-		"keys": ["ctrl+alt+super+["], "command": "bh_key",
+		"keys": ["alt+["], "command": "bh_key",
 		"args": {
-			"plugin": { "type": ["__all__"], "command": "bh_modules.foldbracket"}
+			"no_outside_adj": null,
+			"no_block_mode": null,
+			"lines": true,
+			"plugin": {
+				"type": ["__all__"],
+				"command": "bh_modules.bracketselect",
+				"args": { "select": "left"}
+			}
 		}
 	},
-	// Swap brackets with another type
-	{ "keys": ["ctrl+alt+super+e"], "command": "swap_brackets"},
-	// Surround selection with brackets from quick panel
-	{ "keys": ["ctrl+alt+super+w"], "command": "wrap_brackets"},
-	// Toggle high visibility mode
-	{ "keys": ["ctrl+alt+super+v"], "command": "bh_toggle_high_visibility"}
+	{
+		"keys": ["alt+shift+["], "command": "soft_undo",
+		"context": [
+			{ "key": "last_command", "operator": "equal", "operand": "bh_key"}
+		]
+	},
+	{
+		"keys": ["alt+]"], "command": "bh_key",
+		"args": {
+			"no_outside_adj": null,
+			"no_block_mode": null,
+			"lines": true,
+			"plugin": {
+				"type": ["__all__"],
+				"command": "bh_modules.bracketselect",
+				"args": { "select": "right"}
+			}
+		}
+	},
+	{
+		"keys": ["alt+shift+]"], "command": "soft_undo",
+		"context": [
+			{ "key": "last_command", "operator": "equal", "operand": "bh_key"}
+		]
+	}
 ]
