@@ -97,5 +97,11 @@
 	"theme": "Material Augmented Reaction.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"match_tags": false,
+	"match_brackets_angle": false,
+	"match_brackets_braces": false,
+	"match_brackets_square": false,
+	"match_brackets_content": false,
+	"match_brackets": false
 }
