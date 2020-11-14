@@ -1,3 +1,8 @@
 {
-"ignore_threshold": true
+	"ignore_threshold": true,
+	"show_bracket_popup_always": true,
+	"popup_char_context": 80,
+	"popup_line_context": 4,
+	// "content_highlight_bar": true,
+	// "align_content_highlight_bar": true,
 }

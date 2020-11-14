@@ -1,7 +1,7 @@
 {
 	"auto_complete_cycle": true,
 	"auto_find_in_selection": true,
-	"auto_sidebar_reveal": false,
+	"auto_sidebar_reveal": true,
 	"binary_file_patterns":
 	[
 		"*.exe",
@@ -62,6 +62,7 @@
 		"MarkdownEditing",
 		"OmniSharp",
 		"R-IDE",
+		"SqlBeautifier",
 		"SQLPlus",
 		"Status Bar Time",
 		"SublimeLinter",

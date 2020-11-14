@@ -6,12 +6,23 @@ from os.path import split as splitpath
 class FormatPythonOnSave(sublime_plugin.ViewEventListener):
 
 	def on_pre_save(self):
-		self.view.run_command("lsp_format_document")
-		text = self.view.file_name() + " (" + self.view.encoding() + ")"
-		# sublime.status_message("Formated and Saved " + text)
-		sublime.set_timeout_async(
-			lambda: sublime.status_message("Formated and Saved " + text), 100
-		)
+		if self.view.match_selector(0, "source.python"):
+			self.view.run_command("lsp_format_document")
+			text = self.view.file_name() + " (" + self.view.encoding() + ")"
+			sublime.set_timeout_async(
+				lambda: sublime.status_message("Formated and Saved " + text), 100
+			)
+
+
+class IndentWithTabsOnSave(sublime_plugin.ViewEventListener):
+
+	def on_pre_save(self):
+		# if not self.view.settings().get('format_on_save'):
+		if self.view.settings().get('indent_with_tabs_on_save'):
+			self.view.window().run_command(
+				'unexpand_tabs', {"set_translate_tabs": True}
+			)
+
 		# window = self.view.window()
 
 		# def fixformatchanges():
@@ -34,13 +45,3 @@ class FormatPythonOnSave(sublime_plugin.ViewEventListener):
 		# 	sublime.set_timeout_async(lambda: fixformatchanges(), 1300)
 
 		# 	sublime.set_timeout_async(lambda: s.set('format_on_save', True), 1500)
-
-
-class IndentWithTabsOnSave(sublime_plugin.ViewEventListener):
-
-	def on_pre_save(self):
-		# if not self.view.settings().get('format_on_save'):
-		if self.view.settings().get('indent_with_tabs_on_save'):
-			self.view.window().run_command(
-				'unexpand_tabs', {"set_translate_tabs": True}
-			)
