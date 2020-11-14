@@ -1,0 +1,21 @@
+{
+	"target": "terminus_exec",
+	"cancel": "terminus_cancel_build",
+	"focus": true,
+
+	"shell_cmd": "python \"C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserSettings\\Build Systems\\RunGit.py\"",
+	"working_dir": "$file_path",
+	"env": {"PYTHONIOENCODING": "utf-8"},
+	// "variants": [
+	// 	{
+	// 		"name": "Status",
+	// 		"shell_cmd": "wsl git status",
+	// 		"focus": false,
+	// 	},
+	// 	{
+	// 		"name": "Push To Master",
+	// 		"shell_cmd": "wsl git push",
+	// 		"focus": true,
+	// 	}
+	// ],
+}
