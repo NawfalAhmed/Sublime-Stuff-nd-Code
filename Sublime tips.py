@@ -5,14 +5,14 @@ class Console:
 	sublime.yes_no_cancel_dialog("Do You Want To Create Input File?")
 
 class KeyBindings:
-	#Try Changning word seperators in settings
+	#Try Changing word separators in settings
 	#Syntax Specific KeyBinding
 	"context": [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" }],
 
 class Snippets:
 	#Description in Snippets
 	"<description>For Enumerate Loop</description>"
-	#Location Specifing
+	#Location Specifying
 	"${1:this}"
 
 class Builds:

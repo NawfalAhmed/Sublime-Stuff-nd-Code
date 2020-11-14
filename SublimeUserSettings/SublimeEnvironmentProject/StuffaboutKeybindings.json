@@ -1,0 +1,20 @@
+[
+	{ "keys": ["ctrl+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
+	{ "keys": ["ctrl+shift+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+
+	{ "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+
+	{ "keys": ["ctrl+k", "ctrl+/"], "command": "toggle_inline_diff" },
+	{ "keys": ["ctrl+k", "ctrl+;"], "command": "toggle_inline_diff", "args": { "prefer_hide": true } },
+	{ "keys": ["ctrl+k", "ctrl+b"], "command": "toggle_side_bar" },
+	{ "keys": ["ctrl+k", "ctrl+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
+	{ "keys": ["ctrl+k", "ctrl+c"], "command": "show_at_center" },
+	{ "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
+	{ "keys": ["ctrl+k", "ctrl+g"], "command": "clear_bookmarks", "args": {"name": "mark"} },
+	{ "keys": ["ctrl+k", "ctrl+j"], "command": "unfold_all" },
+	{ "keys": ["ctrl+k", "ctrl+l"], "command": "lower_case" },
+	{ "keys": ["ctrl+k", "ctrl+t"], "command": "fold_tag_attributes" },
+	{ "keys": ["ctrl+k", "ctrl+u"], "command": "upper_case" },
+
+]
+

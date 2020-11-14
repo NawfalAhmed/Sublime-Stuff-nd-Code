@@ -128,8 +128,23 @@
 
 	//builds and terminals
 	{
+		"keys": ["alt+g"], "command": "build",
+		"args": {
+			"build_system": "Packages/User/Build Systems/Git.sublime-build",
+			"choice_build_system": true
+		}
+	},
+	{
 		"keys": ["ctrl+enter"], "command": "chain",
 		"args": { "commands": [["save"], ["build"]] }
+	},
+	{
+		"keys": ["alt+enter"], "command": "chain",
+		"args": { "commands": [["save"], ["build", { "variant": "Terminus"}]] }
+	},
+	{
+		"keys": ["alt+shift+enter"], "command": "chain",
+		"args": { "commands": [["save"], ["build", { "select": true }]] }
 	},
 	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build"},
 	{
@@ -227,12 +242,12 @@
 	// { "keys": ["alt+up"], "command": "swap_line_up" },
 	// { "keys": ["alt+down"], "command": "swap_line_down" },
 	{
-		"keys": ["alt+shift+down"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/copy_lines_down.sublime-macro"}
+		"keys": ["alt+shift+up"], "command": "copy_lines",
+		"args": { "forward": false }
 	},
 	{
-		"keys": ["alt+shift+up"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/copy_lines_up.sublime-macro"}
+		"keys": ["alt+shift+down"], "command": "copy_lines",
+		"args": { "forward": true }
 	},
 	{
 		"keys": ["ctrl+shift+up"], "command": "move",
@@ -391,7 +406,12 @@
 	{ "keys": ["ctrl+7"], "command": "fold_by_level", "args": { "level": 6 } },
 	{ "keys": ["ctrl+8"], "command": "fold_by_level", "args": { "level": 7 } },
 	{ "keys": ["ctrl+9"], "command": "fold_by_level", "args": { "level": 8 } },
-
 	{ "keys": ["super+shift+tab"], "command": "indent"},
-	{ "keys": ["shift+delete"], "command": "pass", },
+	{ "keys": ["shift+delete"], "command": "pass"},
+
+	// experiment -not_logged_to_unity_keyboard_project
+	{ "keys": ["ctrl+z"], "command": "soft_undo"},
+	{ "keys": ["ctrl+shift+z"], "command": "undo"},
+	{ "keys": ["ctrl+y"], "command": "soft_redo"},
+	{ "keys": ["ctrl+shift+y"], "command": "redo"}
 ]

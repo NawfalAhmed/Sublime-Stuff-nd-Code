@@ -76,6 +76,12 @@
 	"line_numbers": true,
 	"lsp_diagnostics_highlight_style": "underline",
 	"margin": 0,
+	"match_brackets": false,
+	"match_brackets_angle": false,
+	"match_brackets_braces": false,
+	"match_brackets_content": false,
+	"match_brackets_square": false,
+	"match_tags": false,
 	"material_theme_accent_indigo": true,
 	"material_theme_compact_panel": true,
 	"material_theme_compact_sidebar": true,
@@ -97,11 +103,5 @@
 	"theme": "Material Augmented Reaction.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true,
-	"match_tags": false,
-	"match_brackets_angle": false,
-	"match_brackets_braces": false,
-	"match_brackets_square": false,
-	"match_brackets_content": false,
-	"match_brackets": false
+	"word_wrap": true
 }
