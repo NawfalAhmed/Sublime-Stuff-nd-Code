@@ -2,9 +2,6 @@
 	"folders":
 	[
 		{
-			"path": "Redacted"
-		},
-		{
 			"folder_exclude_patterns":
 			[
 				"AI",
@@ -60,6 +57,9 @@
 				"UserSettings"
 			],
 			"name": "U: Game Dev",
+			"path": "Redacted"
+		},
+		{
 			"path": "Redacted"
 		},
 		{
