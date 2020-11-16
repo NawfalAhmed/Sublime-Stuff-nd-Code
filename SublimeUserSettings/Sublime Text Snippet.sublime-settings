@@ -1,0 +1,5 @@
+// These settings override both User and Default settings for the Sublime Text Snippet syntax
+{
+
+	"color_scheme": "MonokaiPenguinforSettings.sublime-color-scheme"
+}
