@@ -6,6 +6,8 @@ class Sublime Notes:
 	- look at changes in lsp
 	- try changing workspace expanded folders
 	- u can do a command specifcally based on a previous command
+	- fix copy lines up/down such that it scrolls view if new region is out of view
+	- i can store data in static variables in sublime plugin atleast for one session
 super+A: "Open Action center"
 super+E: "Open File Explorer"
 super+ctrl+Q: "Open Quick Assist"
