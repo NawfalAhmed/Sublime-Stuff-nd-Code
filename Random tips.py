@@ -42,8 +42,8 @@ class Linux:
 	for FILE in *;do unrar x $FILE; done
 	# crop
 	ffmpeg -i "AlignTrim.mp4" -vf "crop=300:150:450:40" AlignCrop.mp4
-	# crop and convert to gif
-	ffmpeg -i AlignCrop.mp4 -vf "crop=300:150:450:40;scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 Align.gif
+	# convert to gif
+	ffmpeg -i Test.mp4 -vf "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 Test.gif
 class Git:
 	# Removing a folder
 	path_to_folder/ # add this to gitignore

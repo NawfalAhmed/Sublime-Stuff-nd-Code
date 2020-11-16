@@ -131,7 +131,6 @@
 		"keys": ["alt+g"], "command": "build",
 		"args": {
 			"build_system": "Packages/User/Build Systems/Git.sublime-build",
-			"choice_build_system": true
 		}
 	},
 	{

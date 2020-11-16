@@ -16,3 +16,7 @@ super+X: "Open the Quick Link menu"
 
 
 fix the registry edit made to .../explorer/advanced/hotkeysdisable
+
+
+# to fix Aura remove this in editor folder
+EditorStyles.miniButton
