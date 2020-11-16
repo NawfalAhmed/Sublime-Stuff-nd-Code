@@ -1,0 +1,5 @@
+[
+	{ "args": { "to": "brackets"}, "command": "expand_selection"},
+	{ "args": { "to": "brackets"}, "command": "expand_selection"},
+	{ "args": { "select": true }, "command": "format_json"}
+]
