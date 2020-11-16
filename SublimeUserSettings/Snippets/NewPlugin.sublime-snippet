@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+import sublime
+import sublime_plugin
+
+
+class ${1:User}Command(sublime_plugin.${2:Text}Command):
+	def run(self, ${3:edit}):
+		${4:self.view.insert(edit, 0, "Hello, World!")}
+
+]]></content>
+</snippet>
