@@ -87,6 +87,7 @@
 		"args": { "to": "eol", "extend": true }
 	},
 	{ "keys": ["alt+n"], "command": "smooth_new"},
+	{ "keys": ["ctrl+n"], "command": "smooth_new_buffer"},
 	{ "keys": ["alt+o"], "command": "prompt_select_workspace"},
 	{ "keys": ["alt+p"], "command": "menu_open_from_current_dir"},
 	{ "keys": ["alt+r"], "command": "rename_file"},
