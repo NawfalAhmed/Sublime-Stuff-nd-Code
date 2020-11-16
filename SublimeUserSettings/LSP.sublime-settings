@@ -1,23 +1,7 @@
 {
+	"auto_show_diagnostics_panel": "never",
 	"clients":
 	{
-		"pyls": {
-			"command": ["pyls"],
-			"scopes": ["source.python"],
-			"syntaxes": ["Packages/Python/Python.sublime-syntax", "Packages/MagicPython/grammars/MagicPython.tmLanguage", "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"],
-			"languageId": "python",
-			"settings": {
-					"pyls.plugins.jedi.extra_paths": [
-							// add jfcherng-sublime/ST-API-stubs
-							"$packages/../ST-API-stubs",
-							// the followings come from the default settings
-							"$sublime_py_files_dir",
-							"$packages",
-					],
-					"pyls.plugins.autopep8.enabled": false,
-					"pyls.plugins.yapf.enabled": true,
-			},
-		},
 		"omnisharp":
 		{
 			"command":
@@ -36,11 +20,40 @@
 				"Packages/C#/C#.sublime-syntax",
 				"Packages/Unity3D/UnityC#.tmLanguage"
 			]
+		},
+		"pyls":
+		{
+			"command":
+			[
+				"pyls"
+			],
+			"enabled": true,
+			"languageId": "python",
+			"scopes":
+			[
+				"source.python"
+			],
+			"settings":
+			{
+				"pyls.plugins.autopep8.enabled": false,
+				"pyls.plugins.jedi.extra_paths":
+				[
+					"$packages/../ST-API-stubs",
+					"$sublime_py_files_dir",
+					"$packages"
+				],
+				"pyls.plugins.yapf.enabled": true
+			},
+			"syntaxes":
+			[
+				"Packages/Python/Python.sublime-syntax",
+				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
+				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+			]
 		}
 	},
 	"diagnostics_gutter_marker": "sign",
 	"show_code_actions_bulb": true,
 	"show_diagnostics_in_view_status": false,
-	"show_symbol_action_links": true,
-	"auto_show_diagnostics_panel": "never"
+	"show_symbol_action_links": true
 }
