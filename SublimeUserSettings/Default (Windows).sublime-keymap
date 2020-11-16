@@ -137,9 +137,37 @@
 
 	//builds and terminals
 	{
-		"keys": ["alt+g"], "command": "build",
+		"keys": ["alt+g"], "command": "terminus_exec",
 		"args": {
-			"build_system": "Packages/User/Build Systems/Git.sublime-build",
+			"focus": true,
+			"cmd": [
+				"python",
+				"-c",
+				"from os import system; system('wsl git ' + c) if (c:=input('Enter Git Command: git ').lower()) != 'exit' else print('Cancelled')"
+			],
+			"working_dir": "$file_path"
+		}
+	},
+	{
+		"keys": ["alt+s"], "command": "terminus_open",
+		"args": {
+			"panel_name": "Google Incognito Search",
+			"cmd": [
+				"python",
+				"-c",
+				"from subprocess import run; run(f'C:/Program Files (x86)/Google/Chrome/Application/chrome -incognito \"? {c}\"') if (c:=input('Incognito Search: ')) != 'exit' else print('Cancelled')"
+			],
+			"working_dir": "$file_path"
+		}
+	},
+	{
+		"keys": ["alt+shift+s"], "command": "exec",
+		"args": {
+			"cmd": [
+				"C:/Program Files (x86)/Google/Chrome/Application/chrome",
+				"-incognito"
+			],
+			"show_panel": false
 		}
 	},
 	{
@@ -167,7 +195,21 @@
 	// 		"selector", "operator": "equal", "operand": "source.assembly" }],
 	// 	"args": { "commands": [["save"],["build", { "select": true}]]}
 	// },
-	{ "keys": ["super+shift+j"], "command": "run_jupyter"},
+	{
+		"keys": ["super+shift+j"], "command": "terminus_open",
+		"args": {
+			"title": "Jupyter Notebook",  // "tag": "jupyter",
+			"post_window_hooks": [
+				["move_tab_back"], [ "carry_file_to_pane", { "direction": "down"} ],
+				[ "toggle_zoom_pane", { "fraction": 0.2 } ],
+				[ "travel_to_pane", { "direction": "up"} ],
+				[
+					"terminus_send_string",
+					{ "string": "jupyter notebook\n", "visible_only": true }
+				]
+			]
+		}
+	},
 	{
 		"keys": ["super+`"], "command": "toggle_terminus_panel",
 		"args": {
@@ -204,20 +246,24 @@
 	// <close>
 	{ "keys": ["ctrl+w"], "command": "safe_close"},
 	{
-		"keys": ["ctrl+w"], "command": "chain",
-		"context": [
-			{
-				"key": "selector",
-				"operator": "equal",
-				"operand": "source.assembly"
-			}
-		],
-		"args": { "commands": [["delete_assembly_stuff"], ["safe_close"]] }
+		"keys": ["ctrl+w"], "command": "terminus_close",
+		"context": [{ "key": "terminus_view"}]
 	},
 	{
 		"keys": ["ctrl+shift+w"], "command": "destroy_pane",
 		"args": { "direction": "self"}
 	},
+	// {
+	// 	"keys": ["ctrl+w"], "command": "chain",
+	// 	"context": [
+	// 		{
+	// 			"key": "selector",
+	// 			"operator": "equal",
+	// 			"operand": "source.assembly"
+	// 		}
+	// 	],
+	// 	"args": { "commands": [["delete_assembly_stuff"], ["safe_close"]] }
+	// },
 	// </close>
 
 	// <delete>
@@ -307,12 +353,12 @@
 	{
 		"keys": ["escape"], "command": "pass",
 		"context": [
-			{ "key": "terminus_view"
-			}, { "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "panel_has_focus", "operator": "equal", "operand": false
-			}, { "key": "num_selections", "operator": "equal", "operand": 1 },
-			{ "key": "has_next_field", "operator": "equal", "operand": false
-			}, { "key": "has_prev_field", "operator": "equal", "operand": false },
+			{ "key": "terminus_view"},
+			{ "key": "panel_visible", "operator": "equal", "operand": true },
+			{ "key": "panel_has_focus", "operator": "equal", "operand": false },
+			{ "key": "num_selections", "operator": "equal", "operand": 1 },
+			{ "key": "has_next_field", "operator": "equal", "operand": false },
+			{ "key": "has_prev_field", "operator": "equal", "operand": false },
 			{ "key": "overlay_visible", "operator": "equal", "operand": false },
 			{ "key": "popup_visible", "operator": "equal", "operand": false },
 			{
