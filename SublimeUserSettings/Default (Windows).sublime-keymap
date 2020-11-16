@@ -1,6 +1,10 @@
 [
 	// <Recent Keybind>
 	{
+		"keys": ["shift+backspace"], "command": "run_macro_file",
+		"args": { "file": "Packages/User/Macros/remove_function.sublime-macro"}
+	},
+	{
 		"keys": ["alt+f"], "command": "run_macro_file",
 		"args": {
 			"file": "Packages/User/Macros/FormatJsonBracketContents.sublime-macro"
@@ -131,9 +135,9 @@
 	// },
 	// other commands
 	{ "keys": ["ctrl+shift+o"], "command": "open_in_browser"},
-	{ "keys": ["ctrl+k", "ctrl+k"], "command": "pass"},
+	{ "keys": [ "ctrl+k", "ctrl+k"], "command": "pass"},
 	{ "keys": ["ctrl+shift+k"], "command": "pass"},
-	{ "keys": ["insert", "insert"], "command": "toggle_overwrite"},
+	{ "keys": [ "insert", "insert"], "command": "toggle_overwrite"},
 
 	//builds and terminals
 	{
@@ -176,11 +180,11 @@
 	},
 	{
 		"keys": ["alt+enter"], "command": "chain",
-		"args": { "commands": [["save"], ["build", { "variant": "Terminus"}]] }
+		"args": { "commands": [["save"], [ "build", { "variant": "Terminus"} ]] }
 	},
 	{
 		"keys": ["alt+shift+enter"], "command": "chain",
-		"args": { "commands": [["save"], ["build", { "select": true }]] }
+		"args": { "commands": [["save"], [ "build", { "select": true } ]] }
 	},
 	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build"},
 	{
@@ -343,7 +347,7 @@
 					"insert_snippet",
 					{ "name": "Packages/User/Snippets/CppDefault.sublime-snippet"}
 				],
-				["set_file_type", { "syntax": "Packages/C++/C++.sublime-syntax"}]
+				[ "set_file_type", { "syntax": "Packages/C++/C++.sublime-syntax"} ]
 			]
 		}
 	},
@@ -405,7 +409,7 @@
 			{ "key": "terminus_view"}
 		],
 		"args": {
-			"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
+			"commands": [["terminus_close"], [ "hide_panel", { "cancel": true } ]]
 		}
 	},
 	// </escape key remapped>
@@ -414,26 +418,26 @@
 	{
 		"keys": ["alt+shift+6"], "command": "set_layout",
 		"args": {
-			"cols": [0.0, 0.6, 1.0],
-			"rows": [0.0, 0.6, 1.0],
+			"cols": [ 0.0, 0.6, 1.0 ],
+			"rows": [ 0.0, 0.6, 1.0 ],
 			"cells": [
 				//| coln | rowb |cole|rowe|
-				[0, 0, 1, 1],
-				[1, 0, 2, 1],
-				[0, 1, 2, 2]
+				[ 0, 0, 1, 1 ],
+				[ 1, 0, 2, 1 ],
+				[ 0, 1, 2, 2 ]
 			]
 		}
 	},
 	{
 		"keys": ["alt+shift+7"], "command": "set_layout",
 		"args": {
-			"cols": [0.0, 0.6, 1.0],
-			"rows": [0.0, 0.6, 1.0],
+			"cols": [ 0.0, 0.6, 1.0 ],
+			"rows": [ 0.0, 0.6, 1.0 ],
 			"cells": [
 				//| coln | rowb |cole|rowe|
-				[0, 0, 2, 1],
-				[0, 1, 1, 2],
-				[1, 1, 2, 2]
+				[ 0, 0, 2, 1 ],
+				[ 0, 1, 1, 2 ],
+				[ 1, 1, 2, 2 ]
 			]
 		}
 	},
