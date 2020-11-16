@@ -32,7 +32,7 @@ class UserTestCommand(sublime_plugin.WindowCommand):
 		for module, module_commands in groupby(
 			command_list, lambda key: key.__module__.split('.')[0]
 		):
-			module = module.replace(' ','').replace('-','')
+			module = module.replace(' ', '').replace('-', '')
 			module_commands = list(module_commands)
 			# if len(module_commands) !=1:
 			self.append("\tclass " + module + ":")

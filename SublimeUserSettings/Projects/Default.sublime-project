@@ -66,12 +66,12 @@
 			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\JsonYapfFormatter"
 		},
 		{
-			"name": "UserPlugins",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserPlugins"
-		},
-		{
 			"name": "UserSettings",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserSettings"
+		},
+		{
+			"name": "UserPlugins",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserPlugins"
 		}
 	],
 	"settings":
