@@ -78,14 +78,6 @@
 	{
 		"LSP":
 		{
-			"clangd":
-			{
-				"enabled": false
-			},
-			"pyls":
-			{
-				"enabled": true
-			},
 			"rlang":
 			{
 				"enabled": true

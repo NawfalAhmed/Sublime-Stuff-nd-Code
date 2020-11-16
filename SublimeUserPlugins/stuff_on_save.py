@@ -22,6 +22,7 @@ class IndentWithTabsOnSave(sublime_plugin.ViewEventListener):
 			self.view.window().run_command(
 				'unexpand_tabs', {"set_translate_tabs": True}
 			)
+			self.view.run_command("scroll_lines", {"amount": -1.0 })
 
 		# window = self.view.window()
 

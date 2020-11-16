@@ -1,4 +1,5 @@
 [
+	{ "caption": "User: New Plugin", "command": "new_user_plugin"},
 	{ "caption": "Run Python in Terminal", "command": "run_on_terminal"},
 	{
 		"caption": "Execute Command (At Current Directory)",
