@@ -1,6 +1,11 @@
 [
 	{ "caption": "-"},
 	{ "command": "format_json"},
+	{ "caption": "Format Selection", "command": "format_json", "args": {"select": true},
+		// "context": [
+		// 	{ "key": "selector", "operator": "equal", "operand": "source.json"}
+		// ]
+	},
 	{ "caption": "-"},
 	{ "command": "user_test"}
 ]

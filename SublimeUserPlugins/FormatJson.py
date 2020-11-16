@@ -1,32 +1,61 @@
 import sublime
 import sublime_plugin
 import re
+from os import system
 
 
 class FormatJsonCommand(sublime_plugin.TextCommand):
 
-	def run(self, edit):
-		self.view.run_command("format_json_step1")
-		sublime.set_timeout_async(lambda: self.delayedrun(), 2000)
+	def run(self, edit, select=False):
+		# self.view.run_command("expand_selection", {"to": "brackets"})
+		# self.view.run_command("expand_selection", {"to": "brackets"})
+		contents = self.view.substr(sublime.Region(0, self.view.size()))
+		# clear file contents
+		system(r"break > C:\Users\Ibraheem\Desktop\SublimeText\ffformat.py")
+		if select:
+			regions = self.view.sel()
+			for region in regions:
+				region_contents = self.view.substr(region).lstrip()
+				self.view.run_command(
+					"format_json_step1", {
+						"select": select,
+						"contents": region_contents
+					}
+				)
+		else:
+			self.view.run_command(
+				"format_json_step1", {
+					"select": select,
+					"contents": contents
+				}
+			)
+		sublime.set_timeout_async(lambda: self.delayedrun(select), 300)
+		# sublime.set_timeout_async(
+		# 	lambda: self.view.
+		# 	run_command("reindent", {"single_line": False}, 1500)
+		# )
 
-	def delayedrun(self):
-		self.view.run_command("format_json_step2")
-		self.view.window().run_command("save")
+	def delayedrun(self, select):
+		self.view.run_command("format_json_step2", {
+			"select": select,
+		})
+
+		if not select:
+			self.view.window().run_command("save")
 
 
 class FormatJsonStep1Command(sublime_plugin.TextCommand):
 
-	def run(self, edit):
+	def run(self, edit, select, contents):
 
-		content = self.view.substr(sublime.Region(0, self.view.size()))
-		content = content.replace("//", "#")
-		content = content.replace("res:#", "res://")
-		indexes = re.finditer(",\\s*[\\)\\]\\}]", content)
+		contents = contents.replace("//", "#")
+		contents = contents.replace("res:#", "res://")
+		indexes = re.finditer(",\\s*[\\)\\]\\}]", contents)
 		indexes = [i.start() for i in indexes]
-		content = "".join(
-			[char for i, char in enumerate(content) if i not in indexes]
+		contents = "".join(
+			[char for i, char in enumerate(contents) if i not in indexes]
 		)
-		content = content.replace("true", "True").replace("false", "False")
+		contents = contents.replace("true", "True").replace("false", "False")
 		name = "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\ffformat.py"
 		style = "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\ssstyle.txt"
 		command = "yapf " + name + " --in-place --style " + style
@@ -37,8 +66,10 @@ class FormatJsonStep1Command(sublime_plugin.TextCommand):
 			}
 		)
 		# with open(path + 'temporary.notpy', 'w') as file:
-		with open(name, 'w') as file:
-			file.write(content)
+		with open(name, 'a') as file:
+			file.write(contents)
+			if select:
+				file.write("\n# end region\n")
 
 	def is_enabled(self):
 		return self.view.match_selector(0, "source.json")
@@ -46,28 +77,38 @@ class FormatJsonStep1Command(sublime_plugin.TextCommand):
 
 class FormatJsonStep2Command(sublime_plugin.TextCommand):
 
-	def run(self, edit):
+	def run(self, edit, select):
 		with open(
 			"C:\\Users\\Ibraheem\\Desktop\\SublimeText\\ffformat.py", 'r'
 		) as file:
-			content = file.read()
-		content = content.replace("#", "//")
-		content = content.replace("True", "true").replace("False", "false")
+			contents = file.read()
+		contents = contents.replace("#", "//")
+		contents = contents.replace("True", "true").replace("False", "false")
 
 		startindexes = sorted(
-			[i.end() - 1 for i in re.finditer("keys\": \\[.*\\],\n", content)],
+			[i.end() - 1 for i in re.finditer("keys\": \\[.*\\],\n", contents)],
 			reverse=True
 		)
 		endindexes = sorted(
-			[i.end() - 1 for i in re.finditer("keys\": \\[.*\\],\n\\s*", content)],
+			[
+				i.end() - 1
+				for i in re.finditer("keys\": \\[.*\\],\n\\s*", contents)
+			],
 			reverse=True
 		)
-		contentlist = list(content)
+		contentslist = list(contents)
 		for s, e in zip(startindexes, endindexes):
-			contentlist[e] = " "
-			del contentlist[s:e]
-		content = "".join(contentlist)
-		self.view.replace(edit, sublime.Region(0, self.view.size()), content)
+			contentslist[e] = " "
+			del contentslist[s:e]
+		contents = "".join(contentslist)
+		if select:
+			contents = contents.split("\n// end region\n")
+			print(contents)
+			regions = self.view.sel()
+			for region, region_contents in zip(regions, contents):
+				self.view.replace(edit, region, region_contents)
+		else:
+			self.view.replace(edit, sublime.Region(0, self.view.size()), contents)
 
 	def is_enabled(self):
 		return self.view.match_selector(0, "source.json")

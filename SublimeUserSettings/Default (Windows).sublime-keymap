@@ -1,4 +1,10 @@
 [
+	{
+		"keys": ["alt+f"], "command": "run_macro_file",
+		"args": {
+			"file": "Packages/User/Macros/FormatJsonBracketContents.sublime-macro"
+		}
+	},
 	// <Sublime Plugins Keybindings>
 	{ "keys": ["ctrl+alt+i"], "command": "increment_selection"},
 	{ "keys": ["ctrl+alt+a"], "command": "alignment"},
