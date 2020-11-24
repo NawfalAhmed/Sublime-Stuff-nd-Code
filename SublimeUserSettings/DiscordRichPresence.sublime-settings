@@ -1,6 +1,6 @@
 {
 	"details": "working in {project} folder atm",
-	"state": "File has {loc} lines",
+	"state": "File contains {loc} lines",
 	"time_per_file": false,
 	"project_name": ["folder_name"],
 	"start_state": "not working on anything atm"
