@@ -165,15 +165,27 @@
 		}
 	},
 	{
-		"keys": ["alt+shift+s"], "command": "exec",
+		"keys": ["alt+shift+s"], "command": "terminus_open",
 		"args": {
+			"panel_name": "Incognito Youtube Search",
 			"cmd": [
-				"C:/Program Files (x86)/Google/Chrome/Application/chrome",
-				"-incognito"
+				"python",
+				"-c",
+				"from subprocess import run; run(f'C:/Program Files (x86)/Google/Chrome/Application/chrome -incognito \"https://www.youtube.com/results?search_query={c}\"') if (c:=input('Youtube Search: ')) != 'exit' else print('Cancelled')"
 			],
-			"show_panel": false
+			"working_dir": "$file_path"
 		}
 	},
+	// {
+	// 	"keys": ["alt+shift+s"], "command": "exec",
+	// 	"args": {
+	// 		"cmd": [
+	// 			"C:/Program Files (x86)/Google/Chrome/Application/chrome",
+	// 			"-incognito"
+	// 		],
+	// 		"show_panel": false
+	// 	}
+	// },
 	{
 		"keys": ["ctrl+enter"], "command": "chain",
 		"args": { "commands": [["save"], ["build"]] }
