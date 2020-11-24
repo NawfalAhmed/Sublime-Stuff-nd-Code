@@ -1,31 +1,7 @@
 [
-	{
-		"args":
-		{
-			"to": "brackets"
-		},
-		"command": "expand_selection"
-	},
-	{
-		"args": null,
-		"command": "cut"
-	},
-	{
-		"args":
-		{
-			"debug": false
-		},
-		"command": "expand_region"
-	},
-	{
-		"args":
-		{
-			"debug": false
-		},
-		"command": "expand_region"
-	},
-	{
-		"args": null,
-		"command": "paste"
-	}
+	{ "args": { "to": "brackets"}, "command": "expand_selection"},
+	{ "args": null, "command": "cut"},
+	{ "args": { "debug": false }, "command": "expand_region"},
+	{ "args": { "debug": false }, "command": "expand_region"},
+	{ "args": null, "command": "paste"}
 ]
