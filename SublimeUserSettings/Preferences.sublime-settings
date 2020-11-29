@@ -80,7 +80,7 @@
 	"match_brackets": true,
 	"match_brackets_angle": true,
 	"match_brackets_braces": true,
-	"match_brackets_content": true,
+	"match_brackets_content": false,
 	"match_brackets_square": true,
 	"match_tags": true,
 	"material_theme_accent_indigo": true,
@@ -102,7 +102,6 @@
 	"status_bar_path": false,
 	"tab_size": 2,
 	"theme": "Material Augmented Reaction.sublime-theme",
-	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }
