@@ -1,6 +1,8 @@
 class Python:
+	#slicing
+	"slice indexing doesnt give out of range error :3 neat"
 	#sort both lists according to (reverse) sorting order of first
-	list1, list2 = (list(_) for _ in zip(*sorted(zip(list1,list2),reverse = True)))
+	list1, list2 = map(list, zip(*sorted(zip(list1,list2),reverse = True)))
 	@njit(error_model='numpy',parallel=True,fastmath=True)
 	# use isinstance for type check
 
@@ -10,18 +12,18 @@ class Python:
 	class Pip:
 		pip install -U pip #upgrade pip
 		pip install -U PackageName #upgrade packagename
-		pip list 	-o #check outdated packages
-		pip list 	-u #check uptodate packages
+		pip list    -o #check outdated packages
+		pip list    -u #check uptodate packages
 
 class CommandPrompt:
-	cls		# clear screen
-	alt+d		# type cmd, opens in that folder
-	super+r	# type cmd, anywhere
-	d:			# to switch directory
-	dir		# to show directory,
-	start.	# to open file exporer there
-	> 			# for output redirect
-	2>			# for error redirect
+	cls      # clear screen
+	alt+d    # type cmd, opens in that folder
+	super+r  # type cmd, anywhere
+	d:       # to switch directory
+	dir      # to show directory,
+	start.   # to open file exporer there
+	>        # for output redirect
+	2>       # for error redirect
 	#add suffix to multiple
 	for %a in (*) do ren "%a" "Task - %a"
 	#link a specific folder to One Drive
@@ -53,5 +55,5 @@ class Git:
 DESKTOP-2NT06QL
 
 class Unity:
-	# Draw a raycast
+	# Draw a ray from position to a direction, use draw line for between two points
 	Debug.DrawRay(transform.position,transform.forward, Color.red);

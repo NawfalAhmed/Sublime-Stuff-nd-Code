@@ -30,6 +30,7 @@ class UserTestCommand(sublime_plugin.WindowCommand):
 		self.append("class " + title + ":")
 		command_list.sort(key=attrgetter("__module__"))
 		for module, module_commands in groupby(
+			# command_list, lambda key: key.__module__
 			command_list, lambda key: key.__module__.split('.')[0]
 		):
 			module = module.replace(' ', '').replace('-', '')
