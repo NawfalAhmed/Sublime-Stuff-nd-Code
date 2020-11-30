@@ -1,9 +1,6 @@
 [
 	// <Recent Keybind>
-	{
-		"keys": ["shift+backspace"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/remove_function.sublime-macro"}
-	},
+	{ "keys": ["shift+backspace"], "command": "remove_function"},
 	{
 		"keys": ["alt+f"], "command": "run_macro_file",
 		"args": {
@@ -114,10 +111,7 @@
 			}
 		]
 	},
-	{
-		"keys": ["ctrl+space"], "command": "expand_region",
-		"args": { "debug": false }
-	},
+	{	"keys": ["ctrl+space"], "command": "expand_region"},
 	{ "keys": ["context_menu"], "command": "menu_file_commands"},
 	{ "keys": ["shift+context_menu"], "command": "menu_toggle_preferences"},
 	{ "keys": ["ctrl+context_menu"], "command": "menu_open_from_current_dir"},
@@ -284,7 +278,7 @@
 
 	// <delete>
 	{
-		"keys": ["super+delete"], "command": "bh_key",
+		"keys": ["shift+delete"], "command": "bh_key",
 		"args": {
 			"plugin": {
 				"type": ["__all__"],
