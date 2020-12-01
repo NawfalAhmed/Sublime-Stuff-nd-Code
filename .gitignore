@@ -8,6 +8,7 @@ SublimeUserSettings/Projects/Default.sublime-workspace
 *.mp4
 *.ipynb_checkpoints/
 ffformat.py
+*.prefab
 #Game Dev/*/*.*
 #!Game Dev/*/*.cs
 #Game Dev/*/*/*
