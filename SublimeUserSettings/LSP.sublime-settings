@@ -2,12 +2,14 @@
 	"auto_show_diagnostics_panel": "never",
 	"clients":
 	{
-		"omnisharp":
+		"Omnisharp":
 		{
 			"command":
 			[
-				"C:/Users/Ibraheem/.vscode/extensions/ms-dotnettools.csharp-1.23.4/.omnisharp/1.37.3/omnisharp.exe",
-				"-lsp"
+				"C:/Users/Ibraheem/.vscode/extensions/ms-dotnettools.csharp-1.23.6/.omnisharp/1.37.3/omnisharp.exe",
+				"-lsp",
+				"-s",
+				"C:/Users/Ibraheem/Desktop/Unity Projects/Assignment2 3D/Assembly-CSharp.csproj"
 			],
 			"enabled": false,
 			"languageId": "csharp",
