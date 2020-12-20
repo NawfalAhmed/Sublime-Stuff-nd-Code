@@ -2,12 +2,14 @@
 	"auto_show_diagnostics_panel": "never",
 	"clients":
 	{
-		"omnisharp":
+		"Omnisharp":
 		{
 			"command":
 			[
 				"Redacted",
-				"-lsp"
+				"-lsp",
+				"-s",
+				"Redacted"
 			],
 			"enabled": false,
 			"languageId": "csharp",
