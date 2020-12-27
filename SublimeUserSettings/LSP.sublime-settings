@@ -52,6 +52,46 @@
 				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
 				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 			]
+		},
+		"mspyls": {
+			"enabled": false,
+			"command": [ "dotnet",
+				"exec",
+				"E:/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll"	 ],
+			"languageId": "python",
+			"scopes": [ "source.python" ],
+			"syntaxes": [
+				"Packages/Python/Python.sublime-syntax",
+				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
+				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+			],
+			"initializationOptions": {
+				"interpreter": {
+					"properties":  {
+						"UseDefaultDatabase": true,
+						"Version": "3.8" // python version
+					}
+				}
+			},
+			"settings": {
+				"python": {
+					// Solve the 'unresolved import' warning as documented in:
+					// https://github.com/microsoft/python-language-server/blob/master/TROUBLESHOOTING.md//unresolved-import-warnings
+					"autoComplete": {
+						// add extra path for Sublime Text plugins
+						"extraPaths": ["/opt/sublime_text"]
+					},
+					"analysis": {
+						"errors": ["undefined-variable"],
+						"warnings": ["unknown-parameter-name"],
+						"information": ["unresolved-import"],
+						"disabled": [ "too-many-function-arguments", "parameter-missing"]
+					},  // "linting":
+				// {
+				//     "enabled": "false"
+				// }
+				}
+			}
 		}
 	},
 	"diagnostics_gutter_marker": "sign",
