@@ -1,8 +1,8 @@
 {
     "variables": {
-        "caret": "#dedfed", 
-        "foreground": "#dedfed", 
         "background": "#212124", 
+        "foreground": "#dedfed", 
+        "caret": "#dedfed", 
         "black": "#000000", 
         "red": "#cd0000", 
         "green": "#00cd00", 
@@ -20,8 +20,8 @@
         "light_cyan": "#00ffff", 
         "light_white": "#ffffff"
     }, 
+    "name": "Terminus", 
     "globals": {
         "background": "#212123"
-    }, 
-    "name": "Terminus"
+    }
 }

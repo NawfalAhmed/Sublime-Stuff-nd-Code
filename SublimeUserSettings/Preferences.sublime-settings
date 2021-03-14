@@ -57,6 +57,7 @@
 	"gutter": true,
 	"ignored_packages":
 	[
+		"BracketHighlighter",
 		"Display numbers",
 		"FileManager",
 		"LSP-json",
