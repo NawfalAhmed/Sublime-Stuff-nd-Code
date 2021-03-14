@@ -1,8 +1,8 @@
 {
     "variables": {
-        "background": "#212124", 
-        "foreground": "#dedfed", 
         "caret": "#dedfed", 
+        "foreground": "#dedfed", 
+        "background": "#212124", 
         "black": "#000000", 
         "red": "#cd0000", 
         "green": "#00cd00", 
