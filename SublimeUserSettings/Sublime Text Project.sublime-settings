@@ -1,4 +1,7 @@
 // These settings override both User and Default settings for the Sublime Text Project syntax
 {
 	"color_scheme": "MonokaiPenguinforSettings.sublime-color-scheme",
+	// "auto_complete": true,
+	// "auto_complete_selector": "source - comment",
+	// "auto_complete_triggers": [{ "selector": "source.cs", "characters": ".<"}]
 }
