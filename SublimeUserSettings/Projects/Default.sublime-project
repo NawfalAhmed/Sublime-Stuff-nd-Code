@@ -9,9 +9,19 @@
 			"folder_exclude_patterns":
 			[
 				"DCN",
+				"Notes",
+				"Testing",
 				"SublimeUser*"
 			],
 			"path": "Redacted"
+		},
+		{
+			"path": "Redacted",
+			"name": ": Notes"
+		},
+		{
+			"path": "Redacted",
+			"name": ": Testing"
 		},
 		{
 			"path": "Redacted",
