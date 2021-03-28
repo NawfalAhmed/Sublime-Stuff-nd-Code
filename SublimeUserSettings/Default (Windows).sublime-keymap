@@ -34,6 +34,19 @@
 			{ "key": "selector", "operator": "equal", "operand": "source.python"}
 		]
 	},
+	{
+		"keys": ["ctrl+shift+f"], "command": "show_panel",
+		"args": {
+			"panel": "find_in_files",
+			"where": "C:\\Users\\Ibraheem\\Desktop\\SublimeText"
+		},
+		"context": [
+			{ "key": "selector", "operator": "not_equal", "operand": "source.python"}
+		],
+		"context": [
+			{ "key": "selector", "operator": "not_equal", "operand": "source.cs"}
+		]
+	},
 	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
 	// 	"context": [{"key": "setting.lsp_active"}]},
 	{
