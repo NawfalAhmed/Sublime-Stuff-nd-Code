@@ -31,6 +31,16 @@ class CommandPrompt:
 	#check if files are greater than 1 mb
 	forfiles /S /C "cmd /c if @fsize GEQ 1048576 echo @path @fsize" > Size.txt
 
+	class BatchFile:
+		# how to remove prefix from files in the directory of the bat file
+		def prefix_bat_file:
+			::RemovePrefix.bat  "prefix" "fileMask"
+			@echo off
+			setlocal
+			for %%A in ("%~1%~2") do (
+				set "fname=%%~A"
+				call ren "%%fname%%" "%%fname:*%~1=%%"
+			)
 	class Nasm:
 		nasm -f win32 forwin32.asm
 		link /SUBSYSTEM:WINDOWS user32.lib forwin32.obj
