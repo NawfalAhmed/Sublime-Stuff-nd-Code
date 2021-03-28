@@ -2,40 +2,20 @@
 	"folders":
 	[
 		{
+			"file_exclude_patterns":
+			[
+				"*.meta"
+			],
 			"folder_exclude_patterns":
 			[
-				"AI",
-				"CV",
-				"Game Dev",
-				"OS",
-				"Probability",
+				"DCN",
 				"SublimeUser*"
 			],
 			"path": "Redacted"
 		},
 		{
-			"name": ": AI",
-			"path": "Redacted"
-		},
-		{
-			"name": ": CV",
-			"path": "Redacted"
-		},
-		{
-			"name": ": OS",
-			"path": "Redacted"
-		},
-		{
-			"name": ": Probabilty",
-			"path": "Redacted"
-		},
-		{
-			"file_exclude_patterns":
-			[
-				"*.meta"
-			],
-			"name": ": Game Dev",
-			"path": "Redacted"
+			"path": "Redacted",
+			"name": ": DCN"
 		},
 		{
 			"binary_file_patterns":
@@ -56,7 +36,7 @@
 				"ProjectSettings",
 				"UserSettings"
 			],
-			"name": "U: Game Dev",
+			"name": "Unity Scripts",
 			"path": "Redacted"
 		},
 		{
