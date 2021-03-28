@@ -2,40 +2,20 @@
 	"folders":
 	[
 		{
+			"file_exclude_patterns":
+			[
+				"*.meta"
+			],
 			"folder_exclude_patterns":
 			[
-				"AI",
-				"CV",
-				"Game Dev",
-				"OS",
-				"Probability",
+				"DCN",
 				"SublimeUser*"
 			],
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText"
 		},
 		{
-			"name": ": AI",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\AI"
-		},
-		{
-			"name": ": CV",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\CV"
-		},
-		{
-			"name": ": OS",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\OS"
-		},
-		{
-			"name": ": Probabilty",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Probability"
-		},
-		{
-			"file_exclude_patterns":
-			[
-				"*.meta"
-			],
-			"name": ": Game Dev",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Game Dev"
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\DCN",
+			"name": ": DCN"
 		},
 		{
 			"binary_file_patterns":
@@ -56,7 +36,7 @@
 				"ProjectSettings",
 				"UserSettings"
 			],
-			"name": "U: Game Dev",
+			"name": "Unity Scripts",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects"
 		},
 		{
