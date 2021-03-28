@@ -9,9 +9,19 @@
 			"folder_exclude_patterns":
 			[
 				"DCN",
+				"Notes",
+				"Testing",
 				"SublimeUser*"
 			],
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText"
+		},
+		{
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Notes",
+			"name": ": Notes"
+		},
+		{
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Testing",
+			"name": ": Testing"
 		},
 		{
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\DCN",
