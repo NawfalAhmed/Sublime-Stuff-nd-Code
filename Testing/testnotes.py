@@ -15,6 +15,7 @@ functions can have private variables that are kinda like static variable for a f
 example
 """
 
+
 # ------------------------------------------------------------------------------
 def store(new: str) -> str:
 	try:
