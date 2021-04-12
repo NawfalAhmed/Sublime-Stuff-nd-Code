@@ -1,6 +1,12 @@
-// These settings override both User and Default settings for the Python syntax
 {
-	"tab_size": 3,
+	"extensions":
+	[
+		"py3",
+		"pyw",
+		"pt",
+		"notes"
+	],
 	"format_on_save": true,
-	"lsp_diagnostics_highlight_style": "no"
+	"lsp_diagnostics_highlight_style": "no",
+	"tab_size": 3
 }

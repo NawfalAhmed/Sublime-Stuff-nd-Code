@@ -3,6 +3,7 @@
 		"caption": "Terminus: Open Command Prompt in Tab (cmd)",
 		"command": "terminus_open",
 		"args": {
+			"title": "Command Prompt",
 			"cwd": "${file_path:${folder}}",
 		}
 	},

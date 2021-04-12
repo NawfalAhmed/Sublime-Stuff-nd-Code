@@ -15,8 +15,8 @@ class OpenUnityProjectCommand(sublime_plugin.TextCommand):
 		def on_done(index):
 			if index != -1:
 				command = (
-					"\"" + path + "\\LaunchUnityProject.bat\" \"" + files[index] +
-					"\""
+					"\"" + path + "\\LaunchUnityProject.bat\" \"" + files[index]
+					+ "\""
 				)
 				self.view.window().run_command(
 					"exec", {
