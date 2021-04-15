@@ -2,6 +2,10 @@
 	// <Recent Keybind>
 	{ "keys": ["shift+backspace"], "command": "remove_function"},
 	{
+		"keys": ["alt+backspace"], "command": "remove_function",
+		"args": { "copy": true}
+	},
+	{
 		"keys": ["alt+f"], "command": "run_macro_file",
 		"args": {
 			"file": "Packages/User/Macros/FormatJsonBracketContents.sublime-macro"
