@@ -222,7 +222,9 @@
 	{
 		"keys": ["super+shift+j"], "command": "terminus_open",
 		"args": {
-			"title": "Jupyter Notebook",  // "tag": "jupyter",
+			"cwd": "${file_path:${folder}}",
+			"title": "Jupyter Notebook",
+			"tag": "jupyter",
 			"post_window_hooks": [
 				["move_tab_back"], [ "carry_file_to_pane", { "direction": "down"} ],
 				[ "toggle_zoom_pane", { "fraction": 0.2 } ],
