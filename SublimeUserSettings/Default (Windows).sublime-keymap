@@ -1,5 +1,7 @@
 [
 	// <Recent Keybind>
+	{ "keys": ["ctrl+shift+d"], "command": "find_under_expand_skip"},
+	{ "keys": ["alt+s"], "command": "send_python_string"},
 	{ "keys": ["ctrl+shift+`"], "command": "cycle_output_panels"},
 	{ "keys": ["shift+backspace"], "command": "remove_function"},
 	{
@@ -159,7 +161,7 @@
 		}
 	},
 	{
-		"keys": ["alt+s"], "command": "terminus_open",
+		"keys": ["alt+shift+s"], "command": "terminus_open",
 		"args": {
 			"panel_name": "Google Incognito Search",
 			"cmd": [
@@ -170,18 +172,18 @@
 			"working_dir": "$file_path"
 		}
 	},
-	{
-		"keys": ["alt+shift+s"], "command": "terminus_open",
-		"args": {
-			"panel_name": "Incognito Youtube Search",
-			"cmd": [
-				"python",
-				"-c",
-				"from subprocess import run; run(f'C:/Program Files (x86)/Google/Chrome/Application/chrome -incognito \"https://www.youtube.com/results?search_query={c}\"') if (c:=input('Youtube Search: ')) != 'exit' else print('Cancelled')"
-			],
-			"working_dir": "$file_path"
-		}
-	},
+	// {
+	// 	"keys": ["alt+shift+s"], "command": "terminus_open",
+	// 	"args": {
+	// 		"panel_name": "Incognito Youtube Search",
+	// 		"cmd": [
+	// 			"python",
+	// 			"-c",
+	// 			"from subprocess import run; run(f'C:/Program Files (x86)/Google/Chrome/Application/chrome -incognito \"https://www.youtube.com/results?search_query={c}\"') if (c:=input('Youtube Search: ')) != 'exit' else print('Cancelled')"
+	// 		],
+	// 		"working_dir": "$file_path"
+	// 	}
+	// },
 	// {
 	// 	"keys": ["alt+shift+s"], "command": "exec",
 	// 	"args": {
