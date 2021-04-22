@@ -264,7 +264,9 @@
 		"keys": ["super+alt+`"], "command": "toggle_terminus_panel",
 		"args": {
 			"cmd": "ipython",
-			"cwd": "${file_path:${folder}}", "panel_name": "Ipython",
+			"cwd": "${file_path:${folder}}",
+			"panel_name": "Ipython",
+			"tag": "Ipython"
 		}
 	},
 	{
