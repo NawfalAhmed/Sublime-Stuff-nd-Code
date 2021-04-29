@@ -1,6 +1,20 @@
 [
+	{
+		"caption": "User: Open Python Live Output",
+		"command": "terminus_open",
+		"args": {
+			"cmd": "ipython",
+			"cwd": "${file_path:${folder}}",
+			"tag": "LiveIpython",
+			"title": "Live Output",
+			"post_window_hooks": [
+				["move_tab_back"],
+				["carry_file_to_pane", {"direction": "down"}],
+				["toggle_zoom_pane", {"fraction": 0.4}]
+			]
+		}
+	},
 	{ "caption": "User: New Plugin", "command": "new_user_plugin"},
-	{ "caption": "Run Python in Terminal", "command": "run_on_terminal"},
 	{
 		"caption": "Execute Command (At Current Directory)",
 		"command": "execute_cmd"
