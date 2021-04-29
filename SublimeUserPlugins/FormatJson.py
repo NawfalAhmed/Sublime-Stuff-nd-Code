@@ -19,26 +19,24 @@ class FormatJsonCommand(sublime_plugin.TextCommand):
 				self.view.run_command(
 					"format_json_step1", {
 						"select": select,
-						"contents": region_contents
+						"contents": region_contents,
 					}
 				)
 		else:
 			self.view.run_command(
 				"format_json_step1", {
 					"select": select,
-					"contents": contents
+					"contents": contents,
 				}
 			)
-		sublime.set_timeout_async(lambda: self.delayedrun(select), 300)
+		sublime.set_timeout_async(lambda: self.delayedrun(select), 1500)
 		# sublime.set_timeout_async(
 		# 	lambda: self.view.
 		# 	run_command("reindent", {"single_line": False}, 1500)
 		# )
 
 	def delayedrun(self, select):
-		self.view.run_command("format_json_step2", {
-			"select": select,
-		})
+		self.view.run_command("format_json_step2", {"select": select})
 
 		if not select:
 			self.view.window().run_command("save")
@@ -62,7 +60,7 @@ class FormatJsonStep1Command(sublime_plugin.TextCommand):
 		self.view.window().run_command(
 			"exec", {
 				"shell_cmd": command,
-				"show_panel": False
+				"show_panel": False,
 			}
 		)
 		# with open(path + 'temporary.notpy', 'w') as file:
@@ -84,6 +82,14 @@ class FormatJsonStep2Command(sublime_plugin.TextCommand):
 			contents = file.read()
 		contents = contents.replace("#", "//")
 		contents = contents.replace("True", "true").replace("False", "false")
+
+		# with open(
+		# 	"C:\\Users\\Ibraheem\\Desktop\\SublimeText\\ffformatoutputcontent.sublime-keymap",
+		# 	'w'
+		# ) as file:
+		# 	file.write(contents)
+		# 	if select:
+		# 		file.write("\n# end region\n")
 
 		startindexes = sorted(
 			[i.end() - 1 for i in re.finditer("keys\": \\[.*\\],\n", contents)],
@@ -109,6 +115,14 @@ class FormatJsonStep2Command(sublime_plugin.TextCommand):
 				self.view.replace(edit, region, region_contents)
 		else:
 			self.view.replace(edit, sublime.Region(0, self.view.size()), contents)
+
+		# with open(
+		# 	"C:\\Users\\Ibraheem\\Desktop\\SublimeText\\ffformatoutput.sublime-keymap",
+		# 	'w'
+		# ) as file:
+		# 	file.write(contents)
+		# 	if select:
+		# 		file.write("\n# end region\n")
 
 	def is_enabled(self):
 		return self.view.match_selector(0, "source.json")
