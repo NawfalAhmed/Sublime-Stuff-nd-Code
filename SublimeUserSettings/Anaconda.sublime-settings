@@ -25,7 +25,8 @@
 		// "E111",
 		"E226",
 		"E123",
-		"W191"
+		"W191",
+		"W503"
 	],
 	// "pep8_error_levels": {"E": "E", "W": "W", "V": "V"},
 	// "auto_formatting": false,

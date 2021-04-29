@@ -6,7 +6,10 @@
 		"pt",
 		"notes"
 	],
+	"tab_size": 3,
 	"format_on_save": true,
+	"lsp_format_on_save": true,
 	"lsp_diagnostics_highlight_style": "no",
-	"tab_size": 3
+	"show_symbol_action_links": true,
+	"show_code_actions_bulb": true,
 }

@@ -57,6 +57,7 @@
 	"gutter": true,
 	"ignored_packages":
 	[
+		"Anaconda",
 		"Display numbers",
 		"FileManager",
 		"LSP-json",

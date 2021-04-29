@@ -2,18 +2,16 @@ import sublime
 import sublime_plugin
 from os.path import split as splitpath
 
-
-class FormatPythonOnSave(sublime_plugin.ViewEventListener):
-
-	def on_pre_save(self):
-		if self.view.match_selector(0, "source.python"):
-			self.view.run_command("lsp_format_document")
-			text = self.view.file_name() + " (" + self.view.encoding() + ")"
-			sublime.set_timeout_async(
-				lambda: sublime.status_message("Formated and Saved " + text), 100
-			)
+# class FormatPythonOnSave(sublime_plugin.ViewEventListener):
 
 
+# 	def on_post_save(self):
+# 		if self.view.match_selector(0, "source.python"):
+# 			self.view.run_command("lsp_format_document")
+# 			text = self.view.file_name() + " (" + self.view.encoding() + ")"
+# 			sublime.set_timeout(
+# 				lambda: sublime.status_message("Formated and Saved " + text), 100
+# 			)
 class IndentWithTabsOnSave(sublime_plugin.ViewEventListener):
 
 	def on_pre_save(self):

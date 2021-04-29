@@ -23,6 +23,75 @@
 				"Packages/Unity3D/UnityC#.tmLanguage"
 			]
 		},
+		"clangd":
+		{
+			"enabled": true
+		},
+		"mspyls":
+		{
+			"command":
+			[
+				"dotnet",
+				"exec",
+				"E:/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll"
+			],
+			"enabled": false,
+			"initializationOptions":
+			{
+				"interpreter":
+				{
+					"properties":
+					{
+						"UseDefaultDatabase": true,
+						"Version": "3.8"
+					}
+				}
+			},
+			"languageId": "python",
+			"scopes":
+			[
+				"source.python"
+			],
+			"settings":
+			{
+				"python":
+				{
+					"analysis":
+					{
+						"disabled":
+						[
+							"too-many-function-arguments",
+							"parameter-missing"
+						],
+						"errors":
+						[
+							"undefined-variable"
+						],
+						"information":
+						[
+							"unresolved-import"
+						],
+						"warnings":
+						[
+							"unknown-parameter-name"
+						]
+					},
+					"autoComplete":
+					{
+						"extraPaths":
+						[
+							"/opt/sublime_text"
+						]
+					}
+				}
+			},
+			"syntaxes":
+			[
+				"Packages/Python/Python.sublime-syntax",
+				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
+				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+			]
+		},
 		"pyls":
 		{
 			"command":
@@ -37,6 +106,8 @@
 			],
 			"settings":
 			{
+				"pyls.configurationSources": [
+					"pycodestyle"],
 				"pyls.plugins.autopep8.enabled": false,
 				"pyls.plugins.jedi.extra_paths":
 				[
@@ -52,50 +123,12 @@
 				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
 				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 			]
-		},
-		"mspyls": {
-			"enabled": false,
-			"command": [ "dotnet",
-				"exec",
-				"E:/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll"	 ],
-			"languageId": "python",
-			"scopes": [ "source.python" ],
-			"syntaxes": [
-				"Packages/Python/Python.sublime-syntax",
-				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
-				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-			],
-			"initializationOptions": {
-				"interpreter": {
-					"properties":  {
-						"UseDefaultDatabase": true,
-						"Version": "3.8" // python version
-					}
-				}
-			},
-			"settings": {
-				"python": {
-					// Solve the 'unresolved import' warning as documented in:
-					// https://github.com/microsoft/python-language-server/blob/master/TROUBLESHOOTING.md//unresolved-import-warnings
-					"autoComplete": {
-						// add extra path for Sublime Text plugins
-						"extraPaths": ["/opt/sublime_text"]
-					},
-					"analysis": {
-						"errors": ["undefined-variable"],
-						"warnings": ["unknown-parameter-name"],
-						"information": ["unresolved-import"],
-						"disabled": [ "too-many-function-arguments", "parameter-missing"]
-					},  // "linting":
-				// {
-				//     "enabled": "false"
-				// }
-				}
-			}
 		}
 	},
 	"diagnostics_gutter_marker": "sign",
 	"show_code_actions_bulb": true,
 	"show_diagnostics_in_view_status": false,
-	"show_symbol_action_links": true
+	"show_symbol_action_links": true,
+	"log_stderr": true,
+	"log_server": true
 }
