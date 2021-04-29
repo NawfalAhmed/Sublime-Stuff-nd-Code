@@ -139,7 +139,7 @@
 	{ "keys": ["alt+context_menu"], "command": "open_unity_project"},
 	{
 		"keys": ["super+context_menu"], "command": "show_overlay",
-		"args": { "overlay": "command_palette", "text": "Terminus Op"}
+		"args": { "overlay": "command_palette", "text": "Terminus"}
 	},
 	// { "keys": ["context_menu"], "command": "file_commands" },
 	// { "keys": ["shift+context_menu"],	"command": "toggle_preferences"	},

@@ -7,6 +7,9 @@ class LivePythonOutputCommand(sublime_plugin.ViewEventListener):
 	def on_text_command(self, command_name, args):
 		if (command_name, args) != ("insert", {"characters": "\n"}):
 			return
+		sublime.set_timeout_async(lambda: self.run_async(command_name, args))
+
+	def run_async(self, command_name, args):
 		regions = list(self.view.sel())
 
 		if not (
