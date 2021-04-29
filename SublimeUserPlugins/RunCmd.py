@@ -19,7 +19,7 @@ class RunCmdCommand(sublime_plugin.WindowCommand):
 		self.window.run_command(
 			"exec", {
 				"shell_cmd": realcmd,
-				"show_panel": show_panel
+				"show_panel": show_panel,
 			}
 		)
 		# self.window.run_command("hide_panel" )
