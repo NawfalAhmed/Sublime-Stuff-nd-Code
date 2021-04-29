@@ -51,15 +51,16 @@
 	// { "keys": ["ctrl+shift+r"], "command": "lsp_workspace_symbols",
 	// 	"context": [{"key": "setting.lsp_active"}]},
 	{
-		"keys": ["shift+space"], "command": "noop",
+		"keys": ["shift+space"], "command": "lsp_hover",
 		"context": [
-			{ "key": "lsp.signature_help", "operator": "equal", "operand": 0 }
+			{ "key": "setting.lsp_active"},
+			{ "key": "lsp.signature_help", "operator": "equal", "operand": 0 },
 		]
 	},
-	{
-		"keys": ["ctrl+shift+space"], "command": "lsp_hover",
-		"context": [{ "key": "setting.lsp_active"}]
-	},
+	// {
+	// 	"keys": ["ctrl+shift+space"], "command": "lsp_hover",
+	// 	"context": [{ "key": "setting.lsp_active"}]
+	// },
 	{
 		"keys": ["ctrl+r"], "command": "lsp_document_symbols",
 		"context": [{ "key": "setting.lsp_active"}]
