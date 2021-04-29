@@ -6,7 +6,13 @@
 	{ "keys": ["shift+backspace"], "command": "remove_function"},
 	{
 		"keys": ["alt+backspace"], "command": "remove_function",
-		"args": { "copy": true}
+		"args": { "copy": true }
+	},
+	{
+		"keys": ["ctrl+shift+v"], "command": "run_macro_file",
+		"args": {
+			"file": "Packages/User/Macros/AddFunction.sublime-macro"
+		},
 	},
 	{
 		"keys": ["alt+f"], "command": "run_macro_file",

@@ -11,5 +11,5 @@ class RemoveFunctionCommand(sublime_plugin.TextCommand):
 		self.view.run_command("expand_region")
 		for region, text in zip(self.view.sel(), selections):
 			if copy:
-				sublime.set_clipboard(self.view.substr(region).replace(text, ""))
+				sublime.set_clipboard(self.view.substr(region).replace(text, "")[:-2])
 			self.view.replace(edit, region, text)
