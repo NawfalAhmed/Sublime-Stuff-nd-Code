@@ -17,25 +17,21 @@ class SmoothNewCommand(sublime_plugin.WindowCommand):
 	def run(self, name):
 		view = self.window.open_file(name)
 		view.set_scratch(True)
-		sublime.set_timeout_async(lambda: view.set_scratch(False), 60000)
+		sublime.set_timeout(lambda: view.set_scratch(False), 60000)
 
 	def input(self, args):
 		if "name" not in args:
 			return NameInputHandler(self.window.active_view())
-		else:
-			return None
 
 
 class SmoothNewBufferCommand(sublime_plugin.WindowCommand):
 
 	def run(self):
-		self.view = self.window.new_file()
-		self.view.set_scratch(True)
-		self.view.set_name("Buffer")
-		sublime.set_timeout_async(lambda: self.view.set_scratch(False), 60000)
+		view = self.window.new_file()
+		view.set_scratch(True)
+		view.set_name("Buffer")
+		sublime.set_timeout(lambda: view.set_scratch(False), 60000)
 
 	def input(self, args):
 		if "name" not in args:
 			return NameInputHandler(self.window.active_view())
-		else:
-			return None

@@ -59,11 +59,7 @@ class UserTestCommand(sublime_plugin.WindowCommand):
 		name = clsname[0].lower()
 		last_upper = False
 		for c in clsname[1:]:
-			if c.isupper() and not last_upper:
-				name += '_'
-				name += c.lower()
-			else:
-				name += c
+			name += (c if last_upper and c.islower() else '_' + c.lower())
 			last_upper = c.isupper()
 		if name.endswith("_command"):
 			name = name[0:-8]

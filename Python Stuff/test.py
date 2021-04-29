@@ -7,10 +7,7 @@ data.split('\n')
 
 # found = 1
 # def datecheck(line):
-# 	if key1 in line and any(subkey in line for subkey in key2):
-# 		return True
-# 	else
-# 		return False
+# 	return key1 in line and any(subkey in line for subkey in key2)
 
 # for index,line in enumerate(data):
 # 			if datecheck(line):

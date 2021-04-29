@@ -21,7 +21,7 @@ class OpenUnityProjectCommand(sublime_plugin.TextCommand):
 				self.view.window().run_command(
 					"exec", {
 						"shell_cmd": command,
-						"show_panel": True
+						"show_panel": True,
 					}
 				)
 

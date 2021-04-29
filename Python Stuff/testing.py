@@ -23,10 +23,7 @@ filee.close()
 # seed(1)
 # def bifind(a, x):
 #     i = bisect_left(a, x)
-#     if i != len(a) and a[i] == x:
-#         return i
-#     else:
-#         return -1
+#     return i if i != len(a) and a[i] == x else -1
 
 # for i in range(4000):
 # 	val = bifind(data,rand(1,9500))
