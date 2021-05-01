@@ -16,6 +16,10 @@
 	},
 	{ "caption": "User: New Plugin", "command": "new_user_plugin"},
 	{
+		"caption": "User: Convert import",
+		"command": "convert_import_statement"
+	},
+	{
 		"caption": "Execute Command (At Current Directory)",
 		"command": "execute_cmd"
 	},
