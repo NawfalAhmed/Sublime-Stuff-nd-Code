@@ -76,7 +76,7 @@
 	// Context Menu Keybinds ->
 	{ "keys": ["context_menu"], "command": "menu_file_commands"},
 	{ "keys": ["shift+context_menu"], "command": "menu_toggle_preferences"},
-	{ "keys": ["ctrl+context_menu"], "command": "menu_open_from_current_dir"},
+	{ "keys": ["ctrl+context_menu"], "command": "menu_open_special_file"},
 	{
 		"keys": ["alt+context_menu"], "command": "chain",
 		"args": { "commands": [["save"], [ "build", { "select": true } ]] }
