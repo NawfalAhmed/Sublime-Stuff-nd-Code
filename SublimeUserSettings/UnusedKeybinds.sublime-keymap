@@ -1,0 +1,94 @@
+[
+	{ "keys": ["alt+n"],	"command": "create_inputf",
+		"context": [{
+			"key": "selector", "operator": "equal", "operand": "source.c++" }]
+	},
+	{ "keys": ["alt+o"], "command": "prompt_select_workspace"}, //replaces switchfile
+	{ "keys": ["alt+context_menu"], "command": "open_unity_project"},
+	{
+		"keys": ["alt+f"], "command": "run_macro_file",
+		"args": {
+			"file": "Packages/User/Macros/FormatJsonBracketContents.sublime-macro"
+		}
+	},
+	{
+		"keys": ["super+shift+s"], "command": "terminus_open",
+		"args": {
+			"panel_name": "Incognito Youtube Search",
+			"cmd": [
+				"python",
+				"-c",
+				"from subprocess import run; run(f'C:/Program Files (x86)/Google/Chrome/Application/chrome -incognito \"https://www.youtube.com/results?search_query={c}\"') if (c:=input('Youtube Search: ')) != 'exit' else print('Cancelled')"
+			],
+			"working_dir": "$file_path"
+		}
+	},
+	{
+		"keys": ["alt+g"], "command": "terminus_exec",
+		"args": {
+			"focus": true,
+			"cmd": [
+				"python",
+				"-c",
+				"from os import system; system('wsl git ' + c) if (c:=input('Enter Git Command: git ').lower()) != 'exit' else print('Cancelled')"
+			],
+			"working_dir": "$file_path"
+		}
+	},
+	{
+		"keys": ["shift+delete"], "command": "bh_key",
+		"args": {
+			"plugin": {
+				"type": ["__all__"],
+				"command": "bh_modules.bracketremove",
+				"args": {
+					"remove_indent": false,
+					"remove_block": false,
+					"remove_content": false
+				}
+			}
+		}
+	}, //doesn't work, (overrides cut command)
+	{
+		"keys": ["ctrl+shift+n"], "command": "chain",
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.c++"}
+		],
+		"args": {
+			"commands": [
+				["new_file"],
+				[
+					"insert_snippet",
+					{ "name": "Packages/User/Snippets/CppDefault.sublime-snippet"}
+				],
+				[ "set_file_type", { "syntax": "Packages/C++/C++.sublime-syntax"} ]
+			]
+		}
+	},
+	{
+		"keys": ["alt+shift+6"], "command": "set_layout",
+		"args": {
+			"cols": [ 0.0, 0.6, 1.0 ],
+			"rows": [ 0.0, 0.6, 1.0 ],
+			"cells": [
+				//| coln | rowb |cole|rowe|
+				[ 0, 0, 1, 1 ],
+				[ 1, 0, 2, 1 ],
+				[ 0, 1, 2, 2 ]
+			]
+		}
+	},
+	{
+		"keys": ["alt+shift+7"], "command": "set_layout",
+		"args": {
+			"cols": [ 0.0, 0.6, 1.0 ],
+			"rows": [ 0.0, 0.6, 1.0 ],
+			"cells": [
+				//| coln | rowb |cole|rowe|
+				[ 0, 0, 2, 1 ],
+				[ 0, 1, 1, 2 ],
+				[ 1, 1, 2, 2 ]
+			]
+		}
+	},
+]
