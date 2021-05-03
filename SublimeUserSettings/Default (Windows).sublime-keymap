@@ -3,10 +3,10 @@
 // </Recent Keybinds>
 // <Main Keybinds>
 	{ "keys": ["alt+a"], "command": "alignment"},  //find panel
-	{ "keys": ["super+b"], "command": "toggle_side_bar"},
+	{ "keys": ["ctrl+k","b"], "command": "toggle_side_bar"},
 	{ "keys": ["alt+c"], "command": "toggle_snake_camel_pascal"},  //find panel
 	{ "keys": ["alt+shift+c"], "command": "toggle_all_cases"},
-	{ "keys": ["super+c"], "command": "super_calculator"},
+	{ "keys": ["ctrl+shift+c"], "command": "super_calculator"},
 	{
 		"keys": ["alt+f"], "command": "remove_function",
 		"args": { "copy": true }
@@ -14,6 +14,16 @@
 	{
 		"keys": ["alt+shift+f"], "command": "run_macro_file",
 		"args": { "file": "Packages/User/Macros/AddFunction.sublime-macro"}
+	},
+	{
+		"keys": [ "ctrl+k", "f"], "command": "zoom_pane",
+		"args": { "fraction": 0.65 },
+		"context": [{ "key": "sidebar_visible", "operator": "equal", "operand": false }]
+	},
+	{
+		"keys": [ "ctrl+k", "f"], "command": "zoom_pane",
+		"args": { "fraction": 0.8 },
+		"context": [{ "key": "sidebar_visible", "operator": "equal", "operand": true }]
 	},
 	{ "keys": ["alt+i"], "command": "increment_selection"},
 	{
@@ -25,18 +35,19 @@
 	{ "keys": ["alt+p"], "command": "menu_open_from_current_dir"},
 	{ "keys": ["alt+r"], "command": "rename_file"},
 	{ "keys": ["alt+s"], "command": "send_python_string"},
-	{ "keys": ["alt+t"], "command": "testing"},
-	{ "keys": ["alt+shift+t"], "command": "testing1"},
-	{ "keys": ["super+t"], "command": "transpose"},
+	{ "keys": ["alt+t"], "command": "transpose"},
+	{ "keys": ["ctrl+k","t"], "command": "testing"},
+	{ "keys": ["ctrl+k","T"], "command": "testing1"},
+	{ "keys": ["shift+ctrl+k","T"], "command": "testing1"},
 	{ "keys": ["alt+z"], "command": "soft_undo"},
 	{ "keys": ["alt+shift+z"], "command": "soft_redo"},
-	{ "keys": ["super+z"], "command": "revert_modification"},
+	{ "keys": ["ctrl+k","z"], "command": "revert_modification"},
 	{ "keys": ["ctrl+shift+`"], "command": "cycle_output_panels"},
-	{ "keys": ["super+tab"], "command": "indent"},
-	{ "keys": ["super+delete"], "command": "bh_remove_brackets"},
+	{ "keys": ["ctrl+k","tab"], "command": "indent"},
+	{ "keys": ["ctrl+k","delete"], "command": "bh_remove_brackets"},
 	{
 		"keys": ["shift+delete"], "command": "run_macro_file",
-		"args": { "file": "res://Packages/Default/Delete to BOL.sublime-macro"}
+		"args": { "file": "res://Packages/Default/Delete to EOL.sublime-macro"}
 	},
 	{
 		"keys": ["alt+delete"], "command": "run_macro_file",
@@ -44,12 +55,12 @@
 	},
 	{
 		"keys": ["shift+backspace"], "command": "run_macro_file",
-		"args": { "file": "res://Packages/Default/Delete to EOL.sublime-macro"}
+		"args": { "file": "res://Packages/Default/Delete to BOL.sublime-macro"}
 	},
 	{ "keys": ["alt+backspace"], "command": "remove_function"},
-	{ "keys": ["super+space"], "command": "expand_region"},
+	{ "keys": ["alt+space"], "command": "expand_region"},
 	{
-		"keys": ["alt+space"], "command": "expand_selection",
+		"keys": ["ctrl+k"," "], "command": "expand_selection",
 		"args": { "to": "scope"}
 	},
 	{
@@ -71,7 +82,7 @@
 		"args": { "commands": [["save"], [ "build", { "select": true } ]] }
 	},
 	{
-		"keys": ["super+context_menu"], "command": "show_overlay",
+		"keys": ["ctrl+k","context_menu"], "command": "show_overlay",
 		"args": { "overlay": "command_palette", "text": "Terminus"}
 	},
 	// '\\' Keybinds ->
@@ -82,9 +93,9 @@
 	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff"},
 	{ "keys": ["alt+\\"], "command": "diff_changes"},
 	{ "keys": ["alt+shift+\\"], "command": "user_test"},
-	{ "keys": ["super+\\"], "command": "open_key_bindings"},
+	{ "keys": ["ctrl+k","\\"], "command": "open_key_bindings"},
 	{
-		"keys": ["super+shift+\\"], "command": "edit_settings",
+		"keys": ["ctrl+k","|"], "command": "edit_settings",
 		"args": {
 			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
 			"default": "[\n\t$0\n]\n"
@@ -172,7 +183,7 @@
 	// 	"context": [{ "key": "setting.lsp_active"}]
 	// },
 	{
-		"keys": ["super+r"], "command": "lsp_document_symbols",
+		"keys": ["ctrl+k","r"], "command": "lsp_document_symbols",
 		"context": [{ "key": "setting.lsp_active"}]
 	},
 	{
@@ -187,14 +198,14 @@
 
 // <Commands in Terminus Keybinds>
 	{
-		"keys": ["super+j"], "command": "terminus_open",
+		"keys": ["ctrl+k","j"], "command": "terminus_open",
 		"args": {
 			"cwd": "${file_path:${folder}}",
 			"title": "Jupyter Notebook",
 			"tag": "jupyter",
 			"post_window_hooks": [
 				["move_tab_back"], [ "carry_file_to_pane", { "direction": "down"} ],
-				[ "toggle_zoom_pane", { "fraction": 0.2 } ],
+				[ "zoom_pane", { "fraction": 0.2 } ],
 				[ "travel_to_pane", { "direction": "up"} ],
 				[
 					"terminus_send_string",
@@ -204,7 +215,7 @@
 		}
 	},
 	{
-		"keys": ["super+s"], "command": "terminus_open",
+		"keys": ["ctrl+k","s"], "command": "terminus_open",
 		"args": {
 			"panel_name": "Google Incognito Search",
 			"cmd": [
@@ -226,16 +237,22 @@
 		"keys": ["alt+enter"], "command": "chain",
 		"args": { "commands": [["save"], [ "build", { "variant": "Terminus"} ]] }
 	},
-	// add super+enter build in tab
+	// add"ctrl+k", enter build in tab
 	// add alt+shift+enter build in terminus-client
 	{
-		"keys": ["super+`"], "command": "toggle_terminus_panel",
+		"keys": ["ctrl+k","`"], "command": "toggle_terminus_panel",
 		"args": {
 			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
 		}
 	},
 	{
-		"keys": ["super+shift+`"], "command": "terminus_open",
+		"keys": ["ctrl+k","~"], "command": "terminus_open",
+		"args": {
+			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
+		}
+	},
+	{
+		"keys": ["shift+ctrl+k","~"], "command": "terminus_open",
 		"args": {
 			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
 		}
@@ -257,7 +274,16 @@
 		}
 	},
 	{
-		"keys": ["super+alt+`"], "command": "toggle_terminus_panel",
+		"keys": ["ctrl+k","alt+`"], "command": "toggle_terminus_panel",
+		"args": {
+			"cmd": "ipython",
+			"cwd": "${file_path:${folder}}",
+			"panel_name": "Ipython",
+			"tag": "Ipython"
+		}
+	},
+	{
+		"keys": ["alt+ctrl+k","alt+`"], "command": "toggle_terminus_panel",
 		"args": {
 			"cmd": "ipython",
 			"cwd": "${file_path:${folder}}",
@@ -357,106 +383,138 @@
 	{ "keys": ["ctrl+9"], "command": "fold_by_level", "args": { "level": 8 } },
 	// PanePane ->
 	{
-		"keys": ["super+,"], "command": "pane_pane_resize",
+		"keys": ["alt+,"], "command": "pane_pane_resize",
 		"args": { "dimension": "width", "resize": "decrease"}
 	},
 	{
-		"keys": ["super+."], "command": "pane_pane_resize",
+		"keys": ["alt+."], "command": "pane_pane_resize",
 		"args": { "dimension": "width", "resize": "increase"}
 	},
 	{
-		"keys": ["alt+,"], "command": "pane_pane_resize",
+		"keys": ["alt+shift+,"], "command": "pane_pane_resize",
 		"args": { "dimension": "height", "resize": "decrease"}
 	},
 	{
-		"keys": ["alt+."], "command": "pane_pane_resize",
+		"keys": ["alt+shift+."], "command": "pane_pane_resize",
 		"args": { "dimension": "height", "resize": "increase"}
 	},
 	{
-		"keys": ["super+/"], "command": "pane_pane_resize",
+		"keys": ["ctrl+k",","], "command": "pane_pane_resize",
 		"args": { "dimension": "width", "resize": "equal"}
 	},
 	{
-		"keys": ["alt+/"], "command": "pane_pane_resize",
+		"keys": ["ctrl+k","."], "command": "pane_pane_resize",
 		"args": { "dimension": "height", "resize": "equal"}
 	},
 	// Origami ->
 	{
-		"keys": ["super+up"], "command": "travel_to_pane",
+		"keys": ["ctrl+k","up"], "command": "travel_to_pane",
 		"args": { "direction": "up"}
 	},
 	{
-		"keys": ["super+right"], "command": "travel_to_pane",
+		"keys": ["ctrl+k","right"], "command": "travel_to_pane",
 		"args": { "direction": "right"}
 	},
 	{
-		"keys": ["super+down"], "command": "travel_to_pane",
+		"keys": ["ctrl+k","down"], "command": "travel_to_pane",
 		"args": { "direction": "down"}
 	},
 	{
-		"keys": ["super+left"], "command": "travel_to_pane",
+		"keys": ["ctrl+k","left"], "command": "travel_to_pane",
 		"args": { "direction": "left"}
 	},
 	{
-		"keys": ["super+shift+up"], "command": "carry_file_to_pane",
+		"keys": ["ctrl+k","shift+up"], "command": "carry_file_to_pane",
 		"args": { "direction": "up"}
 	},
 	{
-		"keys": ["super+shift+right"], "command": "carry_file_to_pane",
+		"keys": ["ctrl+k","shift+right"], "command": "carry_file_to_pane",
 		"args": { "direction": "right"}
 	},
 	{
-		"keys": ["super+shift+down"], "command": "carry_file_to_pane",
+		"keys": ["ctrl+k","shift+down"], "command": "carry_file_to_pane",
 		"args": { "direction": "down"}
 	},
 	{
-		"keys": ["super+shift+left"], "command": "carry_file_to_pane",
+		"keys": ["ctrl+k","shift+left"], "command": "carry_file_to_pane",
 		"args": { "direction": "left"}
 	},
 	{
-		"keys": ["super+alt+up"], "command": "pull_file_from_pane",
+		"keys": ["shift+ctrl+k","shift+up"], "command": "carry_file_to_pane",
 		"args": { "direction": "up"}
 	},
 	{
-		"keys": ["super+alt+right"], "command": "pull_file_from_pane",
+		"keys": ["shift+ctrl+k","shift+right"], "command": "carry_file_to_pane",
 		"args": { "direction": "right"}
 	},
 	{
-		"keys": ["super+alt+down"], "command": "pull_file_from_pane",
+		"keys": ["shift+ctrl+k","shift+down"], "command": "carry_file_to_pane",
 		"args": { "direction": "down"}
 	},
 	{
-		"keys": ["super+alt+left"], "command": "pull_file_from_pane",
+		"keys": ["shift+ctrl+k","shift+left"], "command": "carry_file_to_pane",
 		"args": { "direction": "left"}
 	},
 	{
-		"keys": ["super+ctrl+up"], "command": "create_pane",
+		"keys": ["alt+ctrl+k","alt+up"], "command": "pull_file_from_pane",
+		"args": { "direction": "up"}
+	},
+	{
+		"keys": ["alt+ctrl+k","alt+right"], "command": "pull_file_from_pane",
+		"args": { "direction": "right"}
+	},
+	{
+		"keys": ["alt+ctrl+k","alt+down"], "command": "pull_file_from_pane",
+		"args": { "direction": "down"}
+	},
+	{
+		"keys": ["alt+ctrl+k","alt+left"], "command": "pull_file_from_pane",
+		"args": { "direction": "left"}
+	},
+	{
+		"keys": ["ctrl+k","alt+up"], "command": "pull_file_from_pane",
+		"args": { "direction": "up"}
+	},
+	{
+		"keys": ["ctrl+k","alt+right"], "command": "pull_file_from_pane",
+		"args": { "direction": "right"}
+	},
+	{
+		"keys": ["ctrl+k","alt+down"], "command": "pull_file_from_pane",
+		"args": { "direction": "down"}
+	},
+	{
+		"keys": ["ctrl+k","alt+left"], "command": "pull_file_from_pane",
+		"args": { "direction": "left"}
+	},
+	{
+		"keys": ["ctrl+k","ctrl+up"], "command": "create_pane",
 		"args": { "direction": "up", "give_focus": true }
 	},
 	{
-		"keys": ["super+ctrl+right"], "command": "create_pane",
+		"keys": ["ctrl+k","ctrl+right"], "command": "create_pane",
 		"args": { "direction": "right", "give_focus": true }
 	},
 	{
-		"keys": ["super+ctrl+down"], "command": "create_pane",
+		"keys": ["ctrl+k","ctrl+down"], "command": "create_pane",
 		"args": { "direction": "down", "give_focus": true }
 	},
 	{
-		"keys": ["super+ctrl+left"], "command": "create_pane",
+		"keys": ["ctrl+k","ctrl+left"], "command": "create_pane",
 		"args": { "direction": "left", "give_focus": true }
 	},
 	{
-		"keys": ["super+shift+z"], "command": "toggle_zoom_pane",
-		"args": { "fraction": 0.8 }
+		"keys": ["ctrl+k","Z"], "command": "toggle_zoom_pane",
+		"args": { "fraction": 0.65 }
 	},
 	// AdvancedCSV ->
-	// {"keys": ["super+,","super+up"], "command": "csv_sort_by_col_asc"},
-	// {"keys": ["super+,","super+down"], "command": "csv_sort_by_col_desc"},
-	// {"keys": ["super+,","super+i"], "command": "csv_insert_col"},
-	// {"keys": ["super+,","super+d"], "command": "csv_delete_col"},
-	// {"keys": ["super+,","super+s"], "command": "csv_select_col"},
-	// {"keys": ["super+,","super+e"], "command": "csv_format_expand"},
-	// {"keys": ["super+,","super+,"], "command": "csv_format_compact"},
-	// {"keys": ["super+,","super+="], "command": "csv_evaluate"},
-	// {"keys": ["super+,","super+f"], "command": "csv_format"}
+	// {"keys": ["ctrl+k",",","ctrl+k","up"], "command": "csv_sort_by_col_asc"},
+	// {"keys": ["ctrl+k",",","ctrl+k","down"], "command": "csv_sort_by_col_desc"},
+	// {"keys": ["ctrl+k",",","ctrl+k","i"], "command": "csv_insert_col"},
+	// {"keys": ["ctrl+k",",","ctrl+k","d"], "command": "csv_delete_col"},
+	// {"keys": ["ctrl+k",",","ctrl+k","s"], "command": "csv_select_col"},
+	// {"keys": ["ctrl+k",",","ctrl+k","e"], "command": "csv_format_expand"},
+	// {"keys": ["ctrl+k",",","ctrl+k",","], "command": "csv_format_compact"},
+	// {"keys": ["ctrl+k",",","ctrl+k","="], "command": "csv_evaluate"},
+	// {"keys": ["ctrl+k",",","ctrl+k","f"], "command": "csv_format"}
 ]
