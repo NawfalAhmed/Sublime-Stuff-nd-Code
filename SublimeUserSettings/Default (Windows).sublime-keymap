@@ -239,8 +239,18 @@
 		"keys": ["alt+enter"], "command": "chain",
 		"args": { "commands": [["save"], [ "build", { "variant": "Terminus"} ]] }
 	},
-	// add"ctrl+k", enter build in tab
-	// add alt+shift+enter build in terminus-client
+	{
+		"keys": ["alt+shift+enter"], "command": "chain",
+		"args": { "commands": [["save"], [ "build", { "variant": "Terminus1"} ]] }
+	},
+	{
+		"keys": ["ctrl+k","enter"], "command": "chain",
+		"args": { "commands": [["save"], [ "build", { "variant": "Terminus2"} ]] }
+	},
+	{
+		"keys": ["ctrl+alt+enter"], "command": "chain",
+		"args": { "commands": [["save"], [ "build", { "variant": "Terminus3"} ]] }
+	},
 	{
 		"keys": ["ctrl+k","`"], "command": "toggle_terminus_panel",
 		"args": {
