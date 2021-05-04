@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[[${1:expression} for ${2:item} in ${3:iterator}]]]></content>
+	<tabTrigger>for</tabTrigger>
+	<scope>source.python</scope>
+	<description>[list comprehension]</description>
+</snippet>

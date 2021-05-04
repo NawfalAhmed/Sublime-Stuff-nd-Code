@@ -5,7 +5,9 @@
 	{ "keys": ["alt+a"], "command": "alignment"},  //find panel
 	{ "keys": ["ctrl+k","b"], "command": "toggle_side_bar"},
 	{ "keys": ["alt+c"], "command": "toggle_snake_camel_pascal"},  //find panel
+	{ "keys": ["alt+d"], "command": "expand_selection_to_word"},
 	{ "keys": ["alt+shift+c"], "command": "toggle_all_cases"},
+	{ "keys": ["ctrl+k","c"], "command": "convert_loop_to_list_comprehension"},
 	{ "keys": ["ctrl+shift+c"], "command": "super_calculator"},
 	{
 		"keys": ["alt+f"], "command": "remove_function",
