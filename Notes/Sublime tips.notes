@@ -1,3 +1,13 @@
+class Hints:
+	# rename sublime.package file to zip and extract to see contents
+	# Extract & expand variables to get file path etc In my plugins
+	# right click+leftclick -> expand scope
+	# u can do a command specifically based on a previous command
+	# I can store data in "class.attribute" in for one session
+	# Event listener but not triggered every single time
+	# 	But after given seconds pause
+	# 	https://youtu.be/Ol_Qd-ObX4E?t=870
+
 class Console:
 	sublime.log_input(True)
 	sublime.log_commands(True)
@@ -14,6 +24,7 @@ class Snippets:
 	"<description>For Enumerate Loop</description>"
 	#Location Specifying
 	"${1:this}"
+	"$0" #end point
 
 class Builds:
 {

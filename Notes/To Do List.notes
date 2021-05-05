@@ -1,0 +1,15 @@
+class Python:
+	- Try to turn recursive code to local stack using yield (timeit also)
+	- Try everything in the generators video
+
+class Sublime:
+	- Try Screentogif
+	- update json format
+	  use subprocces.checkoutput("cmd",shell=True).decode() instead of exec
+	- Make own syntax highlighting for notes .penguin
+	- plugin to auto import unimported library perhaps?
+
+	#Fix copy lines up/down such that it scrolls view if new region is out of view
+	#Try snapi Nd filecomand
+	#Try changing workspace expanded folders
+	#On query completions method in event listener (make auto completions for unity)

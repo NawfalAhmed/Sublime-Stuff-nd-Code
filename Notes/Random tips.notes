@@ -1,13 +1,9 @@
 class Python:
-	#slicing
-	"slice indexing doesnt give out of range error :3 neat"
+	"slice indexing doesnt give out of range error"
 	#sort both lists according to (reverse) sorting order of first
 	list1, list2 = map(list, zip(*sorted(zip(list1,list2),reverse = True)))
 	@njit(error_model='numpy',parallel=True,fastmath=True)
 	# use isinstance for type check
-
-	# reg expression : select all till second comma:
-	^([,]*,[^,]*)
 
 	class Pip:
 		pip install -U pip #upgrade pip
@@ -67,3 +63,5 @@ DESKTOP-2NT06QL
 class Unity:
 	# Draw a ray from position to a direction, use draw line for between two points
 	Debug.DrawRay(transform.position,transform.forward, Color.red);
+	# to fix Aura remove this in editor folder
+	EditorStyles.miniButton
