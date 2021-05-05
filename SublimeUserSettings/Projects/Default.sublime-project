@@ -9,6 +9,7 @@
 			"folder_exclude_patterns":
 			[
 				"DCN",
+				"Advanced OS",
 				"Notes",
 				"Testing",
 				"SublimeUser*"
@@ -26,6 +27,10 @@
 		{
 			"name": ": DCN",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\DCN"
+		},
+		{
+			"name": ": Advanced OS",
+			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Advanced OS"
 		},
 		{
 			"binary_file_patterns":
@@ -50,10 +55,35 @@
 			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects"
 		},
 		{
-			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\MenuPreferences"
-		},
-		{
-			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages\\JsonYapfFormatter"
+			"folder_exclude_patterns":
+			[
+				"User",
+				"UserPlugins",
+				"Anaconda",
+				"SendCode",
+				"R-IDE",
+				"OmniSharp",
+				"backrefs",
+				"bs4",
+				"jsonschema",
+				"lsp_utils",
+				"markuepsafe",
+				"mdpopups",
+				"numpy",
+				"package_setting_context",
+				"pathlib",
+				"pygments",
+				"pymdownx",
+				"pyte",
+				"python-jinja2",
+				"python-markdown",
+				"pywinpty",
+				"pyyaml",
+				"sublime_lib",
+				"wcwidth",
+			],
+			"name": "Packages Overrides",
+			"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text 3\\Packages"
 		},
 		{
 			"name": "UserSettings",
@@ -63,6 +93,7 @@
 			"name": "UserPlugins",
 			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserPlugins"
 		}
+
 	],
 	"settings":
 	{
