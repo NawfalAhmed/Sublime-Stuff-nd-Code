@@ -9,6 +9,7 @@
 			"folder_exclude_patterns":
 			[
 				"DCN",
+				"Advanced OS",
 				"Notes",
 				"Testing",
 				"SublimeUser*"
@@ -25,6 +26,10 @@
 		},
 		{
 			"name": ": DCN",
+			"path": "Redacted"
+		},
+		{
+			"name": ": Advanced OS",
 			"path": "Redacted"
 		},
 		{
@@ -50,9 +55,34 @@
 			"path": "Redacted"
 		},
 		{
-			"path": "Redacted"
-		},
-		{
+			"folder_exclude_patterns":
+			[
+				"User",
+				"UserPlugins",
+				"Anaconda",
+				"SendCode",
+				"R-IDE",
+				"OmniSharp",
+				"backrefs",
+				"bs4",
+				"jsonschema",
+				"lsp_utils",
+				"markuepsafe",
+				"mdpopups",
+				"numpy",
+				"package_setting_context",
+				"pathlib",
+				"pygments",
+				"pymdownx",
+				"pyte",
+				"python-jinja2",
+				"python-markdown",
+				"pywinpty",
+				"pyyaml",
+				"sublime_lib",
+				"wcwidth",
+			],
+			"name": "Packages Overrides",
 			"path": "Redacted"
 		},
 		{
@@ -63,6 +93,7 @@
 			"name": "UserPlugins",
 			"path": "Redacted"
 		}
+
 	],
 	"settings":
 	{
