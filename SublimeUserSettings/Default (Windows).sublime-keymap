@@ -1,69 +1,89 @@
 [
 // <Recent Keybinds>
+	{
+		"keys": ["ctrl+shift+/"], "command": "insert",
+		"args": { "characters": "  # " },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" }
+		]
+	},
 // </Recent Keybinds>
 // <Main Keybinds>
-	{ "keys": ["alt+a"], "command": "alignment"},  //find panel
-	{ "keys": ["ctrl+k","b"], "command": "toggle_side_bar"},
-	{ "keys": ["alt+c"], "command": "toggle_snake_camel_pascal"},  //find panel
-	{ "keys": ["alt+d"], "command": "expand_selection_to_word"},
-	{ "keys": ["alt+shift+c"], "command": "toggle_all_cases"},
-	{ "keys": ["ctrl+k","c"], "command": "convert_loop_to_list_comprehension"},
-	{ "keys": ["ctrl+shift+c"], "command": "super_calculator"},
+	{ "keys": ["alt+a"], "command": "alignment" },  //find panel
+	{ "keys": ["ctrl+k", "b"], "command": "toggle_side_bar" },
+	{ "keys": ["alt+c"], "command": "toggle_snake_camel_pascal" },  //find panel
+	{ "keys": ["alt+shift+c"], "command": "toggle_all_cases" },
+	{ "keys": ["ctrl+shift+c"], "command": "super_calculator" },
 	{
-		"keys": ["alt+f"], "command": "remove_function",
-		"args": { "copy": true }
+		"keys": ["ctrl+k", "c"], "command": "chain",
+		"args": {
+			"commands": [
+				["convert_import_statement"], ["convert_loop_to_list_comprehension"]
+			]
+		}
 	},
+	{
+		"keys": ["ctrl+k", "C"], "command": "run_macro_file",
+		"args": { "file": "Packages/User/Macros/listcomprehension.sublime-macro" }
+	},
+	{ "keys": ["alt+d"], "command": "expand_selection_to_word" },
+	{ "keys": ["ctrl+k", "d"], "command": "toggle_distraction_free" },
+	{ "keys": ["alt+f"], "command": "remove_function", "args": { "copy": true } },
 	{
 		"keys": ["alt+shift+f"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/AddFunction.sublime-macro"}
+		"args": { "file": "Packages/User/Macros/AddFunction.sublime-macro" }
 	},
 	{
-		"keys": [ "ctrl+k", "f"], "command": "zoom_pane",
+		"keys": ["ctrl+k", "f"], "command": "zoom_pane",
 		"args": { "fraction": 0.65 },
-		"context": [{ "key": "sidebar_visible", "operator": "equal", "operand": false }]
+		"context": [
+			{ "key": "sidebar_visible", "operator": "equal", "operand": false }
+		]
 	},
 	{
-		"keys": [ "ctrl+k", "f"], "command": "zoom_pane",
+		"keys": ["ctrl+k", "f"], "command": "zoom_pane",
 		"args": { "fraction": 0.8 },
-		"context": [{ "key": "sidebar_visible", "operator": "equal", "operand": true }]
+		"context": [
+			{ "key": "sidebar_visible", "operator": "equal", "operand": true }
+		]
 	},
-	{ "keys": ["alt+i"], "command": "increment_selection"},
+	{ "keys": ["alt+i"], "command": "increment_selection" },
 	{
 		"keys": ["alt+l"], "command": "move_to",
 		"args": { "to": "eol", "extend": true }
 	},
-	{ "keys": ["alt+n"], "command": "smooth_new"},
-	{ "keys": ["ctrl+shift+o"], "command": "open_in_browser"},
-	{ "keys": ["alt+p"], "command": "menu_open_from_current_dir"},
-	{ "keys": ["alt+r"], "command": "rename_file"},
-	{ "keys": ["alt+s"], "command": "send_python_string"},
-	{ "keys": ["alt+t"], "command": "transpose"},
-	{ "keys": ["ctrl+k","t"], "command": "testing"},
-	{ "keys": ["ctrl+k","T"], "command": "testing1"},
-	{ "keys": ["shift+ctrl+k","T"], "command": "testing1"},
-	{ "keys": ["alt+z"], "command": "soft_undo"},
-	{ "keys": ["alt+shift+z"], "command": "soft_redo"},
-	{ "keys": ["ctrl+k","z"], "command": "revert_modification"},
-	{ "keys": ["ctrl+shift+`"], "command": "cycle_output_panels"},
-	{ "keys": ["ctrl+k","tab"], "command": "indent"},
-	{ "keys": ["ctrl+k","delete"], "command": "bh_remove_brackets"},
+	{ "keys": ["alt+n"], "command": "smooth_new" },
+	{ "keys": ["ctrl+shift+o"], "command": "open_in_browser" },
+	{ "keys": ["alt+p"], "command": "menu_open_from_current_dir" },
+	{ "keys": ["alt+r"], "command": "rename_file" },
+	{ "keys": ["alt+s"], "command": "send_python_string" },
+	{ "keys": ["alt+t"], "command": "transpose" },
+	{ "keys": ["ctrl+k", "t"], "command": "testing" },
+	{ "keys": ["ctrl+k", "T"], "command": "testing1" },
+	{ "keys": ["shift+ctrl+k", "T"], "command": "testing1" },
+	{ "keys": ["alt+z"], "command": "soft_undo" },
+	{ "keys": ["alt+shift+z"], "command": "soft_redo" },
+	{ "keys": ["ctrl+k", "z"], "command": "revert_modification" },
+	{ "keys": ["ctrl+shift+`"], "command": "cycle_output_panels" },
+	{ "keys": ["ctrl+k", "tab"], "command": "indent" },
+	{ "keys": ["ctrl+k", "delete"], "command": "bh_remove_brackets" },
 	{
 		"keys": ["shift+delete"], "command": "run_macro_file",
-		"args": { "file": "res://Packages/Default/Delete to EOL.sublime-macro"}
+		"args": { "file": "res://Packages/Default/Delete to EOL.sublime-macro" }
 	},
 	{
 		"keys": ["alt+delete"], "command": "run_macro_file",
-		"args": { "file": "res://Packages/Default/Delete Line.sublime-macro"}
+		"args": { "file": "res://Packages/Default/Delete Line.sublime-macro" }
 	},
 	{
 		"keys": ["shift+backspace"], "command": "run_macro_file",
-		"args": { "file": "res://Packages/Default/Delete to BOL.sublime-macro"}
+		"args": { "file": "res://Packages/Default/Delete to BOL.sublime-macro" }
 	},
-	{ "keys": ["alt+backspace"], "command": "remove_function"},
-	{ "keys": ["alt+space"], "command": "expand_region"},
+	{ "keys": ["alt+backspace"], "command": "remove_function" },
+	{ "keys": ["alt+space"], "command": "expand_region" },
 	{
-		"keys": ["ctrl+k"," "], "command": "expand_selection",
-		"args": { "to": "scope"}
+		"keys": ["ctrl+k", " "], "command": "expand_selection",
+		"args": { "to": "scope" }
 	},
 	{
 		"keys": ["alt+space"], "command": "csv_select_col",
@@ -76,40 +96,40 @@
 		]
 	},
 	// Context Menu Keybinds ->
-	{ "keys": ["context_menu"], "command": "menu_file_commands"},
-	{ "keys": ["shift+context_menu"], "command": "menu_toggle_preferences"},
-	{ "keys": ["ctrl+context_menu"], "command": "menu_open_special_file"},
+	{ "keys": ["context_menu"], "command": "menu_file_commands" },
+	{ "keys": ["shift+context_menu"], "command": "menu_toggle_preferences" },
+	{ "keys": ["ctrl+context_menu"], "command": "menu_open_special_file" },
 	{
 		"keys": ["alt+context_menu"], "command": "chain",
-		"args": { "commands": [["save"], [ "build", { "select": true } ]] }
+		"args": { "commands": [["save"], ["build", { "select": true }]] }
 	},
 	{
-		"keys": ["ctrl+k","context_menu"], "command": "show_overlay",
-		"args": { "overlay": "command_palette", "text": "Terminus"}
+		"keys": ["ctrl+k", "context_menu"], "command": "show_overlay",
+		"args": { "overlay": "command_palette", "text": "Terminus" }
 	},
 	// '\\' Keybinds ->
 	{
 		"keys": ["ctrl+\\"], "command": "toggle_inline_diff",
 		"args": { "prefer_hide": true }
 	},
-	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff"},
-	{ "keys": ["alt+\\"], "command": "diff_changes"},
-	{ "keys": ["alt+shift+\\"], "command": "user_test"},
-	{ "keys": ["ctrl+k","\\"], "command": "open_key_bindings"},
+	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff" },
+	{ "keys": ["alt+\\"], "command": "diff_changes" },
+	{ "keys": ["alt+shift+\\"], "command": "user_test" },
+	{ "keys": ["ctrl+k", "\\"], "command": "open_key_bindings" },
 	{
-		"keys": ["ctrl+k","|"], "command": "edit_settings",
+		"keys": ["ctrl+k", "|"], "command": "edit_settings",
 		"args": {
-			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
+			"base_file": "${packages }/Default/Default ($platform).sublime-keymap",
 			"default": "[\n\t$0\n]\n"
 		}
 	},
 	// Arrows Keybinds ->
-	{ "keys": ["alt+up"], "command": "swap_up_with_indent"},
-	{ "keys": ["alt+down"], "command": "swap_down_with_indent"},
-	{ "keys": ["ctrl+up"], "command": "swap_up_with_indent_always"},
-	{ "keys": ["ctrl+down"], "command": "swap_down_with_indent_always"},
-	{ "keys": ["ctrl+shift+up"], "command": "jump_back"},
-	{ "keys": ["ctrl+shift+down"], "command": "jump_forward"},
+	{ "keys": ["alt+up"], "command": "swap_up_with_indent" },
+	{ "keys": ["alt+down"], "command": "swap_down_with_indent" },
+	{ "keys": ["ctrl+up"], "command": "swap_up_with_indent_always" },
+	{ "keys": ["ctrl+down"], "command": "swap_down_with_indent_always" },
+	{ "keys": ["ctrl+shift+up"], "command": "jump_back" },
+	{ "keys": ["ctrl+shift+down"], "command": "jump_forward" },
 	{
 		"keys": ["alt+shift+up"], "command": "copy_lines",
 		"args": { "forward": false }
@@ -118,37 +138,34 @@
 		"keys": ["alt+shift+down"], "command": "copy_lines",
 		"args": { "forward": true }
 	},
-	{ "keys": [ "insert", "insert"], "command": "toggle_overwrite"},
 // <Main Keybinds>
+	{ "keys": ["insert", "insert"], "command": "toggle_overwrite" },
 
 // <OverRidden Keybinds>
-	{ "keys": ["ctrl+shift+d"], "command": "find_under_expand_skip"},
+	{ "keys": ["ctrl+shift+d"], "command": "find_under_expand_skip" },
 	// overrided: duplicate lines, original: ctrl+k, ctrl+d
-	{ "keys": ["ctrl+n"], "command": "smooth_new_buffer"},
+	{ "keys": ["ctrl+n"], "command": "smooth_new_buffer" },
 	{
 		"keys": ["ctrl+t"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/extendedtranspose.sublime-macro"}
+		"args": { "file": "Packages/User/Macros/extendedtranspose.sublime-macro" }
 	},  // remapped transpose -> alt+t
-	{ "keys": [ "ctrl+k", "ctrl+k"], "command": "pass"},
+	{ "keys": ["ctrl+k", "ctrl+k"], "command": "pass" },
 	// overrided: delete to hard EOL
-	{ "keys": ["ctrl+shift+k"], "command": "pass"},
+	{ "keys": ["ctrl+shift+k"], "command": "pass" },
 	// overrided: delete line
-	{ "keys": ["ctrl+w"], "command": "safe_close"},
+	{ "keys": ["ctrl+w"], "command": "safe_close" },
 	{
 		"keys": ["ctrl+w"], "command": "terminus_close",
-		"context": [{ "key": "terminus_view"}]
+		"context": [{ "key": "terminus_view" }]
 	},
 	{
 		"keys": ["ctrl+shift+w"], "command": "destroy_pane",
-		"args": { "direction": "self"}
+		"args": { "direction": "self" }
 	},  //overrided close window
 	// Find Panel Keybinds ->
 	{
 		"keys": ["ctrl+shift+f"], "command": "show_panel",
-		"args": {
-			"panel": "find_in_files",
-			"where": " , "
-		}
+		"args": { "panel": "find_in_files", "where": " , " }
 	},
 	{
 		"keys": ["ctrl+shift+f"], "command": "show_panel",
@@ -157,17 +174,14 @@
 			"where": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects\\,*/Assets/*.cs,-*/Assets/*/*.cs"
 		},
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.cs"}
+			{ "key": "selector", "operator": "equal", "operand": "source.cs" }
 		]
 	},
 	{
 		"keys": ["ctrl+shift+f"], "command": "show_panel",
-		"args": {
-			"panel": "find_in_files",
-			"where": " ,*.py"
-		},
+		"args": { "panel": "find_in_files", "where": " ,*.py" },
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.python"}
+			{ "key": "selector", "operator": "equal", "operand": "source.python" }
 		]
 	},
 	// </OverRidden Keybinds>
@@ -176,39 +190,40 @@
 	{
 		"keys": ["shift+space"], "command": "lsp_hover",
 		"context": [
-			{ "key": "setting.lsp_active"},
+			{ "key": "setting.lsp_active" },
 			{ "key": "lsp.signature_help", "operator": "equal", "operand": 0 }
 		]
 	},
 	// {
 	// 	"keys": ["ctrl+shift+space"], "command": "lsp_hover",
-	// 	"context": [{ "key": "setting.lsp_active"}]
+	// 	"context": [{ "key": "setting.lsp_active" }]
 	// },
 	{
-		"keys": ["ctrl+k","r"], "command": "lsp_document_symbols",
-		"context": [{ "key": "setting.lsp_active"}]
+		"keys": ["ctrl+k", "r"], "command": "lsp_document_symbols",
+		"context": [{ "key": "setting.lsp_active" }]
 	},
 	{
 		"keys": ["alt+shift+r"], "command": "lsp_symbol_rename",
-		"context": [{ "key": "setting.lsp_active"}]
+		"context": [{ "key": "setting.lsp_active" }]
 	},
 	{
 		"keys": ["ctrl+keypad0"], "command": "lsp_show_diagnostics_panel",
-		// "context": [{"key": "setting.lsp_active"}]
+		// "context": [{ "key": "setting.lsp_active" }]
 	},
 // <LSP Keybinds>
 
 // <Commands in Terminus Keybinds>
 	{
-		"keys": ["ctrl+k","j"], "command": "terminus_open",
+		"keys": ["ctrl+k", "j"], "command": "terminus_open",
 		"args": {
 			"cwd": "${file_path:${folder}}",
 			"title": "Jupyter Notebook",
 			"tag": "jupyter",
 			"post_window_hooks": [
-				["move_tab_back"], [ "carry_file_to_pane", { "direction": "down"} ],
-				[ "zoom_pane", { "fraction": 0.2 } ],
-				[ "travel_to_pane", { "direction": "up"} ],
+				["move_tab_back"],
+				["carry_file_to_pane", { "direction": "down" }],
+				["zoom_pane", { "fraction": 0.2 }],
+				["travel_to_pane", { "direction": "up" }],
 				[
 					"terminus_send_string",
 					{ "string": "jupyter notebook\n", "visible_only": true }
@@ -217,7 +232,7 @@
 		}
 	},
 	{
-		"keys": ["ctrl+k","s"], "command": "terminus_open",
+		"keys": ["ctrl+k", "s"], "command": "terminus_open",
 		"args": {
 			"panel_name": "Google Incognito Search",
 			"cmd": [
@@ -234,37 +249,37 @@
 		"keys": ["ctrl+enter"], "command": "chain",
 		"args": { "commands": [["save"], ["build"]] }
 	},
-	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build"},
+	{ "keys": ["ctrl+shift+enter"], "command": "cancel_build" },
 	{
 		"keys": ["alt+enter"], "command": "chain",
-		"args": { "commands": [["save"], [ "build", { "variant": "Terminus"} ]] }
+		"args": { "commands": [["save"], ["build", { "variant": "Terminus" }]] }
 	},
 	{
 		"keys": ["alt+shift+enter"], "command": "chain",
-		"args": { "commands": [["save"], [ "build", { "variant": "Terminus1"} ]] }
+		"args": { "commands": [["save"], ["build", { "variant": "Terminus1" }]] }
 	},
 	{
-		"keys": ["ctrl+k","enter"], "command": "chain",
-		"args": { "commands": [["save"], [ "build", { "variant": "Terminus2"} ]] }
+		"keys": ["ctrl+k", "enter"], "command": "chain",
+		"args": { "commands": [["save"], ["build", { "variant": "Terminus2" }]] }
 	},
 	{
 		"keys": ["ctrl+alt+enter"], "command": "chain",
-		"args": { "commands": [["save"], [ "build", { "variant": "Terminus3"} ]] }
+		"args": { "commands": [["save"], ["build", { "variant": "Terminus3" }]] }
 	},
 	{
-		"keys": ["ctrl+k","`"], "command": "toggle_terminus_panel",
+		"keys": ["ctrl+k", "`"], "command": "toggle_terminus_panel",
 		"args": {
 			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
 		}
 	},
 	{
-		"keys": ["ctrl+k","~"], "command": "terminus_open",
+		"keys": ["ctrl+k", "~"], "command": "terminus_open",
 		"args": {
 			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
 		}
 	},
 	{
-		"keys": ["shift+ctrl+k","~"], "command": "terminus_open",
+		"keys": ["shift+ctrl+k", "~"], "command": "terminus_open",
 		"args": {
 			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
 		}
@@ -286,7 +301,7 @@
 		}
 	},
 	{
-		"keys": ["ctrl+k","alt+`"], "command": "toggle_terminus_panel",
+		"keys": ["ctrl+k", "alt+`"], "command": "toggle_terminus_panel",
 		"args": {
 			"cmd": "ipython",
 			"cwd": "${file_path:${folder}}",
@@ -295,7 +310,7 @@
 		}
 	},
 	{
-		"keys": ["alt+ctrl+k","alt+`"], "command": "toggle_terminus_panel",
+		"keys": ["alt+ctrl+k", "alt+`"], "command": "toggle_terminus_panel",
 		"args": {
 			"cmd": "ipython",
 			"cwd": "${file_path:${folder}}",
@@ -309,7 +324,7 @@
 	{
 		"keys": ["escape"], "command": "pass",
 		"context": [
-			{ "key": "terminus_view"},
+			{ "key": "terminus_view" },
 			{ "key": "panel_visible", "operator": "equal", "operand": true },
 			{ "key": "panel_has_focus", "operator": "equal", "operand": false },
 			{ "key": "num_selections", "operator": "equal", "operand": 1 },
@@ -358,10 +373,10 @@
 		"keys": ["shift+escape"], "command": "chain",
 		"context": [
 			{ "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "terminus_view"}
+			{ "key": "terminus_view" }
 		],
 		"args": {
-			"commands": [["terminus_close"], [ "hide_panel", { "cancel": true } ]]
+			"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
 		}
 	},
 	// Original Defaults ->
@@ -384,7 +399,7 @@
 		]
 	},
 	// Overrides Focus Group to Folding Keybinds ->
-	{ "keys": ["ctrl+1"], "command": "unfold_all"},
+	{ "keys": ["ctrl+1"], "command": "unfold_all" },
 	{ "keys": ["ctrl+2"], "command": "fold_by_level", "args": { "level": 1 } },
 	{ "keys": ["ctrl+3"], "command": "fold_by_level", "args": { "level": 2 } },
 	{ "keys": ["ctrl+4"], "command": "fold_by_level", "args": { "level": 3 } },
@@ -396,127 +411,127 @@
 	// PanePane ->
 	{
 		"keys": ["alt+,"], "command": "pane_pane_resize",
-		"args": { "dimension": "width", "resize": "decrease"}
+		"args": { "dimension": "width", "resize": "decrease" }
 	},
 	{
 		"keys": ["alt+."], "command": "pane_pane_resize",
-		"args": { "dimension": "width", "resize": "increase"}
+		"args": { "dimension": "width", "resize": "increase" }
 	},
 	{
 		"keys": ["alt+shift+,"], "command": "pane_pane_resize",
-		"args": { "dimension": "height", "resize": "decrease"}
+		"args": { "dimension": "height", "resize": "decrease" }
 	},
 	{
 		"keys": ["alt+shift+."], "command": "pane_pane_resize",
-		"args": { "dimension": "height", "resize": "increase"}
+		"args": { "dimension": "height", "resize": "increase" }
 	},
 	{
-		"keys": ["ctrl+k",","], "command": "pane_pane_resize",
-		"args": { "dimension": "width", "resize": "equal"}
+		"keys": ["ctrl+k", ","], "command": "pane_pane_resize",
+		"args": { "dimension": "width", "resize": "equal" }
 	},
 	{
-		"keys": ["ctrl+k","."], "command": "pane_pane_resize",
-		"args": { "dimension": "height", "resize": "equal"}
+		"keys": ["ctrl+k", "."], "command": "pane_pane_resize",
+		"args": { "dimension": "height", "resize": "equal" }
 	},
 	// Origami ->
 	{
-		"keys": ["ctrl+k","up"], "command": "travel_to_pane",
-		"args": { "direction": "up"}
+		"keys": ["ctrl+k", "up"], "command": "travel_to_pane",
+		"args": { "direction": "up" }
 	},
 	{
-		"keys": ["ctrl+k","right"], "command": "travel_to_pane",
-		"args": { "direction": "right"}
+		"keys": ["ctrl+k", "right"], "command": "travel_to_pane",
+		"args": { "direction": "right" }
 	},
 	{
-		"keys": ["ctrl+k","down"], "command": "travel_to_pane",
-		"args": { "direction": "down"}
+		"keys": ["ctrl+k", "down"], "command": "travel_to_pane",
+		"args": { "direction": "down" }
 	},
 	{
-		"keys": ["ctrl+k","left"], "command": "travel_to_pane",
-		"args": { "direction": "left"}
+		"keys": ["ctrl+k", "left"], "command": "travel_to_pane",
+		"args": { "direction": "left" }
 	},
 	{
-		"keys": ["ctrl+k","shift+up"], "command": "carry_file_to_pane",
-		"args": { "direction": "up"}
+		"keys": ["ctrl+k", "shift+up"], "command": "carry_file_to_pane",
+		"args": { "direction": "up" }
 	},
 	{
-		"keys": ["ctrl+k","shift+right"], "command": "carry_file_to_pane",
-		"args": { "direction": "right"}
+		"keys": ["ctrl+k", "shift+right"], "command": "carry_file_to_pane",
+		"args": { "direction": "right" }
 	},
 	{
-		"keys": ["ctrl+k","shift+down"], "command": "carry_file_to_pane",
-		"args": { "direction": "down"}
+		"keys": ["ctrl+k", "shift+down"], "command": "carry_file_to_pane",
+		"args": { "direction": "down" }
 	},
 	{
-		"keys": ["ctrl+k","shift+left"], "command": "carry_file_to_pane",
-		"args": { "direction": "left"}
+		"keys": ["ctrl+k", "shift+left"], "command": "carry_file_to_pane",
+		"args": { "direction": "left" }
 	},
 	{
-		"keys": ["shift+ctrl+k","shift+up"], "command": "carry_file_to_pane",
-		"args": { "direction": "up"}
+		"keys": ["shift+ctrl+k", "shift+up"], "command": "carry_file_to_pane",
+		"args": { "direction": "up" }
 	},
 	{
-		"keys": ["shift+ctrl+k","shift+right"], "command": "carry_file_to_pane",
-		"args": { "direction": "right"}
+		"keys": ["shift+ctrl+k", "shift+right"], "command": "carry_file_to_pane",
+		"args": { "direction": "right" }
 	},
 	{
-		"keys": ["shift+ctrl+k","shift+down"], "command": "carry_file_to_pane",
-		"args": { "direction": "down"}
+		"keys": ["shift+ctrl+k", "shift+down"], "command": "carry_file_to_pane",
+		"args": { "direction": "down" }
 	},
 	{
-		"keys": ["shift+ctrl+k","shift+left"], "command": "carry_file_to_pane",
-		"args": { "direction": "left"}
+		"keys": ["shift+ctrl+k", "shift+left"], "command": "carry_file_to_pane",
+		"args": { "direction": "left" }
 	},
 	{
-		"keys": ["alt+ctrl+k","alt+up"], "command": "pull_file_from_pane",
-		"args": { "direction": "up"}
+		"keys": ["alt+ctrl+k", "alt+up"], "command": "pull_file_from_pane",
+		"args": { "direction": "up" }
 	},
 	{
-		"keys": ["alt+ctrl+k","alt+right"], "command": "pull_file_from_pane",
-		"args": { "direction": "right"}
+		"keys": ["alt+ctrl+k", "alt+right"], "command": "pull_file_from_pane",
+		"args": { "direction": "right" }
 	},
 	{
-		"keys": ["alt+ctrl+k","alt+down"], "command": "pull_file_from_pane",
-		"args": { "direction": "down"}
+		"keys": ["alt+ctrl+k", "alt+down"], "command": "pull_file_from_pane",
+		"args": { "direction": "down" }
 	},
 	{
-		"keys": ["alt+ctrl+k","alt+left"], "command": "pull_file_from_pane",
-		"args": { "direction": "left"}
+		"keys": ["alt+ctrl+k", "alt+left"], "command": "pull_file_from_pane",
+		"args": { "direction": "left" }
 	},
 	{
-		"keys": ["ctrl+k","alt+up"], "command": "pull_file_from_pane",
-		"args": { "direction": "up"}
+		"keys": ["ctrl+k", "alt+up"], "command": "pull_file_from_pane",
+		"args": { "direction": "up" }
 	},
 	{
-		"keys": ["ctrl+k","alt+right"], "command": "pull_file_from_pane",
-		"args": { "direction": "right"}
+		"keys": ["ctrl+k", "alt+right"], "command": "pull_file_from_pane",
+		"args": { "direction": "right" }
 	},
 	{
-		"keys": ["ctrl+k","alt+down"], "command": "pull_file_from_pane",
-		"args": { "direction": "down"}
+		"keys": ["ctrl+k", "alt+down"], "command": "pull_file_from_pane",
+		"args": { "direction": "down" }
 	},
 	{
-		"keys": ["ctrl+k","alt+left"], "command": "pull_file_from_pane",
-		"args": { "direction": "left"}
+		"keys": ["ctrl+k", "alt+left"], "command": "pull_file_from_pane",
+		"args": { "direction": "left" }
 	},
 	{
-		"keys": ["ctrl+k","ctrl+up"], "command": "create_pane",
+		"keys": ["ctrl+k", "ctrl+up"], "command": "create_pane",
 		"args": { "direction": "up", "give_focus": true }
 	},
 	{
-		"keys": ["ctrl+k","ctrl+right"], "command": "create_pane",
+		"keys": ["ctrl+k", "ctrl+right"], "command": "create_pane",
 		"args": { "direction": "right", "give_focus": true }
 	},
 	{
-		"keys": ["ctrl+k","ctrl+down"], "command": "create_pane",
+		"keys": ["ctrl+k", "ctrl+down"], "command": "create_pane",
 		"args": { "direction": "down", "give_focus": true }
 	},
 	{
-		"keys": ["ctrl+k","ctrl+left"], "command": "create_pane",
+		"keys": ["ctrl+k", "ctrl+left"], "command": "create_pane",
 		"args": { "direction": "left", "give_focus": true }
 	},
 	{
-		"keys": ["ctrl+k","Z"], "command": "toggle_zoom_pane",
+		"keys": ["ctrl+k", "Z"], "command": "toggle_zoom_pane",
 		"args": { "fraction": 0.65 }
 	},
 	// AdvancedCSV ->
