@@ -1,14 +1,22 @@
 import sublime
 import sublime_plugin
+from collections import OrderedDict
+
+files = OrderedDict(
+	**{
+		"Yapf.Style": "C:/Users/Ibraheem/.config/yapf/style",
+		"PyCodeStyle": "C:/Users/Ibraheem/.pycodestyle",
+		"Sublime": "C:/Program Files/Sublime Text 3/sublime.py",
+		"SublimePlugin": "C:/Program Files/Sublime Text 3/sublime_plugin.py",
+	}
+)
+files.move_to_end("Sublime", True)
+files.move_to_end("SublimePlugin", True)
 
 
 class MenuOpenSpecialFileCommand(sublime_plugin.WindowCommand):
 
 	def run(self):
-		files = {
-			"Yapf.Style": "C:/Users/Ibraheem/.config/yapf/style",
-			"PyCodeStyle": "C:/Users/Ibraheem/.pycodestyle"
-		}
 
 		panel_items = [[k, v] for k, v in files.items()]
 		keys = list(files.keys())
