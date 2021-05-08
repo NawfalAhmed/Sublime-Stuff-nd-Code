@@ -32,9 +32,10 @@ class NewUserPluginCommand(sublime_plugin.WindowCommand):
 			import sublime_plugin
 
 
-			class ${1:%s}Command(sublime_plugin.${2:Text}Command):
-				def run(self${3:, edit}):
-					${4:self.view.insert(edit, 0, "Hello, World!")}
+			# class %sCommand(sublime_plugin.${1:Text}Command):
+			class TestingCommand(sublime_plugin.${1:Text}Command):
+				def run(self${2:, edit}):
+					${3:selections = self.view.sel()}
 
 		"""
 		plugin_template = textwrap.dedent(plugin_template).lstrip()
@@ -43,9 +44,11 @@ class NewUserPluginCommand(sublime_plugin.WindowCommand):
 			pass
 		if not view.size():
 			view.set_scratch(True)
-			view.set_syntax_file("Packages/Python/Python.sublime-syntax")
+			view.assign_syntax("Packages/Python/Python.sublime-syntax")
 
-			view.run_command("insert_snippet", {"contents": plugin_template % name})
+			view.run_command(
+				"insert_snippet", {"contents": plugin_template % name}
+			)
 			sublime.set_timeout_async(lambda: view.set_scratch(False), 60000)
 
 	def input(self, args):

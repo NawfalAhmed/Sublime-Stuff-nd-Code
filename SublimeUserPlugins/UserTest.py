@@ -16,9 +16,7 @@ class UserTestCommand(sublime_plugin.WindowCommand):
 		self.view = self.window.new_file()
 		self.view.set_scratch(True)
 		self.view.set_name("Command List")
-		self.view.run_command(
-			"set_file_type", {"syntax": "Packages/Python/Python.sublime-syntax"}
-		)
+		self.view.assign_syntax("Packages/Python/Python.sublime-syntax")
 		self.list_category("Application Commands", application_command_classes)
 		self.list_category("Window Commands", window_command_classes)
 		self.list_category("Text Commands", text_command_classes)
@@ -59,7 +57,7 @@ class UserTestCommand(sublime_plugin.WindowCommand):
 		name = clsname[0].lower()
 		last_upper = False
 		for c in clsname[1:]:
-			name += (c if last_upper and c.islower() else '_' + c.lower())
+			name += ('_' + c.lower()) if (c.isupper() and not last_upper) else (c)
 			last_upper = c.isupper()
 		if name.endswith("_command"):
 			name = name[0:-8]
