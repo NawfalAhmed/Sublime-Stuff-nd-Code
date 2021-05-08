@@ -82,8 +82,11 @@
 	{ "keys": ["alt+backspace"], "command": "remove_function" },
 	{ "keys": ["alt+space"], "command": "expand_region" },
 	{
-		"keys": ["ctrl+k", " "], "command": "expand_selection",
+		"keys": ["alt+shift+space"], "command": "expand_selection",
 		"args": { "to": "scope" }
+	},
+	{
+		"keys": ["ctrl+k", " "], "command": "set_mark"
 	},
 	{
 		"keys": ["alt+space"], "command": "csv_select_col",
@@ -119,7 +122,7 @@
 	{
 		"keys": ["ctrl+k", "|"], "command": "edit_settings",
 		"args": {
-			"base_file": "${packages }/Default/Default ($platform).sublime-keymap",
+			"base_file": "${packages}/Default/Default ($platform).sublime-keymap",
 			"default": "[\n\t$0\n]\n"
 		}
 	},
@@ -146,8 +149,7 @@
 	// overrided: duplicate lines, original: ctrl+k, ctrl+d
 	{ "keys": ["ctrl+n"], "command": "smooth_new_buffer" },
 	{
-		"keys": ["ctrl+t"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/extendedtranspose.sublime-macro" }
+		"keys": ["ctrl+t"], "command": "transpose_pro",
 	},  // remapped transpose -> alt+t
 	{ "keys": ["ctrl+k", "ctrl+k"], "command": "pass" },
 	// overrided: delete to hard EOL
@@ -194,10 +196,6 @@
 			{ "key": "lsp.signature_help", "operator": "equal", "operand": 0 }
 		]
 	},
-	// {
-	// 	"keys": ["ctrl+shift+space"], "command": "lsp_hover",
-	// 	"context": [{ "key": "setting.lsp_active" }]
-	// },
 	{
 		"keys": ["ctrl+k", "r"], "command": "lsp_document_symbols",
 		"context": [{ "key": "setting.lsp_active" }]
