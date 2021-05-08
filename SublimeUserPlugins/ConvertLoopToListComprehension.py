@@ -51,8 +51,7 @@ class ConvertLoopToListComprehensionCommand(sublime_plugin.TextCommand):
 		self.view.run_command("expand_selection", {"to": "indentation"})
 		selection.add(region.cover(selection[0]))
 
-		lines = textwrap.dedent(
-			self.view.substr(region.cover(selection[0])).rstrip()
-		).split('\n')
+		region = region.cover(selection[0])
+		lines = textwrap.dedent(self.view.substr(region).rstrip()).split('\n')
 
 		self.view.replace(edit, region, self.listcomprehension(lines))
