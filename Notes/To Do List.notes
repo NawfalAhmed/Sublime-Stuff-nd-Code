@@ -3,9 +3,6 @@ class Python:
 	- Try everything in the generators video
 
 class Sublime:
-	- Try Screentogif
-	- update json format
-	  use subprocces.checkoutput("cmd",shell=True).decode() instead of exec
 	- Make own syntax highlighting for notes .penguin
 	- plugin to auto import unimported library perhaps?
 
