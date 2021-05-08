@@ -3,6 +3,7 @@ import sublime_plugin
 
 
 class ConvertImportStatementCommand(sublime_plugin.TextCommand):
+
 	def run(self, edit):
 
 		selection = self.view.sel()
@@ -19,5 +20,9 @@ class ConvertImportStatementCommand(sublime_plugin.TextCommand):
 			selection = self.view.sel()
 			regions = list(selection)
 			selection.clear()
-			regions = [sublime.Region(line.end()) for region in regions for line in self.view.lines(region)]
+			regions = [
+				sublime.Region(line.end())
+				for region in regions
+				for line in self.view.lines(region)
+			]
 			selection.add_all(regions)
