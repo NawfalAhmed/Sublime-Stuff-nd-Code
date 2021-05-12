@@ -1,0 +1,47 @@
+### to do later:
+check new annotations functionality
+shift all my user plugins to 3.8 finally
+use ctrl ctrl to add a mark and define custom marks which nicely underline the mark area and are re-moved whenever the transpose command is called
+check Added Revert Diff Hunk
+check this font glow thingy nd how to possibly use it
+update my main monokai to kinda copy anything new in the sublime text 4 monokai?
+try Command Line: subl - can now be used to read from stdin
+check API: Added Window.bring_to_front()
+check View.text_point() and related functions now accept a clamp_column parameter
+check API: View.show() now takes keep_to_left and animate
+CommandInputHandler now has an initial_selection() method maybe can use to not select the file extension when triggering ctrl+n/alt+n?
+show_quick_panel now accepts placeholder text, via the placeholder
+When renaming a file, the extension is now excluded from the initial selection, check if thers a builtin rename command?
+check if that triggers a command: Folders in the sidebar can be recursively expanded via alt+arrow key
+keybinds:
+	Join Lines is now on Ctrl+Shift+J / Cmd+Shift+J
+	Expand Selection to Indentation is no longer bound by default
+	Ctrl+J / Cmd+J is now used as a prefix for sequential key bindings, similar to Ctrl+K / Cmd+K
+added commands to change tab focus left and right
+check sublime.log_control_tree()
+#### notes:
+yay Find in Files can now filter by .gitignore, check it
+recheck go to anything (can go to to line number directly also)
+
+Added Selection/Expand Selection as a general mechanism to expand the selection
+check the difference in Swap Lines?
+Tabs, Open Files entries, Goto File, Goto Symbol in Project, Goto Definition and the Definitions popup now support using the alt modifier to replace the current file with the selected file, add this to my custom file menus too perhaps?
+Goto File, Goto Symbol in Project, Goto Definition and the Definitions popup now support the ctrl/cmd modifier to open the file in addition to the current file ( i think this means split view not sure?)
+Added a New Tab button in the tab bar, and hide_new_tab_button setting
+ctrl+shift+l splits a selection into words if its a single line :o
+tab menu has Close Deleted Files
+View.add_regions() now has an annotations parameter
+Settings can now be treated like a dict (Replaced Settings iteration with Settings.to_dict())
+Plugins starting with _ will be ignored
+folder_exclude_patterns and folder_include_patterns now support project-relative paths, by starting the path with //
+Holding down Shift on Windows, or Option on macOS, will start Sublime Text in Safe Mode (Safe Mode is now activated via shift+alt)
+Console now uses Python syntax highlighting by default yay maybe i can now use it for quick tests ?
+Goto Anything can multi-select files by selecting a file while holding down Ctrl
+API: plugins may now add selections to the Jump Back history list via the add_jump_record command
+API: added sublime.QuickPanelItem() with support for kind info, annotations and basic minihtml
+API: Added ListInputItem so that ListInputHandler objects can provide kind info, annotations and details
+API: Added color-based kind IDs for ListInputItem and QuickPanelItem to allow plugins to provide semantic colors
+API: .sublime-commands files now support filtering commands via the "platform" key
+logging function toggles when no argument is passed e.g sublime.log_commands()
+Fixed an infinite loop when the same folder is added to the sidebar twice
+	(so i can try adding a folder twice then)

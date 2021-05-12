@@ -20,6 +20,8 @@ class CommandPrompt:
 	start.   # to open file exporer there
 	>        # for output redirect
 	2>       # for error redirect
+	#format python files with yapf
+	yapf -r -i -p -vv .
 	#add suffix to multiple
 	for %a in (*) do ren "%a" "Task - %a"
 	#link a specific folder to One Drive
