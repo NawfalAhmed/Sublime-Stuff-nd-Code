@@ -1,17 +1,17 @@
 import sublime
 import sublime_plugin
-from collections import OrderedDict
+from os.path import expandvars
 
-files = OrderedDict(
-	**{
-		"Yapf.Style": "C:/Users/Ibraheem/.config/yapf/style",
-		"PyCodeStyle": "C:/Users/Ibraheem/.pycodestyle",
-		"Sublime": "C:/Program Files/Sublime Text 3/sublime.py",
-		"SublimePlugin": "C:/Program Files/Sublime Text 3/sublime_plugin.py",
-	}
-)
-files.move_to_end("Sublime", True)
-files.move_to_end("SublimePlugin", True)
+_sublime = expandvars(r"%SublimeInstall%")
+
+files = {
+	"Yapf.Style": "C:/Users/Ibraheem/.config/yapf/style",
+	"PyCodeStyle": "C:/Users/Ibraheem/.pycodestyle",
+	"SublimePlugin": f"{_sublime}/Lib/python38/sublime_plugin.py",
+	"Sublime": f"{_sublime}/Lib/python38/sublime.py",
+	"SublimePlugin3.3": f"{_sublime}/Lib/python33/sublime_plugin.py",
+	"Sublime3.3": f"{_sublime}/Lib/python33/sublime.py"
+}
 
 
 class MenuOpenSpecialFileCommand(sublime_plugin.WindowCommand):
