@@ -1,22 +1,5 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
-	"tab_size": 2,
-	"font_size": 11,
-	"theme": "Adaptive.sublime-theme",
-	"translate_tabs_to_spaces": false,
-	"line_numbers": true,
 	"md003": "dash",
 	"md004": "0",
 	"md026": "ordered",
-	    "caret_style": "smooth",
-
-    // These settings control the size of the caret
-    "caret_extra_top": 2,
-    "caret_extra_bottom": 2,
-    "caret_extra_width": 1,
-
-    // When enabled, the caret will be drawn as a rectangle, using the width
-    // of the current character
-    "block_caret": false,
-    "margin": 0,
 }

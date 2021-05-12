@@ -1,5 +1,5 @@
 {
-	"auto_complete_commit_on_tab": true,
+	// "auto_complete_commit_on_tab": false,
 	"auto_complete_cycle": true,
 	"auto_complete_delay": 100,
 	"auto_complete_trailing_symbols": true,
@@ -58,19 +58,21 @@
 	"wrap_width": 80,
 	"wrap_width_style": "min",
 	"added_words": [
-		"whitespace", "color", "centered", "etc", "popup", "Keybinds"
+		"whitespace", "color", "centered", "etc", "popup", "Keybinds",
+		"yapf",
 	],
 	"ignored_packages": [
+		"Chain of Command",
 		"Display numbers",
 		"FileManager",
 		"LSP-pyright",
 		"MarkdownEditing",
 		"OmniSharp",
 		"R-IDE",
-		"SQLPlus",
 		"SqlBeautifier",
+		"SQLPlus",
 		"Verilog",
-		"Vintage"
+		"Vintage",
 	],
 	"binary_file_patterns": [
 		"*.exe",

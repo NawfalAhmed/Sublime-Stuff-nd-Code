@@ -1,0 +1,7 @@
+// These settings override both User and Default settings for the Plain text syntax
+{
+
+	"line_numbers": false,
+	"fold_buttons": false,
+	"rulers": [],
+}

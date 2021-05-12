@@ -1,5 +1,6 @@
 import sublime
 import sublime_plugin
+import re
 
 
 class ConvertImportStatementCommand(sublime_plugin.TextCommand):
@@ -13,7 +14,13 @@ class ConvertImportStatementCommand(sublime_plugin.TextCommand):
 				pattern = "meta.statement.import.python"
 				if self.view.score_selector(line.begin(), pattern):
 					contents = self.view.substr(line)
-					contents = contents.replace("import", "from") + " import "
+					from_pattern = re.compile(r"^(from\s)(.+)(\simport\s)([^\s]+)")
+					sub = re.sub(from_pattern, r"\1\4\3\2", contents)
+					contents = (
+						(contents.replace("import", "from") + " import ")
+						if sub == contents
+						else sub
+					)  # yapf: disable
 					self.view.replace(edit, line, contents)
 					change = True
 		if change:

@@ -16,7 +16,7 @@ class UserTestCommand(sublime_plugin.WindowCommand):
 		self.view = self.window.new_file()
 		self.view.set_scratch(True)
 		self.view.set_name("Command List")
-		self.view.assign_syntax("Packages/Python/Python.sublime-syntax")
+		self.view.assign_syntax("scope:source.python")
 		self.list_category("Application Commands", application_command_classes)
 		self.list_category("Window Commands", window_command_classes)
 		self.list_category("Text Commands", text_command_classes)

@@ -12,7 +12,9 @@
 				"Advanced OS",
 				"Notes",
 				"Testing",
-				"SublimeUser*"
+				"SublimeUser*",
+				"nasmx-1.4",
+				"DosBoxPortable",
 			],
 			"path": "Redacted"
 		},
@@ -64,6 +66,7 @@
 				"R-IDE",
 				"OmniSharp",
 				"backrefs",
+				"bracex",
 				"bs4",
 				"jsonschema",
 				"lsp_utils",
@@ -81,6 +84,7 @@
 				"pyyaml",
 				"sublime_lib",
 				"wcwidth",
+				"wcmatch",
 			],
 			"name": "Packages Overrides",
 			"path": "Redacted"

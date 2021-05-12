@@ -44,7 +44,7 @@ class NewUserPluginCommand(sublime_plugin.WindowCommand):
 			pass
 		if not view.size():
 			view.set_scratch(True)
-			view.assign_syntax("Packages/Python/Python.sublime-syntax")
+			view.assign_syntax("scope:source.python")
 
 			view.run_command(
 				"insert_snippet", {"contents": plugin_template % name}
