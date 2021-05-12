@@ -99,18 +99,4 @@
 		}
 
 	],
-	"settings":
-	{
-		"LSP":
-		{
-			"lsp-pyright":
-			{
-				"enabled": false
-			},
-			"rlang":
-			{
-				"enabled": true
-			}
-		}
-	}
 }
