@@ -27,78 +27,13 @@
 		{
 			"enabled": true
 		},
-		"mspyls":
-		{
-			"command":
-			[
-				"dotnet",
-				"exec",
-				"E:/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll"
-			],
-			"enabled": false,
-			"initializationOptions":
-			{
-				"interpreter":
-				{
-					"properties":
-					{
-						"UseDefaultDatabase": true,
-						"Version": "3.8"
-					}
-				}
-			},
-			"languageId": "python",
-			"scopes":
-			[
-				"source.python"
-			],
-			"settings":
-			{
-				"python":
-				{
-					"analysis":
-					{
-						"disabled":
-						[
-							"too-many-function-arguments",
-							"parameter-missing"
-						],
-						"errors":
-						[
-							"undefined-variable"
-						],
-						"information":
-						[
-							"unresolved-import"
-						],
-						"warnings":
-						[
-							"unknown-parameter-name"
-						]
-					},
-					"autoComplete":
-					{
-						"extraPaths":
-						[
-							"/opt/sublime_text"
-						]
-					}
-				}
-			},
-			"syntaxes":
-			[
-				"Packages/Python/Python.sublime-syntax",
-				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
-				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-			]
-		},
 		"pyls":
 		{
 			"command":
 			[
 				"pyls"
 			],
-			"enabled": true,
+			"enabled": false,
 			"languageId": "python",
 			"scopes":
 			[
@@ -130,5 +65,13 @@
 	"show_diagnostics_in_view_status": false,
 	"show_symbol_action_links": true,
 	"log_stderr": true,
-	"log_server": true
+	"log_server": false,
+	"lsp_format_on_save": false,
+	"show_diagnostics_count_in_view_status": true,
+	"diagnostics_highlight_style": "underline",
+	"show_code_actions": "bulb",
+	// "inhibit_word_completions": false, //testing
+	"show_references_in_quick_panel": true,
+	"log_debug": false,
+
 }
