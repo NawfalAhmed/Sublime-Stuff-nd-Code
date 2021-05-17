@@ -22,6 +22,7 @@
 		"FindKeyConflicts",
 		"Increment Selection",
 		"LSP",
+		"LSP-json",
 		"LSP-pyright",
 		"MarkdownEditing",
 		"MarkdownLivePreview",
