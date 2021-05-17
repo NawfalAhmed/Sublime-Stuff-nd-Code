@@ -1,6 +1,11 @@
 [
 	// <Recent Keybinds>
 	// { "keys": ["alt"], "command": "pass"}, //trying to avoid unnecessary menu toggle
+	{ "keys": ["ctrl","ctrl"], "command": "set_user_mark"},
+	{
+		"keys": ["ctrl", "shift+ctrl"], "command": "set_user_mark",
+		"args": { "clear": true }
+	},
 	{ "keys": ["ctrl+j"], "command": "join_lines" },
 	{
 		"keys": ["ctrl+shift+j"], "command": "expand_selection",
@@ -337,7 +342,6 @@
 	// </Builds and Terminals>
 
 	// Escape Key Remapped ->
-	{ "keys": ["escape"], "command": "cancel"},
 	{
 		"keys": ["escape"], "command": "pass",
 		"context": [
@@ -356,6 +360,7 @@
 			}
 		]
 	},
+	{ "keys": ["escape"], "command": "cancel"},
 	{
 		"keys": ["escape"], "command": "single_selection",
 		"context": [
