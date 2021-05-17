@@ -7,7 +7,9 @@ class ExpandSelectionToWordCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		selections = self.view.sel()
-		selections.add_all(self.getwordwithdots(selections))
+		new_selections = list(self.getwordwithdots(selections))
+		if new_selections:
+			selections.add_all(new_selections)
 
 	def getwordwithdots(self, selections):
 		for region in selections:
