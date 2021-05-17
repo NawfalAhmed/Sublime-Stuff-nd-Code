@@ -58,8 +58,13 @@
 	"wrap_width": 80,
 	"wrap_width_style": "min",
 	"added_words": [
-		"whitespace", "color", "centered", "etc", "popup", "Keybinds",
+		"whitespace", "color", "centered", "etc", "popup", "keybinds",
 		"yapf",
+		"args",
+		"plugin",
+		"json",
+		"ipython",
+		"cmd",
 	],
 	"ignored_packages": [
 		"Chain of Command",

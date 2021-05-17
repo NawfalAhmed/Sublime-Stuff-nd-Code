@@ -1,0 +1,51 @@
+{
+	// if you are developing this plugin...
+	"developing": true,
+	"dev_environment": "sublime_text",
+	"settings": {
+		"python.analysis.autoImportCompletions": true,
+		"python.analysis.autoSearchPaths": true,
+		"python.analysis.completeFunctionParens": true,
+		"python.analysis.extraPaths": [
+			"$packages/../ST-API-stubs",
+			// "$packages/../typings"
+		],
+		"python.analysis.stubPath": "$packages/../typings",
+		"python.analysis.diagnosticMode": "openFilesOnly",
+		"python.analysis.typeCheckingMode": "strict",
+		"python.analysis.diagnosticSeverityOverrides": {
+			// information
+			"reportMissingTypeStubs": "information",
+			"reportUnusedImport": "information",
+			"reportUnusedClass": "information",
+			"reportUnusedFunction": "information",
+			"reportUnusedCoroutine": "information",
+			"reportUnusedVariable": "information",
+			"reportUnboundVariable": "information",
+			"reportPrivateUsage": "information",
+			"reportConstantRedefinition": "information",
+			"reportUnknownArgumentType": "information",
+			// warnings
+			"reportFunctionMemberAccess": "warning",
+			"reportImportCycles": "warning",
+			"reportDuplicateImport": "warning",
+			"reportOptionalSubscript": "warning",
+			"reportOptionalMemberAccess": "warning",
+			"reportOptionalCall": "warning",
+			"reportOptionalIterable": "warning",
+			"reportOptionalContextManager": "warning",
+			"reportOptionalOperand": "warning",
+			"reportUnnecessaryIsInstance": "warning",
+			"reportInvalidStubStatement": "warning",
+			// testing
+			"reportImplicitStringConcatenation": "hint",
+			"reportUnusedCallResult": "hint",
+			"reportCallInDefaultInitializer": "information"
+		},
+		"python.analysis.logLevel": "information",
+		"python.analysis.useLibraryCodeForTypes": true,
+		"pyright.disableLanguageServices": false,
+		// "pyright.disableOrganizeImports": true,
+		"python.pythonPath": "python"
+	}
+}

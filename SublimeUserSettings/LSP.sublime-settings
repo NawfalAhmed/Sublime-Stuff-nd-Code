@@ -1,5 +1,4 @@
 {
-	"auto_show_diagnostics_panel": "never",
 	"clients":
 	{
 		"Omnisharp":
@@ -12,33 +11,30 @@
 				"C:/Users/Ibraheem/Desktop/Unity Projects/Assignment2 3D/Assembly-CSharp.csproj"
 			],
 			"enabled": false,
-			"languageId": "csharp",
-			"scopes":
-			[
-				"source.cs"
-			],
-			"syntaxes":
-			[
-				"Packages/C#/C#.sublime-syntax",
-				"Packages/Unity3D/UnityC#.tmLanguage"
-			]
+			"selector": "source.cs",
 		},
-		"clangd":
+		"PyLsp":
 		{
-			"enabled": true
+			"command": ["pylsp"],
+			"enabled": false,
+			"selector": "source.python",
+			"settings": {
+				"pylsp.configurationSources": ["pycodestyle"],
+				"pylsp.plugins.pycodestyle.enabled": true,
+				"pylsp.plugins.pydocstyle.enabled": true,
+				"pylsp.plugins.rope.enabled": false,
+				"pylsp.plugins.pyflakes.enabled": false,
+				"pylsp.plugins.mypy.enabled": false,
+				"pylsp.plugins.isort.enabled": false,
+				"pylsp.plugins.autopep8.enabled": false,
+				"pylsp.plugins.yapf.enabled": true,
+			},
 		},
 		"pyls":
 		{
-			"command":
-			[
-				"pyls"
-			],
+			"command": ["pyls"],
 			"enabled": false,
-			"languageId": "python",
-			"scopes":
-			[
-				"source.python"
-			],
+			"selector": "source.python",
 			"settings":
 			{
 				"pyls.configurationSources": [
@@ -50,22 +46,15 @@
 					"$sublime_py_files_dir",
 					"$packages"
 				],
-				"pyls.plugins.yapf.enabled": true
+				"pyls.plugins.yapf.enabled": true,
 			},
-			"syntaxes":
-			[
-				"Packages/Python/Python.sublime-syntax",
-				"Packages/MagicPython/grammars/MagicPython.tmLanguage",
-				"Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-			]
-		}
+		},
 	},
 	"diagnostics_gutter_marker": "sign",
-	"show_code_actions_bulb": true,
 	"show_diagnostics_in_view_status": false,
 	"show_symbol_action_links": true,
-	"log_stderr": true,
-	"log_server": false,
+	// "log_stderr": true,
+	// "log_server": false,
 	"lsp_format_on_save": false,
 	"show_diagnostics_count_in_view_status": true,
 	"diagnostics_highlight_style": "underline",
@@ -73,5 +62,6 @@
 	// "inhibit_word_completions": false, //testing
 	"show_references_in_quick_panel": true,
 	"log_debug": false,
+	"show_diagnostics_panel_on_save": 2,
 
 }
