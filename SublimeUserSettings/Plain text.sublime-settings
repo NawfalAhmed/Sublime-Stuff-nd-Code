@@ -1,7 +1,9 @@
 // These settings override both User and Default settings for the Plain text syntax
 {
-
-	"line_numbers": false,
+	"draw_white_space": ["selection", "trailing", "enclosed_tabs"],
 	"fold_buttons": false,
+	"line_numbers": false,
 	"rulers": [],
+	"wrap_width": 0,
+	"wrap_width_style": "min"
 }
