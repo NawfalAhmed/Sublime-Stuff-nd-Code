@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+for ${1:key, val} in ${2:dict}.items():
+	${0:pass}
+]]></content>
+	<tabTrigger>forkv</tabTrigger>
+	<scope>source.python - meta.function.parameters - meta.function-call - meta.statement - meta.mapping - meta.sequence - meta.set - comment - string</scope>
+	<description>For key, val in items()</description>
+</snippet>

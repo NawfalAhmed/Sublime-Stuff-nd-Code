@@ -1,9 +1,9 @@
 <snippet>
-	<tabTrigger>for</tabTrigger>
-	<scope>source.python</scope>
-	<description>For Enumerate Loop</description>
 	<content><![CDATA[
-for index,${1:element} in enumerate(${2:}):
+for ${1:i, val} in enumerate($2):
 	${0:pass}
 ]]></content>
+	<tabTrigger>fore</tabTrigger>
+	<scope>source.python - meta.function.parameters - meta.function-call - meta.statement - meta.mapping - meta.sequence - meta.set - comment - string</scope>
+	<description>For i, val in enumerate</description>
 </snippet>
