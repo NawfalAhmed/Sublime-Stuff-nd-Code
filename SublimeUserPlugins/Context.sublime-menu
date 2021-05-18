@@ -1,4 +1,20 @@
 [
+	{
+		"caption": "Diff",
+		"children": [
+			{ "caption": "-" },
+			{ "caption": "Compare with...", "command": "sbs_compare" },
+			{ "caption": "Mark selection for comparison", "command": "sbs_mark_sel" },
+			{ "caption": "Compare selection", "command": "sbs_compare", "args": { "compare_selections": true } },
+			{ "caption": "-" },
+			{ "caption": "FileDiffs Menu", "command": "file_diff_menu" },
+			{ "caption": "Diff Selections", "command": "file_diff_selections" },
+			{ "caption": "Diff with Clipboard", "command": "file_diff_clipboard" },
+			{ "caption": "Diff with Saved", "command": "file_diff_saved" },
+			{ "caption": "Diff with Previous",
+				"command": "file_diff_previous" }, { "caption": "-" }
+		]
+	},
 	{ "caption": "-"},
 	{ "command": "format_json"},
 	{ "caption": "Format Selection", "command": "format_json", "args": {"select": true},
