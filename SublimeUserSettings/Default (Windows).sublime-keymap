@@ -35,14 +35,14 @@
 	},
 	{
 		"keys": ["ctrl+k", "C"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/listcomprehension.sublime-macro" }
+		"args": { "file": "Packages/User/Macros/ListComprehension.sublime-macro" }
 	},
 	{ "keys": ["alt+d"], "command": "expand_selection_to_word" },
 	{ "keys": ["ctrl+k", "d"], "command": "toggle_distraction_free" },
 	{ "keys": ["alt+f"], "command": "remove_function", "args": { "copy": true } },
 	{
 		"keys": ["alt+shift+f"], "command": "run_macro_file",
-		"args": { "file": "Packages/User/Macros/AddFunction.sublime-macro" }
+		"args": { "file": "Packages/User/Macros/InsertSmartFunction.sublime-macro" }
 	},
 	{
 		"keys": ["ctrl+k", "f"], "command": "zoom_pane",
@@ -96,9 +96,7 @@
 		"keys": ["alt+shift+space"], "command": "expand_selection",
 		"args": { "to": "scope" }
 	},
-	{
-		"keys": ["ctrl+k", " "], "command": "set_mark"
-	},
+	{ "keys": ["ctrl+k", " "], "command": "set_mark" },
 	{
 		"keys": ["alt+space"], "command": "csv_select_col",
 		"context": [
@@ -159,9 +157,8 @@
 	{ "keys": ["ctrl+shift+d"], "command": "find_under_expand_skip" },
 	// overrided: duplicate lines, original: ctrl+k, ctrl+d
 	{ "keys": ["ctrl+n"], "command": "smooth_new_buffer" },
-	{
-		"keys": ["ctrl+t"], "command": "transpose_pro",
-	},  // remapped transpose -> alt+t
+	{ "keys": ["ctrl+t"], "command": "transpose_pro" },
+	// remapped transpose -> alt+t
 	{ "keys": ["ctrl+k", "ctrl+k"], "command": "pass" },
 	// overrided: delete to hard EOL
 	{ "keys": ["ctrl+shift+k"], "command": "pass" },
@@ -326,7 +323,7 @@
 		"args": {
 			"cmd": "ipython",
 			"cwd": "${file_path:${folder}}",
-			"panel_name": "Ipython",
+			"panel_name": "IPython Terminal",
 			"tag": "Ipython"
 		}
 	},
@@ -335,89 +332,170 @@
 		"args": {
 			"cmd": "ipython",
 			"cwd": "${file_path:${folder}}",
-			"panel_name": "Ipython",
+			"panel_name": "IPython Terminal",
 			"tag": "Ipython"
 		}
 	},
 	// </Builds and Terminals>
 
 	// Escape Key Remapped ->
+	{ "keys": ["escape"], "command": "cancel" },
 	{
-		"keys": ["escape"], "command": "pass",
+		"keys": ["escape"], "command": "single_selection",
 		"context": [
-			{ "key": "terminus_view" },
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{
+		"keys": ["escape"], "command": "clear_fields",
+		"context": [
+			{ "key": "has_next_field", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["escape"], "command": "clear_fields",
+		"context": [
+			{ "key": "has_prev_field", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["escape"], "command": "hide_panel",
+		"args": { "cancel": true },
+		"context": [
 			{ "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "panel_has_focus", "operator": "equal", "operand": false },
-			{ "key": "num_selections", "operator": "equal", "operand": 1 },
-			{ "key": "has_next_field", "operator": "equal", "operand": false },
-			{ "key": "has_prev_field", "operator": "equal", "operand": false },
-			{ "key": "overlay_visible", "operator": "equal", "operand": false },
-			{ "key": "popup_visible", "operator": "equal", "operand": false },
 			{
-				"key": "auto_complete_visible",
+				"key": "terminus_panel_visible",
 				"operator": "equal",
 				"operand": false
 			}
 		]
 	},
-	{ "keys": ["escape"], "command": "cancel"},
 	{
-		"keys": ["escape"], "command": "single_selection",
+		"keys": ["escape"], "command": "hide_overlay",
 		"context": [
-			{ "key": "num_selections", "operator": "not_equal", "operand": 1 },
-			{ "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-		]
-	},
-	{
-		"keys": ["escape"], "command": "clear_fields",
-		"context": [
-			{ "key": "has_next_field", "operator": "equal", "operand": true },
-			{ "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-		]
-	},
-	{
-		"keys": ["escape"], "command": "clear_fields",
-		"context": [
-			{ "key": "has_prev_field", "operator": "equal", "operand": true },
-			{ "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-		]
-	},
-	{ "keys": ["escape"], "command": "hide_overlay", "context":
-		[
 			{ "key": "overlay_visible", "operator": "equal", "operand": true },
 			{ "key": "panel_has_focus", "operator": "equal", "operand": false }
 		]
 	},
-	{ "keys": ["escape"], "command": "hide_auto_complete", "context":
-		[
-			{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
+	{
+		"keys": ["escape"], "command": "hide_auto_complete",
+		"context": [
+			{
+				"key": "auto_complete_visible",
+				"operator": "equal",
+				"operand": true
+			}
 		]
 	},
-	{ "keys": ["escape"], "command": "hide_popup", "context":
-		[
+	{
+		"keys": ["escape"], "command": "hide_popup",
+		"context": [
 			{ "key": "popup_visible", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["shift+escape"], "command": "unselect_others" },
 	{
-		"keys": ["shift+escape"], "command": "hide_panel",
-		"args": { "cancel": true }, "context": [{
-			"key": "panel_visible", "operator": "equal", "operand": true
-		}]
-	},
-	{
-		"keys": ["shift+escape"], "command": "chain",
+		"keys": ["escape"], "command": "terminus_keypress",
+		"args": { "key": "escape" },
 		"context": [
-			{ "key": "panel_visible", "operator": "equal", "operand": true },
-			{ "key": "terminus_view" }
-		],
-		"args": {
-			"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
-		}
+			{ "key": "terminus_view" },
+			{
+				"key": "terminus_view.closed",
+				"operator": "not_equal",
+				"operand": true
+			}, { "key": "overlay_visible", "operator": "equal", "operand": false },
+			{ "key": "popup_visible", "operator": "equal", "operand": false }
+		]
 	},
+	// {
+	// 	"keys": ["escape"], "command": "pass",
+	// 	"context": [
+	// 		{ "key": "terminus_view" },
+	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
+	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false },
+	// 		{ "key": "num_selections", "operator": "equal", "operand": 1 },
+	// 		{ "key": "has_next_field", "operator": "equal", "operand": false },
+	// 		{ "key": "has_prev_field", "operator": "equal", "operand": false },
+	// 		{ "key": "overlay_visible", "operator": "equal", "operand": false },
+	// 		{ "key": "popup_visible", "operator": "equal", "operand": false },
+	// 		{
+	// 			"key": "auto_complete_visible",
+	// 			"operator": "equal",
+	// 			"operand": false
+	// 		}
+	// 	]
+	// },
+	// { "keys": ["escape"], "command": "cancel" },
+	// {
+	// 	"keys": ["escape"], "command": "single_selection",
+	// 	"context": [
+	// 		{ "key": "num_selections", "operator": "not_equal", "operand": 1 },
+	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
+	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
+	// 	]
+	// },
+	// {
+	// 	"keys": ["escape"], "command": "clear_fields",
+	// 	"context": [
+	// 		{ "key": "has_next_field", "operator": "equal", "operand": true },
+	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
+	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
+	// 	]
+	// },
+	// {
+	// 	"keys": ["escape"], "command": "clear_fields",
+	// 	"context": [
+	// 		{ "key": "has_prev_field", "operator": "equal", "operand": true },
+	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
+	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
+	// 	]
+	// },
+	// { "keys": ["escape"], "command": "hide_overlay", "context":
+	// 	[
+	// 		{ "key": "overlay_visible", "operator": "equal", "operand": true },
+	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
+	// 	]
+	// },
+	// { "keys": ["escape"], "command": "hide_auto_complete", "context":
+	// 	[
+	// 		{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
+	// 	]
+	// },
+	// { "keys": ["escape"], "command": "hide_popup", "context":
+	// 	[
+	// 		{ "key": "popup_visible", "operator": "equal", "operand": true }
+	// 	]
+	// },
+	// {
+	// 	"keys": ["escape"], "command": "terminus_keypress",
+	// 	"args": { "key": "escape" },
+	// 	"context": [
+	// 		{ "key": "terminus_view" },
+	// 		{
+	// 			"key": "terminus_view.closed",
+	// 			"operator": "not_equal",
+	// 			"operand": true
+	// 		},
+	// 		{ "key": "overlay_visible", "operator": "equal", "operand": false },
+	// 		{ "key": "popup_visible", "operator": "equal", "operand": false }
+	// 	]
+	// },
+	// { "keys": ["shift+escape"], "command": "unselect_others" },
+	// {
+	// 	"keys": ["shift+escape"], "command": "hide_panel",
+	// 	"args": { "cancel": true }, "context": [{
+	// 		"key": "panel_visible", "operator": "equal", "operand": true
+	// 	}]
+	// },
+	// {
+	// 	"keys": ["shift+escape"], "command": "chain",
+	// 	"context": [
+	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
+	// 		{ "key": "terminus_view" }
+	// 	],
+	// 	"args": {
+	// 		"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
+	// 	}
+	// },
 	// Original Defaults ->
 	{
 		"keys": ["alt+c"], "command": "toggle_case_sensitive",
