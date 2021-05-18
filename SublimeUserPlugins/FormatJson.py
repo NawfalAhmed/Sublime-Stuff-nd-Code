@@ -64,7 +64,8 @@ class FormatJsonStep2Command(sublime_plugin.TextCommand):
 			contents = list(filter(None, contents.split("\n// end region\n")))
 			print(contents)
 			regions = self.view.sel()
-			for region, region_contents, indent in zip(reversed(regions), reversed(contents),reversed(indents)):
+			zipped = zip(reversed(regions), reversed(contents), reversed(indents))
+			for region, region_contents, indent in zipped:
 				if indent:
 					region_contents = textwrap.indent(region_contents, indent)
 				self.view.replace(edit, region, region_contents)
