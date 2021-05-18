@@ -5,6 +5,12 @@
 		"keys": ["alt+x"], "command": "run_macro_file",
 		"args": { "file": "Packages/User/Macros/ShiftToMark.sublime-macro" }
 	},
+	{ "keys": [")"], "command": "insert_smart_bracket" },
+	{
+		"keys": [")"], "command": "terminus_keypress",
+		"args": { "key": ")" },
+		"context": [{ "key": "terminus_view" }]
+	},
 	{
 		"keys": ["ctrl", "ctrl"], "command": "chain",
 		"args": { "commands": [["set_mark"], ["set_user_mark"]] }
