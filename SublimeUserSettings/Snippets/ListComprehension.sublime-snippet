@@ -1,5 +1,5 @@
 <snippet>
-	<content><![CDATA[[${1:expression} for ${2:item} in ${3:iterator}]]]></content>
+	<content><![CDATA[$0[${1:expression} for ${2:item} in ${3:iterator}${4: if $5}]$6]]></content>
 	<tabTrigger>for</tabTrigger>
 	<scope>source.python</scope>
 	<description>[list comprehension]</description>
