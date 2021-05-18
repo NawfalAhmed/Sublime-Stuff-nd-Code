@@ -55,6 +55,7 @@
 	"translate_tabs_to_spaces": true,
 	"trim_only_modified_white_space": false,
 	"trim_trailing_white_space_on_save": "not_on_caret",
+	"word_wrap": true,
 	"wrap_width": 80,
 	"wrap_width_style": "min",
 	"added_words": [

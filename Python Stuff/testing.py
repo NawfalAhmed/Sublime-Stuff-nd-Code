@@ -1,14 +1,9 @@
 from random import seed
 from random import randint as rand
 
-data = []
-for i in range(200):
-	data.append(rand(0, 600))
+data = [rand(0, 600) for i in range(200)]
 
-data2 = []
-for num in data:
-	if num not in data2 and len(data2) != 100:
-		data2.append(num)
+data2 = [num for num in data if num not in data2 and len(data2) != 100]
 data = data2
 data = " ".join(map(str, data))
 print(data)

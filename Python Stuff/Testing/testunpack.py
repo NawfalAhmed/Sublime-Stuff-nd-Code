@@ -1,5 +1,5 @@
 list1, list2 = [3, 2, 5], [2, 4, 1]
-list1, list2 = map(list, (zip(*sorted(zip(list1, list2), reverse=True))))
+list1, list2 = map(list, (zip(*sorted(zip(list1, list2, strict= True), reverse=True))))
 print(list1, list2)
 
 
