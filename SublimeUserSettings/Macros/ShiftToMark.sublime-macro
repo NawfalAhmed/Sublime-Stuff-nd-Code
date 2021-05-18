@@ -1,0 +1,18 @@
+[
+	{
+		"args": null,
+		"command": "cut"
+	},
+	{
+		"args": null,
+		"command": "swap_with_mark"
+	},
+	{
+		"args": null,
+		"command": "paste"
+	},
+	{
+		"args": { "clear": true },
+		"command": "set_user_mark"
+	}
+]

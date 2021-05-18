@@ -1,7 +1,14 @@
 [
 	// <Recent Keybinds>
 	// { "keys": ["alt"], "command": "pass"}, //trying to avoid unnecessary menu toggle
-	{ "keys": ["ctrl","ctrl"], "command": "set_user_mark"},
+	{
+		"keys": ["alt+x"], "command": "run_macro_file",
+		"args": { "file": "Packages/User/Macros/ShiftToMark.sublime-macro" }
+	},
+	{
+		"keys": ["ctrl", "ctrl"], "command": "chain",
+		"args": { "commands": [["set_mark"], ["set_user_mark"]] }
+	},
 	{
 		"keys": ["ctrl", "shift+ctrl"], "command": "set_user_mark",
 		"args": { "clear": true }
