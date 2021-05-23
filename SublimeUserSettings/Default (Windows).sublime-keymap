@@ -419,96 +419,6 @@
 			{ "key": "popup_visible", "operator": "equal", "operand": false }
 		]
 	},
-	// {
-	// 	"keys": ["escape"], "command": "pass",
-	// 	"context": [
-	// 		{ "key": "terminus_view" },
-	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
-	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false },
-	// 		{ "key": "num_selections", "operator": "equal", "operand": 1 },
-	// 		{ "key": "has_next_field", "operator": "equal", "operand": false },
-	// 		{ "key": "has_prev_field", "operator": "equal", "operand": false },
-	// 		{ "key": "overlay_visible", "operator": "equal", "operand": false },
-	// 		{ "key": "popup_visible", "operator": "equal", "operand": false },
-	// 		{
-	// 			"key": "auto_complete_visible",
-	// 			"operator": "equal",
-	// 			"operand": false
-	// 		}
-	// 	]
-	// },
-	// { "keys": ["escape"], "command": "cancel" },
-	// {
-	// 	"keys": ["escape"], "command": "single_selection",
-	// 	"context": [
-	// 		{ "key": "num_selections", "operator": "not_equal", "operand": 1 },
-	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
-	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-	// 	]
-	// },
-	// {
-	// 	"keys": ["escape"], "command": "clear_fields",
-	// 	"context": [
-	// 		{ "key": "has_next_field", "operator": "equal", "operand": true },
-	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
-	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-	// 	]
-	// },
-	// {
-	// 	"keys": ["escape"], "command": "clear_fields",
-	// 	"context": [
-	// 		{ "key": "has_prev_field", "operator": "equal", "operand": true },
-	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
-	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-	// 	]
-	// },
-	// { "keys": ["escape"], "command": "hide_overlay", "context":
-	// 	[
-	// 		{ "key": "overlay_visible", "operator": "equal", "operand": true },
-	// 		{ "key": "panel_has_focus", "operator": "equal", "operand": false }
-	// 	]
-	// },
-	// { "keys": ["escape"], "command": "hide_auto_complete", "context":
-	// 	[
-	// 		{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
-	// 	]
-	// },
-	// { "keys": ["escape"], "command": "hide_popup", "context":
-	// 	[
-	// 		{ "key": "popup_visible", "operator": "equal", "operand": true }
-	// 	]
-	// },
-	// {
-	// 	"keys": ["escape"], "command": "terminus_keypress",
-	// 	"args": { "key": "escape" },
-	// 	"context": [
-	// 		{ "key": "terminus_view" },
-	// 		{
-	// 			"key": "terminus_view.closed",
-	// 			"operator": "not_equal",
-	// 			"operand": true
-	// 		},
-	// 		{ "key": "overlay_visible", "operator": "equal", "operand": false },
-	// 		{ "key": "popup_visible", "operator": "equal", "operand": false }
-	// 	]
-	// },
-	// { "keys": ["shift+escape"], "command": "unselect_others" },
-	// {
-	// 	"keys": ["shift+escape"], "command": "hide_panel",
-	// 	"args": { "cancel": true }, "context": [{
-	// 		"key": "panel_visible", "operator": "equal", "operand": true
-	// 	}]
-	// },
-	// {
-	// 	"keys": ["shift+escape"], "command": "chain",
-	// 	"context": [
-	// 		{ "key": "panel_visible", "operator": "equal", "operand": true },
-	// 		{ "key": "terminus_view" }
-	// 	],
-	// 	"args": {
-	// 		"commands": [["terminus_close"], ["hide_panel", { "cancel": true }]]
-	// 	}
-	// },
 	// Original Defaults ->
 	{
 		"keys": ["alt+c"], "command": "toggle_case_sensitive",
@@ -669,15 +579,5 @@
 	{
 		"keys": ["ctrl+k", "Z"], "command": "toggle_zoom_pane",
 		"args": { "fraction": 0.65 }
-	},
-	// AdvancedCSV ->
-	// {"keys": ["ctrl+k",",","ctrl+k","up"], "command": "csv_sort_by_col_asc"},
-	// {"keys": ["ctrl+k",",","ctrl+k","down"], "command": "csv_sort_by_col_desc"},
-	// {"keys": ["ctrl+k",",","ctrl+k","i"], "command": "csv_insert_col"},
-	// {"keys": ["ctrl+k",",","ctrl+k","d"], "command": "csv_delete_col"},
-	// {"keys": ["ctrl+k",",","ctrl+k","s"], "command": "csv_select_col"},
-	// {"keys": ["ctrl+k",",","ctrl+k","e"], "command": "csv_format_expand"},
-	// {"keys": ["ctrl+k",",","ctrl+k",","], "command": "csv_format_compact"},
-	// {"keys": ["ctrl+k",",","ctrl+k","="], "command": "csv_evaluate"},
-	// {"keys": ["ctrl+k",",","ctrl+k","f"], "command": "csv_format"}
+	}
 ]

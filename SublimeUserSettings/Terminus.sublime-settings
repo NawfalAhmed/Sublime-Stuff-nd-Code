@@ -49,5 +49,6 @@
 			// "light_magenta": "#8b57b5",
 			// "light_cyan": "#8ec43d",
 			// "light_white": "#ffffff"
-	 }
+	 },
+	 "scrollback_history_size": 3000
 }

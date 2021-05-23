@@ -1,7 +1,7 @@
 {
 	"popup_char_context": 80,
 	"popup_line_context": 4,
-	"search_threshold": 20000,
+	"search_threshold": 25000,
 	// "ignore_threshold": true,
 	// "show_bracket_popup_always": true,
 	// "content_highlight_bar": true,
