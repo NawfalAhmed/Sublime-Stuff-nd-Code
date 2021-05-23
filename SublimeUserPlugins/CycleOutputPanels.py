@@ -6,10 +6,11 @@ class CycleOutputPanelsCommand(sublime_plugin.WindowCommand):
 
 	def run(self):
 		exclude_panels = [
-			# "output.diagnostics",
+			"output.diagnostics",
 			"output.find_results",
 			"output.Linux Terminal",
 			"output.Windows Terminal"
+			"output.Ipython Terminal"
 		]
 
 		output_panels = [

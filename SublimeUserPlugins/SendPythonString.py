@@ -10,7 +10,7 @@ class SendPythonStringCommand(sublime_plugin.TextCommand):
 				"terminus_send_string",
 				{
 					"string": self.view.substr(region),
-					"tag": "Ipython",
+					"tag": "IPython Terminal",
 				},
 			)
 
@@ -20,6 +20,6 @@ class SendPythonStringCommand(sublime_plugin.TextCommand):
 				"cmd": "ipython",
 				"cwd": "${file_path:${folder}}",
 				"panel_name": "Ipython",
-				"tag": "Ipython"
+				"tag": "IPython Terminal"
 			}
 		)
