@@ -6,6 +6,8 @@ class InitialEmptyPaneCheckCommand(sublime_plugin.EventListener):
 
 	def on_pre_close(self, view):
 		window = view.window()
+		if not window:
+			return
 		group = window.active_group()
 		if window.num_groups() > 1:
 			if len(window.sheets_in_group(group)) == 1:

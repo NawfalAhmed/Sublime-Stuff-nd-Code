@@ -321,10 +321,8 @@
 		}
 	},
 	{
-		"keys": ["shift+ctrl+k", "~"], "command": "terminus_open",
-		"args": {
-			"cwd": "${file_path:${folder}}", "panel_name": "Windows Terminal"
-		}
+		"keys": ["super+shift+`"], "command": "terminus_open_with_title",
+		"args": { "cwd": "${file_path:${folder}}" }
 	},
 	{
 		"keys": ["alt+`"], "command": "toggle_terminus_panel",
@@ -335,12 +333,8 @@
 		}
 	},
 	{
-		"keys": ["alt+shift+`"], "command": "terminus_open",
-		"args": {
-			"config_name": "Linux",
-			"panel_name": "Linux Terminal",
-			"cwd": "${file_path:${folder}}"
-		}
+		"keys": ["alt+shift+`"], "command": "terminus_open_with_title",
+		"args": { "config_name": "Linux", "cwd": "${file_path:${folder}}" }
 	},
 	{
 		"keys": ["alt+super+`"], "command": "toggle_terminus_panel",

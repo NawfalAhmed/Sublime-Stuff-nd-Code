@@ -30,5 +30,9 @@
 	{
 		"caption": "Execute Command (At Current Directory)",
 		"command": "execute_cmd"
+	},
+	{
+		"caption": "Terminus: Open View With Title:",
+		"command": "terminus_open_with_title"
 	}
 ]
