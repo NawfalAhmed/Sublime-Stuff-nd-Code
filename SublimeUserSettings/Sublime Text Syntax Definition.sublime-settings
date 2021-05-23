@@ -1,0 +1,4 @@
+// These settings override both User and Default settings for the Sublime Text Syntax Definition syntax
+{
+ "indent_with_tabs_on_save": false,
+}
