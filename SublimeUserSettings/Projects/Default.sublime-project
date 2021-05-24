@@ -15,23 +15,23 @@
 				"nasmx-1.4",
 				"DosBoxPortable",
 			],
-			"path": "Redacted"
+			"path": "Redacted",
 		},
 		{
 			"name": ": Notes",
-			"path": "Redacted"
+			"path": "Redacted",
 		},
 		{
 			"name": ": Testing",
-			"path": "Redacted"
+			"path": "Redacted",
 		},
 		{
 			"name": ": DCN",
-			"path": "Redacted"
+			"path": "Redacted",
 		},
 		{
 			"name": ": Advanced OS",
-			"path": "Redacted"
+			"path": "Redacted",
 		},
 		{
 			"binary_file_patterns":
@@ -53,49 +53,63 @@
 				"UserSettings"
 			],
 			"name": "Unity Scripts",
-			"path": "Redacted"
+			"path": "Redacted",
 		},
-		{
-			"folder_exclude_patterns":
-			[
-				"User",
-				"UserPlugins",
-				"Anaconda",
-				"SendCode",
-				"R-IDE",
-				"OmniSharp",
-				"backrefs",
-				"bracex",
-				"bs4",
-				"jsonschema",
-				"lsp_utils",
-				"markuepsafe",
-				"mdpopups",
-				"numpy",
-				"package_setting_context",
-				"pathlib",
-				"pygments",
-				"pymdownx",
-				"pyte",
-				"python-jinja2",
-				"python-markdown",
-				"pywinpty",
-				"pyyaml",
-				"sublime_lib",
-				"wcwidth",
-				"wcmatch",
-			],
-			"name": "Packages Overrides",
-			"path": "Redacted"
-		},
+		// {
+		// 	"folder_exclude_patterns":
+		// 	[
+		// 		"User",
+		// 		"UserPlugins",
+		// 		"Anaconda",
+		// 		"SendCode",
+		// 		"R-IDE",
+		// 		"OmniSharp",
+		// 		"backrefs",
+		// 		"bracex",
+		// 		"bs4",
+		// 		"jsonschema",
+		// 		"lsp_utils",
+		// 		"markuepsafe",
+		// 		"mdpopups",
+		// 		"numpy",
+		// 		"package_setting_context",
+		// 		"pathlib",
+		// 		"pygments",
+		// 		"pymdownx",
+		// 		"pyte",
+		// 		"python-jinja2",
+		// 		"python-markdown",
+		// 		"pywinpty",
+		// 		"pyyaml",
+		// 		"sublime_lib",
+		// 		"wcwidth",
+		// 		"wcmatch",
+		// 	],
+		// 	"name": "Packages Overrides",
+		// 	"path": "Redacted"
+		// },
 		{
 			"name": "UserSettings",
-			"path": "Redacted"
+			"path": "Redacted",
 		},
 		{
 			"name": "UserPlugins",
-			"path": "Redacted"
+			"path": "Redacted",
 		}
 
 	],
+	"settings":
+	{
+		"LSP":
+		{
+			"pylsp":
+			{
+				"enabled": true,
+			},
+			"pyls":
+			{
+				"enabled": false,
+			},
+		},
+	},
 }
