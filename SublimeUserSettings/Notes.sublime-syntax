@@ -40,7 +40,6 @@ variables:
       | {{path}}               # a path
     )*
 
-
 contexts:
   main:
     - include: statements
@@ -68,7 +67,6 @@ contexts:
     - match: ;
       scope: punctuation.terminator.statement.notes
     - include: expression-as-a-statement
-
 
   expressions-common:
     - include: comments
@@ -236,8 +234,6 @@ contexts:
       scope: punctuation.separator.sequence.notes
     - match: \=
       scope: keyword.operator.means.notes
-
-
 
   embedded-code:
     - match: '^(\s*)(@)(py(?:thon)?)$'
@@ -429,7 +425,6 @@ contexts:
   #     scope: punctuation.accessor.dot.notes
   #   - match: (?=\S|$)
   #     pop: true
-
 
   entity-name-class:
     - include: generic-names

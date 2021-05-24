@@ -25,6 +25,7 @@
 	"hide_tab_scrolling_buttons": true,
 	"highlight_line_number": false,
 	"highlight_modified_tabs": true,
+	"hot_exit": "only_on_quit",
 	"indent_guide_options": ["draw_normal", "draw_active_single", "solid"],
 	"indent_to_bracket": true,
 	"indent_with_tabs_on_save": true,
@@ -67,6 +68,9 @@
 		"json",
 		"ipython",
 		"cmd",
+		"Ibraheem",
+		"pycodestyle",
+		"config",
 	],
 	"ignored_packages": [
 		"Chain of Command",

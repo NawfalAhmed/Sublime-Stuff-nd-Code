@@ -1,54 +1,75 @@
 {
 	"clients":
 	{
-		"Omnisharp":
-		{
-			"command":
-			[
-				"C:/Users/Ibraheem/.vscode/extensions/ms-dotnettools.csharp-1.23.6/.omnisharp/1.37.3/omnisharp.exe",
-				"-lsp",
-				"-s",
-				"C:/Users/Ibraheem/Desktop/Unity Projects/Assignment2 3D/Assembly-CSharp.csproj"
-			],
-			"enabled": false,
-			"selector": "source.cs",
-		},
-		"PyLsp":
+		// "Omnisharp":
+		// {
+		// 	"command":
+		// 	[
+		// 		"C:/Users/Ibraheem/.vscode/extensions/ms-dotnettools.csharp-1.23.6/.omnisharp/1.37.3/omnisharp.exe",
+		// 		"-lsp",
+		// 		"-s",
+		// 		"C:/Users/Ibraheem/Desktop/Unity Projects/Assignment2 3D/Assembly-CSharp.csproj"
+		// 	],
+		// 	"enabled": false,
+		// 	"selector": "source.cs",
+		// },
+		"pylsp":
 		{
 			"command": ["pylsp"],
-			"enabled": false,
+			"enabled": true,
 			"selector": "source.python",
 			"settings": {
 				"pylsp.configurationSources": ["pycodestyle"],
-				"pylsp.plugins.pycodestyle.enabled": true,
-				"pylsp.plugins.pydocstyle.enabled": true,
+				"pylsp.plugins.autopep8.enabled": false,
 				"pylsp.plugins.rope.enabled": false,
 				"pylsp.plugins.pyflakes.enabled": false,
 				"pylsp.plugins.mypy.enabled": false,
 				"pylsp.plugins.isort.enabled": false,
-				"pylsp.plugins.autopep8.enabled": false,
-				"pylsp.plugins.yapf.enabled": true,
+				"pylsp.plugins.jedi.enabled": false,
+				// "pyls.plugins.jedi.extra_paths":
+				// [
+				// 	"$packages/../ST-API-stubs",
+				// 	"$sublime_py_files_dir",
+				// 	"$packages"
+				// ],
+				"pylsp.plugins.yapf.enabled": true
 			},
+			"disabled_capabilities": {
+				"completionProvider": true,
+				"codeActionProvider": true,
+				"signatureHelpProvider": true,
+				"documentHighlightProvider": false,
+			}
 		},
 		"pyls":
 		{
 			"command": ["pyls"],
 			"enabled": false,
-			"selector": "source.python",
-			"settings":
-			{
-				"pyls.configurationSources": [
-					"pycodestyle"],
-				"pyls.plugins.autopep8.enabled": false,
-				"pyls.plugins.jedi.extra_paths":
-				[
-					"$packages/../ST-API-stubs",
-					"$sublime_py_files_dir",
-					"$packages"
-				],
-				"pyls.plugins.yapf.enabled": true,
-			},
-		},
+		}
+	// 		"selector": "source.python",
+	// 		"settings": {
+	// 			"pyls.configurationSources": ["pycodestyle"],
+	// 			"pyls.plugins.autopep8.enabled": false,
+	// 			"pyls.plugins.rope.enabled": false,
+	// 			"pyls.plugins.pyflakes.enabled": false,
+	// 			"pyls.plugins.mypy.enabled": false,
+	// 			"pyls.plugins.isort.enabled": false,
+	// 			"pyls.plugins.jedi.enabled": false,
+	// 			// "pyls.plugins.jedi.extra_paths":
+	// 			// [
+	// 			// 	"$packages/../ST-API-stubs",
+	// 			// 	"$sublime_py_files_dir",
+	// 			// 	"$packages"
+	// 			// ],
+	// 			"pyls.plugins.yapf.enabled": true
+	// 		},
+	// 		"disabled_capabilities": {
+	// 			"completionProvider": true,
+	// 			"codeActionProvider": true,
+	// 			"signatureHelpProvider": true,
+	// 			"documentHighlightProvider": false,
+	// 		}
+	// 	},
 	},
 	"diagnostics_gutter_marker": "sign",
 	"show_diagnostics_in_view_status": false,
@@ -56,12 +77,11 @@
 	// "log_stderr": true,
 	// "log_server": false,
 	"lsp_format_on_save": false,
-	"show_diagnostics_count_in_view_status": true,
 	"diagnostics_highlight_style": "underline",
 	"show_code_actions": "bulb",
 	// "inhibit_word_completions": false, //testing
 	"show_references_in_quick_panel": true,
 	"log_debug": false,
-	"show_diagnostics_panel_on_save": 2,
+	"show_diagnostics_panel_on_save": 1,
 
 }

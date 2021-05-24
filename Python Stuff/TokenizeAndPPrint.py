@@ -1,5 +1,6 @@
 import tokenize
 from pprint import pprint
+from functools import partial
 
 code = """
 for i in range(4):
@@ -8,6 +9,6 @@ for i in range(4):
 """.strip()
 
 codelines = iter(code.splitlines())
-code_tokens = list(tokenize.generate_tokens(lambda: next(codelines)))
+code_tokens = list(tokenize.generate_tokens(partial(next, codelines)))
 
 pprint(list(map(tokenize.TokenInfo._asdict, code_tokens)))

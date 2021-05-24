@@ -1,0 +1,26 @@
+find next
+find previous
+slurp find string ctrl+e
+slurp replace string ctrl+shift+e
+find under next
+find under previous
+--------------------------------------------------------------------------------
+ctrl +super+enter
+ctrl +alt  +enter
+
+super+alt  +shift+enter
+ctrl +super+shift+enter
+ctrl +alt  +shift+enter
+ctrl +alt  +super+enter
+
+ctrl +alt  +super+shift+enter
+--------------------------------------------------------------------------------
+WARNING: Showing only expired overrides!
+WARNING: Non-expired overrides may exist!
+
+OverrideReport Generated: 2021-05-20 06:47:50
+
+[ IU] LSP
+	`- [X] Default.sublime-keymap
+
+
