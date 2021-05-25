@@ -1,49 +1,38 @@
 class Hints:
-	# rename sublime.package file to zip and extract to see contents
-	# Extract & expand variables to get file path etc In my plugins
-	# right click+leftclick -> expand scope
-	# u can do a command specifically based on a previous command
-	# I can store data in "class.attribute" in for one session
-	# Event listener but not triggered every single time
-	# 	But after given seconds pause
-	# 	https://youtu.be/Ol_Qd-ObX4E?t=870
+	• rename sublime.package file to zip and extract to see contents
+	• Extract & expand variables to get file path etc in my plugins
+	• right click + left click -> expand scope
+	• you can do a command specifically based on a previous command
+	• I can store data in "class.attribute" for one session
+	• Event listener but not triggered every single time
+		But pause after given seconds
+		https://youtu.be/Ol_Qd-ObX4E?t=870
 
-class Console:
+class Console @py:
 	sublime.log_input(True)
 	sublime.log_commands(True)
 	sublime.find_resources('*.sublime-commands')
 	sublime.yes_no_cancel_dialog("Do You Want To Create Input File?")
+;
 
 class KeyBindings:
-	#Try Changing word separators in settings
-	#Syntax Specific KeyBinding
+	• Try Changing word separators in settings
+	• Syntax Specific KeyBinding
 	"context": [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" }],
 
 class Snippets:
-	#Description in Snippets
-	"<description>For Enumerate Loop</description>"
-	#Location Specifying
-	"${1:this}"
-	"$0" #end point
+	• Description in Snippets
+	@snippet <description>For Enumerate Loop</description>
+	• Location Specifying
+	@snippet <content>${1:this}</content>
+	• End Point
+	@snippet <content>$0<content>
 
-class Builds:
-{
-	"shell_cmd": "DOSBoxPortable.exe.lnk",
-	"working_dir": "${file_path}",
-	"selector": "source.assembly",
-	"file_patterns" : "*.asm",
-}
-class Macros:
-[
+class Builds @build:
 	{
-		"args": null,
-		"command": "set_mark"
-	},
-	{
-		"args":
-		{
-			"to": "line"
-		},
-		"command": "expand_selection"
-	},
-]
+		"shell_cmd": "DOSBoxPortable.exe.lnk",
+		"working_dir": "${file_path}",
+		"selector": "source.assembly",
+		"file_patterns" : "*.asm",
+	}
+;

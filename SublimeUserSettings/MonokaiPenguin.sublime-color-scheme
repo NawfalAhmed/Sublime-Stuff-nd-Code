@@ -59,6 +59,27 @@
 			"foreground": "var(blended)",
 			// "foreground": "var(yellow5)"
 		},
+		{ //for python
+			"name": "Docs",
+			"scope": "comment.block.documentation",
+			"font_style": "glow",
+			"foreground": "var(blended)"
+		},
+		{
+			"name": "Notes Text",
+			"scope": "text.plain.notes, constant.bullet",
+			// "font_style": "glow",
+			// "foreground": "var(blended)"
+			"foreground": "hsla(220, 70%, 72%,0.8)"
+		},
+		{
+			"name": "Links",
+			"scope": "string.other.link.links",
+			"font_style": "underline italic",
+			"foreground": "hsl(210, 80%, 60%)"
+			// "foreground": "var(green)"
+			// "foreground": "hsla(220, 70%, 72%,0.8)"
+		},
 		{
 			"name": "String",
 			"scope": "string",
@@ -96,14 +117,38 @@
 			"foreground": "var(red2)"
 		},
 		{
+			"name": "Embedded Code",
+			"scope": "keyword.declaration.embedded-code, punctuation.section.embedded-code",
+			"font_style": "",
+			"foreground": "var(purple)"
+		},
+		// {
+		// 	"name": "Embedded Code Inheritance",
+		// 	"scope": "entity.other.embedded-code",
+		// 	"font_style": "italic",
+		// 	"foreground": "var(green)"
+		// },
+		{
 			"name": "Operators",
 			"scope": "keyword.operator",
 			"foreground": "var(green)"
 		},
 		{
-			"name": "Operatorstwo",
+			"name": "Complex Operators",
 			"scope": "keyword.operator.comparison, keyword.operator.logical, keyword.operator.word",
 			"foreground": "var(red2)"
+		},
+		{
+			"name": "Arrows",
+			"scope": "punctuation.arrow",
+			"foreground": "var(green)"
+			// "foreground": "hsla(220, 60%, 55%,0.8)"
+		},
+		{	//for python
+			"name": "Annotations Arrow",
+			"scope": "punctuation.separator.annotation.return",
+			"font_style": "glow",
+			"foreground": "var(green)"
 		},
 		{
 			"name": "Annotation Punctuation",

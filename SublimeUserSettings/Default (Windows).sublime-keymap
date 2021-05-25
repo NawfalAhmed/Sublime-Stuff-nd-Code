@@ -1,6 +1,12 @@
 [
 	// <Recent Keybinds>
 	// { "keys": ["alt"], "command": "pass" }, //trying to avoid unnecessary menu toggle
+	{ "keys": [".","."], "command": "insert",
+		"args": {"characters": "•"},
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.notes" }
+		]
+	},
 	{ "keys": ["shift+space"], "command": "pass" },
 	{
 		"keys": ["shift+enter"], "command": "run_macro_file",

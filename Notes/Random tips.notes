@@ -1,69 +1,72 @@
 class Python:
-	"slice indexing doesnt give out of range error"
-	#sort both lists according to (reverse) sorting order of first
-	list1, list2 = map(list, zip(*sorted(zip(list1,list2),reverse = True)))
-	@njit(error_model='numpy',parallel=True,fastmath=True)
-	# use isinstance for type check
+	• slice indexing doesn't give out of range error wrong
+	• sort both lists according to (reverse) sorting order of first
+		@py list1, list2 = map(list, zip(*sorted(zip(list1,list2),reverse = True)))
+	• example of njit
+		@py @njit(error_model='numpy',parallel=True,fastmath=True)
+	• use isinstance for type check
 
-	class Pip:
-		pip install -U pip #upgrade pip
-		pip install -U PackageName #upgrade packagename
-		pip list    -o #check outdated packages
-		pip list    -u #check uptodate packages
-
+class Pip @bash:
+	pip install -U pip          # upgrade pip
+	pip install -U PackageName  # upgrade package name
+	pip list    -o              # check outdated packages
+	pip list    -u              # check up-to-date packages
+;
 class CommandPrompt:
-	cls      # clear screen
-	alt+d    # type cmd, opens in that folder
-	super+r  # type cmd, anywhere
-	d:       # to switch directory
-	dir      # to show directory,
-	start.   # to open file exporer there
-	>        # for output redirect
-	2>       # for error redirect
-	#format python files with yapf
-	yapf -r -i -p -vv .
-	#add suffix to multiple
-	for %a in (*) do ren "%a" "Task - %a"
-	#link a specific folder to One Drive
-	mklink /j "%UserProfile%\OneDrive\From Nawfal\SublimeText" "D:\Nawfal\SublimeText"
-	#check if files are greater than 1 mb
-	forfiles /S /C "cmd /c if @fsize GEQ 1048576 echo @path @fsize" > Size.txt
+	@bash
+		cls      # clear screen
+		alt+d    # type cmd, opens in that folder
+		super+r  # type cmd, anywhere
+		d:       # to switch directory
+		dir      # to show directory,
+		start.   # to open file explorer there
+		> file   # for output redirect
+		2> file  # for error redirect
+	• format python files with yapf
+	@bash	yapf -r -i -p -vv .
+	• add suffix to multiple
+	@bash	for %a in (*) do ren "%a" "Task - %a"  #
+	• How to link a specific folder to One Drive
+	@bash mklink /j "%UserProfile%\OneDrive\From Nawfal\SublimeText" "D:\Nawfal\SublimeText"
+	• How to check if files are greater than 1 mb
+	@bash forfiles /S /C "cmd /c if @fsize GEQ 1048576 echo @path @fsize" > Size.txt
 
-	class BatchFile:
-		# how to remove prefix from files in the directory of the bat file
-		def prefix_bat_file:
-			::RemovePrefix.bat  "prefix" "fileMask"
-			@echo off
-			setlocal
-			for %%A in ("%~1%~2") do (
-				set "fname=%%~A"
-				call ren "%%fname%%" "%%fname:*%~1=%%"
-			)
-	class Nasm:
-		nasm -f win32 forwin32.asm
-		link /SUBSYSTEM:WINDOWS user32.lib forwin32.obj
-		nasm -f win64 forwin64.asm
-		link /LARGEADDRESSAWARE:NO /SUBSYSTEM:WINDOWS user32.lib forwin64.obj
-		nasm -f win64 forwin64_console.asm
-		link /LARGEADDRESSAWARE:NO /ENTRY:main user32.lib kernel32.lib forwin64_console.obj
+class BatchFile:
+	• How to remove prefix from files in the directory of the bat file
+	@bash
+		::RemovePrefix.bat  "prefix" "fileMask"
+		@echo off
+		setlocal
+		for %%A in ("%~1%~2") do (
+			set "fname=%%~A"
+			call ren "%%fname%%" "%%fname:*%~1=%%"
+		)
 
+class Nasm @bash:
+	nasm -f win32 forwin32.asm
+	link /SUBSYSTEM:WINDOWS user32.lib forwin32.obj
+	nasm -f win64 forwin64.asm
+	link /LARGEADDRESSAWARE:NO /SUBSYSTEM:WINDOWS user32.lib forwin64.obj
+	nasm -f win64 forwin64_console.asm
+	link /LARGEADDRESSAWARE:NO /ENTRY:main user32.lib kernel32.lib forwin64_console.obj
+;
 class Linux:
-	# for all files do a command
-	for FILE in *;do unrar x $FILE; done
-	# crop
-	ffmpeg -i "AlignTrim.mp4" -vf "crop=300:150:450:40" AlignCrop.mp4
-	# convert to gif
-	ffmpeg -i Test.mp4 -vf "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 Test.gif
+	• for all files do a command
+	@bash for FILE in *;do unrar x $FILE; done
+	• crop
+	@bash ffmpeg -i "AlignTrim.mp4" -vf "crop=300:150:450:40" AlignCrop.mp4
+	• convert to gif
+	@bash ffmpeg -i Test.mp4 -vf "scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 Test.gif
 class Git:
-	# Removing a folder
-	path_to_folder/ # add this to gitignore
-	git rm -r --cached path_to_folder/
+	• Removing a folder
+		"path_to_folder/" # add this to git ignore
+		@bash git rm -r --cached path_to_folder/
 
 #old hostname
 DESKTOP-2NT06QL
 
 class Unity:
-	# Draw a ray from position to a direction, use draw line for between two points
-	Debug.DrawRay(transform.position,transform.forward, Color.red);
-	# to fix Aura remove this in editor folder
-	EditorStyles.miniButton
+	• Draw a ray from position to a direction, use draw line for between two points
+	@c# Debug.DrawRay(transform.position,transform.forward, Color.red);
+	• to fix Aura remove this in editor folder
+	@c# EditorStyles.miniButton
