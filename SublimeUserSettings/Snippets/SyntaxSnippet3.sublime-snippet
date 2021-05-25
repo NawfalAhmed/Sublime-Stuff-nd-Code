@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+- match: '(@)(${1:name}):\$'
+	captures:
+		1: punctuation.section.embedded-code.begin.notes
+		2: keyword.declaration.embedded-code.name.notes
+	embed: scope:source.${2:name}
+	embed_scope: meta.embedded-code.block.notes source.${2:name}.embedded
+	escape: '^\s*(;)\$'
+	escape_captures:
+		1: punctuation.section.embedded-code.end.notes
+	pop: true
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>@c</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.yaml</scope>
+	<description>class</description>
+</snippet>

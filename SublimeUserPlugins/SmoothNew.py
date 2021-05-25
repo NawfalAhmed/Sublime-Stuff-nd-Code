@@ -29,7 +29,7 @@ class SmoothNewBufferCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		view = self.window.new_file()
 		view.set_scratch(True)
-		view.set_name("Buffer")
+		view.assign_syntax("scope:source.notes")
 		sublime.set_timeout(lambda: view.set_scratch(False), 60000)
 
 	def input(self, args):

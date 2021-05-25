@@ -30,7 +30,7 @@
 	},
 	"globals":
 	{
-		"foreground": "var(mywhite)",
+		"foreground": "hsl(220,30%,84%)",
 		// "background": "hsl(195,13.3%,7.9%)",
 		// "background": "#0D1011",
 		// "background": "var(black3)",

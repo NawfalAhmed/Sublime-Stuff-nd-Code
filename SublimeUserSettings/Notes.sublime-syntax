@@ -1,0 +1,1335 @@
+%YAML 1.2
+---
+name: Notes
+file_extensions:
+  - notes
+scope: source.notes
+
+variables:
+  identifier_continue: '[[:alnum:]_]'
+  identifier: '\b[[:alpha:]_]{{identifier_continue}}*\b'
+  identifier_constant: '\b(?:[\p{Lu}_][\p{Lu}_\d]*)?[\p{Lu}]{2,}[\p{Lu}_\d]*\b'  # require 2 consecutive upper-case letters
+  digits: (?:\d+(?:_\d+)*)
+  exponent: (?:[eE][-+]?{{digits}})
+  path: '({{identifier}}[ ]*\.[ ]*)*{{identifier}}'
+  sql_indicator: \s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\b
+  illegal_names: (?:and|as|assert|break|case|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|not|or|pass|raise|return|try|while|with|yield)
+  format_spec: |-
+    (?x:
+      (?:.? [<>=^])?     # fill align
+      [ +-]?             # sign
+      \#?                # alternate form
+      # technically, octal and hexadecimal integers are also supported as 'width', but rarely used
+      \d*                # width
+      ,?                 # thousands separator
+      (?:\.\d+)?         # precision
+      [bcdeEfFgGnosxX%]? # type
+    )
+  strftime_spec: '(?:%(?:[aAwdbBGmyYHIpMSfzZjuUVWcxX%]|-[dmHIMSj]))'
+  # This can be used in look-aheads to parse simple expressions.
+  # Can't be recursive, because sregex doesn't support that,
+  # so we're skipping parentheses.
+  # Can't parse multiple lines as well, for obvious reasons
+  simple_expression: |-
+    (?x:
+      \s+                      # whitespace
+      | [urfb]*"(?:\\.|[^"])*" # strings
+      | [urfb]*'(?:\\.|[^'])*' # ^
+      | [\d.ej]+               # numerics
+      | [+*/%@-] | // | and | or # operators
+      | {{path}}               # a path
+    )*
+
+
+contexts:
+  main:
+    - include: statements
+    - match: >
+        (?x)
+        \b(?:
+            https?://(?:(?:[\w\d\-]+(?:\.[\w\d\-.]+)+)|localhost)|  # http://
+            www\.[\w\d\-]+(?:\.[\w\d\-.]+)+                         # www.
+        )
+        /?[\w\d\-.?,!'(){}\[\]/+&@%$#=:"|~;]*                             # url path and query string
+        [\w\d\-~:/#@$*+=]                                                 # allowed end chars
+
+      scope: string.other.link.links
+    - match: •
+      scope: constant.bullet.language.notes
+    - match: '\w+'
+      scope: text.plain.notes
+    - match: '.'
+      scope: text.plain.notes
+
+  statements:
+    - include: embedded-code
+    - include: docstrings
+    - include: classes
+    - match: ;
+      scope: punctuation.terminator.statement.notes
+    - include: expression-as-a-statement
+
+
+  expressions-common:
+    - include: comments
+    - include: constants
+    - include: numbers
+    - include: arrows
+    - include: operators
+    - include: strings
+    - include: groups
+    - match: \)
+      scope: invalid.illegal.stray.brace.round.notes
+    - match: \]
+      scope: invalid.illegal.stray.brace.square.notes
+    - match: \}
+      scope: invalid.illegal.stray.brace.curly.notes
+    - include: line-continuation
+
+  # Always include these last and only one at a time!
+  expression-as-a-statement:
+    - include: expressions-common
+    # - include: qualified-name
+
+  expression-in-a-statement:
+    # Differs from expression-as-a-statement in that:
+    # - invalid-name matches will pop the current context
+    # - assignment expressions
+    - include: expressions-common
+    # - include: qualified-name
+
+  expression-in-a-group:  # Always include this last!
+    # Differs from expression-in-a-statement in that:
+    # - accessor matching continues into the next line
+    - include: expression-in-a-statement
+    - match: '(\.) *(?={{identifier}})'
+      captures:
+        1: punctuation.accessor.dot.notes
+      push:
+        - include: generic-names
+        - match: ''
+          pop: true
+
+  after-expression:
+    - match: ''
+      pop: true
+
+  comments:
+    - match: "#"
+      scope: punctuation.definition.comment.notes
+      push:
+        - meta_scope: comment.line.number-sign.notes
+        - match: \n
+          pop: true
+
+  constants:
+    - match: \b(None|True|False|Ellipsis)\b
+      scope: constant.language.notes
+    - match: \.{3}(?!\w)
+      scope: constant.language.notes
+
+  numbers:
+    # https://docs.notes.org/3/reference/lexical_analysis.html#numeric-literals
+    # hexadecimal
+    - match: \b(0[xX])(\h*)([lL]) # py2
+      scope: meta.number.integer.hexadecimal.notes
+      captures:
+        1: constant.numeric.base.notes
+        2: constant.numeric.value.notes
+        3: constant.numeric.suffix.notes
+    - match: \b(0[xX])((?:_?\h)+)
+      scope: meta.number.integer.hexadecimal.notes
+      captures:
+        1: constant.numeric.base.notes
+        2: constant.numeric.value.notes
+    # octal
+    - match: \b(0[oO]?)((?=[oO]|[0-7])[0-7]*)([lL]) # py2
+      scope: meta.number.integer.octal.notes
+      captures:
+        1: constant.numeric.base.notes
+        2: constant.numeric.value.notes
+        3: constant.numeric.suffix.notes
+    - match: \b(0)([0-7]+) # py2
+      scope: meta.number.integer.octal.notes
+      captures:
+        1: constant.numeric.base.notes
+        2: constant.numeric.value.notes
+    - match: \b(0[oO])((?:_?[0-7])+)
+      scope: meta.number.integer.octal.notes
+      captures:
+        1: constant.numeric.base.notes
+        2: constant.numeric.value.notes
+    # binary
+    - match: \b(0[bB])([01]*)([lL]) # py2
+      scope: meta.number.integer.binary.notes
+      captures:
+        1: constant.numeric.base.notes
+        2: constant.numeric.value.notes
+        3: constant.numeric.suffix.notes
+    - match: \b(0[bB])((?:_?[01])*)
+      scope: meta.number.integer.binary.notes
+      captures:
+        1: constant.numeric.base.notes
+        2: constant.numeric.value.notes
+    # complex
+    - match: |-
+        (?x)
+        (
+          # 1.j, 1.1j, 1.1e1j, 1.1e-1j, 1.e1j, 1.e-1 | 1e1j, 1e-1j
+          \b{{digits}} (\.)? {{digits}}? {{exponent}}?
+          # .1j, .1e1j, .1e-1j
+          | (\.) {{digits}} {{exponent}}?
+        )
+        ([jJ])
+      scope: meta.number.imaginary.decimal.notes
+      captures:
+        1: constant.numeric.value.notes
+        2: punctuation.separator.decimal.notes
+        3: punctuation.separator.decimal.notes
+        4: constant.numeric.suffix.notes
+    # floating point
+    - match: |-
+        (?x:
+          # 1., 1.1, 1.1e1, 1.1e-1, 1.e1, 1.e-1 | 1e1, 1e-1
+          \b{{digits}} (?: (\.) {{digits}}? {{exponent}}? | {{exponent}} )
+        )
+    #       .1, .1e1, .1e-1
+    #      | (\.) {{digits}} {{exponent}}?
+      scope: meta.number.float.decimal.notes constant.numeric.value.notes
+      captures:
+        1: punctuation.separator.decimal.notes
+        2: punctuation.separator.decimal.notes
+    # integer
+    - match: \b([1-9]\d*|0)([lL])\b # py2
+      scope: meta.number.integer.decimal.notes
+      captures:
+        1: constant.numeric.value.notes
+        2: constant.numeric.suffix.notes
+    - match: \b([1-9][\d_]*|0)\b
+      scope: meta.number.integer.decimal.notes constant.numeric.value.notes
+
+  arrows:
+    - match: \<(\-)+\>
+      scope: punctuation.arrow.bidirectional.notes
+    - match: \<(\-)+
+      scope: punctuation.arrow.direction.left.notes
+    - match: (\-)+\>
+      scope: punctuation.arrow.direction.right.notes
+    - match: (\-){4,}
+      scope: comment.line.notes
+    - match: (\-){2,3}
+      scope: punctuation.arrow.directionless.notes
+  operators:
+    - match: <>
+      scope: invalid.deprecated.operator.notes
+    - match: <\=|>\=|\=\=|<|>|\!\=
+      scope: keyword.operator.comparison.notes
+    - match: \+|\s\-\s|\*|\*\*|/\s|%|<<|>>|&|\||\^|~
+      scope: keyword.operator.arithmetic.notes
+    - match: \b(and|not|or)\b
+    # - match: \b(and|in|is|not|or)\b
+      comment: keyword operators that evaluate to True or False
+      scope: keyword.operator.logical.notes
+    - match: '@'
+      scope: keyword.operator.matrix.notes
+    - match: ','
+      scope: punctuation.separator.sequence.notes
+    - match: \=
+      scope: keyword.operator.means.notes
+
+
+
+  embedded-code:
+    - match: '^(\s*)(@)(py(?:thon)?)$'
+      captures:
+        2: punctuation.section.embedded-code.begin.notes
+        3: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.python
+      embed_scope: meta.embedded-code.block.notes source.python.embedded
+      escape: '^(?=.)(?!(\1\s))'
+    - match: '^\s*(@)(py(?:thon)?)\s+'
+      captures:
+        1: punctuation.section.embedded-code.begin.notes
+        2: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.python
+      embed_scope: meta.embedded-code.line.notes source.python.embedded
+      escape: '$'
+    - match: '^(\s*)(@)(bash)$'
+      captures:
+        2: punctuation.section.embedded-code.begin.notes
+        3: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.shell.bash
+      embed_scope: meta.embedded-code.block.notes source.shell.bash.embedded
+      escape: '^(?=.)(?!(\1\s))'
+      # escape_captures:
+      #   1: punctuation.section.embedded-code.end.notes
+    - match: '^\s*(@)(bash)\s+'
+      captures:
+        1: punctuation.section.embedded-code.begin.notes
+        2: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.shell.bash
+      embed_scope: meta.embedded-code.line.notes source.shell.bash.embedded
+      escape: '$'
+    - match: '^\s*(@)(c\#)\s+'
+      captures:
+        1: punctuation.section.embedded-code.begin.notes
+        2: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.cs
+      embed_scope: meta.embedded-code.line.notes source.cs.embedded
+      escape: '$'
+    - match: '^\s*(@)(snippet)\s+'
+      captures:
+        1: punctuation.section.embedded-code.begin.notes
+        2: keyword.declaration.embedded-code.name.notes
+      embed: scope:text.xml.sublime.snippet
+      embed_scope: meta.embedded-code.line.notes text.xml.sublime.snippet.embedded
+      escape: '$'
+  classes:
+    - match: '^\s*(class)\b'
+      captures:
+        1: keyword.declaration.class.notes
+      push:
+        - meta_scope: meta.class.notes
+        - include: line-continuation-or-pop
+        - match: ':'
+          scope: punctuation.section.class.begin.notes
+          pop: true
+        - match: "(?={{identifier}})"
+          push:
+            - meta_content_scope: entity.name.class.notes
+            - include: entity-name-class
+            - match: ''
+              pop: true
+        - match: '(@)(bash):$'
+          captures:
+            1: punctuation.section.embedded-code.begin.notes
+            2: keyword.declaration.embedded-code.name.notes
+          embed: scope:source.shell.bash
+          embed_scope: meta.embedded-code.block.notes source.shell.bash.embedded
+          escape: '^\s*(;)$'
+          escape_captures:
+            1: punctuation.section.embedded-code.end.notes
+          pop: true
+        - match: '(@)(py(?:thon)?):$'
+          captures:
+            1: punctuation.section.embedded-code.begin.notes
+            2: keyword.declaration.embedded-code.name.notes
+          embed: scope:source.python
+          embed_scope: meta.embedded-code.block.notes source.python.embedded
+          escape: '^\s*(;)$'
+          escape_captures:
+            1: punctuation.section.embedded-code.end.notes
+          pop: true
+        - match: '(@)(c\#):$'
+          captures:
+            1: punctuation.section.embedded-code.begin.notes
+            2: keyword.declaration.embedded-code.name.notes
+          embed: scope:source.cs
+          embed_scope: meta.embedded-code.block.notes source.cs.embedded
+          escape: '^\s*(;)$'
+          escape_captures:
+            1: punctuation.section.embedded-code.end.notes
+          pop: true
+        - match: '(@)(build):$'
+          captures:
+            1: punctuation.section.embedded-code.begin.notes
+            2: keyword.declaration.embedded-code.name.notes
+          embed: scope:source.json.sublime.build
+          embed_scope: meta.embedded-code.block.notes source.json.sublime.build.embedded
+          escape: '^\s*(;)$'
+          escape_captures:
+            1: punctuation.section.embedded-code.end.notes
+          pop: true
+        - match: ([^\s:]+)
+          scope: invalid.illegal.class.declaration
+          pop: true
+
+  groups:
+    - match: \(
+      scope: punctuation.section.group.round.begin.notes
+      push:
+        - meta_scope: text.plain.notes meta.group.round.notes
+        - match: \)
+          scope: punctuation.section.group.round.end.notes
+          set: after-expression
+        - match: ','
+          scope: punctuation.separator.group.notes
+        - include: expression-in-a-group
+    - match: \[
+      scope: punctuation.section.group.square.begin.notes
+      push:
+        - meta_scope: text.plain.notes meta.group.square.notes
+        - match: \]
+          scope: punctuation.section.group.square.end.notes
+          set: after-expression
+        - match: ','
+          scope: punctuation.separator.group.notes
+        - include: expression-in-a-group
+    - match: \{
+      scope: punctuation.section.group.curly.begin.notes
+      push:
+        - meta_scope: text.plain.notes meta.group.curly.notes
+        - match: \}
+          scope: punctuation.section.group.curly.end.notes
+          set: after-expression
+        - match: ','
+          scope: punctuation.separator.group.notes
+        - include: expression-in-a-group
+
+  # name:
+  #   - match: '(?={{identifier}})'
+  #     push:
+  #       - match: '{{identifier_constant}}'
+  #         scope: variable.other.constant.notes
+  #       - include: generic-names
+  #       - match: ''
+  #         pop: true
+
+  # dotted-name:
+  #   - match: '\s*(\.)\s*(?={{identifier}})'
+  #     captures:
+  #       1: punctuation.accessor.dot.notes
+  #     push:
+  #       - match: '{{identifier_constant}}'
+  #         scope: variable.other.constant.notes
+  #       - include: generic-names
+  #       - match: ''
+  #         pop: true
+
+  # qualified-name:
+  #   - match: '(?={{path}})'
+  #     push:
+  #       - meta_scope: meta.qualified-name.notes
+  #       - include: name
+  #       - include: dotted-name
+  #       - match: ''
+  #         pop: true
+  #   - match: \.
+  #     scope: punctuation.accessor.dot.notes
+
+  # qualified-name-until-leaf:
+  #   # Push this together with another context to match a qualified name
+  #   # until the last non-special identifier (if any).
+  #   # This allows the leaf to be scoped individually.
+  #   - meta_scope: meta.qualified-name.notes
+  #   # If a line continuation follows, this may or may not be the last leaf (most likley not though)
+  #   - match: (?={{identifier}}\s*(\.|\\))
+  #     push:
+  #       - include: generic-names
+  #       - match: ''
+  #         pop: true
+  #   - match: (\.)\s*(?={{identifier}}\s*(\.|\\))
+  #     captures:
+  #       1: punctuation.accessor.dot.notes
+  #     push:
+  #       - include: generic-names
+  #       - match: ''
+  #         pop: true
+  #   - match: \.(?!\s*{{identifier}})  # don't match last dot
+  #     scope: punctuation.accessor.dot.notes
+  #   - match: (?=\S|$)
+  #     pop: true
+
+
+  entity-name-class:
+    - include: generic-names
+
+  generic-names:
+    - match: '{{identifier}}'
+      scope: meta.generic-name.notes
+
+  line-continuation:
+    - match: (\\)(.*)$\n?
+      captures:
+        1: punctuation.separator.continuation.line.notes
+        2: invalid.illegal.unexpected-text.notes
+    # make sure to resume parsing at next line
+      push:
+        # This prevents strings after a continuation from being a docstring
+        - include: strings
+        - match: (?=\S|^\s*$|\n)  # '\n' for when we matched a string earlier
+          pop: true
+
+  line-continuation-or-pop:
+    - include: line-continuation
+    - match: (?=\s*($|;|#))
+      pop: true
+
+  docstrings:
+    - match: ^\s*(?=(?i)(ur|ru|u|r)?("""|'''))
+      push:
+      - match: (?i)(u)?("""|''')
+        captures:
+          1: storage.type.string.notes
+          2: punctuation.definition.comment.begin.notes
+        set:
+          - meta_scope: comment.block.documentation.notes
+          - include: escaped-unicode-char
+          - include: escaped-char
+          - match: '\2'
+            scope: punctuation.definition.comment.end.notes
+            pop: true
+      - match: (?i)(u?ru?)("""|''')
+        captures:
+          1: storage.type.string.notes
+          2: punctuation.definition.comment.begin.notes
+        set:
+          - meta_scope: comment.block.documentation.notes
+          - match: '\2'
+            scope: punctuation.definition.comment.end.notes
+            pop: true
+
+  escaped-char:
+    - match: '(\\x\h{2})|(\\[0-7]{1,3})|(\\[\\"''abfnrtv])'
+      captures:
+        1: constant.character.escape.hex.notes
+        2: constant.character.escape.octal.notes
+        3: constant.character.escape.notes
+    - match: \\.  # deprecated in 3.6 and will eventually be a syntax error
+      scope: invalid.deprecated.character.escape.notes
+
+  escaped-unicode-char:
+    - match: '(\\U\h{8})|(\\u\h{4})|(\\N\{[a-zA-Z ]+\})'
+      captures:
+        1: constant.character.escape.unicode.16-bit-hex.notes
+        2: constant.character.escape.unicode.32-bit-hex.notes
+        3: constant.character.escape.unicode.name.notes
+
+  escaped-fstring-escape:
+    # special-case the '\{{' sequence because it has higher priority than the deprecated '\{'
+    - match: (\\)(\{\{|\}\})
+      scope: constant.character.escape.backslash.regexp
+      captures:
+        1: invalid.deprecated.character.escape.notes
+        2: constant.character.escape.notes
+
+  line-continuation-inside-string:
+    - match: (\\)$\n?
+      captures:
+        1: punctuation.separator.continuation.line.notes
+    - match: \n
+      scope: invalid.illegal.unclosed-string.notes
+      set: after-expression
+
+  line-continuation-inside-block-string:
+    - match: \\$
+      scope: punctuation.separator.continuation.line.notes
+
+  constant-placeholder:
+    - match: |- # printf style
+        (?x)
+        %
+          ( \( ({{identifier}}) \) )? # mapping key
+          \#?            # alternate form
+          0?             # pad with zeros
+          \-?            # left-adjust
+          \ ?            # implicit sign
+          [+-]?          # sign
+          (\d*|\*)       # width
+          (\. (\d*|\*))? # precision
+          [hlL]?         # length modifier (but ignored)
+          [acdeEfFgGiorsuxX%]
+      scope: constant.other.placeholder.notes
+      captures:
+        2: variable.other.placeholder.notes
+    - match: '{{strftime_spec}}'
+      scope: constant.other.placeholder.notes
+    - match: '\{\{|\}\}'
+      scope: constant.character.escape.notes
+    - include: formatting-syntax
+
+  formatting-syntax:
+    # https://docs.notes.org/3.6/library/string.html#formatstrings
+    # Technically allows almost every character for the key,
+    # but those are rarely used if ever.
+    - match: |- # simple form
+        (?x)
+        (\{)
+          (?: [\w.\[\]]+)?           # field_name
+          (   ! [ars])?              # conversion
+          (?: (:) ({{format_spec}}|  # format_spec OR
+                   [^}%]*%.[^}]*)    # any format-like string
+          )?
+        (\})
+      scope: constant.other.placeholder.notes
+      captures:
+        1: punctuation.definition.placeholder.begin.notes
+        2: storage.modifier.conversion.notes
+        3: punctuation.separator.format-spec.notes
+        4: meta.format-spec.notes constant.other.format-spec.notes
+        5: punctuation.definition.placeholder.end.notes
+    - match: (?=\{[^{}"']+\{[^"']*\})  # complex (nested) form
+      branch_point: formatting-syntax-branch
+      branch:
+        - formatting-syntax-complex
+        - formatting-syntax-fallback
+
+  formatting-syntax-fallback:
+    - match: \{
+      scope: meta.debug.formatting-syntax-fallback.notes
+      pop: true
+
+  formatting-syntax-complex:
+    - match: \{
+      scope: punctuation.definition.placeholder.begin.notes
+      set:
+        - meta_scope: constant.other.placeholder.notes
+        - match: \}
+          scope: punctuation.definition.placeholder.end.notes
+          pop: true
+        # TODO could match numeric indices or everything else as a key
+        # and also [] indexing
+        - match: '![ars]'
+          scope: storage.modifier.conversion.notes
+        - match: ':'
+          scope: punctuation.separator.format-spec.notes
+          push:
+            - meta_content_scope: meta.format-spec.notes constant.other.format-spec.notes
+            - match: (?=\})
+              pop: true
+            - match: (?=\{)
+              push: formatting-syntax-complex
+        - match: '[{"''\n]'
+          fail: formatting-syntax-branch
+
+  f-string-content:
+    # https://www.notes.org/dev/peps/pep-0498/
+    # https://docs.notes.org/3.6/reference/lexical_analysis.html#f-strings
+    - match: \{\{|\}\}
+      scope: constant.character.escape.notes
+    - match: \{\s*\}
+      scope: invalid.illegal.empty-expression.notes
+    - match: (?=\{)
+      push: f-string-replacement
+    - match: \}
+      scope: invalid.illegal.stray-brace.notes
+
+  f-string-content-with-regex:
+    # Same as f-string-content, but will reset the entire scope stack
+    # and has an additional match.
+    - match: \\(\{\{|\}\})
+      scope: constant.character.escape.backslash.regexp
+      captures:
+        1: constant.character.escape.notes
+    - match: \{\{|\}\}
+      scope: constant.character.escape.notes
+    - match: \{\s*\}
+      scope: invalid.illegal.empty-expression.notes
+    - match: (?=\{)
+      push: f-string-replacement-reset
+    - match: \}
+      scope: invalid.illegal.stray-brace.notes
+
+  f-string-replacement:
+    - clear_scopes: 1
+    - match: \}
+      scope: meta.interpolation.notes punctuation.section.interpolation.end.notes
+      pop: true
+    - match: \{
+      scope: punctuation.section.interpolation.begin.notes
+      push:
+        - meta_scope: meta.interpolation.notes
+        - match: (?=\})
+          pop: true
+        - match: '![ars]'
+          scope: storage.modifier.conversion.notes
+        - match: =
+          scope: storage.modifier.debug.notes
+        - match: ':'
+          push:
+            - meta_scope: meta.format-spec.notes constant.other.format-spec.notes
+            # Because replacements can also be used *within* the format-spec,
+            # basically any character is valid and matching {{format_spec}} is useless.
+            # - match: '{{format_spec}}'
+            - match: (?=\})
+              pop: true
+            - include: f-string-content
+        - match: ''
+          push:
+            - meta_content_scope: source.notes.embedded
+            - match: (?==?(![^=]|:|\}))
+              pop: true
+            - match: \\
+              scope: invalid.illegal.backslash-in-fstring.notes
+            - include: expression-in-a-group
+
+  f-string-replacement-reset:
+    # Same as f-string-replacement, but with clear_scopes: true
+    - clear_scopes: true
+    - meta_scope: source.notes meta.string.interpolated.notes
+    - match: \}
+      scope: meta.interpolation.notes punctuation.section.interpolation.end.notes
+      pop: true
+    - match: \{
+      scope: punctuation.section.interpolation.begin.notes
+      push:
+        - meta_scope: meta.interpolation.notes
+        - match: (?=\})
+          pop: true
+        - match: '![ars]'
+          scope: storage.modifier.conversion.notes
+        - match: ':'
+          push:
+            - meta_scope: meta.format-spec.notes constant.other.format-spec.notes
+            - match: (?=\})
+              pop: true
+            - include: f-string-content
+        - match: ''
+          push:
+            - meta_content_scope: source.notes.embedded
+            - match: (?=![^=]|:|\})
+              pop: true
+            - match: \\
+              scope: invalid.illegal.backslash-in-fstring.notes
+            - include: expression-in-a-group
+
+  string-quoted-double-block:
+    # Triple-quoted capital R raw string, unicode or not, no syntax embedding
+    - match: '([uU]?R)(""")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.block.notes
+        - match: '"""'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: escaped-unicode-char
+    # Triple-quoted capital R raw string, bytes, no syntax embedding
+    - match: '([bB]R|R[bB])(""")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.block.notes
+        - match: '"""'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+    # Triple-quoted raw string, unicode or not, will detect SQL, otherwise regex
+    - match: '([uU]?r)(""")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.block.notes
+        - match: '(?={{sql_indicator}})'
+          set:
+            - meta_scope: meta.string.notes string.quoted.double.block.notes
+            - match: '"""'
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - match: ''
+              push: scope:source.sql
+              with_prototype:
+                - match: '(?=""")'
+                  pop: true
+                - include: escaped-unicode-char
+                - include: constant-placeholder
+        - match: '(?=\S)'
+          set:
+            - meta_scope: meta.string.notes string.quoted.double.block.notes
+            - match: '"""'
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - match: ''
+              push: scope:source.regexp.python
+              with_prototype:
+                - match: '(?=""")'
+                  pop: true
+                - include: escaped-unicode-char
+    # Triple-quoted raw string, bytes, will use regex
+    - match: '([bB]r|r[bB])(""")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.block.notes
+        - match: '"""'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - match: ''
+          embed: scope:source.regexp.python
+          escape: (?=""")
+
+    # Triple-quoted raw f-string
+    - match: ([fF]R|R[fF])(""")
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.double.block.notes
+        - match: '"""'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: f-string-content
+    # Triple-quoted raw f-string, treated as regex
+    - match: ([fF]r|r[fF])(""")
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.double.block.notes
+        - match: '"""'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - match: ''
+          push: scope:source.regexp.python
+          with_prototype:
+            - match: '(?=""")'
+              pop: true
+            - include: f-string-content-with-regex
+    # Triple-quoted f-string
+    - match: ([fF])(""")
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.double.block.notes
+        - match: '"""'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-block-string
+        - include: escaped-fstring-escape
+        - include: escaped-unicode-char
+        - include: escaped-char
+        - include: f-string-content
+    # Triple-quoted string, unicode or not, will detect SQL
+    - match: '([uU]?)(""")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.block.notes
+        - match: '(?={{sql_indicator}})'
+          set:
+            - meta_scope: meta.string.notes string.quoted.double.block.notes
+            - match: '"""'
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - match: ''
+              push: scope:source.sql
+              with_prototype:
+                - match: '(?=""")'
+                  pop: true
+                - include: line-continuation-inside-block-string
+                - include: escaped-unicode-char
+                - include: escaped-char
+                - include: constant-placeholder
+        - match: '(?=\S)'
+          set:
+            - meta_scope: meta.string.notes string.quoted.double.block.notes
+            - match: '"""'
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - include: line-continuation-inside-block-string
+            - include: escaped-unicode-char
+            - include: escaped-char
+            - include: constant-placeholder
+    # Triple-quoted string, bytes, no syntax embedding
+    - match: '([bB])(""")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.block.notes
+        - match: '"""'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-block-string
+        - include: escaped-char
+        - include: constant-placeholder
+
+  string-quoted-double:
+    # Single-line capital R raw string, unicode or not, no syntax embedding
+    - match: '([uU]?R)(")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+    # Single-line capital R raw string, bytes, no syntax embedding
+    - match: '([bB]R|R[bB])(")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+    # Single-line raw string, unicode or not, starting with a SQL keyword
+    - match: '([uU]?r)(")(?={{sql_indicator}})'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.sql
+          with_prototype:
+            - match: '(?="|\n)'
+              pop: true
+            - include: constant-placeholder
+            - include: line-continuation-inside-string
+    # Single-line raw string, unicode or not, treated as regex
+    - match: '([uU]?r)(")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.regexp.python
+          with_prototype:
+            - match: '(?="|\n)'
+              pop: true
+            - include: line-continuation-inside-string
+    # Single-line raw string, bytes, treated as regex
+    - match: '([bB]r|r[bB])(")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          embed: scope:source.regexp.python
+          escape: (?="|\n)
+    # Single-line raw f-string
+    - match: (R[fF]|[fF]R)(")
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - include: f-string-content
+    # Single-line raw f-string, treated as regex
+    - match: (r[fF]|[fF]r)(")
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.regexp.python
+          with_prototype:
+            - match: '(?="|\n)'
+              pop: true
+            - include: line-continuation-inside-string
+            - include: f-string-content-with-regex
+    # Single-line f-string
+    - match: ([fF])(")
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: escaped-fstring-escape
+        - include: escaped-unicode-char
+        - include: escaped-char
+        - include: line-continuation-inside-string
+        - include: f-string-content
+    # Single-line string, unicode or not, starting with a SQL keyword
+    - match: '([uU]?)(")(?={{sql_indicator}})'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.sql
+          with_prototype:
+            - match: '(?="|\n)'
+              pop: true
+            - include: escaped-unicode-char
+            - include: escaped-char
+            - include: line-continuation-inside-string
+            - include: constant-placeholder
+    # Single-line string, unicode or not
+    - match: '([uU]?)(")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: escaped-unicode-char
+        - include: escaped-char
+        - include: line-continuation-inside-string
+        - include: constant-placeholder
+    # Single-line string, bytes
+    - match: '([bB])(")'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.double.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.double.notes
+        - match: '"'
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: escaped-char
+        - include: line-continuation-inside-string
+        - include: constant-placeholder
+
+  string-quoted-single-block:
+    # Triple-quoted capital R raw string, unicode or not, no syntax embedding
+    - match: ([uU]?R)(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.block.notes
+        - match: "'''"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+    # Triple-quoted capital R raw string, bytes, no syntax embedding
+    - match: ([bB]R|R[bB])(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.block.notes
+        - match: "'''"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+    # Triple-quoted raw string, unicode or not, will detect SQL, otherwise regex
+    - match: ([uU]?r)(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.block.notes
+        - match: '(?={{sql_indicator}})'
+          set:
+            - meta_scope: meta.string.notes string.quoted.single.block.notes
+            - match: "'''"
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - match: ''
+              push: scope:source.sql
+              with_prototype:
+                - match: (?=''')
+                  pop: true
+                - include: escaped-unicode-char
+                - include: escaped-char
+                - include: constant-placeholder
+        - match: '(?=\S)'
+          set:
+            - meta_scope: meta.string.notes string.quoted.single.block.notes
+            - match: "'''"
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - match: ''
+              push: scope:source.regexp.python
+              with_prototype:
+                - match: (?=''')
+                  pop: true
+                - include: escaped-unicode-char
+    # Triple-quoted raw string, bytes, will use regex
+    - match: ([bB]r|r[bB])(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.block.notes
+        - match: "'''"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - match: ''
+          embed: scope:source.regexp.python
+          escape: (?=''')
+    # Triple-quoted raw f-string
+    - match: ([fF]R|R[fF])(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.single.block.notes
+        - match: "'''"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: f-string-content
+    # Triple-quoted raw f-string, treated as regex
+    - match: ([fF]r|r[fF])(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.single.block.notes
+        - match: "'''"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - match: ''
+          push: scope:source.regexp.python
+          with_prototype:
+            - match: (?=''')
+              pop: true
+            - include: f-string-content-with-regex
+    # Triple-quoted f-string
+    - match: ([fF])(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.single.block.notes
+        - match: "'''"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-block-string
+        - include: escaped-fstring-escape
+        - include: escaped-unicode-char
+        - include: escaped-char
+        - include: f-string-content
+    # Triple-quoted string, unicode or not, will detect SQL
+    - match: ([uU]?)(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.block.notes
+        - match: '(?={{sql_indicator}})'
+          set:
+            - meta_scope: meta.string.notes string.quoted.single.block.notes
+            - match: "'''"
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - match: ''
+              push: scope:source.sql
+              with_prototype:
+                - match: (?=''')
+                  pop: true
+                - include: line-continuation-inside-block-string
+                - include: escaped-unicode-char
+                - include: escaped-char
+                - include: constant-placeholder
+        - match: '(?=\S)'
+          set:
+            - meta_scope: meta.string.notes string.quoted.single.block.notes
+            - match: "'''"
+              scope: punctuation.definition.string.end.notes
+              set: after-expression
+            - include: line-continuation-inside-block-string
+            - include: escaped-unicode-char
+            - include: escaped-char
+            - include: constant-placeholder
+    # Triple-quoted string, bytes, no syntax embedding
+    - match: ([bB])(''')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.block.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.block.notes
+        - match: "'''"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-block-string
+        - include: escaped-char
+        - include: constant-placeholder
+
+  string-quoted-single:
+    # Single-line capital R raw string, unicode or not, no syntax embedding
+    - match: '([uU]?R)('')'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+    # Single-line capital R raw string, bytes, no syntax embedding
+    - match: '([bB]R|R[bB])('')'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+    # Single-line raw string, unicode or not, starting with a SQL keyword
+    - match: '([uU]?r)('')(?={{sql_indicator}})'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.sql
+          with_prototype:
+            - match: '(?=''|\n)'
+              pop: true
+            - include: line-continuation-inside-string
+            - include: constant-placeholder
+    # Single-line raw string, unicode or not, treated as regex
+    - match: '([uU]?r)('')'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.regexp.python
+          with_prototype:
+            - match: '(?=''|\n)'
+              pop: true
+            - include: line-continuation-inside-string
+    # Single-line raw string, bytes, treated as regex
+    - match: '([bB]r|r[bB])('')'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.regexp.python
+          with_prototype:
+            - match: '(?=''|\n)'
+              pop: true
+            - include: line-continuation-inside-string
+    # Single-line raw f-string
+    - match: ([fF]R|R[fF])(')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - include: f-string-content
+    # Single-line raw f-string, treated as regex
+    - match: ([fF]r|r[fF])(')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.regexp.python
+          with_prototype:
+            - match: (?='|\n)
+              pop: true
+            - include: line-continuation-inside-string
+            - include: f-string-content-with-regex
+    # Single-line f-string
+    - match: ([fF])(')
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.interpolated.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.interpolated.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: escaped-fstring-escape
+        - include: escaped-unicode-char
+        - include: escaped-char
+        - include: line-continuation-inside-string
+        - include: f-string-content
+    # Single-line string, unicode or not, starting with a SQL keyword
+    - match: '([uU]?)('')(?={{sql_indicator}})'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: line-continuation-inside-string
+        - match: ''
+          push: scope:source.sql
+          with_prototype:
+            - match: '(?=''|\n)'
+              pop: true
+            - include: escaped-unicode-char
+            - include: escaped-char
+            - include: line-continuation-inside-string
+            - include: constant-placeholder
+    # Single-line string, unicode or not
+    - match: '([uU]?)('')'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: escaped-unicode-char
+        - include: escaped-char
+        - include: line-continuation-inside-string
+        - include: constant-placeholder
+    # Single-line string, bytes
+    - match: '([bB])('')'
+      captures:
+        1: storage.type.string.notes
+        2: meta.string.notes string.quoted.single.notes punctuation.definition.string.begin.notes
+      push:
+        - meta_content_scope: meta.string.notes string.quoted.single.notes
+        - match: "'"
+          scope: punctuation.definition.string.end.notes
+          set: after-expression
+        - include: escaped-char
+        - include: line-continuation-inside-string
+        - include: constant-placeholder
+
+  strings:
+    # block versions must be matched first
+    - include: string-quoted-double-block
+    - include: string-quoted-double
+    # - include: string-quoted-single-block
+    # - include: string-quoted-single

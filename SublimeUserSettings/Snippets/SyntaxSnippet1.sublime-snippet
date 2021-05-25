@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+- match: '^(\s*)(@)(${1:name})\$'
+	captures:
+		2: punctuation.section.embedded-code.begin.notes
+		3: keyword.declaration.embedded-code.name.notes
+	embed: scope:source.${2:name}
+	embed_scope: meta.embedded-code.block.notes source.${2:name}.embedded
+	escape: '^(?=.)(?!(\1\s))'
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>@b</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.yaml</scope>
+	<description>block</description>
+</snippet>
