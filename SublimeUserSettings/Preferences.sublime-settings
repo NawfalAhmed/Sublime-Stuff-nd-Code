@@ -32,7 +32,6 @@
 	// "line_padding_bottom": 1,
 	"lsp_diagnostics_highlight_style": "underline",
 	"margin": 0,
-	"match_brackets_content": false,
 	"material_theme_accent_indigo": true,
 	"material_theme_compact_panel": true,
 	"material_theme_compact_sidebar": true,
