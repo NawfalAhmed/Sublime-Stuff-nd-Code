@@ -36,12 +36,13 @@ __modules = [
 	"bisect"     , "bs4"      , "collections", "contextlib", "copy"      ,
 	"dataclasses", "flask"    , "functools"  , "heapq"     , "html"      ,
 	"inspect"    , "itertools", "json"       , "logging"   , "math"      ,
-	"os"         , "pathlib"  , "pickle"     , "platform"  , "psutil"    ,
+	"os"         , "pathlib"  , "pickle"     , "platform"  ,
 	"queue"      , "random"   , "re"         , "requests"  , "shutil"    ,
 	"signal"     , "socket"   , "stat"       , "struct"    , "subprocess",
 	"sys"        , "tempfile" , "textwrap"   , "threading" , "time"      ,
-	"tkinter"    , "tokenize" , "tqdm"       , "turtle"    , "typing"    ,
+	"tokenize"   , "tqdm"                    , "typing"    ,
 ]
+
 for module in __modules:
 	globals()[module] = importlib.import_module(module)
 
@@ -54,6 +55,15 @@ for module, method in __methods.items():
 				globals()[method] = importlib.import_module(f".{method}", module)
 			except Exception:
 				globals()[method] = getattr(importlib.import_module(module),method)
+
+if sys.version_info.minor == 9:
+	import numpy as np
+	import pandas as pd
+	import matplotlib.pyplot as plt
+	__modules.append("numpy as np")
+	__modules.append("pandas as pd")
+	__modules.append("matplotlib.pyplot as plt")
+
 __modules.append("importlib")
 __modules.append("futures")
 print("Populating the namespace with imports:")
@@ -85,6 +95,6 @@ ___ignore = """ Not Importing
 	### import winreg
 """
 
-get_ipython().run_line_magic('logstart', '"Redacted')
+get_ipython().run_line_magic('logstart', '~/Sublime/Ipython_logs/log.py rotate')
 # print(set(__methods) - set(__modules))
 

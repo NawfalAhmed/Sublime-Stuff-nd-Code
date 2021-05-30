@@ -1,5 +1,5 @@
 {
-	"python_interpreter": "Redacted",
+	"python_interpreter": "python",
 	"display_signatures": false,
 	"enable_signatures_tooltip": false,
 	"enable_docstrings_tooltip": false,

@@ -1,0 +1,4 @@
+// These settings override both User and Default settings for the YAML syntax
+{
+	"indent_with_tabs_on_save": false
+}

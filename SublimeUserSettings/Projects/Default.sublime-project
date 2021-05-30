@@ -12,27 +12,25 @@
 				"Advanced OS",
 				"Notes",
 				"SublimeUser*",
-				"nasmx-1.4",
-				"DosBoxPortable",
 			],
-			"path": "Redacted",
+			"path": "~/Sublime",
 		},
 		{
 			"name": ": Notes",
-			"path": "Redacted",
-		},
+			"path": "~/Sublime/Notes",
+		},/*
 		{
 			"name": ": Testing",
-			"path": "Redacted",
-		},
+			"path": "~/Sublime/Testing",
+		},*/
 		{
 			"name": ": DCN",
-			"path": "Redacted",
+			"path": "~/Sublime/DCN",
 		},
 		{
 			"name": ": Advanced OS",
-			"path": "Redacted",
-		},
+			"path": "~/Sublime/Advanced OS",
+		},/*
 		{
 			"binary_file_patterns":
 			[
@@ -53,63 +51,48 @@
 				"UserSettings"
 			],
 			"name": "Unity Scripts",
-			"path": "Redacted",
-		},
-		// {
-		// 	"folder_exclude_patterns":
-		// 	[
-		// 		"User",
-		// 		"UserPlugins",
-		// 		"Anaconda",
-		// 		"SendCode",
-		// 		"R-IDE",
-		// 		"OmniSharp",
-		// 		"backrefs",
-		// 		"bracex",
-		// 		"bs4",
-		// 		"jsonschema",
-		// 		"lsp_utils",
-		// 		"markuepsafe",
-		// 		"mdpopups",
-		// 		"numpy",
-		// 		"package_setting_context",
-		// 		"pathlib",
-		// 		"pygments",
-		// 		"pymdownx",
-		// 		"pyte",
-		// 		"python-jinja2",
-		// 		"python-markdown",
-		// 		"pywinpty",
-		// 		"pyyaml",
-		// 		"sublime_lib",
-		// 		"wcwidth",
-		// 		"wcmatch",
-		// 	],
-		// 	"name": "Packages Overrides",
-		// 	"path": "Redacted"
-		// },
+			"path": "~/Desktop/Unity Projects",
+		},*/
+/*  {
+			"folder_exclude_patterns":
+			[
+				"User",
+				"UserPlugins",
+				"Anaconda",
+				"SendCode",
+				"R-IDE",
+				"OmniSharp",
+				"backrefs",
+				"bracex",
+				"bs4",
+				"jsonschema",
+				"lsp_utils",
+				"markuepsafe",
+				"mdpopups",
+				"numpy",
+				"package_setting_context",
+				"pathlib",
+				"pygments",
+				"pymdownx",
+				"pyte",
+				"python-jinja2",
+				"python-markdown",
+				"pywinpty",
+				"pyyaml",
+				"sublime_lib",
+				"wcwidth",
+				"wcmatch",
+			],
+			"name": "Packages Overrides",
+			"path": "~/AppData/Roaming/Sublime Text/Packages"
+		},*/
 		{
-			"name": "UserSettings",
-			"path": "Redacted",
+			"name": "Sublime Config",
+			"path": "~/Sublime/SublimeUserSettings",
 		},
 		{
-			"name": "UserPlugins",
-			"path": "Redacted",
+			"name": "Sublime Plugins",
+			"path": "~/Sublime/SublimeUserPlugins",
 		}
-
 	],
-	"settings":
-	{
-		"LSP":
-		{
-			"pylsp":
-			{
-				"enabled": true,
-			},
-			"pyls":
-			{
-				"enabled": false,
-			},
-		},
-	},
 }

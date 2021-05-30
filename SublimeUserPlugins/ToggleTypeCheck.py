@@ -7,7 +7,7 @@ import shutil
 class ToggleTypeCheckCommand(sublime_plugin.WindowCommand):
 
 	def run(self):
-		path = "$packages\\User\\LSP-pyright.sublime-settings"
+		path = "$packages/User/LSP-pyright.sublime-settings"
 		path = sublime.expand_variables(path, self.window.extract_variables())
 		temp = path + ".temp"
 		backup = path + ".backup"
