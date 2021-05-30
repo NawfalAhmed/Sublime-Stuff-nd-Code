@@ -4,6 +4,7 @@ import re
 import textwrap
 from threading import Thread
 from subprocess import check_output as syscalloutput, CalledProcessError
+from os.path import expanduser
 # from subprocess import check_call as syscall
 
 
@@ -14,8 +15,8 @@ def run_async(select, view):
 		contents = contents.replace("true", "True").replace("false", "False")
 		return re.sub(r",(\s*[\)\]\}])", r"\1", contents)
 
-	name = "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\json-format-temp.py"
-	style = "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\json-style.txt"
+	name = expanduser("~/Sublime/json-format-temp.py")
+	style = expanduser("~/Sublime/json-style.txt")
 	open(name, 'w').close()  # clear file contents
 	indents = []
 	with open(name, 'a') as file:

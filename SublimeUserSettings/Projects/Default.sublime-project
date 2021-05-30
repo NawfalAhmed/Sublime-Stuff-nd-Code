@@ -12,27 +12,25 @@
 				"Advanced OS",
 				"Notes",
 				"SublimeUser*",
-				"nasmx-1.4",
-				"DosBoxPortable",
 			],
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText",
+			"path": "~/Sublime",
 		},
 		{
 			"name": ": Notes",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Notes",
-		},
+			"path": "~/Sublime/Notes",
+		},/*
 		{
 			"name": ": Testing",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Testing",
-		},
+			"path": "~/Sublime/Testing",
+		},*/
 		{
 			"name": ": DCN",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\DCN",
+			"path": "~/Sublime/DCN",
 		},
 		{
 			"name": ": Advanced OS",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\Advanced OS",
-		},
+			"path": "~/Sublime/Advanced OS",
+		},/*
 		{
 			"binary_file_patterns":
 			[
@@ -53,63 +51,48 @@
 				"UserSettings"
 			],
 			"name": "Unity Scripts",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\Unity Projects",
-		},
-		// {
-		// 	"folder_exclude_patterns":
-		// 	[
-		// 		"User",
-		// 		"UserPlugins",
-		// 		"Anaconda",
-		// 		"SendCode",
-		// 		"R-IDE",
-		// 		"OmniSharp",
-		// 		"backrefs",
-		// 		"bracex",
-		// 		"bs4",
-		// 		"jsonschema",
-		// 		"lsp_utils",
-		// 		"markuepsafe",
-		// 		"mdpopups",
-		// 		"numpy",
-		// 		"package_setting_context",
-		// 		"pathlib",
-		// 		"pygments",
-		// 		"pymdownx",
-		// 		"pyte",
-		// 		"python-jinja2",
-		// 		"python-markdown",
-		// 		"pywinpty",
-		// 		"pyyaml",
-		// 		"sublime_lib",
-		// 		"wcwidth",
-		// 		"wcmatch",
-		// 	],
-		// 	"name": "Packages Overrides",
-		// 	"path": "C:\\Users\\Ibraheem\\AppData\\Roaming\\Sublime Text\\Packages"
-		// },
+			"path": "~/Desktop/Unity Projects",
+		},*/
+/*  {
+			"folder_exclude_patterns":
+			[
+				"User",
+				"UserPlugins",
+				"Anaconda",
+				"SendCode",
+				"R-IDE",
+				"OmniSharp",
+				"backrefs",
+				"bracex",
+				"bs4",
+				"jsonschema",
+				"lsp_utils",
+				"markuepsafe",
+				"mdpopups",
+				"numpy",
+				"package_setting_context",
+				"pathlib",
+				"pygments",
+				"pymdownx",
+				"pyte",
+				"python-jinja2",
+				"python-markdown",
+				"pywinpty",
+				"pyyaml",
+				"sublime_lib",
+				"wcwidth",
+				"wcmatch",
+			],
+			"name": "Packages Overrides",
+			"path": "~/AppData/Roaming/Sublime Text/Packages"
+		},*/
 		{
-			"name": "UserSettings",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserSettings",
+			"name": "Sublime Config",
+			"path": "~/Sublime/SublimeUserSettings",
 		},
 		{
-			"name": "UserPlugins",
-			"path": "C:\\Users\\Ibraheem\\Desktop\\SublimeText\\SublimeUserPlugins",
+			"name": "Sublime Plugins",
+			"path": "~/Sublime/SublimeUserPlugins",
 		}
-
 	],
-	"settings":
-	{
-		"LSP":
-		{
-			"pylsp":
-			{
-				"enabled": true,
-			},
-			"pyls":
-			{
-				"enabled": false,
-			},
-		},
-	},
 }

@@ -2,6 +2,7 @@ import sublime
 import sublime_plugin
 import re
 import textwrap
+from os.path import expanduser
 
 
 class NameInputHandler(sublime_plugin.TextInputHandler):
@@ -24,7 +25,7 @@ class NewUserPluginCommand(sublime_plugin.WindowCommand):
 
 	def run_async(self, name):
 		filename = (
-			"C:/Users/Ibraheem/Desktop/SublimeText/SublimeUserPlugins/" + name
+			expanduser("~/Sublime/SublimeUserPlugins/") + name
 			+ ".py"
 		)
 		plugin_template = """

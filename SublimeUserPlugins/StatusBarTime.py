@@ -3,9 +3,9 @@ import sublime_plugin
 from time import sleep
 from threading import Thread
 from datetime import datetime
-from os.path import expandvars
+from os.path import expanduser
 
-log_path = expandvars(r"%Sublime%") + "/SublimeUpTime.log"
+log_path = expanduser(r"~/Sublime/SublimeUpTime.log")
 alive = False
 total_up_time = None
 

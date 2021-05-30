@@ -50,5 +50,7 @@
 			// "light_cyan": "#8ec43d",
 			// "light_white": "#ffffff"
 	 },
-	 "scrollback_history_size": 3000
+	 "scrollback_history_size": 3000,
+	 "256color": true,
+	 "unix_term": "xterm-256color",
 }

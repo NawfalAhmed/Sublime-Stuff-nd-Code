@@ -20,6 +20,7 @@
 		"FileDiffs",
 		"FileManager",
 		"FindKeyConflicts",
+		"fish",
 		"Increment Selection",
 		"LSP",
 		"LSP-bash",

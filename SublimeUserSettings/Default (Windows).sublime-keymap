@@ -155,7 +155,11 @@
 	{ "keys": ["ctrl+shift+\\"], "command": "toggle_inline_diff" },
 	{ "keys": ["alt+\\"], "command": "diff_changes" },
 	{ "keys": ["alt+shift+\\"], "command": "user_test" },
-	{ "keys": ["super+\\"], "command": "open_key_bindings" },
+	{ "keys": ["super+\\"], "command": "open_file" ,
+		"args": {
+			"file": "${packages}/User/Default ($platform).sublime-keymap",
+		},
+	},
 	{
 		"keys": ["super+shift+\\"], "command": "edit_settings",
 		"args": {
