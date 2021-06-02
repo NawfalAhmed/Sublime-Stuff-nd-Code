@@ -5,10 +5,7 @@
 		"pyw",
 		"pt",
 	],
+	"wrap_width": 85,
+	"wrap_width_style": "constant",
 	"tab_size": 3,
-	"format_on_save": true,
-	"lsp_format_on_save": true,
-	// "lsp_diagnostics_highlight_style": "no",
-	// "show_symbol_action_links": true,
-	// "show_code_actions_bulb": true,
 }
