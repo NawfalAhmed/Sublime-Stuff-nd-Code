@@ -7,7 +7,7 @@ class GitStageSelfCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		_, name = splitpath(self.view.file_name())
-		stage = 'wsl git add "' + name + '"'
+		stage = 'git add "' + name + '"'
 		self.view.window().run_command(
 			"exec", {
 				"shell_cmd": stage,
@@ -19,7 +19,7 @@ class GitStageSelfCommand(sublime_plugin.TextCommand):
 class GitStageSelfDirCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
-		stage = 'wsl git add .'
+		stage = 'git add .'
 		self.view.window().run_command(
 			"exec", {
 				"shell_cmd": stage,
@@ -37,7 +37,7 @@ class NameInputHandler(sublime_plugin.TextInputHandler):
 class GitCommitCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit, name):
-		commit = 'wsl git commit -m "' + name + '"'
+		commit = 'git commit -m "' + name + '"'
 		self.view.window().run_command(
 			"exec", {
 				"shell_cmd": commit,
