@@ -1,0 +1,13 @@
+[
+	{
+		"args": null,
+		"command": "expand_selection_to_word"
+	},
+	{
+		"args":
+		{
+			"to": "smart"
+		},
+		"command": "expand_selection"
+	}
+]
