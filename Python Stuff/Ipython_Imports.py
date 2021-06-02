@@ -95,5 +95,11 @@ ___ignore = """ Not Importing
 	### import imghdr
 	### import winreg
 """
-
-get_ipython().run_line_magic('logstart', '~/Sublime/Ipython_logs/log.py rotate')
+if sys.version_info.minor == 9:
+	get_ipython().run_line_magic(
+		'logstart', '~/Sublime/Ipython_logs/py39log.py rotate'
+	)
+else:
+	get_ipython().run_line_magic(
+		'logstart', '~/Sublime/Ipython_logs/log.py rotate'
+	)
