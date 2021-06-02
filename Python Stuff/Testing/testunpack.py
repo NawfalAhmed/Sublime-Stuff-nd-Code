@@ -1,10 +1,11 @@
 list1, list2 = [3, 2, 5], [2, 4, 1]
-list1, list2 = map(list, (zip(*sorted(zip(list1, list2, strict= True), reverse=True))))
+list1, list2 = map(
+	list, (zip(*sorted(zip(list1, list2, strict=True), reverse=True)))
+)
 print(list1, list2)
 
 
 class Point:
-
 	def __init__(self, x, y, z=None):
 		self.x = float(x) if isinstance(x, str) else x
 		self.y = float(y) if isinstance(y, str) else y

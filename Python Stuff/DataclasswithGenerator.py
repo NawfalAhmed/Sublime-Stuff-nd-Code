@@ -4,6 +4,7 @@ from dataclasses import dataclass
 @dataclass
 class Student:
 	"""Student info"""
+
 	sid: str
 	name: str
 	age: int
@@ -27,4 +28,4 @@ std = Student(*details())  # iterables can be unpacked when passing
 
 print(std)
 
-#https://www.youtube.com/watch?v=T-TwcmT6Rcw&ab_channel=PyCon2018
+# https://www.youtube.com/watch?v=T-TwcmT6Rcw&ab_channel=PyCon2018

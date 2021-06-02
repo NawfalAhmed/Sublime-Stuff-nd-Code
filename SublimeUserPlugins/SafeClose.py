@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class SafeCloseCommand(sublime_plugin.WindowCommand):
-
 	def run(self):
 		if self.window.num_groups() <= 1 and not self.window.sheets():
 			if self.window.project_file_name():

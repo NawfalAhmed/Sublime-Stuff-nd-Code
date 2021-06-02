@@ -1,6 +1,6 @@
-file = open('Shrinker.txt')
+file = open("Shrinker.txt")
 data = file.read()
-data.split('\n')
+data.split("\n")
 
 # key1 = " \\"
 # key2 = ["January","February","March","April","May","June","July","August","September","October","November","December"]

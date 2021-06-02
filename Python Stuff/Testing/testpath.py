@@ -7,5 +7,5 @@ txtfiles = glob("*")
 
 ## ----------------------------------------------------------------------------
 
-print("/".join(path.parts[path.parts.index("SublimeText") + 1:]))
+print("/".join(path.parts[path.parts.index("SublimeText") + 1 :]))
 print(txtfiles)

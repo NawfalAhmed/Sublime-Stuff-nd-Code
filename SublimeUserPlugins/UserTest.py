@@ -11,7 +11,6 @@ from itertools import groupby
 
 
 class UserTestCommand(sublime_plugin.WindowCommand):
-
 	def run(self):
 		self.view = self.window.new_file()
 		self.view.set_scratch(True)
@@ -29,40 +28,32 @@ class UserTestCommand(sublime_plugin.WindowCommand):
 		command_list.sort(key=attrgetter("__module__"))
 		for module, module_commands in groupby(
 			# command_list, lambda key: key.__module__
-			command_list, lambda key: key.__module__.split('.')[0]
+			command_list,
+			lambda key: key.__module__.split(".")[0],
 		):
-			module = module.replace(' ', '').replace('-', '')
+			module = module.replace(" ", "").replace("-", "")
 			module_commands = list(module_commands)
 			# if len(module_commands) !=1:
 			self.append("\tclass " + module + ":")
 			for command in module_commands:
-				self.append(
-					"\t\t{cmd}{args}".format(
-						cmd=self.get_name(command), args=self.get_args(command.run)
-					)
-				)
+				self.append(f"\t\t{self.get_signature(command)}")
 			# else:
 			# 	command = module_commands[0]
 			# 	self.append(
-			# 		"\tclass {mod}:\t{cmd}{args}".format(
-			# 			mod = module,
-			# 			cmd=self.get_name(command), args=self.get_args(command.run)
-			# 		)
+			# 		"\tclass {}:\t{}".format(module, self.get_signature(command))
 			# 	)
 
 		self.append("")
 
-	def get_name(self, cls):
+	def get_signature(self, cls):
 		clsname = cls.__name__
 		name = clsname[0].lower()
 		last_upper = False
 		for c in clsname[1:]:
-			name += ('_' + c.lower()) if (c.isupper() and not last_upper) else (c)
+			name += ("_" + c.lower()) if (c.isupper() and not last_upper) else (c)
 			last_upper = c.isupper()
 		if name.endswith("_command"):
 			name = name[0:-8]
-		return name
 
-	def get_args(self, func):
-		args = str(inspect.signature(func))
-		return '(' + (args[7:] if args[5:7] == ', ' else args[5:])
+		args = str(inspect.signature(cls.run))
+		return name + "(" + (args[7:] if args[5:7] == ", " else args[5:])

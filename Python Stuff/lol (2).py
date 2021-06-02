@@ -1,6 +1,10 @@
 marks = [
-	["maths", 10], ["english", 70], ["anlsaf", -1], ["economics", 90],
-	["physics", 65], ["Urdu", 102]
+	["maths", 10],
+	["english", 70],
+	["anlsaf", -1],
+	["economics", 90],
+	["physics", 65],
+	["Urdu", 102],
 ]
 for sub in marks:
 	subject = sub[-1]
@@ -9,7 +13,7 @@ for sub in marks:
 			"Bonus marks for handwriting"
 			if sub[0] == "Urdu" and subject < 110
 			else "error"
-		)  # yapf: disable
+		)
 	elif subject > 90:
 		print("A+")
 	elif subject >= 80:

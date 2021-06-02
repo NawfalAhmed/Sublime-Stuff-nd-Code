@@ -19,4 +19,4 @@ user_list_thread.start()
 
 user_queue.join()
 
-#https://pybay.com/site_media/slides/raymond2017-keynote/threading.html
+# https://pybay.com/site_media/slides/raymond2017-keynote/threading.html

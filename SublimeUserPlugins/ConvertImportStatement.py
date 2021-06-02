@@ -4,7 +4,6 @@ import re
 
 
 class ConvertImportStatementCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit):
 
 		selection = self.view.sel()
@@ -20,7 +19,7 @@ class ConvertImportStatementCommand(sublime_plugin.TextCommand):
 						(contents.replace("import", "from") + " import ")
 						if sub == contents
 						else sub
-					)  # yapf: disable
+					)
 					self.view.replace(edit, line, contents)
 					change = True
 		if change:

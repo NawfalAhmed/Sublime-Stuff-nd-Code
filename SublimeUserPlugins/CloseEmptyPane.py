@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class InitialEmptyPaneCheckCommand(sublime_plugin.EventListener):
-
 	def on_pre_close(self, view):
 		window = view.window()
 		if not window:
@@ -24,7 +23,6 @@ class InitialEmptyPaneCheckCommand(sublime_plugin.EventListener):
 
 
 class FinalEmptyPaneCheckCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit):
 		window = self.view.window()
 		num_groups = window.num_groups()

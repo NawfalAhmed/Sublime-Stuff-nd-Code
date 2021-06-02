@@ -17,8 +17,14 @@ __methods = {
 	"functools": ["partial", "wraps"],
 	"glob": "glob",
 	"heapq": ["heappop", "heappush"],
-	"itertools":
-		["combinations", "permutations", "groupby", "filterfalse", "cycle"],
+	"itertools": [
+		"chain",
+		"combinations",
+		"cycle",
+		"groupby",
+		"permutations",
+		"filterfalse",
+	],
 	"math": ["ceil", "inf", "sqrt"],
 	"os": "system",
 	"os.path": ["expandvars", "isdir"],
@@ -31,18 +37,19 @@ __methods = {
 	"threading": "Thread",
 	"time": "sleep",
 	"tqdm": "trange",
-	"typing": "Optional"
+	"typing": "Optional",
 }
+# fmt: off
 __modules = [
-	"bisect"     , "bs4"      , "collections", "contextlib", "copy"      ,
-	"dataclasses", "flask"    , "functools"  , "heapq"     , "html"      ,
-	"inspect"    , "itertools", "json"       , "logging"   , "math"      ,
-	"os"         , "pathlib"  , "pickle"     , "platform"  ,
-	"queue"      , "random"   , "re"         , "requests"  , "shutil"    ,
-	"signal"     , "socket"   , "stat"       , "struct"    , "subprocess",
-	"sys"        , "tempfile" , "textwrap"   , "threading" , "time"      ,
-	"tokenize"   , "tqdm"                    , "typing"    ,
-]  # yapf: disable
+	"os" , "copy", "flask"  , "bisect", "platform", "functools",
+	"re" , "html", "heapq"  , "pickle", "requests", "itertools",
+	"bs4", "json", "queue"  , "random", "tempfile", "threading",
+	"sys", "math", "inspect", "shutil", "textwrap", "contextlib",
+			 "stat", "logging", "signal", "tokenize", "subprocess",
+			 "time", "pathlib", "socket",             "collections",
+			 "tqdm", "typing" , "struct",             "dataclasses",
+]
+# fmt: on
 
 for module in __modules:
 	globals()[module] = importlib.import_module(module)
@@ -61,6 +68,7 @@ if sys.version_info.minor == 9:
 	import numpy as np
 	import pandas as pd
 	import matplotlib.pyplot as plt
+
 	__modules.append("numpy as np")
 	__modules.append("pandas as pd")
 	__modules.append("matplotlib.pyplot as plt")
@@ -97,9 +105,9 @@ ___ignore = """ Not Importing
 """
 if sys.version_info.minor == 9:
 	get_ipython().run_line_magic(
-		'logstart', '~/Sublime/Ipython_logs/py39log.py rotate'
+		"logstart", "~/Sublime/Ipython_logs/py39log.py rotate"
 	)
 else:
 	get_ipython().run_line_magic(
-		'logstart', '~/Sublime/Ipython_logs/log.py rotate'
+		"logstart", "~/Sublime/Ipython_logs/log.py rotate",
 	)

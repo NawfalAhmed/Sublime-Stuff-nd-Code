@@ -4,7 +4,7 @@ def decimaltobinary(number):
 	ans = 0
 
 	while half > 0:
-		ans += (half%2) * power
+		ans += (half % 2) * power
 		power *= 10
 		half //= 2
 	return ans

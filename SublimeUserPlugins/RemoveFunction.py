@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class RemoveFunctionCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit, copy=False):
 		regions = list(self.view.sel())
 		self.view.run_command("expand_selection", {"to": "brackets"})

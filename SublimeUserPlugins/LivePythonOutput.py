@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class LivePythonOutputCommand(sublime_plugin.ViewEventListener):
-
 	def on_text_command(self, command_name, args):
 		if (command_name, args) != ("insert", {"characters": "\n"}):
 			return
@@ -13,7 +12,8 @@ class LivePythonOutputCommand(sublime_plugin.ViewEventListener):
 		regions = list(self.view.sel())
 
 		if not (
-			"python" in self.view.scope_name(regions[0].a) and any(
+			"python" in self.view.scope_name(regions[0].a)
+			and any(
 				view.name() == "Live Output" for view in self.view.window().views()
 			)
 		):
@@ -31,22 +31,22 @@ class LivePythonOutputCommand(sublime_plugin.ViewEventListener):
 				{
 					"string": self.view.substr(code_block).rstrip(),
 					"tag": "LiveIpython",
-				}
+				},
 			)
 			self.view.window().run_command(
-				"terminus_send_string", {
-					"string": "\n",
-					"tag": "LiveIpython",
-				}
+				"terminus_send_string", {"string": "\n", "tag": "LiveIpython"}
 			)
 			output_view = next(
-				view for view in self.view.window().views()
+				view
+				for view in self.view.window().views()
 				if view.name() == "Live Output"
 			)
-			contents = output_view.substr(sublime.Region(0, output_view.size())
-													).split('\n')
+			contents = output_view.substr(
+				sublime.Region(0, output_view.size())
+			).split("\n")
 			true_output_view = next(
-				view for view in self.view.window().views()
+				view
+				for view in self.view.window().views()
 				if view.name() == "Live Output Condensed"
 			)
 			sublime.status_message(

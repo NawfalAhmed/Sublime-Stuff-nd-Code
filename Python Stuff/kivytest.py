@@ -5,7 +5,6 @@ from functools import partial
 
 
 class KivyButton(App):
-
 	def disable(self, instance, *args):
 
 		instance.disabled = True
@@ -17,7 +16,7 @@ class KivyButton(App):
 	def build(self):
 
 		mybtn = Button(
-			text="Click me to disable", pos=(300, 350), size_hint=(.25, .18)
+			text="Click me to disable", pos=(300, 350), size_hint=(0.25, 0.18)
 		)
 
 		mybtn.bind(on_press=partial(self.disable, mybtn))

@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class ExecuteCmdCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit):
 		window = self.view.window()
 
@@ -15,7 +14,7 @@ class ExecuteCmdCommand(sublime_plugin.TextCommand):
 					value, window.extract_variables()
 				)
 				if value != newvalue:
-					newvalue = "\"" + newvalue + "\""
+					newvalue = '"' + newvalue + '"'
 				realcmd += newvalue + " "
 			window.run_command("exec", {"shell_cmd": realcmd})
 
@@ -25,6 +24,4 @@ class ExecuteCmdCommand(sublime_plugin.TextCommand):
 		def on_cancel():
 			pass
 
-		window.show_input_panel(
-			"Command:", "start.", on_done, on_change, on_cancel
-		)
+		window.show_input_panel("Command:", "start.", on_done, on_change, on_cancel)

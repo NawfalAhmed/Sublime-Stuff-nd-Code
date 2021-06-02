@@ -13,12 +13,11 @@ from os.path import split as splitpath
 # 				lambda: sublime.status_message("Formated and Saved " + text), 100
 # 			)
 class IndentWithTabsOnSave(sublime_plugin.ViewEventListener):
-
 	def on_pre_save(self):
 		# if not self.view.settings().get('format_on_save'):
-		if self.view.settings().get('indent_with_tabs_on_save'):
+		if self.view.settings().get("indent_with_tabs_on_save"):
 			self.view.window().run_command(
-				'unexpand_tabs', {"set_translate_tabs": True}
+				"unexpand_tabs", {"set_translate_tabs": True}
 			)
 			self.view.run_command("scroll_lines", {"amount": -1.0})
 

@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class SetUserMarkCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit, clear=False, convert=False):
 		view = self.view
 		if convert or clear:
@@ -15,5 +14,5 @@ class SetUserMarkCommand(sublime_plugin.TextCommand):
 				"user_mark",
 				list(view.sel()) + view.get_regions("user_mark"),
 				scope="comment",
-				flags=(sublime.DRAW_NO_FILL | sublime.DRAW_EMPTY)
+				flags=(sublime.DRAW_NO_FILL | sublime.DRAW_EMPTY),
 			)

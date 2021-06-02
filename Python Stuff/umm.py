@@ -1,4 +1,4 @@
-myfile = open("meh.txt", 'r')
+myfile = open("meh.txt", "r")
 save = myfile.read()
 save = save.split()
 name = str(input("enter the sentance\n"))

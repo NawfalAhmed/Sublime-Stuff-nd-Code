@@ -5,7 +5,6 @@ from glob import glob
 
 
 class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit):
 		view = self.view
 		path, _ = splitpath(view.file_name())
@@ -14,7 +13,7 @@ class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
 			"zip ../{name} -u -9 -r *"
 			if not glob(dirpath + "/ZIPS")
 			else "zip ../ZIPS/{name} -u -9 -r *"
-		)  #yapf: disable
+		)
 		styles = [
 			"BSCS18010_",
 			"",
@@ -29,8 +28,8 @@ class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
 					"exec",
 					{
 						"shell_cmd": command.format(name=styles[index]),
-						"show_panel": False
-					}
+						"show_panel": False,
+					},
 				)
 
 		view.window().show_quick_panel(styles, on_done)

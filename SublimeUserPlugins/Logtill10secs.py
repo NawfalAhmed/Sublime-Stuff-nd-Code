@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class UserLogCommand(sublime_plugin.WindowCommand):
-
 	def run(self, type="commands", until=10):
 		until *= 1000
 		if type == "commands":

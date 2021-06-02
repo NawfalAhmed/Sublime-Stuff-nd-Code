@@ -9,6 +9,6 @@ from operator import attrgetter
 
 command_list.sort(key=attrgetter("__module__"))
 for module, module_commands in groupby(
-	command_list, lambda x: x.__module__.split('.')[0]
+	command_list, lambda x: x.__module__.split(".")[0]
 ):
 	print(module, module_commands)
