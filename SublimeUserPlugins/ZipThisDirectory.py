@@ -11,9 +11,9 @@ class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
 		path, _ = splitpath(view.file_name())
 		dirpath, dirname = splitpath(path)
 		command = (
-			"wsl zip ../{name} -u -9 -r *"
-			if not glob(dirpath + "/Zips")
-			else "wsl zip ../Zips/{name} -u -9 -r *"
+			"zip ../{name} -u -9 -r *"
+			if not glob(dirpath + "/ZIPS")
+			else "zip ../ZIPS/{name} -u -9 -r *"
 		)  #yapf: disable
 		styles = [
 			"BSCS18010_",
