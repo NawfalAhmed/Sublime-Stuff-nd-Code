@@ -3,15 +3,11 @@ import sublime_plugin
 
 
 class SendPythonStringCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit):
 		for region in self.view.sel():
 			self.view.window().run_command(
 				"terminus_send_string",
-				{
-					"string": self.view.substr(region),
-					"tag": "IPython Terminal",
-				},
+				{"string": self.view.substr(region), "tag": "IPython Terminal"},
 			)
 
 		self.view.window().run_command(
@@ -20,6 +16,6 @@ class SendPythonStringCommand(sublime_plugin.TextCommand):
 				"cmd": "ipython",
 				"cwd": "${file_path:${folder}}",
 				"panel_name": "Ipython",
-				"tag": "IPython Terminal"
-			}
+				"tag": "IPython Terminal",
+			},
 		)

@@ -6,7 +6,6 @@ from os.path import expanduser
 
 
 class NameInputHandler(sublime_plugin.TextInputHandler):
-
 	def placeholder(self):
 		return "Plugin Name"
 
@@ -19,12 +18,11 @@ class NameInputHandler(sublime_plugin.TextInputHandler):
 
 
 class NewUserPluginCommand(sublime_plugin.WindowCommand):
-
 	def run(self, name):
 		sublime.set_timeout_async(lambda: self.run_async(name))
 
 	def run_async(self, name):
-		filename = (expanduser("~/Sublime/SublimeUserPlugins/") + name + ".py")
+		filename = expanduser("~/Sublime/SublimeUserPlugins/") + name + ".py"
 		plugin_template = """
 			import sublime
 			import sublime_plugin
@@ -44,9 +42,7 @@ class NewUserPluginCommand(sublime_plugin.WindowCommand):
 			view.set_scratch(True)
 			view.assign_syntax("scope:source.python")
 
-			view.run_command(
-				"insert_snippet", {"contents": plugin_template % name}
-			)
+			view.run_command("insert_snippet", {"contents": plugin_template % name})
 			sublime.set_timeout_async(lambda: view.set_scratch(False), 60000)
 
 	def input(self, args):

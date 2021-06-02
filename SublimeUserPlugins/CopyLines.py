@@ -3,7 +3,6 @@ import sublime_plugin
 
 
 class CopyLinesCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit, forward=True):
 		for region in self.view.sel():
 			line = self.view.line(region)

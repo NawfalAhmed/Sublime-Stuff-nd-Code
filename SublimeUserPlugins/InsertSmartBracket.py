@@ -4,7 +4,6 @@ import re
 
 
 class InsertSmartBracketCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit):
 		selections = self.view.sel()
 
@@ -20,10 +19,10 @@ class InsertSmartBracketCommand(sublime_plugin.TextCommand):
 
 		missing = 1
 		if selections[0].end() >= match_:
-			missing = contents.count('(') - contents.count(')')
+			missing = contents.count("(") - contents.count(")")
 			if missing > 1:
 				sublime.status_message(f"Added {missing} missing brackets")
 			else:
 				missing = 1
 
-		self.view.insert(edit, selections[0].end(), ")"*missing)
+		self.view.insert(edit, selections[0].end(), ")" * missing)

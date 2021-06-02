@@ -4,7 +4,6 @@ from time import sleep
 
 
 class TitleInputHandler(sublime_plugin.TextInputHandler):
-	
 	def name(self):
 		return "title"
 
@@ -23,6 +22,3 @@ class TerminusOpenWithTitleCommand(sublime_plugin.WindowCommand):
 
 	def input(self, *args, **kwargs):
 		return TitleInputHandler()
-
-
-

@@ -1,10 +1,8 @@
 import sublime
 import sublime_plugin
-from itertools import cycle
 
 
 class JumpSelectionEndCommand(sublime_plugin.TextCommand):
-
 	def run(self, edit, reduce=False, forward=True):
 		sel = self.view.sel()
 		regions = list(sel)
@@ -19,13 +17,8 @@ class JumpSelectionEndCommand(sublime_plugin.TextCommand):
 			sel.add(jump)
 			self.view.show(jump, show_surrounds=False)
 		else:
-			end = cycle(('end', 'begin'))
-			if forward:
-				next(end)
 			sel.add_all(
-				[
-					sublime.Region(
-						getattr(region, next(end))(), getattr(region, next(end))()
-					) for region in regions
-				]
+				[sublime.Region(r.begin(), r.end()) for r in regions]
+				if forward
+				else [sublime.Region(r.end(), r.begin()) for r in regions]
 			)

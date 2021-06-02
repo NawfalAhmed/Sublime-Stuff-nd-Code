@@ -14,15 +14,15 @@ def plugin_loaded() -> None:
 	global alive
 	alive = True
 	update_interval = 30  # secs
-	start_time = datetime.now().strftime("%j,%H,%M").split(',')
+	start_time = datetime.now().strftime("%j,%H,%M").split(",")
 
-	settings = sublime.load_settings('StatusBarTime.sublime-settings')
-	formatt = settings.get('StatusBar_Format', "%I:%M %p")
-	up_time = settings.get('StatusBar_UpTime', True)
+	settings = sublime.load_settings("StatusBarTime.sublime-settings")
+	formatt = settings.get("StatusBar_Format", "%I:%M %p")
+	up_time = settings.get("StatusBar_UpTime", True)
 	Thread(
 		target=time_printer,
 		args=(formatt, up_time, update_interval, start_time),
-		daemon=True
+		daemon=True,
 	).start()
 
 
@@ -40,7 +40,6 @@ def plugin_unloaded() -> None:
 
 
 class OnExitListener(sublime_plugin.EventListener):
-
 	def on_exit(self):
 		plugin_unloaded()
 
@@ -50,10 +49,10 @@ def time_printer(formatt, up_time, update_interval, start_time):
 	while alive:
 		time = datetime.now()
 		view = sublime.active_window().active_view()
-		current = time.strftime("%j,%H,%M").split(',')
+		current = time.strftime("%j,%H,%M").split(",")
 		day, hr, minute = map(lambda x, y: int(x) - int(y), current, start_time)
 		view.set_status("__statustime", time.strftime(formatt))
 		if up_time:
-			total_up_time = str(day*24*60 + hr*60 + minute) + " minutes"
+			total_up_time = str(day * 24 * 60 + hr * 60 + minute) + " minutes"
 			view.set_status("__statusuptime", total_up_time)
 		sleep(update_interval)

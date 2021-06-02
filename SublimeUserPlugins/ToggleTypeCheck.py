@@ -5,7 +5,6 @@ import shutil
 
 
 class ToggleTypeCheckCommand(sublime_plugin.WindowCommand):
-
 	def run(self):
 		path = "$packages/User/LSP-pyright.sublime-settings"
 		path = sublime.expand_variables(path, self.window.extract_variables())
@@ -20,8 +19,8 @@ class ToggleTypeCheckCommand(sublime_plugin.WindowCommand):
 			shutil.copyfile(path, backup)
 			settings_ = sublime.load_settings("LSP-pyright.sublime-settings")
 			settings = settings_.get("settings")
-			settings['python.analysis.diagnosticSeverityOverrides'].clear()
-			settings['python.analysis.typeCheckingMode'] = 'off'
+			settings["python.analysis.diagnosticSeverityOverrides"].clear()
+			settings["python.analysis.typeCheckingMode"] = "off"
 			settings_.set("settings", settings)
 			sublime.save_settings("LSP-pyright.sublime-settings")
 			sublime.status_message("LSP-pyright: Disabled TypeChecking")

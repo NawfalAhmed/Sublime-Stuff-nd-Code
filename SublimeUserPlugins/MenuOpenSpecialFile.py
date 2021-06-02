@@ -10,12 +10,11 @@ files = {
 	"SublimePlugin": f"{_sublime}/Lib/python38/sublime_plugin.py",
 	"Sublime": f"{_sublime}/Lib/python38/sublime.py",
 	"SublimePlugin3.3": f"{_sublime}/Lib/python33/sublime_plugin.py",
-	"Sublime3.3": f"{_sublime}/Lib/python33/sublime.py"
+	"Sublime3.3": f"{_sublime}/Lib/python33/sublime.py",
 }
 
 
 class MenuOpenSpecialFileCommand(sublime_plugin.WindowCommand):
-
 	def run(self):
 
 		panel_items = [[k, v] for k, v in files.items()]
