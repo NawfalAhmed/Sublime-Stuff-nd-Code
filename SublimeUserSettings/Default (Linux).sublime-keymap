@@ -2,11 +2,65 @@
 	// <Recent Keybinds>
 	// { "keys": ["alt"], "command": "pass" }, //trying to avoid unnecessary menu toggle
 	{
+		"keys": ["altgr+a"], "command": "move_to",
+		"args": { "to": "bol", "extend": true }
+	},
+	{
+		"keys": ["altgr+d"], "command": "move_to",
+		"args": { "to": "eol", "extend": true }
+	},
+	{ "keys": ["altgr+q"], "command": "find_under_prev" },
+	{ "keys": ["altgr+w"], "command": "expand_selection_to_word" },
+	{ "keys": ["altgr+e"], "command": "find_under" },
+	{ "keys": ["altgr+n"], "command": "insert", "args": { "characters": "\\n" } },
+	{ "keys": ["altgr+s"], "command": "insert", "args": { "characters": "$" } },
+	{ "keys": ["altgr+t"], "command": "insert", "args": { "characters": "\\t" } },
+	{ "keys": [";"], "command": "insert", "args": { "characters": ":" } },
+	{ "keys": [":"], "command": "insert", "args": { "characters": ";" } },
+	{ "keys": ["\\"], "command": "insert", "args": { "characters": "_" } },
+	{ "keys": ["_"], "command": "insert", "args": { "characters": "|" } },
+	{ "keys": ["|"], "command": "insert", "args": { "characters": "\\" } },
+	{
+		"keys": ["altgr+up"], "command": "jump_selection_end",
+		"args": { "reduce": true, "forward": false }
+	},
+	{
+		"keys": ["altgr+down"], "command": "jump_selection_end",
+		"args": { "reduce": true, "forward": true }
+	},
+	{
+		"keys": ["altgr+left"], "command": "jump_selection_end",
+		"args": { "forward": false }
+	},
+	{
+		"keys": ["altgr+right"], "command": "jump_selection_end",
+		"args": { "forward": true }
+	},
+	{
+		"keys": [".", "."], "command": "insert",
+		"args": { "characters": "..." },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" }
+		]
+	},
+	{
 		"keys": [".", "."], "command": "insert",
 		"args": { "characters": "•" },
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.notes" }
 		]
+	},
+	{
+		"keys": ["super+["], "command": "run_macro_file",
+		"args": {
+			"file": "res://Packages/User/Macros/ExpandSelectionToLeftBracket.sublime-macro"
+		}
+	},
+	{
+		"keys": ["super+]"], "command": "run_macro_file",
+		"args": {
+			"file": "res://Packages/User/Macros/ExpandSelectionToRightBracket.sublime-macro"
+		}
 	},
 	{ "keys": ["shift+space"], "command": "pass" },
 	{
@@ -24,7 +78,11 @@
 		"args": { "commands": [["set_mark"], ["set_user_mark"]] }
 	},
 	{
-		"keys": ["ctrl", "shift+ctrl"], "command": "set_user_mark",
+		"keys": ["shift", "shift"], "command": "set_user_mark",
+		"args": { "convert": true }
+	},
+	{
+		"keys": ["shift+ctrl", "shift+ctrl"], "command": "set_user_mark",
 		"args": { "clear": true }
 	},
 	{ "keys": ["ctrl+j"], "command": "join_lines" },
@@ -50,7 +108,8 @@
 		"keys": ["super+c"], "command": "chain",
 		"args": {
 			"commands": [
-				["convert_import_statement"], ["convert_loop_to_list_comprehension"],
+				["convert_import_statement"],
+				["convert_loop_to_list_comprehension"],
 				["super_calculator"]
 			]
 		}
@@ -164,7 +223,9 @@
 	{ "keys": ["alt+shift+\\"], "command": "user_test" },
 	{
 		"keys": ["super+\\"], "command": "open_file",
-		"args": { "file": "~/Sublime/SublimeUserSettings/Default ($platform).sublime-keymap" }
+		"args": {
+			"file": "~/Sublime/SublimeUserSettings/Default ($platform).sublime-keymap"
+		}
 	},
 	{
 		"keys": ["super+shift+\\"], "command": "edit_settings",
@@ -242,8 +303,10 @@
 	},
 	{ "keys": ["ctrl+q"], "command": "toggle_record_macro" },  //overrides quit
 	{ "keys": ["ctrl+shift+q"], "command": "run_macro" },
-	{ "keys": ["ctrl+alt+q"], "command": "pass" },
-	{ "keys": ["ctrl+alt+shift+q"], "command": "pass" },
+	{ "keys": ["super+q"], "command": "run_macro" },
+	{ "keys": ["super+shift+q"], "command": "save_macro" },
+	{ "keys": ["ctrl+alt+q"], "command": "wrap_lines" },
+	{ "keys": ["ctrl+alt+shift+q"], "command": "join_lines" },
 	// </OverRidden Keybinds>
 
 	// <LSP Keybinds>
@@ -308,7 +371,7 @@
 				"-c",
 				"read -P 'Incognito Search: ' search; if test \"\\$search\" != 'exit'; google-chrome -incognito \"? \\$search\"; end"
 			],
-			"auto_close": false,
+			"auto_close": false
 		}
 	},
 	// </Commands in Terminus Keybinds>
@@ -338,15 +401,14 @@
 		"keys": ["super+enter"], "command": "chain",
 		"args": {
 			"commands": [
-				["save"], ["build", { "variant": "Interactive Mode (in Panel)" }]
+				["save"],
+				["build", { "variant": "Interactive Mode (in Panel)" }]
 			]
 		}
 	},
 	{
 		"keys": ["alt+`"], "command": "toggle_terminus_panel",
-		"args": {
-			"cwd": "${file_path:${folder}}", "panel_name": "Fish Shell"
-		}
+		"args": { "panel_name": "Fish Shell", "cwd": "${file_path:${folder}}" }
 	},
 	{
 		"keys": ["alt+shift+`"], "command": "terminus_open_with_title",
@@ -573,20 +635,20 @@
 	{ "keys": ["ctrl+9"], "command": "fold_by_level", "args": { "level": 8 } },
 	// PanePane ->
 	{
-		"keys": ["super+alt+left"], "command": "pane_pane_resize",
-		"args": { "dimension": "width", "resize": "decrease" }
-	},
-	{
-		"keys": ["super+alt+right"], "command": "pane_pane_resize",
-		"args": { "dimension": "width", "resize": "increase" }
+		"keys": ["super+alt+up"], "command": "pane_pane_resize",
+		"args": { "dimension": "height", "resize": "increase" }
 	},
 	{
 		"keys": ["super+alt+down"], "command": "pane_pane_resize",
 		"args": { "dimension": "height", "resize": "decrease" }
 	},
 	{
-		"keys": ["super+alt+up"], "command": "pane_pane_resize",
-		"args": { "dimension": "height", "resize": "increase" }
+		"keys": ["super+alt+right"], "command": "pane_pane_resize",
+		"args": { "dimension": "width", "resize": "increase" }
+	},
+	{
+		"keys": ["super+alt+left"], "command": "pane_pane_resize",
+		"args": { "dimension": "width", "resize": "decrease" }
 	},
 	// Origami ->
 	{

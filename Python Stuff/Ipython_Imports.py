@@ -3,7 +3,7 @@ from random import random as random_
 import importlib
 
 __methods = {
-	"bisect": ["bisect_left","bisect_right"],
+	"bisect": ["bisect_left", "bisect_right"],
 	"bs4": "BeautifulSoup",
 	"collections": "deque",
 	"collections.abc": ["Iterable", "Mapping"],
@@ -17,7 +17,8 @@ __methods = {
 	"functools": ["partial", "wraps"],
 	"glob": "glob",
 	"heapq": ["heappop", "heappush"],
-	"itertools": ["combinations", "permutations", "groupby"],
+	"itertools":
+		["combinations", "permutations", "groupby", "filterfalse", "cycle"],
 	"math": ["ceil", "inf", "sqrt"],
 	"os": "system",
 	"os.path": ["expandvars", "isdir"],
@@ -41,20 +42,20 @@ __modules = [
 	"signal"     , "socket"   , "stat"       , "struct"    , "subprocess",
 	"sys"        , "tempfile" , "textwrap"   , "threading" , "time"      ,
 	"tokenize"   , "tqdm"                    , "typing"    ,
-]
+]  # yapf: disable
 
 for module in __modules:
 	globals()[module] = importlib.import_module(module)
 
 for module, method in __methods.items():
-		if isinstance(method,list):
-			for m in method:
-				globals()[m] = getattr(importlib.import_module(module),m)
-		else:
-			try:
-				globals()[method] = importlib.import_module(f".{method}", module)
-			except Exception:
-				globals()[method] = getattr(importlib.import_module(module),method)
+	if isinstance(method, list):
+		for m in method:
+			globals()[m] = getattr(importlib.import_module(module), m)
+	else:
+		try:
+			globals()[method] = importlib.import_module(f".{method}", module)
+		except Exception:
+			globals()[method] = getattr(importlib.import_module(module), method)
 
 if sys.version_info.minor == 9:
 	import numpy as np
@@ -67,10 +68,10 @@ if sys.version_info.minor == 9:
 __modules.append("importlib")
 __modules.append("futures")
 print("Populating the namespace with imports:")
-pprint(__modules, compact= True)
+pprint(__modules, compact=True)
 print("and methods/classes:")
 __methodslist = list(__methods.values())
-__methodslist.extend(["split_path","random_"])
+__methodslist.extend(["split_path", "random_"])
 pprint(__methodslist, compact=True)
 
 ___ignore = """ Not Importing
@@ -96,5 +97,3 @@ ___ignore = """ Not Importing
 """
 
 get_ipython().run_line_magic('logstart', '~/Sublime/Ipython_logs/log.py rotate')
-# print(set(__methods) - set(__modules))
-

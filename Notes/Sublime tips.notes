@@ -8,6 +8,29 @@ class Hints:
 		But pause after given seconds
 		https://youtu.be/Ol_Qd-ObX4E?t=870
 
+class Annotations @html:
+	<body>
+		<style>
+			#annotation-error {
+				background-color: color(var(--background) blend(#fff 95%));
+			}
+			html.dark #annotation-error {
+				background-color: color(var(--background) blend(#fff 95%));
+			}
+			html.light #annotation-error {
+				background-color: color(var(--background) blend(#000 85%));
+			}
+			a {
+				text-decoration: inherit;
+			}
+		</style>
+		<div class="error" id=annotation-error>
+			<span class="content">
+				__content__
+			</span>
+		</div>
+	</body>
+;
 class Console @py:
 	sublime.log_input(True)
 	sublime.log_commands(True)

@@ -336,6 +336,16 @@ contexts:
           escape_captures:
             1: punctuation.section.embedded-code.end.notes
           pop: true
+        - match: '(@)(html):$'
+          captures:
+            1: punctuation.section.embedded-code.begin.notes
+            2: keyword.declaration.embedded-code.name.notes
+          embed: scope:text.html.basic
+          embed_scope: meta.embedded-code.block.notes text.html.basic.embedded
+          escape: '^\s*(;)$'
+          escape_captures:
+            1: punctuation.section.embedded-code.end.notes
+          pop: true
         - match: ([^\s:]+)
           scope: invalid.illegal.class.declaration
           pop: true

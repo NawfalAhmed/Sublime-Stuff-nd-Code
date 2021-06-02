@@ -1,0 +1,17 @@
+[
+	{ "command": "set_mark" },
+	{
+		"command": "bh_key",
+		"args": {
+			"lines": true,
+			"no_block_mode": null,
+			"no_outside_adj": null,
+			"plugin": {
+				"command": "bh_modules.bracketselect",
+				"args": { "select": "left" },
+				"type": ["__all__"]
+			}
+		}
+	},
+	{ "command": "select_to_mark" }
+]

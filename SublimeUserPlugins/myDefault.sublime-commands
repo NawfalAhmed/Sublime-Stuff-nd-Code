@@ -22,6 +22,11 @@
 		"command": "format_json",
 		"args": { "select": true }
 	},
+	{
+		"caption": "User: Format Json (Selection expanded to line)",
+		"command": "format_json",
+		"args": { "select": "lines" }
+	},
 	{ "caption": "User: Toggle Preferences", "command": "toggle_preferences"},
 	{ "caption": "User: Test", "command": "user_test"},
 	{ "caption": "File Commands List", "command": "file_commands"},

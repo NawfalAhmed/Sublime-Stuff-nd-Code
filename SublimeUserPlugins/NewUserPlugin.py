@@ -24,10 +24,7 @@ class NewUserPluginCommand(sublime_plugin.WindowCommand):
 		sublime.set_timeout_async(lambda: self.run_async(name))
 
 	def run_async(self, name):
-		filename = (
-			expanduser("~/Sublime/SublimeUserPlugins/") + name
-			+ ".py"
-		)
+		filename = (expanduser("~/Sublime/SublimeUserPlugins/") + name + ".py")
 		plugin_template = """
 			import sublime
 			import sublime_plugin
