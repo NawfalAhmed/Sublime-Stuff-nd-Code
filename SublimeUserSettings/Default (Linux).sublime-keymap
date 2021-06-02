@@ -2,6 +2,28 @@
 	// <Recent Keybinds>
 	// { "keys": ["alt"], "command": "pass" }, //trying to avoid unnecessary menu toggle
 	{
+		"keys": ["super+space"], "command": "run_macro_file",
+		"args": {
+			"file": "res://Packages/User/Macros/ExpandToSomeRegion.sublime-macro"
+		}
+	},
+	{
+		"keys": ["altgr+w"], "command": "insert_snippet",
+		"args": { "contents": "$1${2:($SELECTION) }$0" },
+		"context": [
+			{
+				"key": "setting.auto_match_enabled",
+				"operator": "equal", "operand": true
+			},
+			{
+				"key": "selection_empty",
+				"operator": "equal",
+				"operand": false,
+				"match_all": true
+			}
+		]
+	},
+	{
 		"keys": ["altgr+a"], "command": "move_to",
 		"args": { "to": "bol", "extend": true }
 	},
@@ -10,7 +32,6 @@
 		"args": { "to": "eol", "extend": true }
 	},
 	{ "keys": ["altgr+q"], "command": "find_under_prev" },
-	{ "keys": ["altgr+w"], "command": "expand_selection_to_word" },
 	{ "keys": ["altgr+e"], "command": "find_under" },
 	{ "keys": ["altgr+n"], "command": "insert", "args": { "characters": "\\n" } },
 	{ "keys": ["altgr+s"], "command": "insert", "args": { "characters": "$" } },
@@ -65,7 +86,7 @@
 	{ "keys": ["shift+space"], "command": "pass" },
 	{
 		"keys": ["shift+enter"], "command": "run_macro_file",
-		"args": { "file": "res://Packages/Default/Add Line Before.sublime-macro" }
+		"args": { "file": "res://Packages/Default/Add Line.sublime-macro" }
 	},
 	{ "keys": [")"], "command": "insert_smart_bracket" },
 	{
@@ -163,7 +184,7 @@
 	{ "keys": ["ctrl+shift+o"], "command": "open_in_browser" },
 	{ "keys": ["alt+p"], "command": "menu_open_from_current_dir" },
 	{ "keys": ["alt+r"], "command": "rename_file" },
-	{ "keys": ["alt+s"], "command": "send_python_string" },
+	// { "keys": ["alt+s"], "command": "send_python_string" },
 	{ "keys": ["alt+t"], "command": "transpose" },
 	{ "keys": ["super+t"], "command": "testing" },
 	{ "keys": ["super+shift+t"], "command": "testing1" },
