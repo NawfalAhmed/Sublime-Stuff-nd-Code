@@ -4,7 +4,7 @@
 		"pylsp":
 		{
 			"command": ["pylsp"],
-			"enabled": true,
+			"enabled": false,
 			"selector": "source.python",
 			"settings": {
 				"pylsp.configurationSources": ["pycodestyle"],
@@ -14,7 +14,9 @@
 				"pylsp.plugins.mypy.enabled": false,
 				"pylsp.plugins.isort.enabled": false,
 				"pylsp.plugins.jedi.enabled": false,
-				"pylsp.plugins.yapf.enabled": true
+				"pylsp.plugins.yapf.enabled": false,
+				"pylsp.plugins.black.enabled": true,
+				"pylsp.plugins.pylsp_black.enabled": true
 			},
 			"disabled_capabilities": {
 				"completionProvider": true,
