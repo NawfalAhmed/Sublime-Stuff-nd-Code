@@ -289,5 +289,5 @@ qc:
   cmds: []
 titleControl:
   replacePattern: \t
-  removePattern: ''
+  removePattern: penguin98k/
 clickableLinks: {}
