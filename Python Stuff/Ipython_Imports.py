@@ -105,9 +105,9 @@ ___ignore = """ Not Importing
 """
 if sys.version_info.minor == 9:
 	get_ipython().run_line_magic(
-		"logstart", "~/Sublime/Ipython_logs/py39log.py rotate"
+		"logstart", "~/Sublime/Ipython Logs/py39log.py rotate"
 	)
 else:
 	get_ipython().run_line_magic(
-		"logstart", "~/Sublime/Ipython_logs/log.py rotate",
+		"logstart", "~/Sublime/Ipython Logs/log.py rotate",
 	)
