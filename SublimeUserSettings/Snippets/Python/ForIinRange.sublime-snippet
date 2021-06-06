@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+for ${1:x} in range(${2:10}):
+	${0:pass}
+]]></content>
+	<tabTrigger>fori</tabTrigger>
+	<scope>source.python - meta.function.parameters - meta.function-call - meta.statement - meta.mapping - meta.sequence - meta.set - comment - string</scope>
+	<description>for i in range</description>
+</snippet>

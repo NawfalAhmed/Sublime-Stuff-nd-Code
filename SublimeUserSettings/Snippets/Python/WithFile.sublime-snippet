@@ -1,8 +1,9 @@
 <snippet>
 	<content><![CDATA[
-with open("${1:input.txt}","${2:r}") as ${3:file}:]]></content>
+with open("${1:input.txt}"${2:,"a"}) as ${3:file}:
+]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>with</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<description>open("input.txt") as file</description>
 	<scope>source.python</scope>
 </snippet>

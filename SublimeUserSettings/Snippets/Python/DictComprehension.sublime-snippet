@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[$0{${1:key}: ${2:expression} for ${3:key}, ${4:value}} in ${5:iterator}${6: if $7}}$8]]></content>
+	<tabTrigger>ford</tabTrigger>
+	<scope>source.python</scope>
+	<description>{key: val for key, val in iterator}</description>
+</snippet>
