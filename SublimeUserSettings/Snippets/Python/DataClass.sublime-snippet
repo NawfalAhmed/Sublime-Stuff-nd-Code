@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[@dataclass
+class ${1:Name}:
+	${2:var}: ${3:str}
+	]]></content>
+	<tabTrigger>@data</tabTrigger>
+	<scope>source.python</scope>
+	<description>New DataClass</description>
+	<annotation>@dataclass\nclass Name:</annotation>
+</snippet>

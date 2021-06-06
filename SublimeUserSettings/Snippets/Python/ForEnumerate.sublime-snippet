@@ -1,9 +1,9 @@
 <snippet>
 	<content><![CDATA[
 for ${1:i, val} in enumerate($2):
-	${0:pass}
+	${0:...}
 ]]></content>
 	<tabTrigger>fore</tabTrigger>
 	<scope>source.python - meta.function.parameters - meta.function-call - meta.statement - meta.mapping - meta.sequence - meta.set - comment - string</scope>
-	<description>For i, val in enumerate</description>
+	<description>for i, val in enumerate</description>
 </snippet>
