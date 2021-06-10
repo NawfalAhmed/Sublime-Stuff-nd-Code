@@ -1,11 +1,11 @@
 {
 	// if you are developing this plugin...
 	"developing": true,
-	"dev_environment": "sublime_text",
 	"settings": {
+		"pyright.dev_environment": "sublime_text_38",
 		"python.analysis.autoImportCompletions": true,
 		"python.analysis.autoSearchPaths": true,
-		"python.analysis.completeFunctionParens": true,
+		// "python.analysis.completeFunctionParens": true,
 		"python.analysis.extraPaths": [
 			"$packages/../ST-API-stubs",
 			// "$packages/../typings"
@@ -24,8 +24,9 @@
 			"reportUnboundVariable": "information",
 			"reportPrivateUsage": "information",
 			"reportConstantRedefinition": "information",
-			"reportUnknownArgumentType": "information",
+			"reportUnknownParameterType": "information",
 			// warnings
+			"reportUnknownVariableType": "warning",
 			"reportFunctionMemberAccess": "warning",
 			"reportImportCycles": "warning",
 			"reportDuplicateImport": "warning",
@@ -37,9 +38,13 @@
 			"reportOptionalOperand": "warning",
 			"reportUnnecessaryIsInstance": "warning",
 			"reportInvalidStubStatement": "warning",
+			// none
+			"reportUnknownArgumentType": "none",
+			"reportUnknownMemberType": "none",
+			"reportUnknownLambdaType": "none",
 			// testing
-			"reportImplicitStringConcatenation": "hint",
-			"reportUnusedCallResult": "hint",
+			"reportImplicitStringConcatenation": "none",
+			"reportUnusedCallResult": "information",
 			"reportCallInDefaultInitializer": "information"
 		},
 		"python.analysis.logLevel": "information",
