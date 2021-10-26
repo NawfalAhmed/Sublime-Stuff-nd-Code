@@ -5,6 +5,9 @@ class Python:
 	• example of njit
 		@py @njit(error_model='numpy',parallel=True,fastmath=True)
 	• use isinstance for type check
+	• Typeguard function = those which narrows down the type of the input from say
+		@py list[object] to
+		@py list[str]
 
 class Pip @bash:
 	pip install -U pip          # upgrade pip

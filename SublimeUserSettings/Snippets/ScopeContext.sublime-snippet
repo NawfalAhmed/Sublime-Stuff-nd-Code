@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+"context": [
+	{ "key": "selector", "operator": "equal", "operand": "${2:source.${1:python}}" }
+]]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s</tabTrigger>
+	<description>context[scope]</description>
+	<scope>source.json</scope>
+</snippet>

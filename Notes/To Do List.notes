@@ -1,9 +1,7 @@
 class Python:
-	-> Typeguard function = those which narrows down the type of the input from say
-		@py list[object] to
-		@py list[str]
 	-> Try to turn recursive code to local stack using yield (timeit also)
 	-> Try everything in the generators video
+
 class Sublime:
 	-> Edit Theme to support ST4 stuff
 
