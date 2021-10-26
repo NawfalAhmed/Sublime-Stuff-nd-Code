@@ -21,7 +21,7 @@
 	"ensure_newline_at_eof_on_save": true,
 	"fix_indent_on_line_move": false,
 	"font_face": "Consolig",
-	"font_size": 15,
+	"font_size": 14,
 	"hide_tab_scrolling_buttons": true,
 	"highlight_line_number": false,
 	"highlight_modified_tabs": true,
@@ -72,6 +72,11 @@
 		"ctrl",
 		"alt",
 		"plugins",
+		"txt",
+		"int",
+		"struct",
+		"cout",
+		"cin",
 	],
 	"ignored_packages": [
 		"Chain of Command",
@@ -131,4 +136,6 @@
 	],
 	"spelling_selector": "text.plain.notes, markup.raw, source string.quoted - punctuation - meta.preprocessor.include, source comment - source comment.block.preprocessor, -(source, constant, keyword, storage, support, variable, markup.underline.link, meta.tag)",
 	"show_line_endings": true,
+	"line_padding_top": 1,
+	"line_padding_bottom": 1,
 }
