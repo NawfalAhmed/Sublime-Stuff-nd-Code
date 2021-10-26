@@ -32,11 +32,10 @@
 	// "log_stderr": true,
 	// "log_server": false,
 	"lsp_format_on_save": false,
-	"diagnostics_highlight_style": "underline",
 	"show_code_actions": "bulb",
 	// "inhibit_word_completions": false,
 	"show_references_in_quick_panel": true,
 	"log_debug": false,
-	"show_diagnostics_panel_on_save": 1,
-
+	"show_diagnostics_highlights": true,
+	"show_diagnostics_panel_on_save": 1
 }

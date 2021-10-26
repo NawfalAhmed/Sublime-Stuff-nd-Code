@@ -9,11 +9,12 @@
 	},
 	{
 		"keys": ["altgr+w"], "command": "insert_snippet",
-		"args": { "contents": "$1${2:($SELECTION) }$0" },
+		"args": { "contents": "$1${2:($SELECTION)}$0" },
 		"context": [
 			{
 				"key": "setting.auto_match_enabled",
-				"operator": "equal", "operand": true
+				"operator": "equal",
+				"operand": true
 			},
 			{
 				"key": "selection_empty",
@@ -193,6 +194,12 @@
 	{ "keys": ["super+z"], "command": "revert_hunk" },
 	{ "keys": ["ctrl+shift+`"], "command": "cycle_output_panels" },
 	{ "keys": ["super+tab"], "command": "indent" },
+	{
+		"keys": ["super+tab"], "command": "next_field",
+		"context": [
+			{ "key": "has_next_field", "operator": "equal", "operand": true }
+		]
+	},
 	{ "keys": ["super+delete"], "command": "bh_remove_brackets" },
 	{
 		"keys": ["shift+delete"], "command": "run_macro_file",
