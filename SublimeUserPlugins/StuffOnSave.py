@@ -15,7 +15,7 @@ class StuffOnSave(sublime_plugin.ViewEventListener):
 		super().__init__(*args, **kwargs)
 
 	def on_pre_save(self):
-		# if not self.view.settings().get('format_on_save'):
+
 		if self.view.settings().get("indent_with_tabs_on_save"):
 			self.view.window().run_command(
 				"unexpand_tabs", {"set_translate_tabs": True}
@@ -30,6 +30,8 @@ class StuffOnSave(sublime_plugin.ViewEventListener):
 			self.format_queue.task_done()
 
 	def on_post_save(self):
+		if not self.view.settings().get("python_format_on_save"):
+			return
 		name, _, ext = self.view.file_name().rpartition("/")[-1].rpartition(".")
 		if ext == "py":
 			if self.format_queue is None:

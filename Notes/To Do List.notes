@@ -8,3 +8,5 @@ class Sublime:
 	#Try snapi Nd filecomand
 	#Try changing workspace expanded folders
 	#On query completions method in event listener (make auto completions for unity)
+	#test setting:
+	# "destroy_empty_panes": true, in origami settings
