@@ -138,4 +138,6 @@
 	"show_line_endings": true,
 	"line_padding_top": 1,
 	"line_padding_bottom": 1,
+	"python_format_on_save": true,
+	"select_across_groups": true,
 }
