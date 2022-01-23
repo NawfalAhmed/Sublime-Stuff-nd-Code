@@ -4,4 +4,5 @@
 		"style",
 		".pycodestyle",
 	],
+	"tab_size": 3
 }
