@@ -7,20 +7,24 @@ from glob import glob
 class ZipThisDirectoryCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		view = self.view
-		path, _ = splitpath(view.file_name())
-		dirpath, dirname = splitpath(path)
+		dirpath, dirname = splitpath(splitpath(view.file_name())[0])
 		command = (
 			"zip ../{name} -u -9 -r *"
 			if not glob(dirpath + "/ZIPS")
 			else "zip ../ZIPS/{name} -u -9 -r *"
 		)
-		styles = [
+		prefixes = [
 			"BSCS18010_",
-			"",
 			"BSCS18010_Nawfal_",
-			"BSCS18010-",  # "BSCS18010_Nawfal_Ahmed_"
+			"BSCS18010-",
 		]
-		styles = [style + dirname for style in styles]
+		suffixes = [
+			"_BSCS18010",
+		]
+		styles = []
+		styles.append(dirname)
+		styles.extend(prefix + dirname for prefix in prefixes)
+		styles.extend(dirname + suffix for suffix in suffixes)
 
 		def on_done(index):
 			if index != -1:
