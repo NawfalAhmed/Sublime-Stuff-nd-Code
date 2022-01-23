@@ -1,5 +1,4 @@
-def find(number):
-	dec = 3
+def find(number: int):
 	valueset = [(int("1" * x) % number) for x in range(1, number + 1)]
 	try:
 		print("1" * (valueset.index(0) + 1))

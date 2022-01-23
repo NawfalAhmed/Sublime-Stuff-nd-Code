@@ -1,4 +1,4 @@
-def decimaltobinary(number):
+def decimaltobinary(number: int):
 	half = number
 	power = 1
 	ans = 0
