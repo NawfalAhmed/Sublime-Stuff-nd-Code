@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+print(*${1:iterator},sep="\n")
+]]></content>
+	<tabTrigger>prints</tabTrigger>
+	<description>unpack and print entry per line</description>
+	<scope>source.python</scope>
+</snippet>
