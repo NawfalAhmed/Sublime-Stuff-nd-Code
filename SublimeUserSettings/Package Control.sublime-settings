@@ -27,6 +27,7 @@
 		"LSP-json",
 		"LSP-OmniSharp",
 		"LSP-pyright",
+		"LSP-typescript",
 		"MarkdownLivePreview",
 		"Materialize",
 		"MonokaiFree",

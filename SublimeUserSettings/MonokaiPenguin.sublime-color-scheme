@@ -62,6 +62,16 @@
 	"rules":
 	[
 		{
+			"name": "TagName for JS",
+			"scope": "entity.name.tag.js",
+			"foreground": "var(purple)",
+		},
+		{
+			"name": "ParameterName for JS",
+			"scope": "meta.mapping.js meta.mapping.key.js",
+			"foreground": "var(orange)",
+		},
+		{
 			"name": "Comment",
 			"scope": "comment",
 			"foreground": "var(blended)",

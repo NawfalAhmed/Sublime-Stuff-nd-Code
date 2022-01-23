@@ -1,0 +1,97 @@
+{
+	"shell_cmd": "echo \"#Non-Input mode\" && python -u \"$file\"",
+	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+	"selector": "source.python",
+	"env": {"PYTHONIOENCODING": "utf-8"},
+	"working_dir": "$file_path", // i added
+	"variants":
+	[
+		{
+			"shell_cmd": "python -u \"$file\"",
+			"name": "Terminus",
+			"target": "terminus_exec",
+			"cancel": "terminus_cancel_build",
+			"focus": true,
+		},
+		{
+			"name": "Terminus1",
+			"target": "terminus_open",
+			"shell_cmd": "python -u \"$file\"",
+			"tag": "python-windows-tab1",
+			"title": "Python Build",
+			"auto_close": false,
+			"post_window_hooks": [
+				[ "move_tab_back"],
+				[ "carry_file_to_pane", { "direction": "down"} ],
+				// [ "toggle_zoom_pane", { "fraction": 0.4 } ],
+			],
+		},
+		{
+			"name": "Terminus2",
+			"target": "terminus_open",
+			"shell_cmd": "python -u \"$file\"",
+			"tag": "python-windows-tab2",
+			"title": "Python Build2",
+			"auto_close": false,
+			"post_window_hooks": [
+				[ "move_tab_back"],
+				[ "carry_file_to_pane", { "direction": "down"} ],
+				[ "carry_file_to_pane", { "direction": "right"} ],
+				// [ "toggle_zoom_pane", { "fraction": 0.4 } ],
+			],
+		},
+		{
+			"name": "Terminus3",
+			"target": "terminus_open",
+			"shell_cmd": "python -u \"$file\"",
+			"tag": "python-windows-tab3",
+			"title": "Python Build3",
+			"auto_close": false,
+			"post_window_hooks": [
+				[ "move_tab_back"],
+				[ "carry_file_to_pane", { "direction": "down"} ],
+				[ "carry_file_to_pane", { "direction": "right"} ],
+				[ "carry_file_to_pane", { "direction": "right"} ],
+				// [ "toggle_zoom_pane", { "fraction": 0.4 } ],
+			],
+		},
+		{
+			"name": "Interactive Mode (in Panel)",
+			"target": "terminus_open",
+			"shell_cmd": "ipython -i \"$file\"",
+			"panel_name": "Build Results - IPython",
+			"cancellable": true,
+		},
+		{
+			"name": "Interactive Mode (in Tab)",
+			"target": "terminus_open",
+			"shell_cmd": "ipython -i \"$file\"",
+			"tag": "ipython-windows-tab",
+			"title": "IPython Build",
+			"post_window_hooks": [
+				[ "move_tab_back"],
+				[ "carry_file_to_pane", { "direction": "down"} ],
+				// [ "toggle_zoom_pane", { "fraction": 0.4 } ],
+			],
+		},
+		{
+			"name": "Type Check",
+			"shell_cmd": "mypy --disallow-untyped-calls --disallow-untyped-defs --disallow-incomplete-defs \"$file\"",
+		},
+		// {
+		// 	"name": "32 bit",
+		// 	"shell_cmd": "python32 -c \"print('#32-bit mode')\" && python32 -u \"$file\"",
+		// },
+	]
+}
+				// [
+				//  // "terminus_send_string",
+				//  // { "string": "python -u \"$file\"", "visible_only": true }
+				// ],
+		// {
+		//  "name": "Syntax Check",
+		//  "shell_cmd": "python -m py_compile \"${file}\"",
+		// }
+	// ]
+// }
+
