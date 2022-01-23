@@ -3,7 +3,7 @@ import sublime_plugin
 import re
 import textwrap
 from threading import Thread
-from subprocess import run
+from subprocess import run, CalledProcessError
 from os.path import expanduser
 
 

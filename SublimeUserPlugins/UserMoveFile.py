@@ -7,11 +7,18 @@ from glob import iglob
 
 class UserMoveFileCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
+		first = True
+
 		def getdirlist(path):
 			path_len = len(path)
 			directorylist = [p[path_len + 1 : -1] for p in iglob(path + "/*/")]
 			directorylist.insert(0, "..")
-			directorylist.insert(1, "*Move Here*")
+			nonlocal first
+			if first:
+				first = False
+			else:
+				directorylist.insert(1, "*Move Here*")
+
 			return directorylist
 
 		view = self.view
