@@ -1,0 +1,6 @@
+topic React Native vs Python:
+	@react_native Input.split(' ').map((word) => word && '🍕').join(' ')
+	@python ' '.join(map(lambda word: word and '🍕', Input.split(' ')))
+
+	# Input: "hello there bro"
+	# Output: 🍕 🍕 🍕

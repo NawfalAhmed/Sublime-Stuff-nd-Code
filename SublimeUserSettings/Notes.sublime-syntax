@@ -250,6 +250,20 @@ contexts:
       embed: scope:source.python
       embed_scope: meta.embedded-code.line.notes source.python.embedded
       escape: '$'
+    - match: '^(\s*)(@)(jsx|react(?:_native)?)$'
+      captures:
+        2: punctuation.section.embedded-code.begin.notes
+        3: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.jsx
+      embed_scope: meta.embedded-code.block.notes source.jsx.embedded
+      escape: '^(?=.)(?!(\1\s))'
+    - match: '^\s*(@)(jsx|react(?:_native)?)\s+'
+      captures:
+        1: punctuation.section.embedded-code.begin.notes
+        2: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.jsx
+      embed_scope: meta.embedded-code.line.notes source.jsx.embedded
+      escape: '$'
     - match: '^(\s*)(@)(bash)$'
       captures:
         2: punctuation.section.embedded-code.begin.notes
@@ -266,6 +280,22 @@ contexts:
       embed: scope:source.shell.bash
       embed_scope: meta.embedded-code.line.notes source.shell.bash.embedded
       escape: '$'
+    - match: '^(\s*)(@)(fish)$'
+      captures:
+        2: punctuation.section.embedded-code.begin.notes
+        3: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.shell.fish
+      embed_scope: meta.embedded-code.block.notes source.shell.fish.embedded
+      escape: '^(?=.)(?!(\1\s))'
+      # escape_captures:
+      #   1: punctuation.section.embedded-code.end.notes
+    - match: '^\s*(@)(fish)\s+'
+      captures:
+        1: punctuation.section.embedded-code.begin.notes
+        2: keyword.declaration.embedded-code.name.notes
+      embed: scope:source.shell.fish
+      embed_scope: meta.embedded-code.line.notes source.shell.fish.embedded
+      escape: '$'
     - match: '^\s*(@)(c\#)\s+'
       captures:
         1: punctuation.section.embedded-code.begin.notes
@@ -281,7 +311,7 @@ contexts:
       embed_scope: meta.embedded-code.line.notes text.xml.sublime.snippet.embedded
       escape: '$'
   classes:
-    - match: '^\s*(class)\b'
+    - match: '^\s*(topic)\b'
       captures:
         1: keyword.declaration.class.notes
       push:
@@ -306,12 +336,32 @@ contexts:
           escape_captures:
             1: punctuation.section.embedded-code.end.notes
           pop: true
+        - match: '(@)(fish):$'
+          captures:
+            1: punctuation.section.embedded-code.begin.notes
+            2: keyword.declaration.embedded-code.name.notes
+          embed: scope:source.shell.fish
+          embed_scope: meta.embedded-code.block.notes source.shell.fish.embedded
+          escape: '^\s*(;)$'
+          escape_captures:
+            1: punctuation.section.embedded-code.end.notes
+          pop: true
         - match: '(@)(py(?:thon)?):$'
           captures:
             1: punctuation.section.embedded-code.begin.notes
             2: keyword.declaration.embedded-code.name.notes
           embed: scope:source.python
           embed_scope: meta.embedded-code.block.notes source.python.embedded
+          escape: '^\s*(;)$'
+          escape_captures:
+            1: punctuation.section.embedded-code.end.notes
+          pop: true
+        - match: '(@)(jsx|react(?:_native)?):$'
+          captures:
+            1: punctuation.section.embedded-code.begin.notes
+            2: keyword.declaration.embedded-code.name.notes
+          embed: scope:source.jsx
+          embed_scope: meta.embedded-code.block.notes source.jsx.embedded
           escape: '^\s*(;)$'
           escape_captures:
             1: punctuation.section.embedded-code.end.notes
