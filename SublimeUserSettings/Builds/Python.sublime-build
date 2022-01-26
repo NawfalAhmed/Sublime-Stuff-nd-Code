@@ -76,7 +76,8 @@
 		},
 		{
 			"name": "Type Check",
-			"shell_cmd": "mypy --disallow-untyped-calls --disallow-untyped-defs --disallow-incomplete-defs \"$file\"",
+			"shell_cmd": "mypy --strict --disallow-untyped-calls --disallow-untyped-defs --disallow-incomplete-defs \"$file\"",
+			"file_regex": "^(...*?):([0-9]*):?([0-9]*)",
 		},
 		// {
 		// 	"name": "32 bit",
