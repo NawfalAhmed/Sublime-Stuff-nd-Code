@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 from time import sleep
-from subprocess import run
+from subprocess import PIPE, run
 from threading import Thread
 from queue import Full, Queue
 from contextlib import suppress
@@ -24,8 +24,11 @@ class StuffOnSave(sublime_plugin.ViewEventListener):
 	def formatter_async(self):
 		while True:
 			name = self.format_queue.get()
-			run(f"black -l 85 '{name}'", shell=True)
-			sleep(2)
+			x = run(f"black -l 85 '{name}' --check", shell=True, stderr=PIPE)
+			if not "unchanged" in str(x):
+				print("Formatting")
+				run(f"black -l 85 '{name}'", shell=True)
+				sleep(2)
 			sublime.status_message(f"Formatted: {name}")
 			self.format_queue.task_done()
 
