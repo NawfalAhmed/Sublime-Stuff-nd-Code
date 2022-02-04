@@ -8,14 +8,16 @@ from glob import iglob
 class UserMoveFileCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		first = True
+		current_first = False
 
 		def getdirlist(path):
+			nonlocal first, current_first
 			path_len = len(path)
 			directorylist = [p[path_len + 1 : -1] for p in iglob(path + "/*/")]
 			directorylist.insert(0, "..")
-			nonlocal first
 			if first:
 				first = False
+				current_first = True
 			else:
 				directorylist.insert(1, "*Move Here*")
 
@@ -27,6 +29,7 @@ class UserMoveFileCommand(sublime_plugin.TextCommand):
 		dirlist = getdirlist(path)
 
 		def on_done(index):
+			nonlocal current_first
 			if index != -1:
 				nonlocal path
 				nonlocal src
@@ -36,13 +39,15 @@ class UserMoveFileCommand(sublime_plugin.TextCommand):
 					path, _ = os.path.split(path)
 					dirlist = getdirlist(path)
 					view.window().show_quick_panel(dirlist, on_done)
-				elif index == 1:
+				elif index == 1 and not current_first:
 					dest = path + "/" + dest
 					shutil.move(src, dest)
 					src = src.replace("/home/penguin98k", "~")
 					dest = dest.replace("/home/penguin98k", "~")
 					sublime.status_message(f"moved from {src} to {dest}")
 				else:
+					if current_first:
+						current_first = False
 					path += "/" + dirlist[index]
 					dirlist = getdirlist(path)
 					view.window().show_quick_panel(dirlist, on_done)
