@@ -1,4 +1,7 @@
+
 topic Python:
+	• file.write(tabulate(output, ['Matched', 'Stack', 'Input', 'Action'], tablefmt="pretty")) use that for pretty-print table
+		or can use panda's DataFrame for pretty-print
 	• slice indexing doesn't give out of range error wrong
 	• sort both lists according to (reverse) sorting order of first
 		@py list1, list2 = map(list, zip(*sorted(zip(list1,list2),reverse = True)))
