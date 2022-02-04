@@ -37,11 +37,46 @@
 	{ "keys": ["altgr+n"], "command": "insert", "args": { "characters": "\\n" } },
 	{ "keys": ["altgr+s"], "command": "insert", "args": { "characters": "$" } },
 	{ "keys": ["altgr+t"], "command": "insert", "args": { "characters": "\\t" } },
-	{ "keys": [";"], "command": "insert", "args": { "characters": ":" } },
-	{ "keys": [":"], "command": "insert", "args": { "characters": ";" } },
-	{ "keys": ["\\"], "command": "insert", "args": { "characters": "_" } },
-	{ "keys": ["_"], "command": "insert", "args": { "characters": "|" } },
-	{ "keys": ["|"], "command": "insert", "args": { "characters": "\\" } },
+	{
+		"keys": [";"], "command": "insert",
+		"args": { "characters": ":" },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" },
+			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+		]
+	},
+	{
+		"keys": [":"], "command": "insert",
+		"args": { "characters": ";" },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" },
+			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+		]
+	},
+	{
+		"keys": ["\\"], "command": "insert",
+		"args": { "characters": "_" },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" },
+			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+		]
+	},
+	{
+		"keys": ["_"], "command": "insert",
+		"args": { "characters": "|" },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" },
+			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+		]
+	},
+	{
+		"keys": ["|"], "command": "insert",
+		"args": { "characters": "\\" },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" },
+			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+		]
+	},
 	{
 		"keys": ["altgr+up"], "command": "jump_selection_end",
 		"args": { "reduce": true, "forward": false }
