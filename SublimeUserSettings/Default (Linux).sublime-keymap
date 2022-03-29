@@ -1,6 +1,28 @@
 [
 	// <Recent Keybinds>
-	// { "keys": ["alt"], "command": "pass" }, //trying to avoid unnecessary menu toggle
+	{
+		"keys": ["/"], "command": "chain",
+		"args": {
+			"commands": [
+				["insert", { "characters": "/" }],
+				["close_tag", { "insert_slash": true }]
+			]
+		},
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"operand": "(text.html, text.xml, source.jsx, source.tsx) - string - comment",
+				"match_all": true
+			},
+			{
+				"key": "preceding_text",
+				"operator": "regex_match",
+				"operand": ".*<$",
+				"match_all": true
+			}, { "key": "setting.auto_close_tags" }
+		]
+	},
 	{
 		"keys": ["super+space"], "command": "run_macro_file",
 		"args": {
