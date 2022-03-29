@@ -2,7 +2,8 @@
 	"extensions":
 	[
 		"style",
-		".pycodestyle",
+		"pycodestyle",
+		"desktop",
 	],
-	"tab_size": 3
+	"tab_size": 3,
 }
