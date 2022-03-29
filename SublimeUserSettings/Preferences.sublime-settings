@@ -10,7 +10,7 @@
 	"caret_extra_top": 2,
 	"caret_extra_width": 1,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/MonokaiPenguin.sublime-color-scheme",
+	"color_scheme": "MonokaiPenguin.sublime-color-scheme",
 	"console_max_history_lines": 300,
 	"control_character_style": "names",
 	"copy_with_empty_selection": false,
@@ -142,4 +142,5 @@
 	"python_format_on_save": true,
 	"select_across_groups": true,
 	"reveal_menu": false,
+	"goto_anything_exclude_gitignore": true,
 }
