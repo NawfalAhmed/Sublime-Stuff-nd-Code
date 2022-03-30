@@ -1,9 +1,6 @@
 Gifs
 IpythonLogs
 node_modules
-Semester 4/Assembly/DosboxPortable/
-Semester 4/Assembly/nasmx-1.4/
-Semester 5/Game Dev/Prefab Resources/
 SublimeUserSettings/MenuPenguinLists.sublime-settings
 SublimeUserSettings/Projects/*.sublime-workspace
 SublimeUserSettings/LSP-pyright.sublime-settings.backup
@@ -14,8 +11,3 @@ SublimeUserSettings/OverrideAudit.Status
 *.prefab
 *.directory
 json-format-temp.py
-history.sqlite
-# !Game Dev/*/*/*.cs
-# Game Dev/*/*.*
-# !Game Dev/*/*.cs
-# Game Dev/*/*/*
