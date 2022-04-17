@@ -32,7 +32,7 @@ def run_async(select, view):
 
 	try:
 		yapf_result = run(
-			f"yapf {name} --style {style}",
+			f"python -m yapf {name} --style {style}",
 			shell=True,
 			capture_output=True,
 			text=True,

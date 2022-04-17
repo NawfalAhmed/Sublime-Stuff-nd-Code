@@ -24,10 +24,10 @@ class StuffOnSave(sublime_plugin.ViewEventListener):
 	def formatter_async(self):
 		while True:
 			name = self.format_queue.get()
-			x = run(f"black -l 85 '{name}' --check", shell=True, stderr=PIPE)
+			x = run(f"python3.9 -m black -l 85 '{name}' --check", shell=True, stderr=PIPE)
 			if not "unchanged" in str(x):
 				print("Formatting")
-				run(f"black -l 85 '{name}'", shell=True)
+				run(f"python3.9 -m black -l 85 '{name}'", shell=True)
 				sleep(2)
 			sublime.status_message(f"Formatted: {name}")
 			self.format_queue.task_done()
