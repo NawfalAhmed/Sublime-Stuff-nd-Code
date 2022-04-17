@@ -56,7 +56,7 @@
 	"trim_only_modified_white_space": false,
 	"trim_trailing_white_space_on_save": "not_on_caret",
 	"word_wrap": true,
-	"wrap_width": 80,
+	"wrap_width": 81,
 	"wrap_width_style": "min",
 	"added_words": [
 		"whitespace", "color", "centered", "etc", "popup", "keybinds",
@@ -78,6 +78,11 @@
 		"cout",
 		"cin",
 		"penguin98k",
+		"api",
+		"arham",
+		"nawfal",
+		"amina",
+		"shazia",
 	],
 	"ignored_packages": [
 		"Chain of Command",
@@ -142,5 +147,6 @@
 	"python_format_on_save": true,
 	"select_across_groups": true,
 	"reveal_menu": false,
+	"hardware_acceleration": "opengl",
 	"goto_anything_exclude_gitignore": true,
 }
