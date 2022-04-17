@@ -1,5 +1,9 @@
 [
 	// <Recent Keybinds>
+	{ "keys": ["pageup"], "command": "jump_forward" },
+	{ "keys": ["pagedown"], "command": "jump_back" },
+	{ "keys": ["ctrl+shift+."], "command": "next_modification" },
+	{ "keys": ["ctrl+shift+,"], "command": "prev_modification" },
 	{
 		"keys": ["/"], "command": "chain",
 		"args": {
