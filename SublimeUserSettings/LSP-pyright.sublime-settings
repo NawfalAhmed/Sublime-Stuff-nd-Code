@@ -51,6 +51,6 @@
 		"python.analysis.useLibraryCodeForTypes": true,
 		"pyright.disableLanguageServices": false,
 		// "pyright.disableOrganizeImports": true,
-		"python.pythonPath": "python"
+		"python.pythonPath": "/usr/bin/python3.10",
 	}
 }

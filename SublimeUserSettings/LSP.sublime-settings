@@ -37,5 +37,6 @@
 	"show_references_in_quick_panel": true,
 	"log_debug": false,
 	"show_diagnostics_highlights": true,
-	"show_diagnostics_panel_on_save": 1
+	"show_diagnostics_panel_on_save": 1,
+	"diagnostics_delay_ms": 100,
 }
