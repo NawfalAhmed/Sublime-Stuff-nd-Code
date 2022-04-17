@@ -385,21 +385,68 @@
 	// </OverRidden Keybinds>
 
 	// <LSP Keybinds>
+	{ "keys": ["ctrl+,"], "command": "lsp_code_actions" },
+	{ "keys": ["ctrl+."], "command": "lsp_code_lens" },
 	{
-		"keys": ["shift+space"], "command": "lsp_hover",
+		"keys": ["ctrl+shift+space"], "command": "lsp_expand_selection",
 		"context": [
-			{ "key": "setting.lsp_active" },
-			{ "key": "lsp.signature_help", "operator": "equal", "operand": 0 }
+			{
+				"key": "lsp.session_with_capability",
+				"operator": "equal",
+				"operand": "selectionRangeProvider"
+			}
 		]
 	},
 	{
-		"keys": ["super+e"], "command": "lsp_document_symbols",
+		"keys": ["shift+space"], "command": "lsp_hover",
+		"context": [
+			{
+				"key": "lsp.session_with_capability",
+				"operator": "equal",
+				"operand": "hoverProvider"
+			}
+		]
+	},
+	{
+		"keys": ["super+space"], "command": "lsp_signature_help_show",
+		"context": [
+			{
+				"key": "lsp.signature_help_available",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": ["ctrl+;"], "command": "lsp_document_symbols",
 		"context": [
 			{
 				"key": "lsp.session_with_capability",
 				"operator": "equal",
 				"operand": "documentSymbolProvider"
 			}
+		]
+	},
+	{
+		"keys": ["ctrl+r"], "command": "lsp_symbol_references",
+		"context": [
+			{
+				"key": "lsp.session_with_capability",
+				"operator": "equal",
+				"operand": "referencesProvider"
+			}
+		]
+	},
+	{
+		"keys": ["alt+g"], "command": "lsp_symbol_implementation",
+		"args": { "side_by_side": false },
+		"context": [
+			{
+				"key": "lsp.session_with_capability",
+				"operator": "equal",
+				"operand": "implementationProvider"
+			},
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false }
 		]
 	},
 	{
