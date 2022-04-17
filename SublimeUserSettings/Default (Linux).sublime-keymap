@@ -63,40 +63,35 @@
 		"keys": [";"], "command": "insert",
 		"args": { "characters": ":" },
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.python" },
-			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+			{ "key": "selector", "operator": "equal", "operand": "(source.python, meta.mapping.js, source.json, source.notes)" },
 		]
 	},
 	{
 		"keys": [":"], "command": "insert",
 		"args": { "characters": ";" },
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.python" },
-			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+			{ "key": "selector", "operator": "equal", "operand": "(source.python, meta.mapping.js, source.json, source.notes)" },
 		]
 	},
 	{
 		"keys": ["\\"], "command": "insert",
 		"args": { "characters": "_" },
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.python" },
-			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+			{ "key": "selector", "operator": "equal", "operand": "(source.python, source.json, source.notes)" },
 		]
 	},
 	{
 		"keys": ["_"], "command": "insert",
 		"args": { "characters": "|" },
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.python" },
-			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+			{ "key": "selector", "operator": "equal", "operand": "(source.python, source.json, source.notes)" },
 		]
 	},
 	{
 		"keys": ["|"], "command": "insert",
 		"args": { "characters": "\\" },
 		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "source.python" },
-			// { "key": "selector", "operator": "equal", "operand": "source.notes" }
+			{ "key": "selector", "operator": "equal", "operand": "(source.python, source.json, source.notes)" },
 		]
 	},
 	{
