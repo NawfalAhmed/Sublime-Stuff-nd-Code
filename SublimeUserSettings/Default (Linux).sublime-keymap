@@ -24,12 +24,6 @@
 		]
 	},
 	{
-		"keys": ["super+space"], "command": "run_macro_file",
-		"args": {
-			"file": "res://Packages/User/Macros/ExpandToSomeRegion.sublime-macro"
-		}
-	},
-	{
 		"keys": ["altgr+w"], "command": "insert_snippet",
 		"args": { "contents": "$1${2:($SELECTION)}$0" },
 		"context": [
@@ -136,7 +130,6 @@
 			"file": "res://Packages/User/Macros/ExpandSelectionToRightBracket.sublime-macro"
 		}
 	},
-	{ "keys": ["shift+space"], "command": "pass" },
 	{
 		"keys": ["shift+enter"], "command": "run_macro_file",
 		"args": { "file": "res://Packages/Default/Add Line.sublime-macro" }
@@ -424,26 +417,7 @@
 		// "context": [{ "key": "setting.lsp_active" }]
 	},
 	// <LSP Keybinds>
-
 	// <Commands in Terminus Keybinds>
-	// {
-	// 	"keys": ["super+j"], "command": "terminus_open",
-	// 	"args": {
-	// 		"cwd": "${file_path:${folder}}",
-	// 		"title": "Jupyter Notebook",
-	// 		"tag": "jupyter",
-	// 		"post_window_hooks": [
-	// 			["move_tab_back"],
-	// 			["carry_file_to_pane", { "direction": "down" }],
-	// 			["zoom_pane", { "fraction": 0.2 }],
-	// 			["travel_to_pane", { "direction": "up" }],
-	// 			[
-	// 				"terminus_send_string",
-	// 				{ "string": "jupyter notebook\n", "visible_only": true }
-	// 			]
-	// 		]
-	// 	}
-	// },
 	{
 		"keys": ["super+g"], "command": "terminus_open",
 		"args": {
@@ -496,15 +470,6 @@
 		"keys": ["alt+shift+`"], "command": "terminus_open_with_title",
 		"args": { "cwd": "${file_path:${folder}}" }
 	},
-	// {
-	// 	"keys": ["super+alt+`"], "command": "toggle_terminus_panel",
-	// 	"args": {
-	// 		"cmd": "ipython",
-	// 		"cwd": "${file_path:${folder}}",
-	// 		"panel_name": "IPython Terminal",
-	// 		"tag": "Ipython"
-	// 	}
-	// },
 	// </Builds and Terminals>
 
 	// Escape Key Remapped ->
