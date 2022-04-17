@@ -5,7 +5,7 @@ import sublime_plugin
 class SafeCloseCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		if self.window.num_groups() <= 1 and not self.window.sheets():
-			if self.window.project_file_name():
+			if self.window.project_file_name() and len(sublime.windows()) == 1:
 				self.window.status_message("Prevented Project Closing")
 			else:
 				self.window.run_command("close")
