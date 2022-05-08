@@ -532,7 +532,7 @@
 		}
 	},
 	{
-		"keys": ["alt+`"], "command": "toggle_terminus_panel",
+		"keys": ["alt+`"], "command": "terminus_open",
 		"args": { "panel_name": "Fish Shell", "cwd": "${file_path:${folder}}" }
 	},
 	{
