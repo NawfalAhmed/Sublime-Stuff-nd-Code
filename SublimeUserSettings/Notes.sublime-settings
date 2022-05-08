@@ -6,4 +6,5 @@
 		"desktop",
 	],
 	"tab_size": 3,
+	"word_wrap": "auto"
 }
