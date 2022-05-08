@@ -1,0 +1,14 @@
+{
+	"enabled": true,
+	"settings": {
+		"typescript.inlayHints.includeInlayEnumMemberValueHints": true,
+		"typescript.inlayHints.includeInlayFunctionLikeReturnTypeHints": true,
+		"typescript.inlayHints.includeInlayFunctionParameterTypeHints": true,
+		"typescript.inlayHints.includeInlayParameterNameHints": true,
+		"typescript.inlayHints.includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+		"typescript.inlayHints.includeInlayPropertyDeclarationTypeHints": true,
+		// "typescript.inlayHints.includeInlayVariableTypeHints": true,
+		"javascript.format.semicolons": "remove",
+		"typescript.format.semicolons": "remove",
+	}
+}

@@ -86,6 +86,20 @@
 		]
 	},
 	{
+		"keys": [" ", "o","r"," "], "command": "insert",
+		"args": { "characters": " || " },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.jsx, source.tsx" },
+		]
+	},
+	{
+		"keys": [" ", "a","n","d"," "], "command": "insert",
+		"args": { "characters": " && " },
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.jsx, source.tsx" },
+		]
+	},
+	{
 		"keys": ["|"], "command": "insert",
 		"args": { "characters": "\\" },
 		"context": [
