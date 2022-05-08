@@ -2,7 +2,10 @@
 	"folders":
 	[
 		{
-			"path": "/home/penguin98k/.local/share/applications"
+			"path": "~/.local/share/applications/",
+		},
+		{
+			"path": "~/.config/menus/applications-merged",
 		}
 	]
 }
