@@ -1,13 +1,16 @@
 Gifs
 IpythonLogs
 node_modules
+react-native-*snippets
+#
 SublimeUserSettings/MenuPenguinLists.sublime-settings
-SublimeUserSettings/Projects/*.sublime-workspace
 SublimeUserSettings/LSP-pyright.sublime-settings.backup
 SublimeUserSettings/OverrideAudit.Status
+#
 *.exe
 *.mp4
 *.ipynb_checkpoints/
 *.prefab
 *.directory
+*.sublime-workspace
 json-format-temp.py
