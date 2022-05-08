@@ -1,5 +1,9 @@
 [
 	{
+		"caption": "User: Rename View to Title",
+		"command": "user_rename_view",
+	},
+	{
 		"caption": "User: Open Python Live Output",
 		"command": "terminus_open",
 		"args": {
