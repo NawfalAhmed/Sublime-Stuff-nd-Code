@@ -39,4 +39,9 @@
 	"show_diagnostics_highlights": true,
 	"show_diagnostics_panel_on_save": 1,
 	"diagnostics_delay_ms": 100,
+	"lsp_code_actions_on_save": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.ts": true,
+		"source.addMissingImports.ts": true,
+	},
 }

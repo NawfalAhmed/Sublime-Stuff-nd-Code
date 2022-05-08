@@ -68,7 +68,7 @@
 		},
 		{
 			"name": "ParameterName for JS",
-			"scope": "meta.mapping.js meta.mapping.key.js",
+			"scope": "meta.mapping.js meta.mapping.key.js, meta.type-alias.js variable.other.readwrite.js",
 			"foreground": "var(orange)",
 		},
 		{
