@@ -27,6 +27,21 @@
 			}, { "key": "setting.auto_close_tags" }
 		]
 	},
+	{ "keys": ["altgr+e"], "command": "find_under" },
+	{ "keys": ["altgr+q"], "command": "find_under_prev" },
+	{ "keys": ["altgr+."], "command": "insert", "args": { "characters": "\\." } },
+	{ "keys": ["altgr+n"], "command": "insert", "args": { "characters": "\\n" } },
+	{ "keys": ["altgr+s"], "command": "insert", "args": { "characters": "\\s" } },
+	{ "keys": ["altgr+t"], "command": "insert", "args": { "characters": "\\t" } },
+	{ "keys": ["altgr+w"], "command": "insert", "args": { "characters": "\\w" } },
+	{
+		"keys": ["altgr+a"], "command": "move_to",
+		"args": { "to": "bol", "extend": true }
+	},
+	{
+		"keys": ["altgr+d"], "command": "move_to",
+		"args": { "to": "eol", "extend": true }
+	},
 	{
 		"keys": ["altgr+w"], "command": "insert_snippet",
 		"args": { "contents": "$1${2:($SELECTION)}$0" },
@@ -44,19 +59,6 @@
 			}
 		]
 	},
-	{
-		"keys": ["altgr+a"], "command": "move_to",
-		"args": { "to": "bol", "extend": true }
-	},
-	{
-		"keys": ["altgr+d"], "command": "move_to",
-		"args": { "to": "eol", "extend": true }
-	},
-	{ "keys": ["altgr+q"], "command": "find_under_prev" },
-	{ "keys": ["altgr+e"], "command": "find_under" },
-	{ "keys": ["altgr+n"], "command": "insert", "args": { "characters": "\\n" } },
-	{ "keys": ["altgr+s"], "command": "insert", "args": { "characters": "$" } },
-	{ "keys": ["altgr+t"], "command": "insert", "args": { "characters": "\\t" } },
 	{
 		"keys": [" ", "o","r"," "], "command": "insert",
 		"args": { "characters": " || " },
