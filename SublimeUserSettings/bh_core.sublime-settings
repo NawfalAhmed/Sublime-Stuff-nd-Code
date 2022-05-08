@@ -6,4 +6,346 @@
 	// "show_bracket_popup_always": true,
 	// "content_highlight_bar": true,
 	// "align_content_highlight_bar": true,
+	"brackets": [
+		// OCaml
+		{
+			"name": "ocaml_comment",
+			"open": "(\\(\\*)",
+			"close": "(\\*\\))",
+			"style": "default",
+			"scope_exclude": ["-comment"],
+			"language_filter": "allowlist",
+			"language_list": ["OCaml"],
+			"sub_bracket_search": "false",
+			"enabled": true
+		},
+		// Basic brackets
+		{
+			"name": "curly",
+			"open": "(\\{)",
+			"close": "(\\ })",
+			"style": "curly",
+			"scope_exclude": [
+				"string",
+				"comment",
+				"source.regexp constant.character.escape",
+				"source.yaml-tmlanguage constant.character.escape"
+			],
+			"scope_exclude_exceptions": ["text.tex string.other.math"],
+			"language_filter": "blocklist",
+			"language_list": ["Plain text", "Hex"],
+			"find_in_sub_search": "true",
+			"ignore_string_escape": true,
+			"enabled": true
+		},
+		{
+			"name": "round",
+			"open": "(\\()",
+			"close": "(\\))",
+			"style": "round",
+			"scope_exclude_exceptions": [
+				"text.tex string.other.math",
+				"punctuation.definition.string.begin.shell",
+				"punctuation.definition.string.end.shell"
+			],
+			"scope_exclude": [
+				"string",
+				"comment",
+				"source.regexp constant.character.escape",
+				"keyword.control.conditional.patterns.end.shell",
+				"keyword.control.case.item",
+				"source.yaml-tmlanguage constant.character.escape"
+			],
+			"language_filter": "blocklist",
+			"language_list": ["Plain text", "Hex", "RTF"],
+			"find_in_sub_search": "true",
+			"ignore_string_escape": true,
+			"enabled": true
+		},
+		//XML
+		{
+			"name": "xml_cdata",
+			"open": "(<!\\[CDATA\\[)",
+			"close": "(\\]\\]>)",
+			"style": "default",
+			"language_filter": "allowlist",
+			"language_list": ["XML"],
+			"scope_exclude": ["comment"],
+			"enabled": true
+		},
+		{
+			"name": "square",
+			"open": "(\\[)",
+			"close": "(\\])",
+			"style": "square",
+			"scope_exclude": [
+				"string", "source.regexp constant.character.escape", "comment"
+			],
+			"scope_exclude_exceptions": [
+				"text.tex string.other.math",
+				"source.yaml-tmlanguage meta.value -constant.character.escape"
+			],
+			"language_filter": "blocklist",
+			"language_list": ["Plain text", "Hex", "RTF"],
+			"find_in_sub_search": "true",
+			"ignore_string_escape": true,
+			"enabled": true
+		},
+		// PHP Angle
+		{
+			"name": "php_angle",
+			"open": "(<\\?)(?:php)?",
+			"close": "(\\?>)",
+			"style": "angle",
+			"scope_exclude": ["string", "comment", "keyword.operator"],
+			"language_filter": "allowlist",
+			"language_list": ["HTML", "HTML 5"],
+			"enabled": true
+		},
+		// Angle
+		{
+			"name": "angle",
+			"open": "(<)(?=[^?%]|$)",
+			"close": "(?:(?<=[^?%])|(?<=^))(>)",
+			"style": "angle",
+			"scope_exclude": [
+				"string",
+				"comment",
+				"keyword.operator",
+				"source.ruby.rails.embedded.html",
+				"source.ruby.embedded.html",
+				"storage.type.function.arrow.js",
+				"punctuation.accessor.php",
+				"punctuation.accessor.arrow.php",
+				"punctuation.definition.arrow-function.php",
+				"keyword.declaration.function.arrow.js",
+				"source.php meta.embedded.html punctuation.section.embedded.begin.php",
+				"source.php meta.embedded.js punctuation.section.embedded.begin.php",
+				"source.php meta.embedded.css punctuation.section.embedded.begin.php"
+			],
+			"language_filter": "allowlist",
+			"language_list": [
+				"JSX",
+				"TSX",
+				"HTML",
+				"HTML 5",
+				"XML",
+				"PHP",
+				"HTML (Rails)",
+				"HTML (Jinja Templates)",
+				"HTML (Jinja2)",
+				"HTML (Twig)",
+				"HTML (Django)",
+				"CFML",
+				"HTML+CFML",
+				"ColdFusion",
+				"ColdFusionCFC",
+				"laravel-blade",
+				"blade",
+				"Handlebars",
+				"AngularJS",
+				"Java Server Pages (JSP)"
+			],
+			"plugin_library": "bh_modules.tags",
+			"enabled": true
+		},
+		// CSSedit groups
+		{
+			"name": "cssedit_groups",
+			"open": "(/\\* *@group .*\\*/)",
+			"close": "(/\\* *@end *\\*/)",
+			"style": "default",
+			"scope_exclude": [],
+			"language_filter": "allowlist",
+			"language_list": ["CSS"],
+			"enabled": true
+		},
+		// Ruby embedded HTML
+		// !!! May conflict with `php_keywords` if enabled in same file !!!
+		{
+			"name": "ruby_embedded_html",
+			"open": "((?:(?<=<%)|(?<=^)|(?<==)|(?<=<<))\\s*\\b(?:if|begin|case)\\b(?!:)|(?:(?<=<%)|(?<=^))\\s*(?:(?:private|public|protected)\\s*)?def\\b[\\p{Ll }\\p{Lu }]*\\b(?!:)|(?:(?<=<%)|(?<=^))\\s*\\b(?:for|until|unless|while|class|module)\\b(?!:)|(?<!:)\\bdo\\b(?!:)|(?<=return)\\s*\\b(?:begin|case|for|until|while|class|module)\\b(?!:))",
+			"close": "(?<=[\\s;])(end)\\b(?!:)",
+			"style": "default",
+			"scope_exclude": ["text.html", "source", "comment", "string"],
+			"scope_exclude_exceptions": [
+				"source.ruby.rails.embedded.html -comment -string",
+				"source.ruby.embedded.html -comment -string"
+			],
+			"plugin_library": "bh_modules.rubykeywords",
+			"language_filter": "allowlist",
+			"language_list": ["HTML", "HTML 5", "HTML (Rails)"],
+			"enabled": true
+		},
+		// Ruby conditional statements
+		{
+			"name": "ruby",
+			"open": "((?:(?<=^)|(?<==)|(?<=<<))\\s*\\b(?:if|begin|case)\\b(?!:)|^\\s*(?:(?:private|public|protected)\\s*)?def\\b[\\p{Ll }\\p{Lu }]*\\b(?!:)|^\\s*\\b(?:for|until|unless|while|class|module)\\b(?!:)|(?<!:)\\bdo\\b(?!:)|(?<=return)\\s*\\b(?:begin|case|for|until|while|class|module)\\b(?!:))",
+			"close": "(?<=[\\s;])(end)\\b(?!:)",
+			"style": "default",
+			"scope_exclude": ["string", "comment"],
+			"plugin_library": "bh_modules.rubykeywords",
+			"language_filter": "allowlist",
+			"language_list": [
+				"Ruby", "RSpec", "Better RSpec", "Ruby on Rails", "Ruby (Rails)"
+			],
+			"enabled": true
+		},
+		// C/C++ compile switches
+		{
+			"name": "c_compile_switch",
+			"open": "\\//[ \\t]*(if|ifdef|ifndef)\\b",
+			"close": "\\//[ \\t]*(endif)\\b",
+			"style": "c_define",
+			"scope_exclude": ["string", "comment"],
+			"language_filter": "allowlist",
+			"language_list": [
+				"C++", "C", "Objective-C++", "Objective-C", "CCpp", "C Improved"
+			],
+			"enabled": true
+		},
+		// PHP conditional keywords
+		// !!! May conflict with `ruby_embedded_html` if enabled in same file !!!
+		{
+			"name": "php_keywords",
+			"open": "(?:(?<=^)|(?<=<\\?php)|(?<=<\\?))\\s*(if|foreach|for|while|switch)\\b(?=.*?\\)\\s*:\\s*(?://.*?|/\\*.*?\\*/\\s*?)?(?:\\?>|$))",
+			"close": "(?:(?<=^)|(?<=<\\?php)|(?<=<\\?))\\s*(endif|endfor|endforeach|endwhile|endswitch)\\b(?=\\s*(?:;|;?\\?>))",
+			"style": "default",
+			"language_filter": "allowlist",
+			"scope_exclude": ["string", "comment", "text.html"],
+			"scope_exclude_exceptions": ["source.php -comment -string"],
+			"plugin_library": "bh_modules.phpkeywords",
+			"language_list": [
+				"HTML",
+				"HTML 5",
+				"PHP",
+				"CFML",
+				"HTML+CFML",
+				"ColdFusion",
+				"ColdFusionCFC"
+			],
+			"enabled": true
+		},
+		// Erlang conditional statements
+		{
+			"name": "erlang",
+			"open": "\\s*(\\b(?:if|case|begin|try|fun(?=\\s*\\()|receive)\\b)",
+			"close": "\\b(end)\\b",
+			"style": "default",
+			"scope_exclude": ["string", "comment"],
+			"language_filter": "allowlist",
+			"plugin_library": "bh_modules.lowercase",
+			"language_list": ["Erlang", "HTML (Erlang)"],
+			"enabled": true
+		},
+		//Bash
+		{
+			"name": "bash",
+			"open": "(?:(?<!\\\\\\n)(?:;|^|&|\\|)\\s*)\\b(if|case|while|select|until|for)\\s",
+			"close": "(?:(?<!\\\\\\n)(?:;|^)\\s*)\\b(fi|esac|done)(?=;|\\s|$)",
+			"style": "default",
+			"scope_exclude": ["string", "comment"],
+			"plugin_library": "bh_modules.bashsupport",
+			"language_filter": "allowlist",
+			"language_list": ["Shell-Unix-Generic", "Bash"],
+			"enabled": true
+		},
+		//Fish shell
+		{
+			"name": "fish",
+			"open": "(?:(?<!\\\\\\n)(?:;|^|&|\\||and|or|not)\\s*)\\b(begin|if|while|for|switch|function)(?:;|\\s)",
+			"close": "(?:(?<!\\\\\\n)(?:;|^)\\s*)\\b(end)(?=;|\\s|$)",
+			"style": "default",
+			"scope_exclude": ["string", "comment"],
+			"language_filter": "allowlist",
+			"language_list": ["fish"],
+			"enabled": true
+		},
+		// Lua
+		{
+			"name": "lua",
+			"open": "\\b(if|function|do|repeat)\\b",
+			"close": "\\b(end|until)\\b",
+			"style": "default",
+			"scope_exclude": ["-keyword"],
+			"scope_exclude_exceptions": ["storage.type.function.lua"],
+			"plugin_library": "bh_modules.luakeywords",
+			"language_filter": "allowlist",
+			"language_list": ["Lua"],
+			"enabled": true
+		},
+		// LaTeX
+		{
+			"name": "latexenv",
+			"open": "(\\\\begin{[^ }]* })",
+			"close": "(\\\\end{[^ }]* })",
+			"style": "tag",
+			"scope_exclude": ["comment"],
+			"plugin_library": "bh_modules.latexenvironments",
+			"language_filter": "allowlist",
+			"language_list": ["LaTeX", "LaTeX (TikZ)", "knitr (Rnw)"],
+			"sub_bracket_search": "true",
+			"enabled": true
+		},
+		// Pascal
+		{
+			"name": "pascal",
+			"open": "(?:(?<=^)|(?<=[\\s;]))(try|(?<=\\=\\s)(?:class|record|interface)|begin|repeat)\\b",
+			"close": "(?<=[\\s;])(end(?=[;\\s])|until(?=\\s))",
+			"style": "default",
+			"scope_exclude": ["string", "comment"],
+			"plugin_library": "bh_modules.pascalkeywords",
+			"language_filter": "allowlist",
+			"language_list": ["Pascal"],
+			"enabled": true
+		},
+		// Elixir
+		{
+			"name": "elixir",
+			"open": "\\b(do$|fn)\\b",
+			"close": "\\b(end(?![:?]))\\b",
+			"style": "default",
+			"scope_exclude": ["string", "comment"],
+			"language_filter": "allowlist",
+			"language_list": ["Elixir"],
+			"enabled": true
+		},
+		// CMake
+		{
+			"name": "cmake",
+			"open": "\\b(foreach|function|if|macro|while)\\b",
+			"close": "\\b(end(?:foreach|function|if|macro|while))\\b",
+			"style": "default",
+			"scope_exclude": ["-keyword.cmake"],
+			"plugin_library": "bh_modules.cmakekeywords",
+			"language_filter": "allowlist",
+			"language_list": ["CMake"],
+			"enabled": true
+		},
+		// `SINUMERIK 840D SL G-Code`
+		{
+			"name": "s840d_gcode",
+			"open": "\\b(IF(?!.*GOTO)|FOR|WHILE|REPEAT(?!.*GOTO))\\b",
+			"close": "\\b(END(?:IF|FOR|WHILE)|UNTIL)\\b",
+			"style": "tag",
+			"scope_exclude": ["string", "comment"],
+			"plugin_library": "bh_modules.s840d_gcode",
+			"language_filter": "allowlist",
+			"language_list": ["s840d_gcode"],
+			"enabled": true
+		},
+		// `SINUMERIK 840D SL RunMyHmi`
+		{
+			"name": "s840d_hmi",
+			"open": "^\\s*(//[ABGMS]|ACTIVATE|CHANGE|FOCUS|IF|LOAD|UNLOAD|OUTPUT|PRESS|SUB)\\b",
+			"close": "^\\s*(//END|END_(?:ACTIVATE|CHANGE|FOCUS|IF|LOAD|UNLOAD|OUTPUT|PRESS|SUB))\\b",
+			"style": "tag",
+			"scope_exclude": ["string", "comment"],
+			"plugin_library": "bh_modules.s840d_hmi",
+			"language_filter": "allowlist",
+			"language_list": ["s840d_hmi"],
+			"enabled": true
+		}
+	],
+	"show_unmatched": false,
 }
