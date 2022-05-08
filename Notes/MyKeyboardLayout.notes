@@ -1,0 +1,30 @@
+# /usr/share/X11/xkb/symbols/us: at end of file insert
+topic KeyboardLayout @jsx:
+partial alphanumeric_keys
+xkb_symbols "intl-penguin" {
+
+	include "us(intl-unicode)"
+	name[Group1]= "English (US, Penguin)";
+	key <AC10> {[ colon,      semicolon, U0328,   U0308 ] };
+	key <AE11> {[ minus,      bar,       yen,     U0323 ]};
+	key <BKSL> {[ underscore, backslash, notsign, brokenbar ]};
+};
+
+;
+# /usr/share/X11/xkb/rules/evdev.extras.xml: line 344
+@jsx
+				<variant>
+					<configItem>
+						<name>intl-penguin</name>
+						<description>English (US, Penguin)</description>
+					</configItem>
+				</variant>
+
+# /usr/share/X11/xkb/rules/base.extras.xml: line 344
+@jsx
+				<variant>
+					<configItem>
+						<name>intl-penguin</name>
+						<description>English (US, Penguin)</description>
+					</configItem>
+				</variant>
