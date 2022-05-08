@@ -1,0 +1,67 @@
+topic ManuallyFixable @fish:
+	no-unsafe-negation   # disallow negating the left operand of relational operators
+	valid-typeof   # enforce comparing `typeof` expressions against valid strings
+	no-nonoctal-decimal-escape   # disallow `\8` and `\9` escape sequences in string literals
+	no-useless-escape   # disallow unnecessary escape characters
+;
+topic AutoFixable @fish:
+	no-extra-boolean-cast   # disallow unnecessary boolean casts
+	no-extra-semi   # disallow unnecessary semicolons
+	no-regex-spaces   # disallow multiple spaces in regular expressions
+	no-unused-labels   # disallow unused labels
+;
+topic UnFixable @fish:
+	constructor-super   # require `super()` calls in constructors
+	for-direction   # enforce "for" loop update clause moving the counter in the right direction.
+	getter-return   # enforce `return` statements in getters
+	no-async-promise-executor   # disallow using an async function as a Promise executor
+	no-class-assign   # disallow reassigning class members
+	no-compare-neg-zero   # disallow comparing against -0
+	no-cond-assign   # disallow assignment operators in conditional expressions
+	no-const-assign   # disallow reassigning `const` variables
+	no-constant-condition   # disallow constant expressions in conditions
+	no-control-regex   # disallow control characters in regular expressions
+	no-debugger   # disallow the use of `debugger`
+	no-dupe-args   # disallow duplicate arguments in `function` definitions
+	no-dupe-class-members   # disallow duplicate class members
+	no-dupe-else-if   # disallow duplicate conditions in if-else-if chains
+	no-dupe-keys   # disallow duplicate keys in object literals
+	no-duplicate-case   # disallow duplicate case labels
+	no-empty-character-class   # disallow empty character classes in regular expressions
+	no-empty-pattern   # disallow empty destructuring patterns
+	no-ex-assign   # disallow reassigning exceptions in `catch` clauses
+	no-fallthrough   # disallow fallthrough of `case` statements
+	no-func-assign   # disallow reassigning `function` declarations
+	no-import-assign   # disallow assigning to imported bindings
+	no-inner-declarations   # disallow variable or `function` declarations in nested blocks
+	no-invalid-regexp   # disallow invalid regular expression strings in `RegExp` constructors
+	no-irregular-whitespace   # disallow irregular whitespace
+	no-loss-of-precision   # disallow literal numbers that lose precision
+	no-misleading-character-class   # disallow characters which are made with multiple code points in character class syntax
+	no-new-symbol   # disallow `new` operators with the `Symbol` object
+	no-obj-calls   # disallow calling global object properties as functions
+	no-prototype-builtins   # disallow calling some `Object.prototype` methods directly on objects
+	no-self-assign   # disallow assignments where both sides are exactly the same
+	no-setter-return   # disallow returning values from setters
+	no-sparse-arrays   # disallow sparse arrays
+	no-this-before-super   # disallow `this`/`super` before calling `super()` in constructors
+	no-undef   # disallow the use of undeclared variables unless mentioned in `/*global */` comments
+	no-unexpected-multiline   # disallow confusing multiline expressions
+	no-unreachable   # disallow unreachable code after `return`, `throw`, `continue`, and `break` statements
+	no-unsafe-finally   # disallow control flow statements in `finally` blocks
+	no-unsafe-optional-chaining   # disallow use of optional chaining in contexts where the `undefined` value is not allowed
+	no-unused-vars   # disallow unused variables
+	no-useless-backreference   # disallow useless backreferences in regular expressions
+	use-isnan   # require calls to `isNaN()` when checking for `NaN`
+	no-case-declarations   # disallow lexical declarations in case clauses
+	no-delete-var   # disallow deleting variables
+	no-empty   # disallow empty block statements
+	no-global-assign   # disallow assignments to native objects or read-only global variables
+	no-octal   # disallow octal literals
+	no-redeclare   # disallow variable redeclaration
+	no-shadow-restricted-names   # disallow identifiers from shadowing restricted names
+	no-useless-catch   # disallow unnecessary `catch` clauses
+	no-with   # disallow `with` statements
+	require-yield   # require generator functions to contain `yield`
+	no-mixed-spaces-and-tabs   # disallow mixed spaces and tabs for indentation
+;
