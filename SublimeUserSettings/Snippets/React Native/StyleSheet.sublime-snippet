@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+const styles = StyleSheet.create({
+	${0::}
+});
+]]></content>
+	<tabTrigger>ss</tabTrigger>
+	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<description>StyleSheet</description>
+</snippet>

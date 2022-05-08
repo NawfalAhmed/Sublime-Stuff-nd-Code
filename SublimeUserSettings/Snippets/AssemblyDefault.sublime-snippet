@@ -13,5 +13,5 @@ start:		${1:mov}
 ]]></content>
 	<tabTrigger>org</tabTrigger>
 	<description>Default Assembly</description>
-	<!-- <scope>source.assembly</scope> -->
+	<scope>source.assembly</scope>
 </snippet>

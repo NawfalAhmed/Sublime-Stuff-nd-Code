@@ -18,4 +18,5 @@ void stdin_from_inputfile()
 	freopen(name.c_str(), "r", stdin);
 }]]></content>
 	<description>Default Cpp</description>
+	<scope>source.c++</scope>
 </snippet>
