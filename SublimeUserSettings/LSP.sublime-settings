@@ -16,14 +16,18 @@
 				"pylsp.plugins.jedi.enabled": false,
 				"pylsp.plugins.yapf.enabled": false,
 				"pylsp.plugins.black.enabled": true,
-				"pylsp.plugins.pylsp_black.enabled": true
+				"pylsp.plugins.pylsp_black.enabled": true,
 			},
 			"disabled_capabilities": {
 				"completionProvider": true,
 				"codeActionProvider": true,
 				"signatureHelpProvider": true,
 				"documentHighlightProvider": false,
-			}
+			},
+		},
+		"clangd":
+		{
+			"enabled": true
 		},
 	},
 	"diagnostics_gutter_marker": "sign",
