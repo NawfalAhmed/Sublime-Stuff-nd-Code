@@ -8,8 +8,6 @@
 			],
 			"folder_exclude_patterns":
 			[
-				// "DCN",
-				// "Advanced OS",
 				"Notes",
 				"SublimeUser*",
 			],
@@ -19,18 +17,6 @@
 			"name": ": Notes",
 			"path": "~/Sublime/Notes",
 		},/*
-		{
-			"name": ": Testing",
-			"path": "~/Sublime/Testing",
-		},
-		{
-			"name": ": DCN",
-			"path": "~/Sublime/DCN",
-		},
-		{
-			"name": ": Advanced OS",
-			"path": "~/Sublime/Advanced OS",
-		},
 		{
 			"binary_file_patterns":
 			[
