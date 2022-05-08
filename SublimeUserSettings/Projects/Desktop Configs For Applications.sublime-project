@@ -2,7 +2,10 @@
 	"folders":
 	[
 		{
-			"path": "Redacted"
+			"path": "~/.local/share/applications/",
+		},
+		{
+			"path": "~/.config/menus/applications-merged",
 		}
 	]
 }
