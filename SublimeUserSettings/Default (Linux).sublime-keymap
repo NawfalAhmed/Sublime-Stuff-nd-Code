@@ -58,34 +58,6 @@
 	{ "keys": ["altgr+s"], "command": "insert", "args": { "characters": "$" } },
 	{ "keys": ["altgr+t"], "command": "insert", "args": { "characters": "\\t" } },
 	{
-		"keys": [";"], "command": "insert",
-		"args": { "characters": ":" },
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "(source.python, meta.mapping.js, source.json, source.notes)" },
-		]
-	},
-	{
-		"keys": [":"], "command": "insert",
-		"args": { "characters": ";" },
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "(source.python, meta.mapping.js, source.json, source.notes)" },
-		]
-	},
-	{
-		"keys": ["\\"], "command": "insert",
-		"args": { "characters": "_" },
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "(source.python, source.json, source.notes)" },
-		]
-	},
-	{
-		"keys": ["_"], "command": "insert",
-		"args": { "characters": "|" },
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "(source.python, source.json, source.notes)" },
-		]
-	},
-	{
 		"keys": [" ", "o","r"," "], "command": "insert",
 		"args": { "characters": " || " },
 		"context": [
@@ -97,13 +69,6 @@
 		"args": { "characters": " && " },
 		"context": [
 			{ "key": "selector", "operator": "equal", "operand": "source.jsx, source.tsx" },
-		]
-	},
-	{
-		"keys": ["|"], "command": "insert",
-		"args": { "characters": "\\" },
-		"context": [
-			{ "key": "selector", "operator": "equal", "operand": "(source.python, source.json, source.notes)" },
 		]
 	},
 	{
