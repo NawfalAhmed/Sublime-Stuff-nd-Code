@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[await new Promise(r => setTimeout(r, ${1:3000}));]]></content>
+	<tabTrigger>sleep</tabTrigger>
+	<scope>source.jsx, source.tsx, source.js, source.ts</scope>
+	<description>Sleep by async timeout</description>
+</snippet>

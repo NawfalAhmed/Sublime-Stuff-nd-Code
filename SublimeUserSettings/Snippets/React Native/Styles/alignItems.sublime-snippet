@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[alignItems: '${1:center}',]]></content>
+	<tabTrigger>ai</tabTrigger>
+	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<description>alignItems</description>
+</snippet>
+
