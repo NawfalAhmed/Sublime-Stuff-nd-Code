@@ -48,4 +48,5 @@
 		"source.fixAll.ts": true,
 		"source.addMissingImports.ts": true,
 	},
+	"semantic_highlighting": true,
 }
