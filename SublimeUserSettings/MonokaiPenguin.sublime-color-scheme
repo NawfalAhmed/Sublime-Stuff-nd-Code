@@ -414,5 +414,120 @@
 			"background": "hsla(80, 65%, 53%, 0.30)",
 			"foreground_adjust": "l(+ 10%)"
 		},
+		{
+			"name": "Meta",
+			"scope": "meta.semantic-token",
+			"background": "#00000101",
+		},
+		// {
+		// 	"name": "Meta namespace",
+		// 	"scope": "meta.semantic-token.namespace",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta type",
+		// 	"scope": "meta.semantic-token.type",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta class",
+		// 	"scope": "meta.semantic-token.class",
+		// 	"foreground": "var(blue_deep)",
+		// },
+		// {
+		// 	"name": "Meta enum",
+		// 	"scope": "meta.semantic-token.enum",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta interface",
+		// 	"scope": "meta.semantic-token.interface",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta struct",
+		// 	"scope": "meta.semantic-token.struct",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta typeparameter",
+		// 	"scope": "meta.semantic-token.typeparameter",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta parameter",
+		// 	"scope": "meta.semantic-token.parameter",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta variable",
+		// 	"scope": "meta.semantic-token.variable",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta property",
+		// 	"scope": "meta.semantic-token.property",
+		// 	"foreground": "var(orange)",
+		// },
+		// {
+		// 	"name": "Meta enummember",
+		// 	"scope": "meta.semantic-token.enummember",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta event",
+		// 	"scope": "meta.semantic-token.event",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta function",
+		// 	"scope": "meta.semantic-token.function",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta method",
+		// 	"scope": "meta.semantic-token.method",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta macro",
+		// 	"scope": "meta.semantic-token.macro",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta keyword",
+		// 	"scope": "meta.semantic-token.keyword",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta modifier",
+		// 	"scope": "meta.semantic-token.modifier",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta comment",
+		// 	"scope": "meta.semantic-token.comment",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta string",
+		// 	"scope": "meta.semantic-token.string",
+		// 	"foreground":  "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta number",
+		// 	"scope": "meta.semantic-token.number",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta regexp",
+		// 	"scope": "meta.semantic-token.regexp",
+		// 	"foreground": "var(purple)",
+		// },
+		// {
+		// 	"name": "Meta operator",
+		// 	"scope": "meta.semantic-token.operator",
+		// 	"foreground": "var(purple)",
+		// },
 	]
 }
