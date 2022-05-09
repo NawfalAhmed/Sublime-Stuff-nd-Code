@@ -9,6 +9,7 @@
 		"blended": "hsla(70, 10%, 60%,0.6)",
 		"grey": "hsl(55, 8%, 26%)",
 		"blue": "hsl(190, 81%, 67%)",
+		"blue_deep": "hsl(210, 70%, 67%)",
 		"green": "hsla(130, 100%, 70%, 0.8)",
 		"orange": "hsl(32, 98%, 56%)",
 		"orange2": "hsl(30, 83%, 34%)",
@@ -60,6 +61,7 @@
 		"shadow_width": "20"
 	},
 	"rules":
+
 	[
 		{
 			"name": "TagName for JS",
@@ -186,7 +188,8 @@
 		{
 			"name": "Storage type",
 			"scope": "storage.type",
-			"foreground": "var(blue)",
+			// "foreground": "var(purple)",
+			"foreground": "var(blue_deep)",
 			"font_style": "italic"
 		},
 		{
@@ -242,7 +245,7 @@
 		{
 			"name": "Library class/type",
 			"scope": "support.type, support.class",
-			"foreground": "var(blue)",
+			"foreground": "var(blue_deep)",
 			"font_style": "italic"
 		},
 		{
@@ -413,6 +416,11 @@
 			"scope": "diff.inserted.char",
 			"background": "hsla(80, 65%, 53%, 0.30)",
 			"foreground_adjust": "l(+ 10%)"
+		},
+		{
+			"name": "Declaration",
+			"scope": "keyword.declaration",
+			"foreground": "var(blue)",
 		},
 		{
 			"name": "Meta",
