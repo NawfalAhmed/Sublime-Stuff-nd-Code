@@ -348,4 +348,24 @@
 		}
 	],
 	"show_unmatched": false,
+	"bracket_styles": {
+		"default": {
+			"color": "storage.type",
+			"icon": "dot",
+			"style": "none"
+		},
+		"unmatched": {
+			"color": "region.redish",
+			"icon": "question"
+		},
+		"angle":        { "icon": "angle_bracket" },
+		"c_define":     { "icon": "hash" },
+		"curly":        { "icon": "curly_bracket" },
+		"double_quote": { "icon": "double_quote" },
+		"regex":        { "icon": "star" },
+		"round":        { "icon": "round_bracket" },
+		"single_quote": { "icon": "single_quote" },
+		"square":       { "icon": "square_bracket" },
+		"tag":          { "icon": "tag" },
+	},
 }
