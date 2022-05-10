@@ -1,0 +1,192 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+	"variables": {
+		"_blue_luv": "hsl(202,77.6%,50%)",
+		"_blue": "hsl(199,80%,50%)",
+		"_blue1": "hsl(215,66.8%,53.9%)",
+		"_purple": "hsl(276,70.2%,68.4%)",
+		"_purple1": "hsl(261, 95%, 70%)",
+		"_red": "hsl(338,70%,52%)",
+		"_sea_green": "hsl(174,51.8%,43.1%)",
+		"_white": "hsl(220,30%,92%)",
+		"_bg": "hsl(210, 8%, 13.5%)",
+		"_bg_highlight": "hsla(210, 13%, 30%, 0.7)",
+		"_bg_border": "hsl(210, 13%, 35%)",
+		"blended": "hsla(210,10%,60%,0.6)"
+	},
+	"globals": {
+		"foreground": "var(_white)",
+		"background": "var(_bg)",
+		// "accent": "var(blue-vibrant)",
+		"caret": "var(blue5)",
+		"line_highlight": "var(_bg_highlight)",
+		"selection": "var(_bg_highlight)",
+		"selection_border": "var(null)",
+		"selection_corner_radius": "7",
+		"inactive_selection": "var(null)",
+		"misspelling": "var(_purple)",
+		"shadow": "var(_blue_luv)",
+		"shadow_width": "30",
+		"active_guide": "hsla(180, 36%, 64%,0.5)",
+		// "stack_guide": "color(var(blue5) alpha(0.5))",
+		// "highlight": "var(blue5)",
+		// "find_highlight_foreground": "var(grey)",
+		// "find_highlight": "var(orange3)",
+		"brackets_options": "glow bold",
+		"brackets_foreground": "var(orange)",
+		"bracket_contents_options": "glow bold",
+		"bracket_contents_foreground": "var(blue5)",
+		"tags_options": "glow bold",
+		"tags_foreground": "var(_purple1)"
+	},
+	"rules": [
+		{
+			"name": "Notes Text",
+			"scope": "text.plain.notes, constant.bullet",
+			"foreground": "hsla(220, 70%, 72%,0.8)"
+		},
+		{
+			"name": "Comment",
+			"scope": "comment, punctuation.definition.comment",
+			"foreground": "var(blended)"
+		},
+		{
+			"name": "Number",
+			"scope": "constant.numeric",
+			"foreground": "var(_purple)"
+		},
+		{
+			"name": "Built-in constant",
+			"scope": "constant.language",
+			"foreground": "var(_purple)",
+			"font_style": "italic"
+		},
+		{
+			"name": "User-defined constant",
+			"scope": "variable.other.constant",
+			"font_style": "glow",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "Keyword",
+			"scope": "keyword - keyword.operator, keyword.operator.word",
+			"foreground": "hsl(338,70%,52%)"
+		},
+		{
+			"name": "Storage type",
+			"scope": "storage.type",
+			"foreground": "var(_sea_green)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Entity name",
+			"scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "Entity name",
+			"scope": "entity.name.function",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "Function call Non Semantic",
+			"scope": "variable.function, variable.annotation",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "Function call Semantic",
+			"scope": "semantic.function",
+			"foreground": "var(_blue1)"
+		},
+		{
+			"name": "Function argument",
+			"scope": "variable.parameter, meta.function.parameters meta.type meta.mapping variable.other.readwrite",
+			"foreground": "var(_blue)"
+		},  // also highlight js parameter type
+		{
+			"name": "Operators",
+			"scope": "keyword.operator",
+			"foreground": "var(_sea_green)"
+		},
+		{
+			"name": "Complex Operators",
+			"scope": "keyword.operator.comparison, keyword.operator.logical, keyword.operator.word",
+			"foreground": "var(_red)"
+		},
+		{
+			"name": "Library class/type",
+			"scope": "support.type, support.class",
+			"foreground": "var(red)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Tag name",
+			"scope": "entity.name.tag",
+			"foreground": "var(_purple1)"
+		},
+		{
+			"name": "Tag Punctuation",
+			"scope": "punctuation.definition.tag",
+			"foreground": "var(_purple1)"
+		},
+		{
+			"name": "Tag attribute",
+			"scope": "entity.other.attribute-name",
+			"foreground": "hsla(130, 100%, 70%, 0.8)"
+		},
+		{
+			"name": "Language variables this/self",
+			"scope": "variable.language",
+			"foreground": "var(_sea_green)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Mapping Key",
+			"scope": "meta.mapping.key, meta.type-alias variable.other.readwrite",
+			"foreground": "var(orange)"
+		},
+		{
+			"name": "Mapping Key In Python",
+			"scope": "meta.mapping.key.python - punctuation.definition.string",
+			"font_style": "italic glow"
+		},
+		{
+			"name": "Mapping Key Quotes in Python",
+			"scope": "meta.mapping.key.python punctuation.definition.string",
+			"foreground": "var(orange)"
+		},
+		// {
+		// 	"name": "ParameterName for Meta",
+		// 	"scope": "meta.semantic-token.property.declaration",
+		// 	// "foreground": "var(orange)",
+		// }
+	]
+}
+
+// "_blue2": "hsl(204,100%,29.4%)",
+// "_blue3": "hsl(206,68%,61%)",
+// "_blue4": "hsl(206,41.2%,49%)",
+// "_green": "hsla(150, 100%, 70%, 0.8)",
+// "_green1": "hsl(150,100%,26.5%)",
+// "_purple2": "hsl(264,100%,70%)",
+// "_purple3": "hsl(264,76.8%,57.3%)",
+// "_red1": "hsl(333,54.2%,25.7%)",
+// "_red1": "hsl(338, 95%, 56%)",
+// "_red2": "hsl(341,63.2%,32%)",
+// "_red3": "hsl(340,100%,60%)",
+// "_red4": "hsl(345,85%,44.3%)",
+// "_red5": "hsl(356,65.9%,48.2%)",
+// "_red6": "hsl(342,100%,66.7%)",
+// "_red7": "hsl(338,100%,73.3%)",
+// "_sea_blue": "hsl(185,84.5%,35.5%)",
+// "_sea_greeen_1": "hsl(174,43.9%,58%)",
+// "_sea_greeen_10": "hsl(187,65.6%,47.8%)",
+// "_sea_greeen_2": "hsl(175,45%,66.5%)",
+// "_sea_greeen_3": "hsl(188,35%,60.2%)",
+// "_sea_greeen_4": "hsl(174,37.9%,51.4%)",
+// "_sea_greeen_5": "hsl(174,51.8%,43.1%)",
+// "_sea_greeen_6": "hsl(174,100%,29.4%)",
+// "_sea_greeen_7": "hsl(181,61.3%,41.6%)",
+// "_sea_greeen_8": "hsl(184,47.4%,45.5%)",
+// "_sea_greeen_9": "hsl(185,84.5%,35.5%)",
+// "_sea_green_0": "hsl(174,100%,29.4%)",
