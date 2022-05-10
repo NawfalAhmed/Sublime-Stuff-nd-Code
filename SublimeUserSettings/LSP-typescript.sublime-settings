@@ -10,5 +10,16 @@
 		// "typescript.inlayHints.includeInlayVariableTypeHints": true,
 		"javascript.format.semicolons": "remove",
 		"typescript.format.semicolons": "remove",
+	},
+	"semantic_tokens": {
+		"property.declaration": "meta.mapping.key",
+		"function": "semantic.function",
+		"member": "semantic.function",
+		"function.defaultLibrary": "support.function",
+		"member.defaultLibrary": "support.function",
+		"variable.defaultLibrary": "support.constant",
+		"namespace": "storage.type",
+		"variable": "punctuation.separator", // non const variables are greyish
+		"variable.readonly": "null", // const variables are white
 	}
 }
