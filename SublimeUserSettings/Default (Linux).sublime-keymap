@@ -1,5 +1,6 @@
 [
 	// <Recent Keybinds>
+	{ "keys": ["super+alt+p"], "command": "prompt_open_recent_project" },
 	{ "keys": ["shift+f9"], "command": "sort_selection" },
 	{ "keys": ["pageup"], "command": "jump_forward" },
 	{ "keys": ["pagedown"], "command": "jump_back" },
