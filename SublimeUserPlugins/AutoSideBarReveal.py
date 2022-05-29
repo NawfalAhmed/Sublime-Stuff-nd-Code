@@ -10,8 +10,9 @@ class AutoRevealCommand(sublime_plugin.EventListener):
 		flag = not bool(self.flag % self.reset_rate)
 		if flag:
 			proj = window.project_data()
-			proj["sidebar_reset_flag"] = self.flag // self.reset_rate
-			window.set_project_data(proj)
+			if proj:
+				proj["sidebar_reset_flag"] = self.flag // self.reset_rate
+				window.set_project_data(proj)
 
 		self.flag += 1
 		return flag
