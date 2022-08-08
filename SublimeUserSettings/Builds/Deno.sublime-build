@@ -1,0 +1,16 @@
+{
+	"shell_cmd": "deno run \"$file\"",
+	"file_regex": "(...*?):([0-9]*):?([0-9]*)",
+	"selector": "(source.jsx, source.js, source.tsx, source.ts)",
+	"working_dir": "$file_path",
+	"target": "terminus_exec",
+	"cancel": "terminus_cancel_build",
+	"focus": true,
+	"variants":
+	[
+		{
+			"shell_cmd": "deno run --check \"$file\"",
+			"name": "Terminus",
+		}
+	]
+}

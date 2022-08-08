@@ -1,0 +1,7 @@
+{
+	"shell_cmd": "ts-node \"$file\"",
+	"file_regex": "(.*\\.ts?)\\s\\(([0-9]+)\\,([0-9]+)\\)\\:\\s(...*?)$",
+	// "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+	"selector": "(source.tsx, source.ts)",
+	"working_dir": "$file_path",
+}
