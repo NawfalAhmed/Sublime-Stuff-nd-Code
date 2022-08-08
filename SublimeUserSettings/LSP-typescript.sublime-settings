@@ -18,6 +18,8 @@
 		"function.defaultLibrary": "support.function",
 		"member.defaultLibrary": "support.function",
 		"variable.defaultLibrary": "support.constant",
+		"type": "support.constant",
+		"type.defaultLibrary": "support.function",
 		"namespace": "storage.type",
 		"variable": "punctuation.separator", // non const variables are greyish
 		"variable.readonly": "null", // const variables are white
