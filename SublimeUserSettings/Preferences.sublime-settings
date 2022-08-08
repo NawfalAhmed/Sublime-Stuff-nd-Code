@@ -102,7 +102,6 @@
 		"js",
 	],
 	"ignored_packages": [
-		"Chain of Command",
 		"Display numbers",
 		"FileManager",
 		"OmniSharp",
