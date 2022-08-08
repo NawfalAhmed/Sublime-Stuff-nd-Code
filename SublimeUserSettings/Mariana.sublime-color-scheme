@@ -8,6 +8,7 @@
 		"_purple1": "hsl(261, 95%, 70%)",
 		"_red": "hsl(338,70%,52%)",
 		"_sea_green": "hsl(174,51.8%,43.1%)",
+		"_sea_green_pale": "hsl(174,45%,57%)",
 		"_white": "hsl(220,30%,92%)",
 		"_bg": "hsl(210, 8%, 13.5%)",
 		"_bg_highlight": "hsla(210, 13%, 30%, 0.7)",
@@ -74,18 +75,13 @@
 		},
 		{
 			"name": "Storage type",
-			"scope": "storage.type",
+			"scope": "storage.type, entity.name.function.constructor",
 			"foreground": "var(_sea_green)",
 			"font_style": "italic"
 		},
 		{
 			"name": "Entity name",
 			"scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
-			"foreground": "var(red)"
-		},
-		{
-			"name": "Entity name",
-			"scope": "entity.name.function",
 			"foreground": "var(red)"
 		},
 		{
@@ -102,7 +98,17 @@
 			"name": "Function argument",
 			"scope": "variable.parameter, meta.function.parameters meta.type meta.mapping variable.other.readwrite",
 			"foreground": "var(_blue)"
-		},  // also highlight js parameter type
+		},  // also highlight js parameter
+		{
+			"name": "Function GenericType Parameter",
+			"scope": "variable.parameter.generic",
+			"foreground": "var(pink)"
+		},  // make generic type be coloured same as type
+		{
+				"name": "Punctuation",
+				"scope": "punctuation.separator, punctuation.terminator, punctuation.definition.generic",
+				"foreground": "var(blue6)"
+		},
 		{
 			"name": "Operators",
 			"scope": "keyword.operator",
@@ -116,7 +122,7 @@
 		{
 			"name": "Library class/type",
 			"scope": "support.type, support.class",
-			"foreground": "var(red)",
+			"foreground": "var(_sea_green_pale)",
 			"font_style": "italic"
 		},
 		{
