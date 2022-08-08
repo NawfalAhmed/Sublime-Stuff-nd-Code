@@ -6,7 +6,9 @@
 | ------- | ------------ |
 | e       | export       |
 | ec      | export const |
+| s       | style={{|}}  |
 | ss      | StyleSheet   |
+| set     | useState     |
 | T       | Text         |
 | V       | View         |
 
