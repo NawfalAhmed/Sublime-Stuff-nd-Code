@@ -145,14 +145,14 @@
 			"scope": "meta.mapping.key, meta.type-alias variable.other.readwrite",
 			"foreground": "var(orange)"
 		},
-		{
-			"name": "Mapping Key In Python",
-			"scope": "meta.mapping.key.python - punctuation.definition.string",
-			"font_style": "italic glow"
-		},
+		// {
+		// 	"name": "Mapping Key In Python",
+		// 	"scope": "meta.mapping.key.python - punctuation.definition.string",
+		// 	"font_style": "italic glow"
+		// },
 		{
 			"name": "Mapping Key Quotes in Python",
-			"scope": "meta.mapping.key.python punctuation.definition.string",
+			"scope": "meta.mapping.key.python punctuation.definition.string, meta.mapping.key.python string",
 			"foreground": "var(orange)"
 		},
 		// {
@@ -160,6 +160,10 @@
 		// 	"scope": "meta.semantic-token.property.declaration",
 		// 	// "foreground": "var(orange)",
 		// }
+		{
+			"foreground": "var(_blue)",
+			"scope": "entity.name.filename.find-in-files, constant.numeric.line-number.match.find-in-files"
+		}
 	]
 }
 
