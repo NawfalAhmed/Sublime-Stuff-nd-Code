@@ -96,6 +96,10 @@
 		"svg",
 		"textinput",
 		"params",
+		"tsx",
+		"ts",
+		"jsx",
+		"js",
 	],
 	"ignored_packages": [
 		"Chain of Command",
@@ -103,6 +107,7 @@
 		"FileManager",
 		"OmniSharp",
 		"R-IDE",
+		"Show Character Code",
 		"SqlBeautifier",
 		"SQLPlus",
 		"Verilog",
