@@ -1,0 +1,14 @@
+lib constants       = pale purple
+number/constants    = purple
+let variables       = greyish
+string              = green
+parameters          = yellow
+arguments           = vibrant blue
+lib functions       = pale blue
+functions mine      = blue
+lib classes         = pale sea_green
+classes mine        = sea_green
+declarations        = sea_green italic
+res words/logic ops =  red
+ops/punctation      = sea_green
+types ...
