@@ -74,8 +74,14 @@
 			"foreground": "hsl(338,70%,52%)"
 		},
 		{
+			"name": "Constructor type",
+			"scope": "entity.name.function.constructor, storage.modifier",
+			"foreground": "var(_sea_green)",
+			"font_style": "bold"
+		},
+		{
 			"name": "Storage type",
-			"scope": "storage.type, entity.name.function.constructor",
+			"scope": "storage.type",
 			"foreground": "var(_sea_green)",
 			"font_style": "italic"
 		},
