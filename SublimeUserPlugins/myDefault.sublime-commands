@@ -20,6 +20,7 @@
 	},
 	{ "caption": "User: Toggle Type Check", "command": "toggle_type_check"},
 	{ "caption": "User: New Plugin", "command": "new_user_plugin"},
+	{ "caption": "User: Prettify JS", "command": "user_prettify_js" },
 	{ "caption": "User: Format Json", "command": "format_json" },
 	{
 		"caption": "User: Format Json (Selection)",
