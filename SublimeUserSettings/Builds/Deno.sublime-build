@@ -1,5 +1,5 @@
 {
-	"shell_cmd": "deno run \"$file\"",
+	"shell_cmd": "deno run -A \"$file\"",
 	"file_regex": "(...*?):([0-9]*):?([0-9]*)",
 	"selector": "(source.jsx, source.js, source.tsx, source.ts)",
 	"working_dir": "$file_path",
@@ -9,7 +9,7 @@
 	"variants":
 	[
 		{
-			"shell_cmd": "deno run --check \"$file\"",
+			"shell_cmd": "deno run -A --check \"$file\"",
 			"name": "Terminus",
 		}
 	]
