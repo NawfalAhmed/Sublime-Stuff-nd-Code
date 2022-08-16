@@ -15,6 +15,7 @@
 		"property.declaration": "meta.mapping.key",
 		"function": "semantic.function",
 		"member": "semantic.function",
+		"member.declaration": "meta.mapping.key",
 		"function.defaultLibrary": "support.function",
 		"member.defaultLibrary": "support.function",
 		"variable.defaultLibrary": "support.constant",
