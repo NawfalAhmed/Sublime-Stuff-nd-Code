@@ -1,16 +1,16 @@
 # Snippets
 
+> These work only in jsx/tsx files
+
 ## Normal
 
-| Trigger | Description  |
-| ------- | ------------ |
-| e       | export       |
-| ec      | export const |
-| s       | style={{|}}  |
-| ss      | StyleSheet   |
-| set     | useState     |
-| T       | Text         |
-| V       | View         |
+| Trigger | Description |
+| ------- | ----------- |
+| s       | style={{|}} |
+| ss      | StyleSheet  |
+| set     | useState    |
+| T       | Text        |
+| V       | View        |
 
 ## Style
 

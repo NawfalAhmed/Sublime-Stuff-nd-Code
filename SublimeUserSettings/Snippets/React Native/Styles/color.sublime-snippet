@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[color: colors.${1:main},]]></content>
 	<tabTrigger>c</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>color</description>
 </snippet>

@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[alignSelf: '${1:center}',]]></content>
 	<tabTrigger>as</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>alignSelf</description>
 </snippet>

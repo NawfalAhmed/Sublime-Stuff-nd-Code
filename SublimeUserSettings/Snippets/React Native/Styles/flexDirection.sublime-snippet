@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[flexDirection: '${1:row}',]]></content>
 	<tabTrigger>fd</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>flexDirection</description>
 </snippet>

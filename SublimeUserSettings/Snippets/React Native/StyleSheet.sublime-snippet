@@ -5,6 +5,6 @@ const styles = StyleSheet.create({
 });
 ]]></content>
 	<tabTrigger>ss</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>StyleSheet</description>
 </snippet>
