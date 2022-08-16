@@ -36,6 +36,7 @@ def run_async(select, view):
 			shell=True,
 			capture_output=True,
 			text=True,
+			executable="/usr/local/bin/fish"
 		)
 		contents = yapf_result.stdout
 		yapf_result.check_returncode()
