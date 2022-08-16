@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+try {
+	${1:$SELECTION}
+} catch (${2:e}) {
+	if (${2:e} instanceof ${3:Some}Error) {
+		$0
+	}
+	else
+		throw ${2:e}
+}
+]]></content>
+	<tabTrigger>try</tabTrigger>
+	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<description>try … catch</description>
+</snippet>
