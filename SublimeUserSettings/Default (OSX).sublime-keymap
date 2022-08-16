@@ -23,6 +23,7 @@
 	{ "keys": ["super+shift+backspace"], "command": "delete_word", "args": { "forward": true } },
 	{ "keys": ["super+space"], "command": "auto_complete" },
 	// <Recent Keybinds>
+	{ "keys": ["super+shift+ctrl+enter"], "command": "testing" },
 	{ "keys": ["shift"], "command": "insert", "args": { "characters": "=>" } },
 	{ "keys": ["super+alt+p"], "command": "prompt_open_recent_project" },
 	{ "keys": ["super+shift+."], "command": "next_modification" },
