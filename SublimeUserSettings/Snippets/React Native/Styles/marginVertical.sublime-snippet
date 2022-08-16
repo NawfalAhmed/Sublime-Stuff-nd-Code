@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[marginVertical: defaults.padVertical,]]></content>
 	<tabTrigger>mv</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>marginVertical</description>
 </snippet>

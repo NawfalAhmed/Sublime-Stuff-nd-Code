@@ -4,6 +4,6 @@
 </View>
 ]]></content>
 	<tabTrigger>V</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>View</description>
 </snippet>

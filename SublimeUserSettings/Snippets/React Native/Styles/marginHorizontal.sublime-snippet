@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[marginHorizontal: defaults.padHorizontal,]]></content>
 	<tabTrigger>mh</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>marginHorizontal</description>
 </snippet>

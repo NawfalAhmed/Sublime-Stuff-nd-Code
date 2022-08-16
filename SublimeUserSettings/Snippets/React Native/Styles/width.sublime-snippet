@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[width: $1,]]></content>
 	<tabTrigger>w</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>width</description>
 </snippet>

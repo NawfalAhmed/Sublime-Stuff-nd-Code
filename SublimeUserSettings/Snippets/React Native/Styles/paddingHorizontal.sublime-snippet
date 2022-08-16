@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[paddingHorizontal: defaults.padHorizontal,]]></content>
 	<tabTrigger>ph</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>paddingHorizontal</description>
 </snippet>

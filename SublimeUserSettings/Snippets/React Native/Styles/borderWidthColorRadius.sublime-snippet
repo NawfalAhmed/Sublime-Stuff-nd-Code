@@ -5,6 +5,6 @@ borderColor: 'colors.${2}',
 borderRadius: '${3:defaults.radius}',
 ]]></content>
 	<tabTrigger>b</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>borderWidthColorRadius</description>
 </snippet>

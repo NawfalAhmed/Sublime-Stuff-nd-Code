@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[backgroundColor: colors.${1:bg},]]></content>
 	<tabTrigger>bg</tabTrigger>
-	<scope>source.js, source.jsx, source.ts, source.tsx</scope>
+	<scope>source.jsx, source.tsx</scope>
 	<description>backgroundColor</description>
 </snippet>
