@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nawfal Ahmed",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.3.6",
+    "lodash": "^4.17.21",
+    "mocha": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.6.5",
+    "typescript": "^4.7.4"
+  }
+}
