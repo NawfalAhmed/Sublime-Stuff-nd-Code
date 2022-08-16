@@ -85,6 +85,11 @@
 			"foreground": "var(red)"
 		},
 		{
+				"name": "Entity name",
+				"scope": "entity.name.function",
+				"foreground": "var(red)"
+		},
+		{
 			"name": "Function call Non Semantic",
 			"scope": "variable.function, variable.annotation",
 			"foreground": "var(red)"
