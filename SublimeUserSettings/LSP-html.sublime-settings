@@ -1,0 +1,7 @@
+// Settings in here override those in "LSP-html/LSP-html.sublime-settings"
+
+{
+	"settings": {
+		"html.format.wrapLineLength": 80,
+	}
+}

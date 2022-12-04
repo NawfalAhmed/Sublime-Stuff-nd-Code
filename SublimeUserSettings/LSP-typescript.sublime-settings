@@ -1,15 +1,16 @@
 {
+
 	"enabled": true,
 	"settings": {
 		"typescript.inlayHints.includeInlayEnumMemberValueHints": true,
 		"typescript.inlayHints.includeInlayFunctionLikeReturnTypeHints": true,
 		"typescript.inlayHints.includeInlayFunctionParameterTypeHints": true,
-		"typescript.inlayHints.includeInlayParameterNameHints": true,
-		"typescript.inlayHints.includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+		"typescript.inlayHints.includeInlayParameterNameHints": "literals",
+		"typescript.inlayHints.includeInlayParameterNameHintsWhenArgumentMatchesName": false,
 		"typescript.inlayHints.includeInlayPropertyDeclarationTypeHints": true,
 		// "typescript.inlayHints.includeInlayVariableTypeHints": true,
-		"javascript.format.semicolons": "remove",
-		"typescript.format.semicolons": "remove",
+		"javascript.format.semicolons": "insert",
+		"typescript.format.semicolons": "ignore",
 	},
 	"semantic_tokens": {
 		"property.declaration": "meta.mapping.key",
@@ -24,5 +25,40 @@
 		"namespace": "storage.type",
 		"variable": "punctuation.separator", // non const variables are greyish
 		"variable.readonly": "null", // const variables are white
+	},
+	"initializationOptions":
+	{
+		"locale": "en",
+		"maxTsServerMemory": 6144,
+		"npmLocation": "",
+		"plugins":
+		[
+		],
+		"preferences":
+		{
+			"allowIncompleteCompletions": true,
+			"allowRenameOfImportPath": true,
+			"allowTextChangesInNewFiles": true,
+			"autoImportFileExcludePatterns":
+			[
+			],
+			"displayPartsForJSDoc": true,
+			"generateReturnInDocTemplate": true,
+			"includeAutomaticOptionalChainCompletions": true,
+			"includeCompletionsForImportStatements": true,
+			"includeCompletionsForModuleExports": true,
+			"includeCompletionsWithClassMemberSnippets": true,
+			"includeCompletionsWithInsertText": true,
+			"includeCompletionsWithObjectLiteralMethodSnippets": true,
+			"includeCompletionsWithSnippetText": true,
+			"includePackageJsonAutoImports": "auto",
+			"jsxAttributeCompletionStyle": "auto",
+			"providePrefixAndSuffixTextForRename": true,
+			"useLabelDetailsInCompletionEntries": true,
+		},
+		"tsserver.logDirectory": "",
+		"tsserver.logVerbosity": "off",
+		"tsserver.path": "",
+		"tsserver.trace": "off"
 	}
 }
