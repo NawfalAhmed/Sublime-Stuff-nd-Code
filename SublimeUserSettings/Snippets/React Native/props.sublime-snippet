@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+import PropTypes from 'prop-types';
+
+export const props = {
+	$0
+};
+]]></content>
+	<tabTrigger>prop</tabTrigger>
+	<scope>source.jsx, source.tsx</scope>
+	<description>props</description>
+</snippet>
