@@ -1,4 +1,8 @@
 // These settings override both User and Default settings for the Sublime Text Settings syntax
 {
 	"word_wrap": true,
+	"extensions":
+	[
+		"sublime-settings",
+	],
 }

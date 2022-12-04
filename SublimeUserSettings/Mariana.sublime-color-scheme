@@ -62,12 +62,12 @@
 			"foreground": "var(_purple)",
 			"font_style": "italic"
 		},
-		{
-			"name": "User-defined constant",
-			"scope": "variable.other.constant",
-			"font_style": "glow",
-			"foreground": "var(red)"
-		},
+		// {
+		// 	"name": "User-defined constant",
+		// 	"scope": "variable.other.constant",
+		// 	"font_style": "glow",
+		// 	"foreground": "var(red)"
+		// },
 		{
 			"name": "Keyword",
 			"scope": "keyword - keyword.operator, keyword.operator.word",
@@ -142,6 +142,11 @@
 			"foreground": "var(_purple1)"
 		},
 		{
+			"name": "Rails JSX",
+			"scope": "punctuation.section.embedded.begin.rails,punctuation.section.embedded.end.rails",
+			"foreground": "var(_purple1)"
+		},
+		{
 			"name": "Tag Punctuation",
 			"scope": "punctuation.definition.tag",
 			"foreground": "var(_purple1)"
@@ -170,6 +175,11 @@
 		{
 			"name": "Mapping Key Quotes in Python",
 			"scope": "meta.mapping.key.python punctuation.definition.string, meta.mapping.key.python string",
+			"foreground": "var(orange)"
+		},
+		{
+			"name": "Mapping Key Quotes in Json",
+			"scope": "meta.mapping.key.json punctuation.definition.string, meta.mapping.key.json string",
 			"foreground": "var(orange)"
 		},
 		// {
