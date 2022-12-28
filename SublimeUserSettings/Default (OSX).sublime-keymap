@@ -266,6 +266,12 @@
 		]
 	},
 	{
+		"keys": ["alt+tab"], "command": "copilot_accept_completion",
+		"context": [
+			{ "key": "setting.copilot.completion.is_visible" }
+		]
+	},
+	{
 		"keys": ["ctrl+backspace"], "command": "run_macro_file",
 		"args": { "file": "res://Packages/Default/Delete to BOL.sublime-macro" }
 	},
