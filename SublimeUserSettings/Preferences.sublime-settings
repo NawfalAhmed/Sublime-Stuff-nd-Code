@@ -28,7 +28,7 @@
 	// "hot_exit": "only_on_quit",
 	"indent_guide_options": ["draw_normal", "draw_active_single", "solid"],
 	"indent_to_bracket": true,
-	"indent_with_tabs_on_save": true,
+	"indent_with_tabs_on_save": false, // don't convert tabs
 	// "line_padding_bottom": 1,
 	"lsp_diagnostics_highlight_style": "underline",
 	"margin": 0,
@@ -52,7 +52,7 @@
 	"status_bar_path": false,
 	"tab_size": 2,
 	"theme": "Material Augmented Reaction.sublime-theme",
-	"translate_tabs_to_spaces": true,
+	"translate_tabs_to_spaces": false,
 	"trim_only_modified_white_space": false,
 	"trim_trailing_white_space_on_save": "not_on_caret",
 	"word_wrap": true,
