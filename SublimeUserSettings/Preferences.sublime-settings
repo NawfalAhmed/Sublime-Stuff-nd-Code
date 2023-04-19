@@ -105,6 +105,7 @@
 		"iterable",
 	],
 	"ignored_packages": [
+		"Discord Rich Presence",
 		"Display numbers",
 		"FileManager",
 		"OmniSharp",
