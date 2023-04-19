@@ -39,8 +39,8 @@
 		"args": { "case_sensitive": false }
 	},
 	{ "keys": ["super+alt+shift+n"], "command": "noop" },
-	{ "keys": ["ctrl+alt+tab"], "command": "noop" },
-	{ "keys": ["ctrl+alt+shift+tab"], "command": "noop" },
+	// { "keys": ["ctrl+alt+tab"], "command": "noop" },
+	// { "keys": ["ctrl+alt+shift+tab"], "command": "noop" },
 	{ "keys": ["super+m"], "command": "move_to", "args": { "to": "brackets" } },
 	{ "keys": ["super+t"], "command": "transpose" },
 	{ "keys": ["ctrl+tab"], "command": "next_view_in_stack" },
@@ -57,7 +57,6 @@
 	{ "keys": ["super+space"], "command": "auto_complete" },
 	// <Recent Keybinds>
 	{ "keys": ["super+shift+ctrl+enter"], "command": "testing" },
-	{ "keys": ["shift"], "command": "insert", "args": { "characters": "=>" } },
 	{ "keys": ["super+alt+p"], "command": "prompt_open_recent_project" },
 	{ "keys": ["super+shift+."], "command": "next_modification" },
 	{ "keys": ["super+shift+,"], "command": "prev_modification" },
