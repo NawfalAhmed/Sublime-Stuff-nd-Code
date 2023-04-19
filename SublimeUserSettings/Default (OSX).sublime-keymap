@@ -416,7 +416,7 @@
 		]
 	},
 	{
-		"keys": ["super+;"], "command": "lsp_document_symbols",
+		"keys": ["super+:"], "command": "lsp_document_symbols",
 		"context": [
 			{
 				"key": "lsp.session_with_capability",

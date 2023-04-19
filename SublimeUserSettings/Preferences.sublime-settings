@@ -207,4 +207,7 @@
 	"reveal_menu": false,
 	"hardware_acceleration": "opengl",
 	"goto_anything_exclude_gitignore": true,
+	"update_check": true,
+	"open_files_in_new_window": "never",
+	"show_navigation_bar": false,
 }
