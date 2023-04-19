@@ -10,7 +10,7 @@ def run_async(view, file_name: str):
 		path,_,file_name = file_name.rpartition('/')
 		# print("filename, path", path, file_name)
 		prettier_result = run(
-			f"prettier {file_name} --tab-width 4",
+			f"prettier {file_name}",
 			shell=True,
 			capture_output=True,
 			text=True,
