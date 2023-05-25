@@ -1,19 +1,20 @@
+import os
 from string import Template
 import sublime
 import sublime_plugin
 
 from time import sleep
-from subprocess import PIPE, run
+from subprocess import PIPE, CalledProcessError, run
 from threading import Thread
 from queue import Full, Queue
 from contextlib import suppress
 
-
-hardcode_root = "/Users/nawfalahmed/Desktop/Ricult/"
+run_args = {"shell": True, "executable": "/usr/local/bin/fish"}
 command = {
-	"ts": Template("prettier --write $name"),
-	'py': Template("python3.9 -m black -l 85 '$name'")
+	"ts": Template("npx prettier --write $name"),
+	"py": Template("python -m black -l 85 '$name'"),
 }
+
 
 class StuffOnSave(sublime_plugin.ViewEventListener):
 	def __init__(self, *args, **kwargs):
@@ -31,19 +32,31 @@ class StuffOnSave(sublime_plugin.ViewEventListener):
 	def formatter_async(self):
 		while True:
 			name, type_ = self.format_queue.get()
-			file_name = name.replace(hardcode_root, "./")
+			dir_name = os.path.dirname(name)
+			file_name = os.path.basename(name)
 			if type_ == "py":
-				x = run(command[type_].substitute(name=name) + " --check", shell=True)
-				if not "unchanged" in str(x):
+				output = run(
+					command[type_].substitute(name=name) + " --check", **run_args
+				)
+				if not "unchanged" in str(output):
 					print("Formatting")
-					run(command[type_] % name, shell=True)
+					run(command[type_].substitute(name=name), **run_args)
 					sleep(2)
 			elif type_ == "ts":
 				print("Formatting")
-				run(command[type_].substitute(name=file_name), shell=True,cwd=hardcode_root, check=True, executable='/usr/local/bin/fish')
-				sleep(1)
+				try:
+					run(
+						command[type_].substitute(name=file_name),
+						check=True,
+						capture_output=True,
+						cwd=dir_name,
+						**run_args,
+					)
+					sleep(1)
+				except CalledProcessError as e:
+					sublime.error_message(e.stderr)
 
-			sublime.status_message(f"Formatted: {name}")
+			sublime.status_message(f"Formatted {type_}: {name}")
 			self.format_queue.task_done()
 
 	def on_post_save(self):
@@ -79,4 +92,3 @@ class StuffOnSave(sublime_plugin.ViewEventListener):
 				self.format_queue.put([self.view.file_name(), "ts"], block=False)
 			except Full:
 				print("Prevent Unnecessary Formatting")
-
