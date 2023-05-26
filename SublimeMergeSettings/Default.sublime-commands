@@ -1,0 +1,22 @@
+[
+	{
+		"caption": "Open Remote Repository",
+		"command": "git",
+		"args": { "argv": ["open", "repo"] }
+	},
+	{
+		"caption": "View Pull Requests of [branch]",
+		"command": "git",
+		"args": { "argv": ["open", "view_prs", "$select_branch"] }
+	},
+	{
+		"caption": "Create Pull Request of [branch]",
+		"command": "git",
+		"args": { "argv": ["open", "pr", "$select_branch"] }
+	},
+	{
+		"caption": "Create Pull Request against [branch, base]",
+		"command": "git",
+		"args": { "argv": ["open", "pr", "$select_branch", "$select_branch"] }
+	},
+]

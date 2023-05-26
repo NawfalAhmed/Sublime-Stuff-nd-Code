@@ -1,0 +1,65 @@
+[
+	// { "caption": "Insert: Updates to Sublime", "command": "insert_snippet", "args": {"contents": "Updates to SublimeEnvironment\n\n${1:Added }"} },
+	// { "caption": "Insert: Added %s Plugin", "command": "insert_snippet", "args": {"contents": "Added ${1:$SELECTION} Plugin"} },
+	// { "caption": "Insert: Updated %s Settings", "command": "insert_snippet", "args": {"contents": "Updated ${1:$SELECTION} Settings"} },
+	// { "caption": "Insert: Updated User KeyBinds", "command": "insert_snippet", "args": {"contents": "Updated User KeyBinds"} },
+	// { "caption": "Insert: --unspecified user_commit", "command": "insert_snippet", "args": {"contents": "--unspecified user_commit"} },
+	{ "keys": ["super+alt+p"], "command": "chain",
+		"args": {
+			"commands": [
+				["new_tab"],
+				["prompt_select_workspace"]
+			]
+		},
+	},
+	{
+		"keys": ["super+tab"], "command": "insert_snippet",
+		"args": { "contents": "Added ${1:$SELECTION } Plugin" },
+		"context": [
+			{
+				"key": "preceding_text",
+				"operator": "regex_match",
+				"operand": "a$",
+				"match_all": true
+			}
+		]
+	},
+	{ "keys": ["super+tab"], "command": "next_field", "context":
+		[{ "key": "has_next_field", "operator": "equal", "operand": true }]
+	},
+	{ "keys": ["ctrl", "ctrl"], "command": "edit_commit" },
+	{ "keys": ["super+a"], "command": "fixup_commits" },
+	{ "keys": ["super+shift+a"], "command": "squash_commits" },
+	{
+		"keys": ["super+c"], "command": "checkout_branch",
+		"args": { "branch": "$commit" }
+	},
+	{
+		"keys": ["super+shift+c"], "command": "show_command_palette",
+		"args": { "command": "checkout_branch" }
+	},
+	{
+		"keys": ["super+d"], "command": "rebase_branch",
+		"args": { "commit": "$commit" }
+	},
+	{
+		"keys": ["super+shift+d"], "command": "show_command_palette",
+		"args": { "command": "rebase_branch" }
+	},
+	// {
+	// 	"keys": [ "super+s"], "command": "stash",
+	// 	"args":  {"message": "", "options": ["--include-untracked", 0] }
+	// },
+	// {
+	// 	"keys": ["super+shift+s"], "command": "stash",
+	// 	"args": { "message": "", "options": ["--keep-index"] }
+	// },
+	{
+		"keys": [ "super+up"], "command": "move_commit",
+		"args": { "commit": "$commit", "down": false }
+	},
+	{
+		"keys": [ "super+down"], "command": "move_commit",
+		"args": { "commit": "$commit", "down": true }
+	}
+]

@@ -1,0 +1,68 @@
+[
+	// { "caption": "Insert: Updates to Sublime", "command": "insert_snippet", "args": {"contents": "Updates to SublimeEnvironment\n\n${1:Added }" } },
+	// { "caption": "Insert: Added %s Plugin", "command": "insert_snippet", "args": {"contents": "Added ${1:$SELECTION } Plugin" } },
+	// { "caption": "Insert: Updated %s Settings", "command": "insert_snippet", "args": {"contents": "Updated ${1:$SELECTION } Settings" } },
+	// { "caption": "Insert: Updated User KeyBinds", "command": "insert_snippet", "args": {"contents": "Updated User KeyBinds" } },
+	// { "caption": "Insert: --unspecified user_commit", "command": "insert_snippet", "args": {"contents": "--unspecified user_commit" } },
+	{
+		"keys": ["ctrl+alt+p"], "command": "chain",
+		"args": { "commands": [["new_tab"], ["prompt_select_workspace"]] }
+	},
+	{
+		"keys": ["ctrl+tab"], "command": "insert_snippet",
+		"args": { "contents": "Added ${1:$SELECTION } Plugin" },
+		"context": [
+			{
+				"key": "preceding_text",
+				"operator": "regex_match",
+				"operand": "a$",
+				"match_all": true
+			}
+		]
+	},
+	{
+		"keys": ["ctrl+tab"], "command": "next_field",
+		"context": [
+			{ "key": "has_next_field", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["shift", "shift"], "command": "git",
+		"args": { "argv": ["open", "commit_pr", "$commit"] }
+	},
+	{ "keys": ["super", "super"], "command": "edit_commit" },
+	{ "keys": ["ctrl+a"], "command": "fixup_commits" },
+	{ "keys": ["ctrl+shift+a"], "command": "squash_commits" },
+	{
+		"keys": ["ctrl+c"], "command": "checkout_branch",
+		"args": { "branch": "$commit" }
+	},
+	{
+		"keys": ["ctrl+shift+c"], "command": "show_command_palette",
+		"args": { "command": "checkout_branch" }
+	},
+	{
+		"keys": ["ctrl+d"], "command": "rebase_branch",
+		"args": { "commit": "$commit" }
+	},
+	{
+		"keys": ["ctrl+shift+d"], "command": "show_command_palette",
+		"args": { "command": "rebase_branch" }
+	},
+	// {
+	//  "keys": [ "ctrl+s"], "command": "stash",
+	//  "args":  {"message": "", "options": ["--include-untracked", 0] }
+	// },
+	// {
+	//  "keys": ["ctrl+shift+s"], "command": "stash",
+	//  "args": { "message": "", "options": ["--keep-index"] }
+	// },
+	{
+		"keys": ["ctrl+up"], "command": "move_commit",
+		"args": { "commit": "$commit", "down": false }
+	},
+	{
+		"keys": ["ctrl+down"], "command": "move_commit",
+		"args": { "commit": "$commit", "down": true }
+	}
+]

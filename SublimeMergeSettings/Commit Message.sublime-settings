@@ -1,0 +1,7 @@
+{
+	"dictionary": "Packages/Language - English/en_GB.dic",
+	"gutter": true,
+	"line_numbers": false,
+	"spell_check": true,
+	"syntax": "Packages/Git Formats/Git Commit.sublime-syntax",
+}
