@@ -1,18 +1,27 @@
 [
-    { "caption": "-", "id": "end" },
     {
-        "caption": "Open Branch $branch in Browser",
+        "caption": "Open Pull Request of $branch",
         "command": "git",
-        "args": { "argv": ["open", "branch", "$branch"] }
+        "args": { "argv": ["open", "open_pr", "$branch"] }
     },
     {
-        "caption": "Create Pull Request of $branch",
-        "command": "git",
-        "args": { "argv": ["open", "pr", "$branch"] }
-    },
-    {
-        "caption": "View Pull Requests of $branch",
-        "command": "git",
-        "args": { "argv": ["open", "view_prs", "$branch"] }
+        "caption": "in GitHub for $branch",
+        "children": [
+            {
+                "caption": "Open Branch $branch",
+                "command": "git",
+                "args": { "argv": ["open", "branch", "$branch"] }
+            },
+            {
+                "caption": "Create Pull Request of $branch",
+                "command": "git",
+                "args": { "argv": ["open", "pr", "$branch"] }
+            },
+            {
+                "caption": "View Pull Requests of $branch",
+                "command": "git",
+                "args": { "argv": ["open", "view_prs", "$branch"] }
+            }
+        ]
     }
 ]
