@@ -1,0 +1,17 @@
+[
+    {
+        "caption": "-",
+        "id": "end"
+    },
+    {
+        "caption": "View Pull Request of $short_commit in Browser",
+        "command": "git",
+        "args": {
+            "argv": [
+                "open",
+                "commit_pr",
+                "$commit"
+            ]
+        }
+    },
+]

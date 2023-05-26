@@ -1,0 +1,32 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"font_face": "Consolig",
+	"font_size": 13,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"side_bar_layout": "commit_graph_as_column",
+	"ignore_diff_white_space": false,
+	"added_words":
+	[
+		"plugin",
+		"gitignore",
+		"Configs",
+		"js",
+		"dirs",
+		"memoized",
+		"Pressable",
+		"config",
+	],
+	"expand_merge_commits_by_default": true,
+	"hardware_acceleration": "opengl",
+	"display_author_date": true,
+	"auto_fetch_delay": 50,
+	"image_diff_style": "side-by-side",
+	"tab_size": 2,
+	"time_format": "12h",
+	"commit_graph_ordering": "commit_date",
+	"diff_algorithm": "histogram",
+	"git_binary": "system",
+	"always_show_command_status": true,
+}

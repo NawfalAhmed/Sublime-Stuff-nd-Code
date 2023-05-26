@@ -1,0 +1,18 @@
+[
+    { "caption": "-", "id": "end" },
+    {
+        "caption": "Open Branch $branch in Browser",
+        "command": "git",
+        "args": { "argv": ["open", "branch", "$branch"] }
+    },
+    {
+        "caption": "Create Pull Request of $branch",
+        "command": "git",
+        "args": { "argv": ["open", "pr", "$branch"] }
+    },
+    {
+        "caption": "View Pull Requests of $branch",
+        "command": "git",
+        "args": { "argv": ["open", "view_prs", "$branch"] }
+    }
+]

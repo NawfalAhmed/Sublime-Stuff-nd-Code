@@ -1,0 +1,39 @@
+[
+	{ "keys": ["ctrl","ctrl"], "command": "edit_commit" },//a
+	{ "keys": [ "f13"], "command": "fixup_commits"},
+	{ "keys": [ "shift+f13"], "command": "squash_commits"},
+	{//c
+		"keys": [ "f15"], "command": "show_command_palette",
+		"args": {
+			"command": "checkout_branch",
+		}
+
+	},
+	{//d
+		"keys": [ "f20"],
+		"command": "rebase_branch",
+		"args": {"commit": "$commit"}
+	},
+	{
+		"keys": [ "shift+f20"], "command": "show_command_palette",
+		"args": {
+			"command": "rebase_branch",
+		}
+	},
+	{//s
+		"keys": [ "f21"], "command": "stash",
+		"args":  {"message": "", "options": ["--include-untracked", 0]}
+	},
+	{
+		"keys": [ "shift+f21"], "command": "stash",
+		"args":  {"message": "", "options": ["--include-untracked", "--keep-index"]}
+	},
+	{//up
+		"keys": [ "browser_forward"], "command": "move_commit",
+		"args": { "commit": "$commit", "down": false }
+	},
+	{//down
+		"keys": [ "browser_back"], "command": "move_commit",
+		"args": { "commit": "$commit", "down": true }
+	}
+]
