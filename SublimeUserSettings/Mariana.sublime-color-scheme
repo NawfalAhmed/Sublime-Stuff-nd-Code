@@ -98,7 +98,7 @@
 		{
 			"name": "Function call Non Semantic",
 			"scope": "variable.function, variable.annotation",
-			"foreground": "var(red)"
+			"foreground": "var(_blue1)" // temp change back to red
 		},
 		{
 			"name": "Function call Semantic",
