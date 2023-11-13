@@ -200,12 +200,15 @@
 		}
 	},
 	{
-		"keys": ["ctrl+shift+c"], "command": "run_macro_file",
-		"args": {
-			"file": "res://Packages/User/Macros/ListComprehension.sublime-macro"
-		}
+		"keys": ["ctrl+shift+c"], "command": "get_tailwind_spacing",
 	},
-		{ "keys": ["alt+d"], "command": "expand_selection_to_word" },
+	// {
+	// 	"keys": ["ctrl+shift+c"], "command": "run_macro_file",
+	// 	"args": {
+	// 		"file": "res://Packages/User/Macros/ListComprehension.sublime-macro"
+	// 	}
+	// },
+	{ "keys": ["alt+d"], "command": "expand_selection_to_word" },
 	// { "keys": ["super+d"], "command": "toggle_distraction_free" },
 	{ "keys": ["alt+x"], "command": "remove_function", "args": { "copy": true } },
 	{
