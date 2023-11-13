@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<View tw='flex flex-col items-center ${1}'>${2:$TM_SELECTED_TEXT}</View>]]></content>
+	<tabTrigger>col</tabTrigger>
+	<scope>source.jsx, source.tsx</scope>
+	<description>Column View</description>
+</snippet>

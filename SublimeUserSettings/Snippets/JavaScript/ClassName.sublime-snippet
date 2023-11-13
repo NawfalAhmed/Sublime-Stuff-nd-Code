@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[className="$1"]]></content>
+	<tabTrigger>cl</tabTrigger>
+	<scope>source.jsx, source.tsx, source.js, source.ts</scope>
+	<description>class Name</description>
+</snippet>
