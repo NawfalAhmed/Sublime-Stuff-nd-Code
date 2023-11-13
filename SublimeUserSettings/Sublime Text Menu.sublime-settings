@@ -1,5 +1,5 @@
 // These settings override both User and Default settings for the Sublime Text Menu syntax
 {
-
-	"color_scheme": "MonokaiPenguinforKeySettings.sublime-color-scheme"
+	"color_scheme": "MonokaiPenguinforKeySettings.sublime-color-scheme",
+	"lsp_format_on_save": false,
 }

@@ -3,5 +3,6 @@
 	"color_scheme": "MonokaiPenguinforKeySettings.sublime-color-scheme",
 	"tab_size": 2,
 	"spell_check": false,
-	"word_wrap": true
+	"word_wrap": true,
+	"lsp_format_on_save": false,
 }
