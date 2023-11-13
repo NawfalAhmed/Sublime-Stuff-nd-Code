@@ -5,12 +5,12 @@ import textwrap
 from threading import Thread
 from subprocess import run, CalledProcessError
 
-def run_async(view, file_name: str):
+def run_async(view, file_name: str, tab_width=2):
 	try:
 		path,_,file_name = file_name.rpartition('/')
 		# print("filename, path", path, file_name)
 		prettier_result = run(
-			f"prettier {file_name}",
+			f"prettier {file_name} --tab-width {tab_width}",
 			shell=True,
 			capture_output=True,
 			text=True,
@@ -68,8 +68,9 @@ class UserPrettifyJsCommand(sublime_plugin.WindowCommand):
 		file_name = self.window.active_view().file_name()
 		# print(file_name)
 		if file_name and file_name.rpartition('.')[-1] in ('ts','js','tsx','jsx'):
+			tab_width = 4 if "edx" in file_name else 2
 			Thread(
 				target=run_async,
-				args=(self.window.active_view(), file_name),
+				args=(self.window.active_view(), file_name, tab_width),
 				name="PrettifyJS.run_async",
 			).start()
