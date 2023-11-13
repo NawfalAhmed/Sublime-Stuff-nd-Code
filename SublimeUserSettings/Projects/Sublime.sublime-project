@@ -81,4 +81,8 @@
 			"path": "~/Sublime/SublimeUserPlugins",
 		}
 	],
+	"settings": {
+		"indent_with_tabs_on_save": true,
+		"python_format_on_save": false,
+	},
 }

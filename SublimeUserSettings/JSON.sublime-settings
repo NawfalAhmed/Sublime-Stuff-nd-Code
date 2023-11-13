@@ -1,4 +1,5 @@
 // These settings override both User and Default settings for the JSON syntax
 {
 	"tab_size" : 2,
+	"lsp_format_on_save": false,
 }

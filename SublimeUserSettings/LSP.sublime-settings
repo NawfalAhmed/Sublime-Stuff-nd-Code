@@ -45,7 +45,7 @@
 		"info": "stippled",
 		"hint": "stippled",
 	},
-	"show_diagnostics_panel_on_save": 1,
+	"show_diagnostics_panel_on_save": 3,
 	"diagnostics_delay_ms": 100,
 	"lsp_code_actions_on_save": {
 		"source.addMissingImports.ts": true,
