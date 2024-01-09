@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[const ${1:var} = use${1/\b(\w)/\U$1/}($2)]]></content>
 	<tabTrigger>use</tabTrigger>
-	<scope>source.jsx, source.tsx</scope>
+	<scope>source.js, source.ts, source.jsx, source.tsx</scope>
 	<description>useHook</description>
 </snippet>

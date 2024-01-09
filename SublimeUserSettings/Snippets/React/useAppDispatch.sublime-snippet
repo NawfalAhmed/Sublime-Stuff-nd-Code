@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[const dispatch = useAppDispatch$1()]]></content>
+	<tabTrigger>dis</tabTrigger>
+	<scope>source.js, source.ts, source.jsx, source.tsx</scope>
+	<description>dispatch</description>
+</snippet>
