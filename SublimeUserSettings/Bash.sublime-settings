@@ -1,6 +1,12 @@
 {
 	"extensions":
 	[
-		".env"
+		".env",
+		".env.dist",
+		".env.local",
+		".env.dev",
+		".env.development",
+		".env.prod",
+		".env.production",
 	]
 }
