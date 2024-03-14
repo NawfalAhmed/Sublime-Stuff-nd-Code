@@ -23,5 +23,6 @@
 		// ]
 	},
 	{ "caption": "-"},
-	{ "command": "user_test"}
+	{ "command": "user_test"},
+	{ "command": "copy_remote_ref" }
 ]
