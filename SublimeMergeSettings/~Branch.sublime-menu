@@ -5,11 +5,6 @@
 		"args": { "argv": ["open", "open_pr", "$branch"] }
 	},
 	{
-		"caption": "Copy Review Request of $branch",
-		"command": "git",
-		"args": { "argv": ["open", "review_pr", "$branch"] }
-	},
-	{
 		"caption": "in GitHub for $branch",
 		"children": [
 			{
