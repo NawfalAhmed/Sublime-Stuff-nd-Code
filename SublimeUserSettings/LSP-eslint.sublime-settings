@@ -6,5 +6,11 @@
 			"rule": "*",
 			"severity": "downgrade"
 		}],
+		"codeAction.disableRuleComment": {
+			"enable": true,
+		},
+		"codeAction.showDocumentation": {
+			"enable": false
+		},
 	}
 }

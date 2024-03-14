@@ -69,11 +69,11 @@
 	// { "keys": ["ctrl+w"], "command": "insert", "args": { "characters": "\\w" } },
 	{
 		"keys": ["ctrl+a"], "command": "move_to",
-		"args": { "to": "bol", "extend": true }
+		"args": { "to": "hardbol", "extend": true }
 	},
 	{
 		"keys": ["ctrl+d"], "command": "move_to",
-		"args": { "to": "eol", "extend": true }
+		"args": { "to": "hardeol", "extend": true }
 	},
 	{
 		"keys": ["ctrl+w"], "command": "insert_snippet",
