@@ -2,10 +2,16 @@
 
 {
 	"settings": {
-		"rulesCustomizations": [{
-			"rule": "*",
-			"severity": "downgrade"
-		}],
+		"rulesCustomizations": [
+			{
+				"rule": "*",
+				"severity": "downgrade"
+			},
+			{
+				"rule": "@typescript-eslint/no-unused-vars",
+				"severity": "off"
+			}
+		],
 		"codeAction.disableRuleComment": {
 			"enable": true,
 		},
