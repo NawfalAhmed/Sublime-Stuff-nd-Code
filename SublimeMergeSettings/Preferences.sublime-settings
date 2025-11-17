@@ -169,4 +169,6 @@
 		"yapf",
 		"Åland",
 	],
+	"editor_path": "/Applications/Cursor.app/Contents/Resources/app/bin/cursor",
+	"editor_argument_format": "--reuse-window --goto ${file}:${line}:${col}",
 }

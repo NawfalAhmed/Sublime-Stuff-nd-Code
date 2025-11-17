@@ -27,10 +27,10 @@
 		]
 	},
 	{
-		"keys": ["shift", "shift"], "command": "git",
+		"keys": ["ctrl", "ctrl"], "command": "git",
 		"args": { "argv": ["open", "commit_pr", "$commit"] }
 	},
-	{ "keys": ["super", "super"], "command": "edit_commit" },
+	{ "keys": ["shift", "shift"], "command": "edit_commit" },
 	{ "keys": ["ctrl+a"], "command": "fixup_commits" },
 	{ "keys": ["ctrl+shift+a"], "command": "squash_commits" },
 	{
