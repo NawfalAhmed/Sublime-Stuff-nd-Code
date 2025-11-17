@@ -2,27 +2,39 @@
 	{
 		"caption": "Diff",
 		"children": [
-			{ "caption": "-" },
 			{ "caption": "Compare with...", "command": "sbs_compare" },
 			{ "caption": "Mark selection for comparison", "command": "sbs_mark_sel" },
-			{ "caption": "Compare selection", "command": "sbs_compare", "args": { "compare_selections": true } },
+			{
+				"caption": "Compare selection", "command": "sbs_compare",
+				"args": { "compare_selections": true }
+			},
 			{ "caption": "-" },
 			{ "caption": "FileDiffs Menu", "command": "file_diff_menu" },
 			{ "caption": "Diff Selections", "command": "file_diff_selections" },
 			{ "caption": "Diff with Clipboard", "command": "file_diff_clipboard" },
 			{ "caption": "Diff with Saved", "command": "file_diff_saved" },
-			{ "caption": "Diff with Previous",
-				"command": "file_diff_previous" }, { "caption": "-" }
+			{ "caption": "Diff with Previous", "command": "file_diff_previous" },
 		]
 	},
-	{ "caption": "-"},
-	{ "command": "format_json"},
-	{ "caption": "Format Selection", "command": "format_json", "args": {"select": true},
-		// "context": [
-		// 	{ "key": "selector", "operator": "equal", "operand": "source.json"}
-		// ]
+	{
+		"caption": "Format",
+		"children": [
+			{ "command": "format_json" },
+			{
+				"caption": "Format Selection", "command": "format_json",
+				"args": { "select": true }
+			},
+		]
 	},
-	{ "caption": "-"},
-	{ "command": "user_test"},
-	{ "command": "copy_remote_ref" }
+	{ "caption": "-" },
+	{ "caption": "Copy Ref", "command": "copy_remote_ref" },
+	{
+		"caption": "Copy Ref as [fileName(Link)", "command": "copy_remote_ref",
+		"args": { "link_text": "file_name" }
+	},
+	{
+		"caption": "Copy Ref as [selectedText](Link)", "command": "copy_remote_ref",
+		"args": { "link_text": "selection" }
+	},
+	{ "caption": "User: Test new plugin", "command": "testing" },
 ]
