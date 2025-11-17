@@ -9,7 +9,13 @@ from threading import Thread
 from queue import Full, Queue
 from contextlib import suppress
 
-run_args = {"shell": True, "executable": "/usr/local/bin/fish"}
+run_args = {
+	"shell": True,
+	"executable": "/usr/local/bin/fish",
+	"capture_output": True,
+	"check": True,
+	"text": True,
+}
 command = {
 	"ts": Template("npx prettier --write $name"),
 	"py": Template("python -m black -l 85 '$name'"),
@@ -34,27 +40,31 @@ class StuffOnSave(sublime_plugin.ViewEventListener):
 			name, type_ = self.format_queue.get()
 			dir_name = os.path.dirname(name)
 			file_name = os.path.basename(name)
-			if type_ == "py":
-				output = run(
-					command[type_].substitute(name=name) + " --check", **run_args
-				)
-				if not "unchanged" in str(output):
+			try:
+				if type_ == "py":
+					try:
+						output = run(
+							command[type_].substitute(name=name) + " --check",
+							**run_args,
+						)
+					except CalledProcessError as e:
+						if "would reformat" in e.stderr:
+							run(command[type_].substitute(name=name), **run_args)
+							sleep(2)
+						elif "unchanged" in e.stderr:
+							...
+						else:
+							raise e
+				elif type_ == "ts":
 					print("Formatting")
-					run(command[type_].substitute(name=name), **run_args)
-					sleep(2)
-			elif type_ == "ts":
-				print("Formatting")
-				try:
 					run(
 						command[type_].substitute(name=file_name),
-						check=True,
-						capture_output=True,
 						cwd=dir_name,
 						**run_args,
 					)
 					sleep(1)
-				except CalledProcessError as e:
-					sublime.error_message(e.stderr)
+			except CalledProcessError as e:
+				sublime.error_message(e.stderr)
 
 			sublime.status_message(f"Formatted {type_}: {name}")
 			self.format_queue.task_done()
