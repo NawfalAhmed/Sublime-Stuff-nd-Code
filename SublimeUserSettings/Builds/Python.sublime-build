@@ -7,7 +7,7 @@
 	"variants":
 	[
 		{
-			"shell_cmd": "python3.10 -u \"$file\"",
+			"shell_cmd": "python -u \"$file\"",
 			"name": "Terminus",
 			"target": "terminus_exec",
 			"cancel": "terminus_cancel_build",

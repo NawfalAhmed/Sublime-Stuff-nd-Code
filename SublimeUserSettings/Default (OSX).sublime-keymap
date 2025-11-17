@@ -1,6 +1,8 @@
 [
 	// Fix Mac Keybinds ->
 	// words
+	{ "keys": [";"], "command": "insert", "args": { "characters": ":" } },
+	{ "keys": [":"], "command": "insert", "args": { "characters": ";" } },
 	{
 		"keys": ["super+left"], "command": "move",
 		"args": { "by": "words", "forward": false }
@@ -56,6 +58,23 @@
 	},
 	{ "keys": ["super+space"], "command": "auto_complete" },
 	// <Recent Keybinds>
+	{
+		"keys": ["super+k", "super+c"], "command": "insert_snippet",
+		"args": { "contents": "console.log${2:($SELECTION)}$0" },
+		"context": [
+			{
+				"key": "setting.auto_match_enabled",
+				"operator": "equal",
+				"operand": true
+			},
+			{
+				"key": "selection_empty",
+				"operator": "equal",
+				"operand": false,
+				"match_all": true
+			}
+		]
+	},
 	{ "keys": ["super+shift+ctrl+enter"], "command": "testing" },
 	{ "keys": ["super+alt+p"], "command": "prompt_open_recent_project" },
 	{ "keys": ["super+shift+."], "command": "next_modification" },
@@ -160,15 +179,21 @@
 	},
 	{
 		"keys": ["super", "super"], "command": "chain",
-		"args": { "commands": [["set_mark"], ["set_user_mark"]] }
+		"args": { "commands": [["set_mark"], ["set_user_mark"], ["toggle_bookmark"]] }
 	},
 	{
 		"keys": ["shift", "shift"], "command": "set_user_mark",
 		"args": { "convert": true }
 	},
 {
-		"keys": ["shift+super", "shift+super"], "command": "set_user_mark",
-		"args": { "clear": true }
+		"keys": ["shift+super", "shift+super"], "command": "chain",
+		"args": {
+			"commands": [
+				["set_user_mark", {"clear": true }],
+				["clear_bookmarks", {"name": "mark"}],
+				["clear_bookmarks"],
+			]
+		}
 	},
 	{ "keys": ["super+j"], "command": "join_lines" },
 	{
@@ -259,7 +284,7 @@
 	{ "keys": ["alt+shift+z"], "command": "redo" },
 	{ "keys": ["super+z"], "command": "soft_undo" },
 	{ "keys": ["super+shift+z"], "command": "soft_redo" },
-	{ "keys": ["ctrl+z"], "command": "revert_hunk" },
+	{ "keys": ["ctrl+z"], "command": "next_bookmark" },
 	{ "keys": ["super+shift+`"], "command": "cycle_output_panels" },
 	{ "keys": ["alt+tab"], "command": "indent" },
 	{

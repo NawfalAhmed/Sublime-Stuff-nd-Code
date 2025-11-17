@@ -1,0 +1,8 @@
+{
+  "ignore_overrides_in": [
+    "PanePane",
+    "Case Conversion",
+    "Origami",
+    "LSP-json"
+  ]
+}

@@ -1,5 +1,4 @@
 {
-
 	"enabled": true,
 	"settings": {
 		"typescript.inlayHints.includeInlayEnumMemberValueHints": true,
@@ -25,41 +24,5 @@
 		"namespace": "storage.type",
 		"variable": "punctuation.separator", // non const variables are greyish
 		"variable.readonly": "null", // const variables are white
-	},
-	"initializationOptions":
-	{
-		"locale": "en",
-		"maxTsServerMemory": 6144,
-		"npmLocation": "",
-		"plugins":
-		[
-		],
-		"preferences":
-		{
-			"allowIncompleteCompletions": true,
-			"allowRenameOfImportPath": true,
-			"allowTextChangesInNewFiles": true,
-			"autoImportFileExcludePatterns":
-			[
-			],
-			"displayPartsForJSDoc": true,
-			"generateReturnInDocTemplate": true,
-			"includeAutomaticOptionalChainCompletions": true,
-			"includeCompletionsForImportStatements": true,
-			"includeCompletionsForModuleExports": true,
-			"includeCompletionsWithClassMemberSnippets": true,
-			"includeCompletionsWithInsertText": true,
-			"includeCompletionsWithObjectLiteralMethodSnippets": true,
-			"includeCompletionsWithSnippetText": true,
-			"includePackageJsonAutoImports": "auto",
-			"jsxAttributeCompletionStyle": "auto",
-			"providePrefixAndSuffixTextForRename": true,
-			"useLabelDetailsInCompletionEntries": true,
-			"quotePreference": "auto",
-		},
-		"tsserver.logDirectory": "",
-		"tsserver.logVerbosity": "off",
-		"tsserver.path": "",
-		"tsserver.trace": "off"
 	}
 }

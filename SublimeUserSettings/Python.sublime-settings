@@ -5,7 +5,8 @@
 		"pyw",
 		"pt",
 	],
-	"wrap_width": 85,
+	"rulers": [[80, "stippled"], [87, "solid"]],
+	"wrap_width": 88,
 	"wrap_width_style": "constant",
 	"tab_size": 3,
 }

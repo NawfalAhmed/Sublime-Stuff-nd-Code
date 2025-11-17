@@ -1,13 +1,17 @@
 // Settings in here override those in "LSP-copilot/LSP-copilot.sublime-settings"
-
 {
-	"settings":
-	{
+	"settings": {
 		"auto_ask_completions": true,
+		"commit_completion_on_tab": true,
 		"completion_style": "phantom",
 		"debug": false,
 		"hook_to_auto_complete_command": false,
 		"local_checks": false,
-		"telemetry": false
+		"proxy": "",
+		"status_text": "{% if is_copilot_ignored %}{{ is_copilot_ignored }}{% elif is_waiting %}{{ is_waiting }}{% elif server_version %}v{{ server_version }}{% endif %}",
+		"telemetry":
+		{
+			"telemetryLevel": null
+		}
 	}
 }

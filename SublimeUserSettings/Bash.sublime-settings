@@ -6,7 +6,10 @@
 		".env.local",
 		".env.dev",
 		".env.development",
+		".env.test",
 		".env.prod",
 		".env.production",
-	]
+		"pre-push",
+		"pre-commit",
+	],
 }

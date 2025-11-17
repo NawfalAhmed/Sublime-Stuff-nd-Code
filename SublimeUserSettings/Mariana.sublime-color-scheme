@@ -27,7 +27,7 @@
 		"inactive_selection": "var(null)",
 		"misspelling": "var(_purple)",
 		"shadow": "var(_blue_luv)",
-		"shadow_width": "30",
+		"shadow_width": "7",
 		"active_guide": "hsla(180, 36%, 64%,0.5)",
 		// "stack_guide": "color(var(blue5) alpha(0.5))",
 		// "highlight": "var(blue5)",
