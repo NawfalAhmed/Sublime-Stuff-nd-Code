@@ -1,8 +1,9 @@
 // Settings in here override those in "Default/Preferences.sublime-settings",
 // and are overridden in turn by syntax-specific settings.
 {
+	// "ui_scale": 0.85,
 	"font_face": "Geist Mono",
-	"font_size": 13,
+	"font_size": 14,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"side_bar_layout": "commit_graph_as_column",
@@ -10,7 +11,7 @@
 	"expand_merge_commits_by_default": true,
 	"hardware_acceleration": "opengl",
 	"display_author_date": true,
-	"auto_fetch_delay": 50,
+	"auto_fetch_delay": 15,
 	"image_diff_style": "side-by-side",
 	"tab_size": 2,
 	"time_format": "12h",
