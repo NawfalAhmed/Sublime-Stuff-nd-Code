@@ -1,5 +1,5 @@
 {
 	// "StatusBar_Format": "%I:%M %p - %A, %d %b",
 	"StatusBar_Format": "%I:%M %p - %A",
-	"StatusBar_UpTime": true
+	"StatusBar_UpTime": false
 }
