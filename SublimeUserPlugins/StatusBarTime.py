@@ -29,14 +29,14 @@ def plugin_loaded() -> None:
 def plugin_unloaded() -> None:
 	global alive
 	alive = False
-	with open(log_path, "a") as logger:
-		time = datetime.now()
-		log = total_up_time + time.strftime(" on %A _ %B, %Y (logged@%#I:%#M|)")
-		check = {"1": "st", "2": "nd", "3": "rd"}
-		day = time.strftime("%#d")
-		day += check.get(day[-1], "th")
-		log = log.replace("_", day).replace("|", time.strftime("%p").lower())
-		logger.write(log + "\n")
+	# with open(log_path, "a") as logger:
+	# 	time = datetime.now()
+	# 	log = total_up_time + time.strftime(" on %A _ %B, %Y (logged@%#I:%#M|)")
+	# 	check = {"1": "st", "2": "nd", "3": "rd"}
+	# 	day = time.strftime("%#d")
+	# 	day += check.get(day[-1], "th")
+	# 	log = log.replace("_", day).replace("|", time.strftime("%p").lower())
+	# 	logger.write(log + "\n")
 
 
 class OnExitListener(sublime_plugin.EventListener):
