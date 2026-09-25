@@ -1,8 +1,8 @@
 [
 	// Fix Mac Keybinds ->
 	// words
-	{ "keys": [";"], "command": "insert", "args": { "characters": ":" } },
-	{ "keys": [":"], "command": "insert", "args": { "characters": ";" } },
+	// { "keys": [";"], "command": "insert", "args": { "characters": ":" } },
+	// { "keys": [":"], "command": "insert", "args": { "characters": ";" } },
 	{
 		"keys": ["super+left"], "command": "move",
 		"args": { "by": "words", "forward": false }

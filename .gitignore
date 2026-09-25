@@ -1,18 +1,10 @@
-Gifs
-IpythonLogs
-node_modules
-react-native-*snippets
-#
 SublimeUserSettings/MenuPenguinLists.sublime-settings
 SublimeUserSettings/LSP-pyright.sublime-settings.backup
 SublimeUserSettings/OverrideAudit.Status
-#
+SublimeUserSettings/Color Highlight.cache
+
+node_modules
+
 *.DS_store
-*.exe
-*.mp4
-*.ipynb_checkpoints/
-*.prefab
 *.directory
 *.sublime-workspace
-json-format-temp.py
-SublimeUserSettings/Color Highlight.cache/

@@ -270,4 +270,5 @@
 		"yapf",
 		"Åland",
 	],
+	"index_files": true,
 }

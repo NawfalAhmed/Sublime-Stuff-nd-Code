@@ -8,10 +8,11 @@
 		"hook_to_auto_complete_command": false,
 		"local_checks": false,
 		"proxy": "",
-		"status_text": "{% if is_copilot_ignored %}{{ is_copilot_ignored }}{% elif is_waiting %}{{ is_waiting }}{% elif server_version %}v{{ server_version }}{% endif %}",
+		"status_text": "{% if is_copilot_ignored %}{{ is_copilot_ignored }}{% elif is_waiting %}{{ is_waiting }}{% elif server_status_kind == 'InProgress' %}{{ server_status_message }}{% elif server_version %}v{{ server_version }}{% endif %}",
 		"telemetry":
 		{
-			"telemetryLevel": null
-		}
-	}
+			"telemetryLevel": null,
+		},
+	},
+	"enabled": false,
 }

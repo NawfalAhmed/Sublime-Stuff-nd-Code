@@ -2,6 +2,10 @@
 	"folders":
 	[
 		{
+			"name": "➦   Notes",
+			"path": "~/Sublime/Notes",
+		},
+		{
 			"file_exclude_patterns":
 			[
 				"*.meta"
@@ -9,77 +13,23 @@
 			"folder_exclude_patterns":
 			[
 				"Notes",
+				"SublimeMergeSettings",
 				"SublimeUser*",
 			],
 			"path": "~/Sublime",
 		},
 		{
-			"name": "➦   Notes",
-			"path": "~/Sublime/Notes",
-		},/*
-		{
-			"binary_file_patterns":
-			[
-				"*"
-			],
-			"file_exclude_patterns":
-			[
-				"*.csproj",
-				"*.sln"
-			],
-			"folder_exclude_patterns":
-			[
-				".vscode",
-				"Library",
-				"Logs",
-				"Packages",
-				"ProjectSettings",
-				"UserSettings"
-			],
-			"name": "Unity Scripts",
-			"path": "~/Desktop/Unity Projects",
-		},*/
-/*  {
-			"folder_exclude_patterns":
-			[
-				"User",
-				"UserPlugins",
-				"Anaconda",
-				"SendCode",
-				"R-IDE",
-				"OmniSharp",
-				"backrefs",
-				"bracex",
-				"bs4",
-				"jsonschema",
-				"lsp_utils",
-				"markuepsafe",
-				"mdpopups",
-				"numpy",
-				"package_setting_context",
-				"pathlib",
-				"pygments",
-				"pymdownx",
-				"pyte",
-				"python-jinja2",
-				"python-markdown",
-				"pywinpty",
-				"pyyaml",
-				"sublime_lib",
-				"wcwidth",
-				"wcmatch",
-			],
-			"name": "Packages Overrides",
-			"path": "~/AppData/Roaming/Sublime Text/Packages"
-		},*/
+			"name": "Sublime Plugins",
+			"path": "~/Sublime/SublimeUserPlugins",
+		},
 		{
 			"name": "Sublime Config",
 			"path": "~/Sublime/SublimeUserSettings",
 		},
 		{
-			"name": "Sublime Plugins",
-			"path": "~/Sublime/SublimeUserPlugins",
-		}
+			"name": "Sublime Merge Config",
+			"path": "~/Sublime/SublimeMergeSettings",
+		},
 	],
 	"settings": {
 		"indent_with_tabs_on_save": true,
