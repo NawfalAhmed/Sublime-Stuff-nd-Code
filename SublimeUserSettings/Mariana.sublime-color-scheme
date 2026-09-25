@@ -2,16 +2,18 @@
 {
 	"variables": {
 		"_blue_luv": "hsl(202,77.6%,50%)",
-		"_blue": "hsl(199,80%,50%)",
-		"_blue1": "hsl(215,66.8%,53.9%)",
-		"_purple": "hsl(276,70.2%,68.4%)",
-		"_purple1": "hsl(261, 95%, 70%)",
-		"_red": "hsl(338,70%,52%)",
-		"_sea_green": "hsl(174,51.8%,43.1%)",
-		"_sea_green_pale": "hsl(174,45%,57%)",
+		"_blue": "hsl(210,100%,60%)",
+		"_blue_dark": "hsl(212,75%,50%)",
+		"_purple_dark": "hsl(276,72%,65%)",
+		"_purple": "hsl(270,100%,70%)",
+		"_red": "hsl(330,66.5%,52%)",
+		"_sea_green": "hsl(170,100%,33%)",
+		"_sea_green_pale": "hsl(174, 48%, 51%)",
+		"_sea_green_dark": "hsl(172, 75%, 34%)",
 		"_white": "hsl(220,30%,92%)",
-		"_bg": "hsl(210, 8%, 13.5%)",
+		"_bg": "hsl(240,2%,9%)",
 		"_bg_highlight": "hsla(210, 13%, 30%, 0.7)",
+		"_bg_selection": "hsla(210, 100%, 60%, 0.2)",
 		"_bg_border": "hsl(210, 13%, 35%)",
 		"blended": "hsla(210,10%,60%,0.6)"
 	},
@@ -21,14 +23,14 @@
 		// "accent": "var(blue-vibrant)",
 		"caret": "var(blue5)",
 		"line_highlight": "var(_bg_highlight)",
-		"selection": "var(_bg_highlight)",
+		"selection": "var(_bg_selection)",
 		"selection_border": "var(null)",
 		"selection_corner_radius": "7",
 		"inactive_selection": "var(null)",
-		"misspelling": "var(_purple)",
+		"misspelling": "var(_purple_dark)",
 		"shadow": "var(_blue_luv)",
 		"shadow_width": "7",
-		"active_guide": "hsla(180, 36%, 64%,0.5)",
+		"active_guide": "hsla(210, 100%, 60%, 0.5)",
 		// "stack_guide": "color(var(blue5) alpha(0.5))",
 		// "highlight": "var(blue5)",
 		// "find_highlight_foreground": "var(grey)",
@@ -38,7 +40,7 @@
 		"bracket_contents_options": "glow bold",
 		"bracket_contents_foreground": "var(blue5)",
 		"tags_options": "glow bold",
-		"tags_foreground": "var(_purple1)"
+		"tags_foreground": "var(_purple)"
 	},
 	"rules": [
 		{
@@ -54,12 +56,12 @@
 		{
 			"name": "Number",
 			"scope": "constant.numeric",
-			"foreground": "var(_purple)"
+			"foreground": "var(_purple_dark)"
 		},
 		{
 			"name": "Built-in constant",
 			"scope": "constant.language",
-			"foreground": "var(_purple)",
+			"foreground": "var(_purple_dark)",
 			"font_style": "italic"
 		},
 		// {
@@ -71,18 +73,18 @@
 		{
 			"name": "Keyword",
 			"scope": "keyword - keyword.operator, keyword.operator.word",
-			"foreground": "hsl(338,70%,52%)"
+			"foreground": "var(_red)"
 		},
 		{
 			"name": "Constructor type",
 			"scope": "entity.name.function.constructor, storage.modifier",
-			"foreground": "var(_sea_green)",
-			"font_style": "bold"
+			"foreground": "var(_red)",
+			"font_style": "italic"
 		},
 		{
 			"name": "Storage type",
 			"scope": "storage.type",
-			"foreground": "var(_sea_green)",
+			"foreground": "var(_red)",
 			"font_style": "italic"
 		},
 		{
@@ -103,7 +105,7 @@
 		{
 			"name": "Function call Semantic",
 			"scope": "semantic.function",
-			"foreground": "var(_blue1)"
+			"foreground": "var(_blue_dark)"
 		},
 		{
 			"name": "Function argument",
@@ -131,25 +133,31 @@
 			"foreground": "var(_red)"
 		},
 		{
-			"name": "Library class/type",
-			"scope": "support.type, support.class",
+			"name": "Library type",
+			"scope": "support.type",
 			"foreground": "var(_sea_green_pale)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Library class",
+			"scope": "support.class",
+			"foreground": "var(_sea_green_dark)",
 			"font_style": "italic"
 		},
 		{
 			"name": "Tag name",
 			"scope": "entity.name.tag",
-			"foreground": "var(_purple1)"
+			"foreground": "var(_purple)"
 		},
 		{
 			"name": "Rails JSX",
 			"scope": "punctuation.section.embedded.begin.rails,punctuation.section.embedded.end.rails",
-			"foreground": "var(_purple1)"
+			"foreground": "var(_purple)"
 		},
 		{
 			"name": "Tag Punctuation",
 			"scope": "punctuation.definition.tag",
-			"foreground": "var(_purple1)"
+			"foreground": "var(_purple)"
 		},
 		{
 			"name": "Tag attribute",

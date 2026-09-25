@@ -34,7 +34,7 @@
 		// "background": "hsl(195,13.3%,7.9%)",
 		// "background": "#0D1011",
 		// "background": "var(black3)",
-		"background": "hsl(240,3%,13.5%)",
+		"background": "hsl(240,4%,10.5%)",
 		"accent": "#5B69BD",
 		"caret": "color(var(white2) alpha(0.9))",
 		"block_caret": "color(var(white2) alpha(0.4))",
