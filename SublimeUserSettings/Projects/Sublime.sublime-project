@@ -2,8 +2,8 @@
 	"folders":
 	[
 		{
-			"name": "➦   Notes",
-			"path": "~/Sublime/Notes",
+			"name": "➦   Scripts",
+			"path": "~/Sublime/scripts",
 		},
 		{
 			"file_exclude_patterns":
@@ -12,7 +12,7 @@
 			],
 			"folder_exclude_patterns":
 			[
-				"Notes",
+				"scripts",
 				"SublimeMergeSettings",
 				"SublimeUser*",
 			],
