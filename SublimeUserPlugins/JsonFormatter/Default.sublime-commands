@@ -1,6 +1,0 @@
-[
-	{
-		"caption": "JSON Formatter: Format Current File",
-		"command": "json_yapf_format",
-	},
-]
